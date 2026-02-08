@@ -4,6 +4,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![romcal](https://img.shields.io/badge/romcal-3B82F6?style=for-the-badge&logo=github&logoColor=white)
 
 **A modern, high-performance web application designed for the Catholic life, providing a fluid experience for navigating the liturgical calendar and reading the Holy Scriptures in Latin and Spanish.**
 
@@ -114,6 +115,12 @@ Developed by _Daniel Losada_
 
 [![GitHub](https://img.shields.io/badge/GitHub-danloi2-181717?style=for-the-badge&logo=github)](https://github.com/danloi2)
 [![Researcher EHU](https://img.shields.io/badge/Researcher-EHU-blue?style=for-the-badge&logo=researchgate)](https://github.com/danloi2)
+
+---
+
+## 🛠️ Technical Credits
+
+- **[romcal](https://github.com/romcal/romcal)**: The core liturgical engine powering the calendar logic. We use the version `3.0.0` (dev branch) to ensure modern liturgical precision.
 
 ---
 
