@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
 import { Moon, Sun } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -121,14 +120,7 @@ export default function DateWidget({ language = 'es' }: DateWidgetProps) {
       <div className="text-sm font-bold text-slate-700 capitalize tracking-tight text-center">
         {dateText}
       </div>
-      <div
-        className={cn(
-          'inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-black tracking-widest ring-1 ring-inset transition-colors duration-300 shadow-sm',
-          isNight
-            ? 'bg-indigo-50 text-indigo-700 ring-indigo-700/20'
-            : 'bg-amber-50 text-amber-700 ring-amber-600/30'
-        )}
-      >
+      <div className="flex flex-col items-center justify-center py-0.5 md:py-1 px-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-[#c49b9b]/30 shadow-sm transition-all duration-300 hover:shadow-md group">
         {isNight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
         <span>{timeText}</span>
       </div>

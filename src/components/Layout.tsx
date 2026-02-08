@@ -63,7 +63,7 @@ export default function Layout({
             />
             <span className="text-[#c49b9b]">|</span>
             <a
-              href="https://github.com/danloi2/calitur"
+              href="https://github.com/danloi2/itercatholicum"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-sm font-bold text-[#522b2b] hover:text-[#8B0000] transition-colors uppercase tracking-widest"

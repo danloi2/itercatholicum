@@ -124,7 +124,7 @@ export default function AboutModal({ language, trigger }: AboutModalProps) {
 
                 <div className="flex flex-col gap-2">
                   <a
-                    href="https://github.com/danloi2/calitur"
+                    href="https://github.com/danloi2/itercatholicum"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-4 py-2 bg-[#8B0000]/10 hover:bg-[#8B0000]/20 rounded-xl transition-all group font-bold text-[#8B0000] mt-4"

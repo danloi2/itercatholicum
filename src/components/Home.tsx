@@ -149,24 +149,24 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
   ];
 
   return (
-    <>
+    <div className="h-screen overflow-hidden flex flex-col bg-[#fdfbf7]">
       <UnifiedHeader language={language} setLanguage={setLanguage} />
 
-      {/* Typewriter Animation Section */}
-      <div className="bg-[#fefdfa] border-b border-[#c49b9b]/30 py-4">
+      {/* Typewriter Animation & Today's Card Section */}
+      <div className="bg-[#fefdfa] border-b border-[#c49b9b]/30 py-1 md:py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="min-h-[2em] flex flex-col justify-center items-center gap-6">
-            <p className="text-base md:text-lg text-[#522b2b] italic leading-none opacity-80 inline-flex items-center text-center">
+          <div className="flex flex-col justify-center items-center gap-1 md:gap-2">
+            <p className="text-xs md:text-[15px] text-[#522b2b] italic leading-tight opacity-80 inline-flex items-center text-center">
               {displayText}
-              <span className="w-0.5 h-5 bg-[#8B0000] ml-1 animate-pulse" />
+              <span className="w-0.5 h-3 md:h-4 bg-[#8B0000] ml-1 animate-pulse" />
             </p>
 
             {/* Today's Liturgical Card */}
             {todayData && (
-              <div className="w-full max-w-md animate-in fade-in slide-in-from-bottom-4 duration-1000">
+              <div className="w-full max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-1000">
                 <div
                   onClick={() => navigate('/calendar')}
-                  className="cursor-pointer transform transition-all duration-300 hover:scale-[1.02] active:scale-95"
+                  className="cursor-pointer transform transition-all duration-300 hover:scale-[1.01] active:scale-95"
                 >
                   <DayCard day={todayData} isToday={true} language={language} />
                 </div>
@@ -177,26 +177,28 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-[#fdfbf7]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <main className="flex-1 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => navigate(section.path)}
-              className="group relative flex flex-col items-center p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-[#c49b9b] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-center hover:bg-[#fefdfa]"
+              className="group relative flex flex-col items-center p-3 md:p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-[#c49b9b] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-center hover:bg-[#fefdfa]"
             >
               <div
                 className={cn(
-                  'w-14 h-14 rounded-full flex items-center justify-center mb-6 border border-[#c49b9b]/50 shadow-inner group-hover:scale-110 transition-transform duration-500',
+                  'w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-2 md:mb-3 border border-[#c49b9b]/50 shadow-inner group-hover:scale-110 transition-transform duration-500',
                   section.color
                 )}
               >
-                {section.icon}
+                {React.cloneElement(section.icon as any, {
+                  className: 'w-4 h-4 md:w-5 md:h-5',
+                })}
               </div>
-              <h2 className="text-2xl font-bold mb-3 group-hover:text-[#8B0000] transition-colors">
+              <h2 className="text-base md:text-lg font-bold mb-0.5 md:mb-1 group-hover:text-[#8B0000] transition-colors">
                 {section.title}
               </h2>
-              <p className="text-[#8B0000]/80 text-base leading-relaxed serif italic">
+              <p className="text-[#8B0000]/80 text-[10px] md:text-xs leading-relaxed serif italic">
                 {section.description}
               </p>
             </button>
@@ -204,7 +206,7 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
         </div>
       </main>
       <Footer language={language} />
-    </>
+    </div>
   );
 };
 

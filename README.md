@@ -18,7 +18,9 @@
 ### Key Features
 
 - **📅 Dynamic Liturgical Calendar**: Complete coverage of liturgical days, feast ranks, and liturgical colors for any year.
-- **📖 Public Domain Bible Reader**: Access to historical, copyright-free translations in both Spanish and Latin.
+- **✨ Daily Liturgical Card**: Instant view of today's liturgical context directly on the home page.
+- **📖 Public Domain Bible Reader**: Access to historical, copyright-free translations in both Spanish and Latin (Vulgata & Torres Amat).
+- **🔠 Elegant Typography**: Traditional drop caps and refined font sets for an immersive reading experience.
 - **🔍 Smart Search**: Instant, accent-insensitive search for festivities and biblical passages.
 - **🌍 Bilingual Interface**: Effortless toggling between Latin (_lingua ecclesiastica_) and Spanish.
 - **💎 Premium Design**: A curated "clerical" aesthetic with dark red accents, ivory paper textures, and elegant typography.
@@ -84,6 +86,10 @@ npm run dev
 ```bash
 npm run build
 ```
+
+### 4. Continuous Deployment
+
+The project is configured with **GitHub Actions** to automatically deploy to GitHub Pages on every push to `main`.
 
 ---
 

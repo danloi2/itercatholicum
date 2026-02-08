@@ -16,11 +16,11 @@ export default function UnifiedHeader({
   children,
 }: UnifiedHeaderProps) {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/50 shadow-sm">
+    <header className="sticky top-0 z-40 w-full bg-[#fdfbf7]/80 backdrop-blur-md border-b border-[#c49b9b]/20 shadow-smHeader">
       {/* Common Section */}
       <div className="border-b border-stone-200/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 items-center py-3 gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-2">
+          <div className="grid grid-cols-3 items-center gap-4">
             {/* Left: App Branding */}
             <div className="flex flex-col items-start">
               <h1 className="text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none">
