@@ -21,10 +21,8 @@ interface VerseResult {
   text: string;
 }
 
-// Pre-load all Bible JSON files using Vite's import.meta.glob with eager loading
-const bibleModules = import.meta.glob<{ default: any }>('/src/data/bibles/**/*.json', {
-  eager: true,
-});
+// Load Bible JSON files using Vite's import.meta.glob (lazy loading)
+const bibleModules = import.meta.glob<{ default: any }>('/src/data/bibles/**/*.json');
 
 // Normalize text for search (remove accents, lowercase)
 const normalizeText = (text: string): string => {
@@ -45,7 +43,6 @@ const searchVerses = async (
     verses?: { start: number; end: number };
   }
 ): Promise<VerseResult[]> => {
-  console.log('🔍 searchVerses called with:', { query, language, limit, filters });
   const normalizedQuery = normalizeText(query);
   const results: VerseResult[] = [];
 
@@ -63,12 +60,14 @@ const searchVerses = async (
       try {
         const filename = language === 'es' ? book.files.torres : book.files.vulgata;
         const bookPath = `/src/data/bibles/${bibleVersion}/${filename}`;
-        const module = bibleModules[bookPath];
+        const loadModule = bibleModules[bookPath];
 
-        if (!module) {
+        if (!loadModule) {
           continue;
         }
 
+        // Lazy load the specific book data
+        const module = await loadModule();
         const data = module.default || module;
 
         // Search through chapters and verses
