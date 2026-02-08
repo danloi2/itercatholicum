@@ -4,6 +4,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![romcal](https://img.shields.io/badge/romcal-3B82F6?style=for-the-badge&logo=github&logoColor=white)
 
 **A modern, high-performance web application designed for the Catholic life, providing a fluid experience for navigating the liturgical calendar and reading the Holy Scriptures in Latin and Spanish.**
