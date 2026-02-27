@@ -46,25 +46,27 @@ export default function BibleDisplay({
         className="relative font-serif text-[#3d0c0c] text-justify leading-[1.9]"
         style={{ fontSize: `${1.3 * fontScale}rem` }}
       >
-        {versesToDisplay.map((verse, index) => (
-          <span key={verse.num} className="inline mr-1">
-            {index === 0 ? (
-              <>
-                <span className="float-left text-7xl font-bold text-[#8b0000] leading-[0.8] mr-2 mt-1 font-serif drop-shadow-sm select-none">
-                  {verse.text.charAt(0).toUpperCase()}
-                </span>
-                <span>{verse.text.substring(1)} </span>
-              </>
-            ) : (
-              <>
+        <div className="text-justify">
+          {versesToDisplay.map((verse, index) => (
+            <span key={verse.num} className="inline">
+              {index !== 0 && (
                 <sup className="text-[0.6em] font-bold text-[#8B0000] mr-1 select-none">
                   {verse.num}
                 </sup>
+              )}
+              {index === 0 ? (
+                <>
+                  <span className="text-5xl font-bold text-[#8b0000] font-serif mr-1">
+                    {verse.text.charAt(0).toUpperCase()}
+                  </span>
+                  <span>{verse.text.substring(1)} </span>
+                </>
+              ) : (
                 <span>{verse.text} </span>
-              </>
-            )}
-          </span>
-        ))}
+              )}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Decorative footer */}

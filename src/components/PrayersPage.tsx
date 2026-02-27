@@ -198,25 +198,22 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
                   className="relative font-serif text-[#3d0c0c] text-justify leading-[1.9]"
                   style={{ fontSize: '1.3rem' }}
                 >
-                  {selectedPrayer.content[language].map((line, idx) => {
-                    if (idx === 0) {
-                      const firstLetter = line[0];
-                      const restOfLine = line.substring(1);
-                      return (
-                        <span key={idx} className="block mb-1.5">
-                          <span className="float-left text-7xl font-bold text-[#8b0000] leading-[0.8] mr-2 mt-1 font-serif drop-shadow-sm select-none">
-                            {firstLetter}
-                          </span>
-                          {restOfLine}
-                        </span>
-                      );
-                    }
-                    return (
+                  <div className="text-justify">
+                    {selectedPrayer.content[language].map((line, idx) => (
                       <p key={idx} className="mb-1.5">
-                        {line}
+                        {idx === 0 ? (
+                          <>
+                            <span className="text-5xl font-bold text-[#8b0000] font-serif mr-1">
+                              {line.charAt(0).toUpperCase()}
+                            </span>
+                            {line.substring(1)}
+                          </>
+                        ) : (
+                          line
+                        )}
                       </p>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
 
                 {/* Decorative Footer */}
