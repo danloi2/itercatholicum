@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import UnifiedHeader from '@/components/UnifiedHeader';
 import Footer from '@/components/Footer';
 import PrayersCommandPalette from '@/components/PrayersCommandPalette';
-import { BookOpen, Quote, ArrowLeft, Search, Shuffle } from 'lucide-react';
+import { BookOpen, Quote, ArrowLeft, Shuffle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import {
@@ -43,10 +43,6 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
     () => prayers.find((p) => p.id === selectedPrayerId),
     [prayers, selectedPrayerId]
   );
-
-  const filteredPrayers = useMemo(() => {
-    return prayers; // List filtering logic removed in favor of modal search
-  }, [prayers]);
 
   const pageTitle = language === 'la' ? 'Orationes' : 'Oraciones';
 
@@ -141,7 +137,7 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {filteredPrayers.map((prayer) => (
+              {prayers.map((prayer) => (
                 <button
                   key={prayer.id}
                   onClick={() => {
@@ -164,9 +160,9 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
               ))}
             </div>
 
-            {filteredPrayers.length === 0 && (
+            {prayers.length === 0 && (
               <div className="text-center py-20 bg-stone-50 rounded-3xl border border-dashed border-[#c49b9b]/30">
-                <Search className="w-12 h-12 text-[#c49b9b]/40 mx-auto mb-4" />
+                <BookOpen className="w-12 h-12 text-[#c49b9b]/40 mx-auto mb-4" />
                 <p className="text-[#522b2b] font-serif">
                   {language === 'la' ? 'Nulla oratio inventa' : 'No se encontraron oraciones'}
                 </p>

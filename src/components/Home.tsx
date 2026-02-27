@@ -43,7 +43,7 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
         },
         prayers: {
           title: 'Oraciones',
-          description: 'Devocionario y oraciones cristianas (Próximamente).',
+          description: 'Devocionario y oraciones de la tradición cristiana.',
         },
       },
     },
@@ -65,7 +65,7 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
         },
         prayers: {
           title: 'Orationes',
-          description: 'Devotionarium et orationes christianae (Mox venturum).',
+          description: 'Devotionarium et orationes christianae.',
         },
       },
     },

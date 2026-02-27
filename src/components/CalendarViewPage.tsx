@@ -35,7 +35,7 @@ export default function CalendarViewPage({ language, setLanguage }: CalendarView
         if (todayElement) {
           const headerOffset = 180;
           const elementPosition = todayElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
           window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
           hasScrolledRef.current = true;
         }
@@ -69,7 +69,7 @@ export default function CalendarViewPage({ language, setLanguage }: CalendarView
       if (element) {
         const headerOffset = 150;
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     }, 100);
