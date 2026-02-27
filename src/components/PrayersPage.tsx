@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useTodayLiturgicalColor } from '@/hooks/useLiturgicalColor';
 
 // Type for prayer structure
 interface Prayer {
@@ -37,6 +38,8 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
   const [selectedPrayerId, setSelectedPrayerId] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const liturgicalHex = useTodayLiturgicalColor(language);
+
   const prayers = useMemo(() => allPrayers, []);
 
   const selectedPrayer = useMemo(
@@ -57,9 +60,12 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
                 setSelectedPrayerId(null);
               }}
               className={cn(
-                'flex items-center justify-center bg-linear-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shrink-0 transition-all hover:scale-105 active:scale-95 group border-none outline-none data-[state=open]:scale-105 [&>svg]:hidden',
+                'flex items-center justify-center rounded-xl shadow-lg shrink-0 transition-all hover:scale-105 active:scale-95 group border-none outline-none data-[state=open]:scale-105 [&>svg]:hidden',
                 viewMode === 'READ' ? 'h-11 md:h-14 px-4 md:px-6' : 'h-14 md:h-20 px-8 md:px-12'
               )}
+              style={{
+                background: `linear-gradient(to right, ${liturgicalHex}cc, ${liturgicalHex})`,
+              }}
             >
               <span
                 className={cn(
@@ -189,15 +195,15 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
                 />
 
                 <div
-                  className="relative font-serif text-[#3d0c0c] text-justify leading-relaxed"
-                  style={{ fontSize: '1.1rem' }}
+                  className="relative font-serif text-[#3d0c0c] text-justify leading-[1.9]"
+                  style={{ fontSize: '1.3rem' }}
                 >
                   {selectedPrayer.content[language].map((line, idx) => {
                     if (idx === 0) {
                       const firstLetter = line[0];
                       const restOfLine = line.substring(1);
                       return (
-                        <span key={idx} className="block mb-4">
+                        <span key={idx} className="block mb-1.5">
                           <span className="float-left text-7xl font-bold text-[#8b0000] leading-[0.8] mr-2 mt-1 font-serif drop-shadow-sm select-none">
                             {firstLetter}
                           </span>
@@ -206,7 +212,7 @@ export default function PrayersPage({ language, setLanguage }: PrayersPageProps)
                       );
                     }
                     return (
-                      <p key={idx} className="mb-4">
+                      <p key={idx} className="mb-1.5">
                         {line}
                       </p>
                     );

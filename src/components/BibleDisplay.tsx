@@ -43,8 +43,8 @@ export default function BibleDisplay({
 
       {/* Content */}
       <div
-        className="relative font-serif text-[#3d0c0c] text-justify leading-relaxed"
-        style={{ fontSize: `${1.1 * fontScale}rem` }}
+        className="relative font-serif text-[#3d0c0c] text-justify leading-[1.9]"
+        style={{ fontSize: `${1.3 * fontScale}rem` }}
       >
         {versesToDisplay.map((verse, index) => (
           <span key={verse.num} className="inline mr-1">

@@ -22,6 +22,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import { useTodayLiturgicalColor } from '@/hooks/useLiturgicalColor';
 
 interface BibleReaderPageProps {
   language: 'es' | 'la';
@@ -41,6 +42,7 @@ export default function BibleReaderPage({ language, setLanguage }: BibleReaderPa
   const [bookData, setBookData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const liturgicalHex = useTodayLiturgicalColor(language);
 
   // Progressive Disclosure States (for initial view accordions)
   const [activeTestament, setActiveTestament] = useState<string | null>(null);
@@ -146,11 +148,14 @@ export default function BibleReaderPage({ language, setLanguage }: BibleReaderPa
             setActiveGroup(null);
           }}
           className={cn(
-            'flex flex-col items-center justify-center bg-linear-to-r from-blue-600 to-indigo-600 border-none rounded-xl hover:scale-115 transition-all shadow-lg group shrink-0 z-10',
+            'flex flex-col items-center justify-center border-none rounded-xl hover:scale-115 transition-all shadow-lg group shrink-0 z-10',
             selectedBookId
               ? 'h-11 md:h-14 px-4 md:px-6 scale-110'
               : 'h-14 md:h-20 px-8 md:px-12 scale-100'
           )}
+          style={{
+            background: `linear-gradient(to right, ${liturgicalHex}cc, ${liturgicalHex})`,
+          }}
         >
           <span
             className={cn(
