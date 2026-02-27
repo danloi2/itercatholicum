@@ -2,7 +2,7 @@
 type LiturgicalDay = any;
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { COLOR_MAP, UI_STRINGS } from '@/constants/config';
+import { COLOR_MAP, UI_STRINGS, RANK_MAP } from '@/constants/config';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -61,27 +61,6 @@ export default function DayCard({ day, isToday, language = 'es' }: DayCardProps)
       ? LATIN_MONTHS[dateObj.getMonth()]
       : format(dateObj, 'MMM', { locale: currentLocale });
   const todayLabel = language === 'la' ? 'HODIE' : 'HOY';
-
-  const RANK_MAP: Record<string, Record<string, string>> = {
-    es: {
-      SOLEMNITY: 'SOLEMNIDAD',
-      FEAST: 'FIESTA',
-      MEMORIAL: 'MEMORIA',
-      OPTIONAL_MEMORIAL: 'MEMORIA LIBRE',
-      SUNDAY: 'DOMINGO',
-      FERIA: 'FERIA',
-      WEEKDAY: 'FERIA',
-    },
-    la: {
-      SOLEMNITY: 'SOLLEMNITAS',
-      FEAST: 'FESTUM',
-      MEMORIAL: 'MEMORIA',
-      OPTIONAL_MEMORIAL: 'MEMORIA AD LIBITUM',
-      SUNDAY: 'DOMINICA',
-      FERIA: 'FERIA',
-      WEEKDAY: 'FERIA',
-    },
-  };
 
   const COLOR_NAME_MAP: Record<string, Record<string, string>> = {
     es: {

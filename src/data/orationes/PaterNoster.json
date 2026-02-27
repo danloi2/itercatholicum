@@ -1,0 +1,31 @@
+{
+  "id": "pater-noster",
+  "title": {
+    "es": "Padre Nuestro",
+    "la": "Pater Noster"
+  },
+  "content": {
+    "es": [
+      "Padre nuestro, que estás en el cielo,",
+      "santificado sea tu Nombre;",
+      "venga a nosotros tu reino;",
+      "hágase tu voluntad en la tierra como en el cielo.",
+      "Danos hoy nuestro pan de cada día;",
+      "perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden;",
+      "no nos dejes caer en la tentación,",
+      "y líbranos del mal.",
+      "Amén."
+    ],
+    "la": [
+      "Pater noster, qui es in caelis,",
+      "sanctificetur nomen tuum;",
+      "adveniat regnum tuum;",
+      "fiat voluntas tua sicut in caelo et in terra.",
+      "Panem nostrum quotidianum da nobis hodie;",
+      "et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris;",
+      "et ne nos inducas in tentationem;",
+      "sed libera nos a malo.",
+      "Amen."
+    ]
+  }
+}

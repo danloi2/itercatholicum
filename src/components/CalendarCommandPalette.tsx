@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Search, Calendar } from 'lucide-react';
 import type { CalendarData } from '@/hooks/use-calendar';
+import { RANK_MAP } from '@/constants/config';
 
 interface CalendarCommandPaletteProps {
   open: boolean;
@@ -136,9 +137,14 @@ export default function CalendarCommandPalette({
                     <Calendar className="mr-2 h-4 w-4 text-[#8B0000]" />
                     <div className="flex flex-col">
                       <span className="text-[#522b2b] font-medium">{event.name}</span>
-                      <span className="text-[10px] text-[#8B0000]/70 uppercase tracking-widest">
-                        {event.date}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-[#8B0000]/70 uppercase tracking-widest">
+                          {event.date}
+                        </span>
+                        <span className="text-[9px] px-1.5 py-0.5 bg-[#8B0000]/5 text-[#8B0000]/60 rounded font-bold uppercase tracking-tighter">
+                          {RANK_MAP[language]?.[event.rank?.toUpperCase()] || event.rank}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 ))

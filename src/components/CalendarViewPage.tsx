@@ -79,7 +79,12 @@ export default function CalendarViewPage({ language, setLanguage }: CalendarView
 
   return (
     <>
-      <UnifiedHeader language={language} setLanguage={setLanguage} pageTitle={pageTitle}>
+      <UnifiedHeader
+        language={language}
+        setLanguage={setLanguage}
+        pageTitle={pageTitle}
+        year={year}
+      >
         <Controls
           year={year}
           onYearChange={(y: string) => {

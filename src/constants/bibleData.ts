@@ -1105,7 +1105,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 16,
     files: {
@@ -1126,7 +1126,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 16,
     files: {
@@ -1147,7 +1147,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 13,
     files: {
@@ -1168,7 +1168,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 6,
     files: {
@@ -1189,7 +1189,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 6,
     files: {
@@ -1210,7 +1210,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 4,
     files: {
@@ -1231,7 +1231,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 4,
     files: {
@@ -1252,7 +1252,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 5,
     files: {
@@ -1273,7 +1273,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 3,
     files: {
@@ -1294,7 +1294,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 6,
     files: {
@@ -1315,7 +1315,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 4,
     files: {
@@ -1336,7 +1336,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 3,
     files: {
@@ -1357,7 +1357,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 1,
     files: {
@@ -1378,7 +1378,7 @@ export const BIBLE_BOOKS: BibleBook[] = [
     },
     type: {
       la: 'Epistulae Paulinae',
-      es: 'Cartas de san Pablo',
+      es: 'Cartas de San Pablo',
     },
     chapters: 13,
     files: {

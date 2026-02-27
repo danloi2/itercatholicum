@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '@/components/Home';
 import CalendarViewPage from '@/components/CalendarViewPage';
 import BibleReaderPage from '@/components/BibleReaderPage';
+import PrayersPage from '@/components/PrayersPage';
 import FeaturePlaceholder from '@/components/FeaturePlaceholder';
 
 export default function App() {
@@ -27,9 +28,7 @@ export default function App() {
       />
       <Route
         path="/prayers"
-        element={
-          <FeaturePlaceholder title="Oraciones" language={language} setLanguage={setLanguage} />
-        }
+        element={<PrayersPage language={language} setLanguage={setLanguage} />}
       />
     </Routes>
   );

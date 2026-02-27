@@ -1,0 +1,42 @@
+{
+  "id": "salve-regina",
+  "title": {
+    "es": "Salve Regina",
+    "la": "Salve Regina"
+  },
+  "content": {
+    "es": [
+      "Dios te salve, Reina y Madre de Misericordia,",
+      "vida, dulzura y esperanza nuestra;",
+      "Dios te salve.",
+      "A ti clamamos los desterrados hijos de Eva;",
+      "a ti suspiramos, gimiendo y llorando,",
+      "en este valle de lágrimas.",
+      "Ea, pues, Señora, abogada nuestra,",
+      "vuelve a nosotros esos tus ojos misericordiosos;",
+      "y después de este destierro,",
+      "muéstranos a Jesús,",
+      "fruto bendito de tu vientre.",
+      "¡Oh clementísima, oh piadosa, oh dulce Virgen María!",
+      "℣. Ruega por nosotros, Santa Madre de Dios.",
+      "℟. Para que seamos dignos de alcanzar las promesas de nuestro Señor Jesucristo.",
+      "Amén"
+    ],
+    "la": [
+      "Salve, Regina, Mater misericordiae,",
+      "vita, dulcedo, et spes nostra, salve.",
+      "Ad te clamamus exsules filii Evae,",
+      "ad te suspiramus, gementes et flentes",
+      "in hac lacrimarum valle.",
+      "Eia, ergo, advocata nostra,",
+      "illos tuos misericordes oculos",
+      "ad nos converte;",
+      "et Iesum, benedictum fructum ventris tui,",
+      "nobis post hoc exsilium ostende.",
+      "O clemens, O pia, O dulcis Virgo Maria.",
+      "V. Ora pro nobis, Sancta Dei Genitrix.",
+      "R. Ut digni efficiamur promissionibus Christi.",
+      "Amen."
+    ]
+  }
+}

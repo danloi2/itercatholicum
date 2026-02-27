@@ -1,0 +1,31 @@
+{
+  "id": "ave-maria",
+  "title": {
+    "es": "Ave María",
+    "la": "Ave Maria"
+  },
+  "content": {
+    "es": [
+      "Dios te salve, María,",
+      "llena eres de gracia;",
+      "el Señor es contigo.",
+      "Bendita tú eres entre todas las mujeres,",
+      "y bendito es el fruto de tu vientre, Jesús.",
+      "Santa María, Madre de Dios,",
+      "ruega por nosotros, pecadores,",
+      "ahora y en la hora de nuestra muerte.",
+      "Amén."
+    ],
+    "la": [
+      "Ave Maria,",
+      "gratia plena;",
+      "Dominus tecum.",
+      "Benedicta tu in mulieribus,",
+      "et benedictus fructus ventris tui, Iesus.",
+      "Sancta Maria, Mater Dei,",
+      "ora pro nobis peccatoribus,",
+      "nunc et in hora mortis nostrae.",
+      "Amen."
+    ]
+  }
+}

@@ -152,21 +152,15 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
     <div className="h-screen overflow-hidden flex flex-col bg-[#fdfbf7]">
       <UnifiedHeader language={language} setLanguage={setLanguage} />
 
-      {/* Typewriter Animation & Today's Card Section */}
-      <div className="bg-[#fefdfa] border-b border-[#c49b9b]/30 py-1 md:py-2">
+      {/* Today's Liturgical Card Section (Restored to Top) */}
+      <div className="bg-[#fefdfa] border-b border-[#c49b9b]/20 py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-center items-center gap-1 md:gap-2">
-            <p className="text-xs md:text-[15px] text-[#522b2b] italic leading-tight opacity-80 inline-flex items-center text-center">
-              {displayText}
-              <span className="w-0.5 h-3 md:h-4 bg-[#8B0000] ml-1 animate-pulse" />
-            </p>
-
-            {/* Today's Liturgical Card */}
+          <div className="flex flex-col justify-center items-center">
             {todayData && (
-              <div className="w-full max-w-2xl animate-in fade-in slide-in-from-bottom-2 duration-1000">
+              <div className="w-full max-w-2xl transform transition-all duration-500 animate-in fade-in slide-in-from-top-2">
                 <div
                   onClick={() => navigate('/calendar')}
-                  className="cursor-pointer transform transition-all duration-300 hover:scale-[1.01] active:scale-95"
+                  className="cursor-pointer hover:scale-[1.01] active:scale-95 transition-all"
                 >
                   <DayCard day={todayData} isToday={true} language={language} />
                 </div>
@@ -177,32 +171,47 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
-          {sections.map((section) => (
-            <button
-              key={section.id}
-              onClick={() => navigate(section.path)}
-              className="group relative flex flex-col items-center p-3 md:p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-[#c49b9b] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-center hover:bg-[#fefdfa]"
-            >
-              <div
-                className={cn(
-                  'w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-2 md:mb-3 border border-[#c49b9b]/50 shadow-inner group-hover:scale-110 transition-transform duration-500',
-                  section.color
-                )}
+      <main className="flex-1 flex flex-col pt-4">
+        {/* Buttons Grid Section */}
+        <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 w-full">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => navigate(section.path)}
+                className="group relative flex flex-col items-center p-4 md:p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-[#c49b9b]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-center hover:bg-[#fefdfa] hover:border-[#8B0000]/30"
               >
-                {React.cloneElement(section.icon as any, {
-                  className: 'w-4 h-4 md:w-5 md:h-5',
-                })}
-              </div>
-              <h2 className="text-base md:text-lg font-bold mb-0.5 md:mb-1 group-hover:text-[#8B0000] transition-colors">
-                {section.title}
-              </h2>
-              <p className="text-[#8B0000]/80 text-[10px] md:text-xs leading-relaxed serif italic">
-                {section.description}
+                <div
+                  className={cn(
+                    'w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 border border-[#c49b9b]/50 shadow-inner group-hover:scale-110 transition-transform duration-500',
+                    section.color
+                  )}
+                >
+                  {React.cloneElement(section.icon as any, {
+                    className: 'w-5 h-5 md:w-6 md:h-6',
+                  })}
+                </div>
+                <h2 className="text-lg md:text-xl font-bold mb-1 md:mb-1.5 group-hover:text-[#8B0000] transition-colors">
+                  {section.title}
+                </h2>
+                <p className="text-[#8B0000]/80 text-[11px] md:text-xs leading-relaxed serif italic">
+                  {section.description}
+                </p>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Typewriter Animation Section (Keep Below Buttons) */}
+        <div className="py-6 md:py-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col justify-center items-center">
+              <p className="text-sm md:text-[20px] text-[#522b2b] italic font-serif leading-tight opacity-90 inline-flex items-center text-center px-4">
+                {displayText}
+                <span className="w-0.5 h-4 md:h-6 bg-[#8B0000] ml-1.5 animate-pulse" />
               </p>
-            </button>
-          ))}
+            </div>
+          </div>
         </div>
       </main>
       <Footer language={language} />

@@ -1,6 +1,7 @@
 import DayCard from './DayCard';
 import SeasonBanner from './SeasonBanner';
 import type { CalendarData } from '@/hooks/use-calendar';
+import { ROMCAL_MAP } from '@/constants/config';
 
 interface CalendarViewProps {
   data: CalendarData;
@@ -35,13 +36,11 @@ export default function CalendarView({ data, loading, language }: CalendarViewPr
 
     // Season Logic: Determine which season section we are in
     let seasonRaw = principal.seasons?.[0] || 'ORDINARY_TIME';
-    // Normalize naming differences
-    let season =
-      seasonRaw === 'CHRISTMASTIDE' || seasonRaw === 'CHRISTMAS_TIME' ? 'CHRISTMAS' : seasonRaw;
+    // Use centralized mapping and periods
+    let season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
 
-    // Specific overrides for Holy Week and Octaves
+    // Specific overrides for Holy Week
     if (principal.periods?.includes('HOLY_WEEK')) season = 'HOLY_WEEK';
-    if (principal.periods?.includes('EASTER_OCTAVE')) season = 'EASTER';
 
     // Handle split Ordinary Time (I and II)
     if (season === 'ORDINARY_TIME' && currentSeasonHeader === 'EASTER') {

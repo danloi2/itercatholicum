@@ -6,7 +6,9 @@ export const ROMCAL_MAP: Record<string, string> = {
   ADVENT: 'ADVENT',
   LENT: 'LENT',
   EASTER: 'EASTER',
+  EASTER_TIME: 'EASTER',
   ORDINARY_TIME: 'ORDINARY_TIME',
+  'TIME PER ANNUM': 'ORDINARY_TIME',
 };
 
 export const SEASON_INFO: Record<string, SeasonInfo> = {
@@ -137,5 +139,43 @@ export const UI_STRINGS: Record<UiLanguage, UiString> = {
   la: {
     todayLabel: 'HODIE',
     obligationLabel: 'DE PRÆCEPTO',
+  },
+};
+
+export const RANK_MAP: Record<string, Record<string, string>> = {
+  es: {
+    SOLEMNITY: 'SOLEMNIDAD',
+    FEAST: 'FIESTA',
+    MEMORIAL: 'MEMORIA',
+    OPTIONAL_MEMORIAL: 'MEMORIA LIBRE',
+    SUNDAY: 'DOMINGO',
+    FERIA: 'FERIA',
+    WEEKDAY: 'FERIA',
+  },
+  la: {
+    SOLEMNITY: 'SOLLEMNITAS',
+    FEAST: 'FESTUM',
+    MEMORIAL: 'MEMORIA',
+    OPTIONAL_MEMORIAL: 'MEMORIA AD LIBITUM',
+    SUNDAY: 'DOMINICA',
+    FERIA: 'FERIA',
+    WEEKDAY: 'FERIA',
+  },
+};
+
+export const CYCLE_MAP: Record<string, Record<string, string>> = {
+  es: {
+    YEAR_1: 'Año I',
+    YEAR_2: 'Año II',
+    YEAR_A: 'Ciclo A',
+    YEAR_B: 'Ciclo B',
+    YEAR_C: 'Ciclo C',
+  },
+  la: {
+    YEAR_1: 'Annus I',
+    YEAR_2: 'Annus II',
+    YEAR_A: 'Cyclus A',
+    YEAR_B: 'Cyclus B',
+    YEAR_C: 'Cyclus C',
   },
 };
