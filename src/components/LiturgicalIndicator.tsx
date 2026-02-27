@@ -8,12 +8,13 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 interface LiturgicalIndicatorProps {
   language: 'es' | 'la';
   activeYear?: number;
+  showTitle?: boolean;
 }
 
 const StoleIcon = ({ color }: { color: string }) => (
   <svg
-    width="22"
-    height="28"
+    width="60"
+    height="75"
     viewBox="0 0 32 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -25,23 +26,17 @@ const StoleIcon = ({ color }: { color: string }) => (
       stroke="rgba(0,0,0,0.1)"
       strokeWidth="0.5"
     />
-    <path
-      d="M16 1V35M8 10H24M8 20H24M8 30H24"
-      stroke="rgba(255,255,255,0.2)"
-      strokeWidth="1"
-      strokeLinecap="round"
-    />
-    {/* Stylized Cross at the bottom of each side */}
-    <path
-      d="M11 32H13M12 31V33M19 32H21M20 31V33"
-      stroke="rgba(255,255,255,0.6)"
-      strokeWidth="1"
-      strokeLinecap="round"
-    />
+    <path d="M16 1V35M8 10H24M8 20H24M8 30H24" stroke="none" />
+    {/* Large Central Cross in white */}
+    <path d="M16 8V32M10 16H22" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
-export default function LiturgicalIndicator({ language, activeYear }: LiturgicalIndicatorProps) {
+export default function LiturgicalIndicator({
+  language,
+  activeYear,
+  showTitle = false,
+}: LiturgicalIndicatorProps) {
   const { data, generateData } = useCalendar();
   const currentYear = new Date().getFullYear();
   const yearToFetch = activeYear || currentYear;
@@ -112,27 +107,36 @@ export default function LiturgicalIndicator({ language, activeYear }: Liturgical
   return (
     <HoverCard openDelay={200}>
       <HoverCardTrigger asChild>
-        <div className="flex items-center gap-2 group cursor-help ml-2 md:ml-4 pl-2 md:pl-4 border-l border-[#c49b9b]/20 py-1">
-          <div className="relative transform transition-transform group-hover:scale-110 duration-500">
+        <div className="flex items-center gap-4 group cursor-help py-1">
+          <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
             <StoleIcon color={liturgicalInfo.color} />
           </div>
-          <div className="flex flex-col items-start leading-none gap-0.5">
-            <div className="flex items-center gap-1.5">
+          <div className="flex flex-col items-start leading-none gap-1.5">
+            {showTitle && (
+              <h1 className="text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none mb-0.5">
+                <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+                  Iter Catholicum
+                </span>
+              </h1>
+            )}
+            <div className="flex items-center gap-3">
               <span
                 className={cn(
-                  'text-[10px] md:text-xs font-black tracking-tight uppercase font-serif',
+                  'text-sm md:text-base font-black tracking-tight font-serif whitespace-nowrap',
                   liturgicalInfo.theme.text
                 )}
               >
                 {liturgicalInfo.season}
               </span>
-              <span className="text-[8px] md:text-[9px] px-1 bg-[#8B0000]/5 text-[#8B0000]/60 rounded font-bold">
-                {liturgicalInfo.sundayCycle}
-              </span>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[9px] md:text-[10px] px-1.5 py-0 bg-[#8B0000]/5 text-[#8B0000]/60 border border-[#8B0000]/10 rounded font-bold whitespace-nowrap leading-tight">
+                  {liturgicalInfo.sundayCycle}
+                </span>
+                <span className="text-[9px] md:text-[10px] px-1.5 py-0 bg-stone-100/50 text-[#3d0c0c]/60 border border-stone-200/50 rounded font-bold whitespace-nowrap leading-tight">
+                  {liturgicalInfo.weekdayCycle}
+                </span>
+              </div>
             </div>
-            <span className="text-[8px] md:text-[9px] text-[#8B0000]/60 font-bold uppercase tracking-widest hidden md:block">
-              Ecclesia Viva • {liturgicalInfo.weekdayCycle}
-            </span>
           </div>
         </div>
       </HoverCardTrigger>

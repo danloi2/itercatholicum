@@ -73,7 +73,7 @@ export const COLOR_MAP: Record<LiturgicalColor, ColorTheme> = {
     hoverBg: 'group-hover:bg-[#f4e2e2]/50',
     icon: 'bg-yellow-400',
     badge: 'bg-[#ebd6d6]/50 text-[#8B0000] ring-[#8B0000]/20',
-    hex: '#c49b9b', // Using reddish taupe for border
+    hex: '#ffffff', // Pure white for the stole icon
   },
   GREEN: {
     bg: 'bg-emerald-50',

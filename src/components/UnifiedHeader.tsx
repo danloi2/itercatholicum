@@ -28,12 +28,7 @@ export default function UnifiedHeader({
           <div className="grid grid-cols-3 items-center gap-4">
             {/* Left: App Branding & Context */}
             <div className="flex items-center">
-              <h1 className="text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none shrink-0">
-                <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
-                  Iter Catholicum
-                </span>
-              </h1>
-              <LiturgicalIndicator language={language} activeYear={year} />
+              <LiturgicalIndicator language={language} activeYear={year} showTitle={true} />
             </div>
 
             {/* Center: Date & Time */}
