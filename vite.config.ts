@@ -10,6 +10,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@app': path.resolve(__dirname, './src/app'),
+      '@features': path.resolve(__dirname, './src/features'),
+      '@shared': path.resolve(__dirname, './src/shared'),
+      '@ui': path.resolve(__dirname, './src/ui'),
+      '@styles': path.resolve(__dirname, './src/styles'),
+      '@data': path.resolve(__dirname, './src/data'),
     },
   },
   build: {
@@ -17,8 +23,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          romcal: ['src/lib/romcal/romcal.js'],
-          locales: ['src/lib/romcal/es.js', 'src/lib/romcal/la.js'],
+          romcal: ['src/features/calendar/lib/romcal/romcal.js'],
+          locales: [
+            'src/features/calendar/lib/romcal/es.js',
+            'src/features/calendar/lib/romcal/la.js',
+          ],
         },
       },
     },
