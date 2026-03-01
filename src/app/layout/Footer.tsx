@@ -1,5 +1,6 @@
 import AboutModal from '@features/home/components/AboutModal';
 import { GitHubIcon } from '@shared/components/icons/GitHubIcon';
+import { StoleIcon } from '@shared/components/icons/StoleIcon';
 import { useGitHubVersion } from '@shared/hooks/useGitHubVersion';
 
 interface FooterProps {
@@ -12,14 +13,17 @@ export default function Footer({ language }: FooterProps) {
   return (
     <footer className="py-6 px-4 text-center border-t border-[#c49b9b]/30 bg-[#f4e2e2]/50">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-left">
-          <p className="text-lg font-bold text-[#522b2b]">
-            Iter <span className="text-[#8B0000]">Catholicum</span>
-          </p>
-          <p className="text-sm text-[#8B0000]/80 mt-1">
-            © {new Date().getFullYear()} Daniel Losada •{' '}
-            {language === 'la' ? 'Licentia MIT' : 'Licencia MIT'}
-          </p>
+        <div className="flex items-center gap-3 text-left">
+          <StoleIcon size={32} color="#8B0000" className="opacity-80" />
+          <div>
+            <p className="text-lg font-bold text-[#522b2b]">
+              Iter <span className="text-[#8B0000]">Catholicum</span>
+            </p>
+            <p className="text-sm text-[#8B0000]/80 mt-1">
+              © {new Date().getFullYear()} Daniel Losada •{' '}
+              {language === 'la' ? 'Licentia MIT' : 'Licencia MIT'}
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center gap-4">
