@@ -1,0 +1,5603 @@
+Date: 2026-01-01
+[
+  {
+    "id": "mary_mother_of_god",
+    "date": "2026-01-01",
+    "dateDef": {
+      "dateFn": "maryMotherOfGod",
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_SOLEMNITY_3",
+    "rank": "SOLEMNITY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "names:mary_mother_of_god"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "CHRISTMAS_OCTAVE",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 8,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-02
+[
+  {
+    "id": "basil_the_great_and_gregory_nazianzen_bishops",
+    "date": "2026-01-02",
+    "dateDef": {
+      "month": 1,
+      "date": 2
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:basil_the_great_and_gregory_nazianzen_bishops"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_BEFORE_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "basil_the_great_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "DOCTOR_OF_THE_CHURCH"
+        ],
+        "dateOfDeath": 379
+      },
+      {
+        "id": "gregory_nazianzen_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "DOCTOR_OF_THE_CHURCH"
+        ],
+        "dateOfDeath": 390
+      }
+    ],
+    "titles": [
+      "BISHOP",
+      "DOCTOR_OF_THE_CHURCH"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 9,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "christmas_time_january_2",
+      "date": "2026-01-02",
+      "dateDef": {
+        "dateFn": "weekdayBeforeEpiphany",
+        "dateArgs": [
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:christmas_time.before_epiphany",
+        {
+          "day": 2
+        }
+      ],
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ],
+      "periods": [
+        "DAYS_BEFORE_EPIPHANY",
+        "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+      ],
+      "colors": [
+        "WHITE"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 9,
+        "dayOfWeek": 5,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2025-12-25",
+        "endOfSeason": "2026-01-11",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "CHRISTMAS_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-03
+[
+  {
+    "id": "christmas_time_january_3",
+    "date": "2026-01-03",
+    "dateDef": {
+      "dateFn": "weekdayBeforeEpiphany",
+      "dateArgs": [
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.before_epiphany",
+      {
+        "day": 3
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_BEFORE_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 10,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "most_holy_name_of_jesus",
+    "date": "2026-01-03",
+    "dateDef": {
+      "month": 1,
+      "date": 3
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:most_holy_name_of_jesus"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_BEFORE_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "most_holy_name_of_jesus"
+      }
+    ],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 10,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "christmas_time_january_3",
+      "date": "2026-01-03",
+      "dateDef": {
+        "dateFn": "weekdayBeforeEpiphany",
+        "dateArgs": [
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:christmas_time.before_epiphany",
+        {
+          "day": 3
+        }
+      ],
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ],
+      "periods": [
+        "DAYS_BEFORE_EPIPHANY",
+        "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+      ],
+      "colors": [
+        "WHITE"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 10,
+        "dayOfWeek": 6,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2025-12-25",
+        "endOfSeason": "2026-01-11",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "CHRISTMAS_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-04
+[
+  {
+    "id": "second_sunday_after_christmas",
+    "date": "2026-01-04",
+    "dateDef": {
+      "dateFn": "secondSundayAfterChristmas",
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.second_sunday_after_christmas"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_BEFORE_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 11,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-05
+[
+  {
+    "id": "christmas_time_january_5",
+    "date": "2026-01-05",
+    "dateDef": {
+      "dateFn": "weekdayBeforeEpiphany",
+      "dateArgs": [
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.before_epiphany",
+      {
+        "day": 5
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_BEFORE_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 12,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-06
+[
+  {
+    "id": "epiphany_of_the_lord",
+    "date": "2026-01-06",
+    "dateDef": {
+      "dateFn": "epiphany",
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "PROPER_OF_TIME_SOLEMNITY_2",
+    "rank": "SOLEMNITY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "names:epiphany_of_the_lord"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 13,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-07
+[
+  {
+    "id": "wednesday_after_epiphany",
+    "date": "2026-01-07",
+    "dateDef": {
+      "dateFn": "weekdayAfterEpiphany",
+      "dateArgs": [
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.after_epiphany",
+      {
+        "dow": 3
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 14,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "raymond_of_penyafort_priest",
+    "date": "2026-01-07",
+    "dateDef": {
+      "month": 1,
+      "date": 7
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:raymond_of_penyafort_priest"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Pastors"
+    ],
+    "martyrology": [
+      {
+        "id": "raymond_of_penyafort_priest",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "PRIEST"
+        ],
+        "dateOfDeath": 1275
+      }
+    ],
+    "titles": [
+      "PRIEST"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 14,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "wednesday_after_epiphany",
+      "date": "2026-01-07",
+      "dateDef": {
+        "dateFn": "weekdayAfterEpiphany",
+        "dateArgs": [
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:christmas_time.after_epiphany",
+        {
+          "dow": 3
+        }
+      ],
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ],
+      "periods": [
+        "DAYS_FROM_EPIPHANY",
+        "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+      ],
+      "colors": [
+        "WHITE"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 14,
+        "dayOfWeek": 3,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2025-12-25",
+        "endOfSeason": "2026-01-11",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "CHRISTMAS_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-08
+[
+  {
+    "id": "thursday_after_epiphany",
+    "date": "2026-01-08",
+    "dateDef": {
+      "dateFn": "weekdayAfterEpiphany",
+      "dateArgs": [
+        4
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.after_epiphany",
+      {
+        "dow": 4
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 15,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-09
+[
+  {
+    "id": "friday_after_epiphany",
+    "date": "2026-01-09",
+    "dateDef": {
+      "dateFn": "weekdayAfterEpiphany",
+      "dateArgs": [
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.after_epiphany",
+      {
+        "dow": 5
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 16,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "eulogius_of_cordoba_bishop",
+    "date": "2026-01-09",
+    "dateDef": {
+      "month": 1,
+      "date": 9
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:eulogius_of_cordoba_bishop"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [
+      {
+        "id": "eulogius_of_cordoba_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP"
+        ]
+      }
+    ],
+    "titles": [
+      "BISHOP"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 16,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "spain",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "friday_after_epiphany",
+      "date": "2026-01-09",
+      "dateDef": {
+        "dateFn": "weekdayAfterEpiphany",
+        "dateArgs": [
+          5
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:christmas_time.after_epiphany",
+        {
+          "dow": 5
+        }
+      ],
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ],
+      "periods": [
+        "DAYS_FROM_EPIPHANY",
+        "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+      ],
+      "colors": [
+        "WHITE"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 16,
+        "dayOfWeek": 5,
+        "nthDayOfWeekInMonth": 2,
+        "startOfSeason": "2025-12-25",
+        "endOfSeason": "2026-01-11",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "CHRISTMAS_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-10
+[
+  {
+    "id": "saturday_after_epiphany",
+    "date": "2026-01-10",
+    "dateDef": {
+      "dateFn": "weekdayAfterEpiphany",
+      "dateArgs": [
+        6
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:christmas_time.after_epiphany",
+      {
+        "dow": 6
+      }
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 17,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-11
+[
+  {
+    "id": "baptism_of_the_lord",
+    "date": "2026-01-11",
+    "dateDef": {
+      "dateFn": "baptismOfTheLord",
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "PROPER_OF_TIME_SOLEMNITY_2",
+    "rank": "SOLEMNITY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "names:baptism_of_the_lord"
+    ],
+    "seasons": [
+      "CHRISTMAS_TIME"
+    ],
+    "periods": [
+      "DAYS_FROM_EPIPHANY",
+      "CHRISTMAS_TO_PRESENTATION_OF_THE_LORD"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 18,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2025-12-25",
+      "endOfSeason": "2026-01-11",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "CHRISTMAS_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-12
+[
+  {
+    "id": "ordinary_time_1_monday",
+    "date": "2026-01-12",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        1,
+        1
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 1,
+        "dow": 1
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 1,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-13
+[
+  {
+    "id": "ordinary_time_1_tuesday",
+    "date": "2026-01-13",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        2,
+        1
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 1,
+        "dow": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 2,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "hilary_of_poitiers_bishop",
+    "date": "2026-01-13",
+    "dateDef": {
+      "month": 1,
+      "date": 13
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:hilary_of_poitiers_bishop"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Bishops",
+      "DoctorsOfTheChurch"
+    ],
+    "martyrology": [
+      {
+        "id": "hilary_of_poitiers_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "DOCTOR_OF_THE_CHURCH"
+        ],
+        "dateOfDeath": 367
+      }
+    ],
+    "titles": [
+      "BISHOP",
+      "DOCTOR_OF_THE_CHURCH"
+    ],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 2,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_1_tuesday",
+      "date": "2026-01-13",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          1
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 1,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 1,
+        "dayOfSeason": 2,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 2,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-14
+[
+  {
+    "id": "ordinary_time_1_wednesday",
+    "date": "2026-01-14",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        3,
+        1
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 1,
+        "dow": 3
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 3,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-15
+[
+  {
+    "id": "ordinary_time_1_thursday",
+    "date": "2026-01-15",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        4,
+        1
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 1,
+        "dow": 4
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 4,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-16
+[
+  {
+    "id": "ordinary_time_1_friday",
+    "date": "2026-01-16",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        5,
+        1
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 1,
+        "dow": 5
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 5,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-17
+[
+  {
+    "id": "anthony_of_egypt_abbot",
+    "date": "2026-01-17",
+    "dateDef": {
+      "month": 1,
+      "date": 17
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:anthony_of_egypt_abbot"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "anthony_of_egypt_abbot",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "ABBOT"
+        ],
+        "dateOfDeath": 356
+      }
+    ],
+    "titles": [
+      "ABBOT"
+    ],
+    "calendar": {
+      "weekOfSeason": 1,
+      "dayOfSeason": 6,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_1_saturday",
+      "date": "2026-01-17",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          6,
+          1
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 1,
+          "dow": 6
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 1,
+        "dayOfSeason": 6,
+        "dayOfWeek": 6,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-18
+[
+  {
+    "id": "ordinary_time_2_sunday",
+    "date": "2026-01-18",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        0,
+        2
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.sunday",
+      {
+        "week": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 7,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-19
+[
+  {
+    "id": "ordinary_time_2_monday",
+    "date": "2026-01-19",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        1,
+        2
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 2,
+        "dow": 1
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 8,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-20
+[
+  {
+    "id": "ordinary_time_2_tuesday",
+    "date": "2026-01-20",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        2,
+        2
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 2,
+        "dow": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 9,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "fabian_i_pope",
+    "date": "2026-01-20",
+    "dateDef": {
+      "month": 1,
+      "date": 20
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:fabian_i_pope"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "Martyrs",
+      "PopeOrBishop"
+    ],
+    "martyrology": [
+      {
+        "id": "fabian_i_pope",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "POPE",
+          "MARTYR"
+        ],
+        "dateOfDeath": 250
+      }
+    ],
+    "titles": [
+      "POPE",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 9,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_tuesday",
+      "date": "2026-01-20",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 9,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  },
+  {
+    "id": "sebastian_of_milan_martyr",
+    "date": "2026-01-20",
+    "dateDef": {
+      "month": 1,
+      "date": 20
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:sebastian_of_milan_martyr"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "Martyrs"
+    ],
+    "martyrology": [
+      {
+        "id": "sebastian_of_milan_martyr",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "MARTYR"
+        ],
+        "dateOfDeath": 284,
+        "dateOfDeathIsApproximative": true
+      }
+    ],
+    "titles": [
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 9,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_tuesday",
+      "date": "2026-01-20",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 9,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  },
+  {
+    "id": "fructuosus_of_tarragona_bishop_and_augurius_of_tarragona_and_eulogius_of_tarragona_deacons_martyrs",
+    "date": "2026-01-20",
+    "dateDef": {
+      "month": 1,
+      "date": 20
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:fructuosus_of_tarragona_bishop_and_augurius_of_tarragona_and_eulogius_of_tarragona_deacons_martyrs"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [],
+    "martyrology": [
+      {
+        "id": "fructuosus_of_tarragona_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "MARTYR"
+        ]
+      },
+      {
+        "id": "augurius_of_tarragona_deacon",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "DEACON",
+          "MARTYR"
+        ]
+      },
+      {
+        "id": "eulogius_of_tarragona_deacon",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "DEACON",
+          "MARTYR"
+        ]
+      }
+    ],
+    "titles": [
+      "BISHOP",
+      "DEACON",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 9,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "spain",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_tuesday",
+      "date": "2026-01-20",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 9,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-21
+[
+  {
+    "id": "agnes_of_rome_virgin",
+    "date": "2026-01-21",
+    "dateDef": {
+      "month": 1,
+      "date": 21
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:agnes_of_rome_virgin"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "VirginMartyrs",
+      "Virgins"
+    ],
+    "martyrology": [
+      {
+        "id": "agnes_of_rome_virgin",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "VIRGIN",
+          "MARTYR"
+        ],
+        "dateOfDeath": 304,
+        "dateOfDeathIsApproximative": true
+      }
+    ],
+    "titles": [
+      "VIRGIN",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 10,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_wednesday",
+      "date": "2026-01-21",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          3,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 3
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 10,
+        "dayOfWeek": 3,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-22
+[
+  {
+    "id": "vincent_of_saragossa_deacon",
+    "date": "2026-01-22",
+    "dateDef": {
+      "month": 1,
+      "date": 22
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "PROPER_MEMORIAL_11B",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:vincent_of_saragossa_deacon"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "Martyrs"
+    ],
+    "martyrology": [
+      {
+        "id": "vincent_of_saragossa_deacon",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "DEACON",
+          "MARTYR"
+        ],
+        "dateOfDeath": 304
+      }
+    ],
+    "titles": [
+      "DEACON",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 11,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "spain",
+    "fromExtendedCalendars": [
+      {
+        "precedence": "OPTIONAL_MEMORIAL_12",
+        "rank": "OPTIONAL_MEMORIAL",
+        "fromCalendarId": "general_roman"
+      }
+    ],
+    "weekday": {
+      "id": "ordinary_time_2_thursday",
+      "date": "2026-01-22",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          4,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 4
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 11,
+        "dayOfWeek": 4,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-23
+[
+  {
+    "id": "ordinary_time_2_friday",
+    "date": "2026-01-23",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        5,
+        2
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 2,
+        "dow": 5
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 12,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "ildephonsus_of_toledo_bishop",
+    "date": "2026-01-23",
+    "dateDef": {
+      "month": 1,
+      "date": 23
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:ildephonsus_of_toledo_bishop"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [],
+    "martyrology": [
+      {
+        "id": "ildephonsus_of_toledo_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP"
+        ]
+      }
+    ],
+    "titles": [
+      "BISHOP"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 12,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "spain",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_friday",
+      "date": "2026-01-23",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          5,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 5
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 12,
+        "dayOfWeek": 5,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-24
+[
+  {
+    "id": "francis_de_sales_bishop",
+    "date": "2026-01-24",
+    "dateDef": {
+      "month": 1,
+      "date": 24
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:francis_de_sales_bishop"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Bishops",
+      "DoctorsOfTheChurch"
+    ],
+    "martyrology": [
+      {
+        "id": "francis_de_sales_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "DOCTOR_OF_THE_CHURCH"
+        ],
+        "dateOfDeath": 1622
+      }
+    ],
+    "titles": [
+      "BISHOP",
+      "DOCTOR_OF_THE_CHURCH"
+    ],
+    "calendar": {
+      "weekOfSeason": 2,
+      "dayOfSeason": 13,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_2_saturday",
+      "date": "2026-01-24",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          6,
+          2
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 2,
+          "dow": 6
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 2,
+        "dayOfSeason": 13,
+        "dayOfWeek": 6,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-25
+[
+  {
+    "id": "sunday_of_the_word_of_god",
+    "date": "2026-01-25",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        0,
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "names:sunday_of_the_word_of_god"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 14,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-26
+[
+  {
+    "id": "timothy_of_ephesus_and_titus_of_crete_bishops",
+    "date": "2026-01-26",
+    "dateDef": {
+      "month": 1,
+      "date": 26
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:timothy_of_ephesus_and_titus_of_crete_bishops"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "timothy_of_ephesus_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP"
+        ],
+        "dateOfDeath": {
+          "century": 1
+        }
+      },
+      {
+        "id": "titus_of_crete_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP"
+        ],
+        "dateOfDeath": {
+          "century": 1
+        }
+      }
+    ],
+    "titles": [
+      "BISHOP"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 15,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_3_monday",
+      "date": "2026-01-26",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          1,
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 3,
+          "dow": 1
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 15,
+        "dayOfWeek": 1,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_3"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-27
+[
+  {
+    "id": "ordinary_time_3_tuesday",
+    "date": "2026-01-27",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        2,
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 3,
+        "dow": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 16,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "angela_merici_virgin",
+    "date": "2026-01-27",
+    "dateDef": {
+      "month": 1,
+      "date": 27
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:angela_merici_virgin"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Virgins",
+      "Educators"
+    ],
+    "martyrology": [
+      {
+        "id": "angela_merici_virgin",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "VIRGIN"
+        ],
+        "dateOfDeath": 1540
+      }
+    ],
+    "titles": [
+      "VIRGIN"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 16,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_3_tuesday",
+      "date": "2026-01-27",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 3,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 16,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_3"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-28
+[
+  {
+    "id": "thomas_aquinas_priest",
+    "date": "2026-01-28",
+    "dateDef": {
+      "month": 1,
+      "date": 28
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:thomas_aquinas_priest"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "DoctorsOfTheChurch",
+      "Pastors"
+    ],
+    "martyrology": [
+      {
+        "id": "thomas_aquinas_priest",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "PRIEST",
+          "DOCTOR_OF_THE_CHURCH"
+        ],
+        "dateOfBirth": 1225,
+        "dateOfBirthIsApproximative": true,
+        "dateOfDeath": "1274-03-07",
+        "dateOfCanonization": "1323-07-19"
+      }
+    ],
+    "titles": [
+      "PRIEST",
+      "DOCTOR_OF_THE_CHURCH"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 17,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 4,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_3_wednesday",
+      "date": "2026-01-28",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          3,
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 3,
+          "dow": 3
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 17,
+        "dayOfWeek": 3,
+        "nthDayOfWeekInMonth": 4,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_3"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-01-29
+[
+  {
+    "id": "ordinary_time_3_thursday",
+    "date": "2026-01-29",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        4,
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 3,
+        "dow": 4
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 18,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 5,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-30
+[
+  {
+    "id": "ordinary_time_3_friday",
+    "date": "2026-01-30",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        5,
+        3
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 3,
+        "dow": 5
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 19,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 5,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-01-31
+[
+  {
+    "id": "john_bosco_priest",
+    "date": "2026-01-31",
+    "dateDef": {
+      "month": 1,
+      "date": 31
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:john_bosco_priest"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Pastors",
+      "Educators"
+    ],
+    "martyrology": [
+      {
+        "id": "john_bosco_priest",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "PRIEST"
+        ],
+        "dateOfDeath": 1888
+      }
+    ],
+    "titles": [
+      "PRIEST"
+    ],
+    "calendar": {
+      "weekOfSeason": 3,
+      "dayOfSeason": 20,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 5,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_3"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_3_saturday",
+      "date": "2026-01-31",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          6,
+          3
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 3,
+          "dow": 6
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 3,
+        "dayOfSeason": 20,
+        "dayOfWeek": 6,
+        "nthDayOfWeekInMonth": 5,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_3"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-01
+[
+  {
+    "id": "ordinary_time_4_sunday",
+    "date": "2026-02-01",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        0,
+        4
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.sunday",
+      {
+        "week": 4
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 21,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-02
+[
+  {
+    "id": "presentation_of_the_lord",
+    "date": "2026-02-02",
+    "dateDef": {
+      "dateFn": "presentationOfTheLord"
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_LORD_FEAST_5",
+    "rank": "FEAST",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:presentation_of_the_lord"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "presentation_of_the_lord"
+      }
+    ],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 22,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_4_monday",
+      "date": "2026-02-02",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          1,
+          4
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 4,
+          "dow": 1
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 4,
+        "dayOfSeason": 22,
+        "dayOfWeek": 1,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_4"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-03
+[
+  {
+    "id": "ordinary_time_4_tuesday",
+    "date": "2026-02-03",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        2,
+        4
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 4,
+        "dow": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 23,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "blaise_of_sebaste_bishop",
+    "date": "2026-02-03",
+    "dateDef": {
+      "month": 2,
+      "date": 3
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:blaise_of_sebaste_bishop"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "Martyrs",
+      "Bishops"
+    ],
+    "martyrology": [
+      {
+        "id": "blaise_of_sebaste_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "MARTYR"
+        ],
+        "dateOfDeath": 316
+      }
+    ],
+    "titles": [
+      "BISHOP",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 23,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_4_tuesday",
+      "date": "2026-02-03",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          4
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 4,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 4,
+        "dayOfSeason": 23,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_4"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  },
+  {
+    "id": "ansgar_of_hamburg_bishop",
+    "date": "2026-02-03",
+    "dateDef": {
+      "month": 2,
+      "date": 3
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:ansgar_of_hamburg_bishop"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Missionaries",
+      "Bishops"
+    ],
+    "martyrology": [
+      {
+        "id": "ansgar_of_hamburg_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP"
+        ],
+        "dateOfDeath": 865
+      }
+    ],
+    "titles": [
+      "BISHOP"
+    ],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 23,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_4_tuesday",
+      "date": "2026-02-03",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          4
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 4,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 4,
+        "dayOfSeason": 23,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_4"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-04
+[
+  {
+    "id": "ordinary_time_4_wednesday",
+    "date": "2026-02-04",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        3,
+        4
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 4,
+        "dow": 3
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 24,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-05
+[
+  {
+    "id": "agatha_of_sicily_virgin",
+    "date": "2026-02-05",
+    "dateDef": {
+      "month": 2,
+      "date": 5
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:agatha_of_sicily_virgin"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "VirginMartyrs",
+      "Virgins"
+    ],
+    "martyrology": [
+      {
+        "id": "agatha_of_sicily_virgin",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "VIRGIN",
+          "MARTYR"
+        ],
+        "dateOfDeath": 251
+      }
+    ],
+    "titles": [
+      "VIRGIN",
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 25,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_4_thursday",
+      "date": "2026-02-05",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          4,
+          4
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 4,
+          "dow": 4
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 4,
+        "dayOfSeason": 25,
+        "dayOfWeek": 4,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_4"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-06
+[
+  {
+    "id": "paul_miki_and_companions_martyrs",
+    "date": "2026-02-06",
+    "dateDef": {
+      "month": 2,
+      "date": 6
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:paul_miki_and_companions_martyrs"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "RED"
+    ],
+    "commonsDef": [
+      "Martyrs"
+    ],
+    "martyrology": [
+      {
+        "id": "paul_miki_martyr",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "MARTYR"
+        ],
+        "dateOfDeath": 1597
+      },
+      {
+        "id": "companions_martyrs",
+        "titles": [
+          "MARTYR"
+        ],
+        "count": "many"
+      }
+    ],
+    "titles": [
+      "MARTYR"
+    ],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 26,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_4_friday",
+      "date": "2026-02-06",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          5,
+          4
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 4,
+          "dow": 5
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 4,
+        "dayOfSeason": 26,
+        "dayOfWeek": 5,
+        "nthDayOfWeekInMonth": 1,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_4"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-07
+[
+  {
+    "id": "ordinary_time_4_saturday",
+    "date": "2026-02-07",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        6,
+        4
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 4,
+        "dow": 6
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 4,
+      "dayOfSeason": 27,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 1,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-08
+[
+  {
+    "id": "ordinary_time_5_sunday",
+    "date": "2026-02-08",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        0,
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.sunday",
+      {
+        "week": 5
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 28,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-09
+[
+  {
+    "id": "ordinary_time_5_monday",
+    "date": "2026-02-09",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        1,
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 5,
+        "dow": 1
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 29,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-10
+[
+  {
+    "id": "scholastica_of_nursia_virgin",
+    "date": "2026-02-10",
+    "dateDef": {
+      "month": 2,
+      "date": 10
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "GENERAL_MEMORIAL_10",
+    "rank": "MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:scholastica_of_nursia_virgin"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Virgins",
+      "Nuns"
+    ],
+    "martyrology": [
+      {
+        "id": "scholastica_of_nursia_virgin",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "VIRGIN"
+        ],
+        "dateOfDeath": 543
+      }
+    ],
+    "titles": [
+      "VIRGIN"
+    ],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 30,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_5_tuesday",
+      "date": "2026-02-10",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          5
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 5,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 5,
+        "dayOfSeason": 30,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 2,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-11
+[
+  {
+    "id": "ordinary_time_5_wednesday",
+    "date": "2026-02-11",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        3,
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 5,
+        "dow": 3
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 31,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "our_lady_of_lourdes",
+    "date": "2026-02-11",
+    "dateDef": {
+      "month": 2,
+      "date": 11
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:our_lady_of_lourdes"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "BlessedVirginMary"
+    ],
+    "martyrology": [
+      {
+        "id": "our_lady_of_lourdes"
+      }
+    ],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 31,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_5_wednesday",
+      "date": "2026-02-11",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          3,
+          5
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 5,
+          "dow": 3
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 5,
+        "dayOfSeason": 31,
+        "dayOfWeek": 3,
+        "nthDayOfWeekInMonth": 2,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-12
+[
+  {
+    "id": "ordinary_time_5_thursday",
+    "date": "2026-02-12",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        4,
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 5,
+        "dow": 4
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 32,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-13
+[
+  {
+    "id": "ordinary_time_5_friday",
+    "date": "2026-02-13",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        5,
+        5
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 5,
+        "dow": 5
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 33,
+      "dayOfWeek": 5,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-14
+[
+  {
+    "id": "cyril_constantine_the_philosopher_monk_and_methodius_michael_of_thessaloniki_bishop",
+    "date": "2026-02-14",
+    "dateDef": {
+      "month": 2,
+      "date": 14
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "PROPER_FEAST__PRINCIPAL_PATRON_OF_A_REGION_8C",
+    "rank": "FEAST",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:cyril_constantine_the_philosopher_monk_and_methodius_michael_of_thessaloniki_bishop_copatrons_of_europe"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "None"
+    ],
+    "martyrology": [
+      {
+        "id": "cyril_constantine_the_philosopher_monk",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "MONK",
+          "COPATRON_OF_EUROPE"
+        ],
+        "dateOfDeath": "869-02-14"
+      },
+      {
+        "id": "methodius_michael_of_thessaloniki_bishop",
+        "canonizationLevel": "SAINT",
+        "titles": [
+          "BISHOP",
+          "COPATRON_OF_EUROPE"
+        ],
+        "dateOfDeath": "885-04-06"
+      }
+    ],
+    "titles": [
+      "MONK",
+      "BISHOP",
+      "COPATRON_OF_EUROPE"
+    ],
+    "calendar": {
+      "weekOfSeason": 5,
+      "dayOfSeason": 34,
+      "dayOfWeek": 6,
+      "nthDayOfWeekInMonth": 2,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_1"
+    },
+    "fromCalendarId": "europe",
+    "fromExtendedCalendars": [
+      {
+        "precedence": "GENERAL_MEMORIAL_10",
+        "rank": "MEMORIAL",
+        "i18nDef": [
+          "names:cyril_constantine_the_philosopher_monk_and_methodius_michael_of_thessaloniki_bishop"
+        ],
+        "titles": [
+          "MONK",
+          "BISHOP"
+        ],
+        "fromCalendarId": "general_roman"
+      }
+    ],
+    "weekday": {
+      "id": "ordinary_time_5_saturday",
+      "date": "2026-02-14",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          6,
+          5
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 5,
+          "dow": 6
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 5,
+        "dayOfSeason": 34,
+        "dayOfWeek": 6,
+        "nthDayOfWeekInMonth": 2,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_1"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-15
+[
+  {
+    "id": "ordinary_time_6_sunday",
+    "date": "2026-02-15",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        0,
+        6
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "UNPRIVILEGED_SUNDAY_6",
+    "rank": "SUNDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": true,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.sunday",
+      {
+        "week": 6
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 6,
+      "dayOfSeason": 35,
+      "dayOfWeek": 0,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-16
+[
+  {
+    "id": "ordinary_time_6_monday",
+    "date": "2026-02-16",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        1,
+        6
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 6,
+        "dow": 1
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 6,
+      "dayOfSeason": 36,
+      "dayOfWeek": 1,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-17
+[
+  {
+    "id": "ordinary_time_6_tuesday",
+    "date": "2026-02-17",
+    "dateDef": {
+      "dateFn": "dateOfOrdinaryTime",
+      "dateArgs": [
+        2,
+        6
+      ],
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "WEEKDAY_13",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:ordinary_time.weekday",
+      {
+        "week": 6,
+        "dow": 2
+      }
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "GREEN"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 6,
+      "dayOfSeason": 37,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  },
+  {
+    "id": "seven_holy_founders_of_the_servite_order",
+    "date": "2026-02-17",
+    "dateDef": {
+      "month": 2,
+      "date": 17
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "OPTIONAL_MEMORIAL_12",
+    "rank": "OPTIONAL_MEMORIAL",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": true,
+    "i18nDef": [
+      "names:seven_holy_founders_of_the_servite_order"
+    ],
+    "seasons": [
+      "ORDINARY_TIME"
+    ],
+    "periods": [
+      "EARLY_ORDINARY_TIME"
+    ],
+    "colors": [
+      "WHITE"
+    ],
+    "commonsDef": [
+      "Religious"
+    ],
+    "martyrology": [
+      {
+        "id": "seven_holy_founders_of_the_servite_order",
+        "count": 7,
+        "dateOfDeath": 1310
+      }
+    ],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 6,
+      "dayOfSeason": 37,
+      "dayOfWeek": 2,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-01-12",
+      "endOfSeason": "2026-11-28",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "ORDINARY_TIME"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_SAINTS",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_2"
+    },
+    "fromCalendarId": "general_roman",
+    "fromExtendedCalendars": [],
+    "weekday": {
+      "id": "ordinary_time_6_tuesday",
+      "date": "2026-02-17",
+      "dateDef": {
+        "dateFn": "dateOfOrdinaryTime",
+        "dateArgs": [
+          2,
+          6
+        ],
+        "yearOffset": 0
+      },
+      "dateExceptions": [],
+      "alternativeTransferDateDefs": [],
+      "precedence": "WEEKDAY_13",
+      "rank": "WEEKDAY",
+      "allowSimilarRankItems": false,
+      "isHolyDayOfObligation": false,
+      "isOptional": false,
+      "i18nDef": [
+        "seasons:ordinary_time.weekday",
+        {
+          "week": 6,
+          "dow": 2
+        }
+      ],
+      "seasons": [
+        "ORDINARY_TIME"
+      ],
+      "periods": [
+        "EARLY_ORDINARY_TIME"
+      ],
+      "colors": [
+        "GREEN"
+      ],
+      "commonsDef": [],
+      "martyrology": [],
+      "titles": [],
+      "calendar": {
+        "weekOfSeason": 6,
+        "dayOfSeason": 37,
+        "dayOfWeek": 2,
+        "nthDayOfWeekInMonth": 3,
+        "startOfSeason": "2026-01-12",
+        "endOfSeason": "2026-11-28",
+        "startOfLiturgicalYear": "2025-11-30",
+        "endOfLiturgicalYear": "2026-11-28",
+        "seasons": [
+          "ORDINARY_TIME"
+        ]
+      },
+      "cycles": {
+        "properCycle": "PROPER_OF_TIME",
+        "sundayCycle": "YEAR_A",
+        "weekdayCycle": "YEAR_2",
+        "psalterWeek": "WEEK_2"
+      },
+      "fromCalendarId": "ProperOfTime",
+      "fromExtendedCalendars": []
+    }
+  }
+]
+
+Date: 2026-02-18
+[
+  {
+    "id": "ash_wednesday",
+    "date": "2026-02-18",
+    "dateDef": {
+      "dateFn": "ashWednesday",
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "ASH_WEDNESDAY_2",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "names:ash_wednesday"
+    ],
+    "seasons": [
+      "LENT"
+    ],
+    "periods": [
+      "PRESENTATION_OF_THE_LORD_TO_HOLY_THURSDAY"
+    ],
+    "colors": [
+      "PURPLE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 0,
+      "dayOfSeason": 1,
+      "dayOfWeek": 3,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-02-18",
+      "endOfSeason": "2026-04-02",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "LENT"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
+Date: 2026-02-19
+[
+  {
+    "id": "thursday_after_ash_wednesday",
+    "date": "2026-02-19",
+    "dateDef": {
+      "dateFn": "ashWednesday",
+      "addDay": 1,
+      "yearOffset": 0
+    },
+    "dateExceptions": [],
+    "alternativeTransferDateDefs": [],
+    "precedence": "PRIVILEGED_WEEKDAY_9",
+    "rank": "WEEKDAY",
+    "allowSimilarRankItems": false,
+    "isHolyDayOfObligation": false,
+    "isOptional": false,
+    "i18nDef": [
+      "seasons:lent.day_after_ash_wed",
+      {
+        "dow": 4
+      }
+    ],
+    "seasons": [
+      "LENT"
+    ],
+    "periods": [
+      "PRESENTATION_OF_THE_LORD_TO_HOLY_THURSDAY"
+    ],
+    "colors": [
+      "PURPLE"
+    ],
+    "commonsDef": [],
+    "martyrology": [],
+    "titles": [],
+    "calendar": {
+      "weekOfSeason": 0,
+      "dayOfSeason": 2,
+      "dayOfWeek": 4,
+      "nthDayOfWeekInMonth": 3,
+      "startOfSeason": "2026-02-18",
+      "endOfSeason": "2026-04-02",
+      "startOfLiturgicalYear": "2025-11-30",
+      "endOfLiturgicalYear": "2026-11-28",
+      "seasons": [
+        "LENT"
+      ]
+    },
+    "cycles": {
+      "properCycle": "PROPER_OF_TIME",
+      "sundayCycle": "YEAR_A",
+      "weekdayCycle": "YEAR_2",
+      "psalterWeek": "WEEK_4"
+    },
+    "fromCalendarId": "ProperOfTime",
+    "fromExtendedCalendars": []
+  }
+]
+
