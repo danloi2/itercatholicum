@@ -1,5 +1,5 @@
-import Romcal from './src/lib/romcal/romcal.js';
-import Spain_Es from './src/lib/romcal/es.js';
+import Romcal from './src/shared/lib/romcal/romcal.js';
+import Spain_Es from './src/shared/lib/romcal/es.js';
 import fs from 'fs';
 
 async function test() {

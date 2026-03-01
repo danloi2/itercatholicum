@@ -23,11 +23,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          romcal: ['src/features/calendar/lib/romcal/romcal.js'],
-          locales: [
-            'src/features/calendar/lib/romcal/es.js',
-            'src/features/calendar/lib/romcal/la.js',
-          ],
+          romcal: ['src/shared/lib/romcal/romcal.js'],
+          locales: ['src/shared/lib/romcal/es.js', 'src/shared/lib/romcal/la.js'],
         },
       },
     },
