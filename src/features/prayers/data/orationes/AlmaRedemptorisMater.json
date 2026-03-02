@@ -1,0 +1,38 @@
+{
+  "id": "alma-redemptoris-mater",
+  "title": {
+    "es": "Alma Redemptoris Mater",
+    "la": "Alma Redemptoris Mater"
+  },
+  "seasons": ["ADVENT", "CHRISTMAS"],
+  "content": {
+    "es": [
+      "Madre santa del Redentor,",
+      "puerta del cielo siempre abierta,",
+      "estrella del mar,",
+      "socorre al pueblo que cae",
+      "y busca levantarse;",
+      "tú que engendraste,",
+      "con asombro de la naturaleza, a tu santo Creador.",
+      "Virgen antes y después,",
+      "que recibiste de la boca de Gabriel",
+      "aquel “Ave”,",
+      "ten piedad de los pecadores.",
+      "Amén."
+    ],
+    "la": [
+      "Alma Redemptoris Mater,",
+      "quae pervia caeli",
+      "porta manes, et stella maris,",
+      "succurre cadenti,",
+      "surgere qui curat, populo;",
+      "tu quae genuisti,",
+      "natura mirante, tuum sanctum Genitorem:",
+      "Virgo prius ac posterius,",
+      "Gabrielis ab ore",
+      "sumens illud Ave,",
+      "peccatorum miserere.",
+      "Amen."
+    ]
+  }
+}

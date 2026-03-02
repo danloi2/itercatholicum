@@ -9,6 +9,7 @@ interface CalendarCommandPaletteProps {
   onOpenChange: (open: boolean) => void;
   data: CalendarData;
   language?: 'la' | 'es';
+  onSelectDate?: (date: string) => void;
 }
 
 export default function CalendarCommandPalette({
@@ -16,6 +17,7 @@ export default function CalendarCommandPalette({
   onOpenChange,
   data,
   language = 'la',
+  onSelectDate,
 }: CalendarCommandPaletteProps) {
   const [inputValue, setInputValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState<any[]>([]);
@@ -78,19 +80,23 @@ export default function CalendarCommandPalette({
   }, [inputValue, data]);
 
   const handleSelect = (date: string) => {
-    onOpenChange(false);
+    if (onSelectDate) {
+      onSelectDate(date);
+    } else {
+      onOpenChange(false);
 
-    // Use the same scrolling logic as Bible reader or specific to date IDs
-    const element = document.getElementById(date);
-    if (element) {
-      const headerOffset = 150; // Approximated header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      // Use the same scrolling logic as Bible reader or specific to date IDs
+      const element = document.getElementById(date);
+      if (element) {
+        const headerOffset = 150; // Approximated header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 

@@ -7,11 +7,11 @@ export type LiturgicalSeason =
   | 'ORDINARY_TIME';
 
 export type LiturgicalColor =
-  | 'VIOLET'
+  | 'PURPLE'
   | 'WHITE'
   | 'GREEN'
   | 'RED'
-  | 'PINK'
+  | 'ROSE'
   | 'BLUE'
   | 'BLACK'
   | 'GOLD';

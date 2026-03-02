@@ -7,9 +7,15 @@ interface CalendarViewProps {
   data: CalendarData;
   loading: boolean;
   language: string;
+  seasonFilter?: string;
 }
 
-export default function CalendarView({ data, loading, language }: CalendarViewProps) {
+export default function CalendarView({
+  data,
+  loading,
+  language,
+  seasonFilter = 'none',
+}: CalendarViewProps) {
   const todayStr = new Date().toISOString().split('T')[0];
 
   if (loading) {
@@ -48,18 +54,35 @@ export default function CalendarView({ data, loading, language }: CalendarViewPr
     }
 
     // Render decorative Banner when season changes
-    if (season !== currentSeasonHeader) {
-      let infoKey =
-        season === 'ORDINARY_TIME'
-          ? ordinaryBlock === 1
-            ? 'ORDINARY_TIME_1'
-            : 'ORDINARY_TIME_2'
-          : season;
+    let infoKey =
+      season === 'ORDINARY_TIME'
+        ? ordinaryBlock === 1
+          ? 'ORDINARY_TIME_1'
+          : 'ORDINARY_TIME_2'
+        : season;
 
-      elements.push(
-        <SeasonBanner key={`banner-${date}`} seasonKey={infoKey} language={language} />
-      );
+    if (season !== currentSeasonHeader) {
+      if (seasonFilter === 'none' || seasonFilter === infoKey) {
+        const sundayCycle = principal.cycles?.sundayCycle || '';
+        const year = principal.date
+          ? new Date(principal.date).getFullYear()
+          : new Date().getFullYear();
+
+        elements.push(
+          <SeasonBanner
+            key={`banner-${date}`}
+            seasonKey={infoKey}
+            language={language}
+            sundayCycle={sundayCycle}
+            year={year}
+          />
+        );
+      }
       currentSeasonHeader = season;
+    }
+
+    if (seasonFilter !== 'none' && seasonFilter !== infoKey) {
+      return;
     }
 
     elements.push(

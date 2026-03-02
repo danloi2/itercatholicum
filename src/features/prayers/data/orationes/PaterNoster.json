@@ -4,6 +4,7 @@
     "es": "Padre Nuestro",
     "la": "Pater Noster"
   },
+  "seasons": ["ANY"],
   "content": {
     "es": [
       "Padre nuestro, que estás en el cielo,",

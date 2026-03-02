@@ -17,13 +17,9 @@ export function normalizeLiturgicalColor(day: LiturgicalDay): {
 } {
   let rawColor = (day.colors[0] || 'WHITE').toUpperCase();
 
-  // Standard normalization
-  if (rawColor === 'PURPLE') rawColor = 'VIOLET';
-  if (rawColor === 'ROSE') rawColor = 'PINK';
-
-  // Specific day overrides (to be centralized here)
+  // Keep BLUE override (not a native Romcal color, our custom override)
   if (day.id === 'immaculate_conception_of_the_blessed_virgin_mary') rawColor = 'BLUE';
-  if (day.id === 'advent_3_sunday' || day.id === 'lent_4_sunday') rawColor = 'PINK';
+  if (day.id === 'advent_3_sunday' || day.id === 'lent_4_sunday') rawColor = 'ROSE';
 
   const colorKey = rawColor as LiturgicalColor;
   const theme = COLOR_MAP[colorKey] || COLOR_MAP.WHITE;

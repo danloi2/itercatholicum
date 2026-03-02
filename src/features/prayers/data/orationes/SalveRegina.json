@@ -4,6 +4,7 @@
     "es": "Salve Regina",
     "la": "Salve Regina"
   },
+  "seasons": ["ANY", "ORDINARY_TIME"],
   "content": {
     "es": [
       "Dios te salve, Reina y Madre de Misericordia,",

@@ -15,7 +15,7 @@ interface DayCardProps {
 }
 
 export default function DayCard({ day, isToday, language = 'es' }: DayCardProps) {
-  const { theme } = normalizeLiturgicalColor(day);
+  const { theme, key: normalizedKey } = normalizeLiturgicalColor(day);
 
   const dateObj = new Date(day.date);
 
@@ -53,21 +53,23 @@ export default function DayCard({ day, isToday, language = 'es' }: DayCardProps)
   const COLOR_NAME_MAP: Record<string, Record<string, string>> = {
     es: {
       WHITE: 'BLANCO',
-      VIOLET: 'MORADO',
+      PURPLE: 'MORADO',
       GREEN: 'VERDE',
       RED: 'ROJO',
-      PINK: 'ROSA',
+      ROSE: 'ROSA',
       BLUE: 'AZUL',
       BLACK: 'NEGRO',
+      GOLD: 'ORO',
     },
     la: {
       WHITE: 'ALBUS',
-      VIOLET: 'VIOLACEUS',
+      PURPLE: 'PURPUREUS',
       GREEN: 'VIRIDIS',
       RED: 'RUBER',
-      PINK: 'ROSEUS',
+      ROSE: 'ROSACEUS',
       BLUE: 'CAERULEUS',
       BLACK: 'NIGER',
+      GOLD: 'AUREUS',
     },
   };
 
@@ -85,6 +87,9 @@ export default function DayCard({ day, isToday, language = 'es' }: DayCardProps)
     >
       {/* Date Widget */}
       <div className="w-20 md:w-20 shrink-0 flex flex-col items-center justify-center p-2 border-r border-[#c49b9b]/30 bg-white/40 backdrop-blur-sm">
+        <div className="mb-1 px-1.5 py-0.5 rounded-sm bg-black/85 text-white text-[8px] font-black tracking-widest leading-none">
+          {dateObj.getFullYear()} {dateObj.getFullYear() % 2 !== 0 ? 'I' : 'II'}
+        </div>
         <div className="text-[9px] font-bold text-[#c49b9b] uppercase tracking-widest mb-0.5">
           {weekday}
         </div>
@@ -144,13 +149,20 @@ export default function DayCard({ day, isToday, language = 'es' }: DayCardProps)
         </div>
         <CardContent className="px-3 sm:px-4 pb-2 pt-0">
           <div className="flex flex-wrap gap-2 mt-1">
-            {day.colors.map((c: string) => (
+            {(
+              [
+                ...new Set([
+                  ...((day.colors || []) as string[]).map((c: string) => c.toUpperCase()),
+                  normalizedKey, // always include the normalized override (e.g. BLUE)
+                ]),
+              ] as string[]
+            ).map((c) => (
               <Badge
                 key={c}
                 variant="outline"
                 className="uppercase text-[9px] bg-white/50 font-medium"
               >
-                {COLOR_NAME_MAP[language]?.[c.toUpperCase()] || c}
+                {COLOR_NAME_MAP[language]?.[c] || c}
               </Badge>
             ))}
           </div>

@@ -11,53 +11,60 @@ export const ROMCAL_MAP: Record<string, string> = {
   'TIME PER ANNUM': 'ORDINARY_TIME',
 };
 
-export const SEASON_INFO: Record<string, SeasonInfo> = {
+export const SEASON_INFO: Record<string, SeasonInfo & { emoji: string }> = {
   ADVENT: {
     title: 'Tiempo de Adviento',
     latTitle: 'Tempus Adventus',
     desc: 'Preparación para la llegada de Cristo',
     latDesc: 'Præparatio adventus Christi',
+    emoji: '🌿',
   },
   CHRISTMAS: {
     title: 'Tiempo de Navidad',
     latTitle: 'Tempus Nativitatis',
     desc: 'Celebración del nacimiento del Señor',
     latDesc: 'Nativitas Domini',
+    emoji: '👶',
   },
   ORDINARY_TIME_1: {
     title: 'Tiempo Ordinario I',
     latTitle: 'Tempus per Annum I',
     desc: 'La vida pública de Jesús',
     latDesc: 'Initium ministerii publici Iesu',
+    emoji: '⛪',
   },
   LENT: {
     title: 'Tiempo de Cuaresma',
     latTitle: 'Tempus Quadragesimæ',
     desc: 'Penitencia y preparación para la Pasión',
     latDesc: 'Pænitentia et præparatio ad Pascha',
+    emoji: '✝',
   },
   HOLY_WEEK: {
     title: 'Semana Santa',
     latTitle: 'Hebdomada Sancta',
     desc: 'La Pasión del Señor',
     latDesc: 'Passio Domini',
+    emoji: '🕊️',
   },
   EASTER: {
     title: 'Tiempo de Pascua',
     latTitle: 'Tempus Paschale',
     desc: 'Celebración de Cristo Resucitado',
     latDesc: 'Christus resurrexit.',
+    emoji: '🌅',
   },
   ORDINARY_TIME_2: {
     title: 'Tiempo Ordinario II',
     latTitle: 'Tempus per Annum II',
     desc: 'Enseñanzas, milagros y crecimiento del Reino.',
     latDesc: 'Doctrina et miracula Domini.',
+    emoji: '⛪',
   },
 };
 
 export const COLOR_MAP: Record<LiturgicalColor, ColorTheme> = {
-  VIOLET: {
+  PURPLE: {
     bg: 'bg-purple-50',
     text: 'text-purple-900',
     border: 'border-purple-200',
@@ -93,7 +100,7 @@ export const COLOR_MAP: Record<LiturgicalColor, ColorTheme> = {
     badge: 'bg-rose-100 text-rose-700 ring-rose-600/20',
     hex: '#e11d48', // rose-600
   },
-  PINK: {
+  ROSE: {
     bg: 'bg-pink-50',
     text: 'text-pink-900',
     border: 'border-pink-200',

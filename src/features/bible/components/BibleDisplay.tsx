@@ -8,6 +8,9 @@ interface BibleDisplayProps {
   startVerse: number;
   endVerse: number;
   fontScale?: number;
+  bookName?: string;
+  chapter?: number | string | null;
+  language?: 'es' | 'la';
 }
 
 export default function BibleDisplay({
@@ -15,6 +18,9 @@ export default function BibleDisplay({
   startVerse,
   endVerse,
   fontScale = 1,
+  bookName,
+  chapter,
+  language = 'es',
 }: BibleDisplayProps) {
   const versesToDisplay = React.useMemo(() => {
     const verses: { num: string; text: string }[] = [];
@@ -47,6 +53,31 @@ export default function BibleDisplay({
         className="relative font-serif text-[#3d0c0c] text-justify leading-[1.9]"
         style={{ fontSize: `${1.3 * fontScale}rem` }}
       >
+        {bookName && (
+          <div className="text-center mb-8 border-b border-[#c49b9b]/20 pb-6 animate-in fade-in slide-in-from-top-4 duration-700">
+            <h1 className="text-3xl md:text-5xl font-serif font-bold text-[#3d0c0c] mb-2 tracking-tight">
+              {bookName}
+            </h1>
+            {chapter !== undefined && chapter !== null && (
+              <div className="flex items-center justify-center gap-4">
+                <span className="h-px w-6 bg-[#c49b9b]/30"></span>
+                <span className="text-lg md:text-xl font-serif italic text-[#8B0000]">
+                  {chapter === 0
+                    ? language === 'la'
+                      ? 'Omnia Capitula'
+                      : 'Todos los capítulos'
+                    : `${language === 'la' ? 'Caput' : 'Capítulo'} ${chapter}`}
+                </span>
+                {chapter !== 0 && (startVerse > 1 || endVerse < 500) && (
+                  <span className="bg-[#8B0000]/5 text-[#8B0000] text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full border border-[#8B0000]/10 uppercase tracking-widest">
+                    {`${startVerse}-${endVerse > 500 ? (language === 'la' ? 'Fin.' : 'Fin') : endVerse}`}
+                  </span>
+                )}
+                <span className="h-px w-6 bg-[#c49b9b]/30"></span>
+              </div>
+            )}
+          </div>
+        )}
         <div className="text-justify">
           {versesToDisplay.map((verse, index) => (
             <span key={verse.num} className="inline">

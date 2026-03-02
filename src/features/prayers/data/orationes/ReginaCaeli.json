@@ -1,0 +1,47 @@
+{
+  "id": "regina-caeli",
+  "title": {
+    "es": "Regina Caeli",
+    "la": "Regina Caeli"
+  },
+  "seasons": ["EASTER"],
+  "content": {
+    "es": [
+      "Reina del cielo, alégrate, aleluya.",
+      "Porque el que mereciste llevar en tu seno, aleluya,",
+      "ha resucitado según lo dijo, aleluya.",
+      "Ruega por nosotros a Dios, aleluya.",
+      "",
+      "℣. Gózate y alégrate, Virgen María, aleluya.",
+      "℟. Porque verdaderamente ha resucitado el Señor, aleluya.",
+      "",
+      "Oremos.",
+      "Oh Dios, que por la resurrección de tu Hijo,",
+      "nuestro Señor Jesucristo,",
+      "te has dignado alegrar al mundo,",
+      "concédenos, te rogamos,",
+      "que por su Madre, la Virgen María,",
+      "alcancemos los gozos eternos.",
+      "Por el mismo Jesucristo nuestro Señor.",
+      "Amén."
+    ],
+    "la": [
+      "Regina caeli, laetare, alleluia.",
+      "Quia quem meruisti portare, alleluia.",
+      "Resurrexit, sicut dixit, alleluia.",
+      "Ora pro nobis Deum, alleluia.",
+      "",
+      "℣. Gaude et laetare, Virgo Maria, alleluia.",
+      "℟. Quia surrexit Dominus vere, alleluia.",
+      "",
+      "Oremus.",
+      "Deus, qui per resurrectionem Filii tui Domini nostri Iesu Christi",
+      "mundum laetificare dignatus es,",
+      "praesta, quaesumus,",
+      "ut per eius Genetricem Virginem Mariam",
+      "perpetuae capiamus gaudia vitae.",
+      "Per eundem Christum Dominum nostrum.",
+      "Amen."
+    ]
+  }
+}

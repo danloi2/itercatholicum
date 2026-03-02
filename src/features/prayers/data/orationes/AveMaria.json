@@ -4,6 +4,7 @@
     "es": "Ave María",
     "la": "Ave Maria"
   },
+  "seasons": ["ANY"],
   "content": {
     "es": [
       "Dios te salve, María,",

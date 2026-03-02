@@ -59,8 +59,8 @@ export default function Header({
             <div
               className={
                 centerChildren
-                  ? 'flex flex-col items-center justify-center py-3 gap-3'
-                  : 'flex flex-col md:flex-row justify-between items-center py-3 gap-3'
+                  ? 'relative flex flex-col items-center justify-center py-3 gap-3'
+                  : 'relative flex flex-col md:flex-row justify-between items-center py-3 gap-3 min-h-[60px]'
               }
             >
               {pageTitle &&
@@ -84,6 +84,11 @@ export default function Header({
                   {children}
                 </div>
               )}
+              {/* Target for portaling the Radix TabsList from pages into the header */}
+              <div
+                id="header-portal-target"
+                className="flex flex-1 md:justify-end justify-center w-full md:w-auto"
+              />
             </div>
           </div>
         </div>

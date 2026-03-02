@@ -1,0 +1,34 @@
+{
+  "id": "ave-regina-caelorum",
+  "title": {
+    "es": "Ave Regina Caelorum",
+    "la": "Ave Regina Caelorum"
+  },
+  "seasons": ["LENT", "HOLY_WEEK"],
+  "content": {
+    "es": [
+      "Dios te salve, Reina de los cielos,",
+      "Dios te salve, Señora de los ángeles;",
+      "Salve, raíz; salve, puerta,",
+      "De quien nació la luz para el mundo.",
+      "",
+      "Alégrate, Virgen gloriosa,",
+      "Entre todas la más hermosa;",
+      "Salve, oh muy bella,",
+      "Y ruega por nosotros a Cristo.",
+      "Amén."
+    ],
+    "la": [
+      "Ave, Regina caelorum,",
+      "Ave, Domina Angelorum:",
+      "Salve, radix, salve, porta,",
+      "Ex qua mundo lux est orta.",
+      "",
+      "Gaude, Virgo gloriosa,",
+      "Super omnes speciosa;",
+      "Vale, o valde decora,",
+      "Et pro nobis Christum exora.",
+      "Amen."
+    ]
+  }
+}
