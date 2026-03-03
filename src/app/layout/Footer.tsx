@@ -1,4 +1,4 @@
-import AboutModal from '@features/home/components/AboutModal';
+import AboutModal from '@features/home/components/About.modal';
 import { GitHubIcon } from '@shared/components/icons/GitHubIcon';
 import { StoleIcon } from '@shared/components/icons/StoleIcon';
 import { useGitHubVersion } from '@shared/hooks/useGitHubVersion';

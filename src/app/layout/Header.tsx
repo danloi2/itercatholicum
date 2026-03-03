@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import DateWidget from '@features/calendar/components/DateWidget';
+import { LatinDateTime } from '@features/calendar/components/widgets/LatinDateTime';
 import LanguageToggle from './LanguageToggle';
 import LiturgicalIndicator from '@shared/components/LiturgicalIndicator';
 import { useTodayLiturgicalColor } from '@shared/hooks/useLiturgicalColor';
@@ -41,7 +41,7 @@ export default function Header({
 
             {/* Center: Date & Time */}
             <div className="flex flex-col items-center justify-center">
-              <DateWidget language={language} />
+              <LatinDateTime language={language} />
             </div>
 
             {/* Right: Language Toggle */}

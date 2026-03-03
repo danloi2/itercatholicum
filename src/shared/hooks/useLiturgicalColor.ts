@@ -22,8 +22,8 @@ export function useTodayLiturgicalColor(language: 'es' | 'la' = 'es') {
           const { theme: colorTheme } = normalizeLiturgicalColor(today);
           setTheme(colorTheme);
         }
-      } catch (e) {
-        // Keep white default on error
+      } catch {
+        // Keep white default  // @ts-expect-error: romcal has non-standard internal structure in this version
       }
     }
 

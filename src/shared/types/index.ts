@@ -39,3 +39,32 @@ export interface UiString {
   todayLabel: string;
   obligationLabel: string;
 }
+export interface LiturgicalDay {
+  date: string;
+  name: string;
+  rank: string;
+  rankName: string;
+  colors: string[];
+  seasonNames: string[];
+  seasons: string[];
+  periods: string[];
+  id: string;
+  cycles: {
+    sundayCycle: string;
+    weekdayCycle: string;
+    psalterWeek: string;
+  };
+  calendar: {
+    weeksOfLent: number;
+    weeksOfEaster: number;
+    weeksOfOrdinaryTime: number;
+    weeksOfAdvent: number;
+    weekOfSeason: number;
+  };
+  isHolyDayOfObligation: boolean;
+}
+
+export interface LiturgicalSummary {
+  text: string;
+  theme: ColorTheme;
+}

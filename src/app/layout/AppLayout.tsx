@@ -1,23 +1,10 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { useSettings } from '@shared/context/SettingsContext';
 
-interface LayoutContextType {
-  setHeaderProps: (props: {
-    pageTitle?: React.ReactNode;
-    centerChildren?: boolean;
-    year?: number;
-  }) => void;
-}
-
-const LayoutContext = createContext<LayoutContextType | null>(null);
-
-export const useLayout = () => {
-  const context = useContext(LayoutContext);
-  if (!context) throw new Error('useLayout must be used within an AppLayout');
-  return context;
-};
+import { LayoutContext } from './LayoutContext';
 
 interface AppLayoutProps {
   language: 'es' | 'la';
@@ -25,6 +12,13 @@ interface AppLayoutProps {
 }
 
 export default function AppLayout({ language, setLanguage }: AppLayoutProps) {
+  const { fontScale } = useSettings();
+
+  // Apply font scale to body for portals
+  useEffect(() => {
+    document.body.style.setProperty('--font-scale', fontScale.toString());
+  }, [fontScale]);
+
   const [headerProps, setHeaderProps] = useState<{
     pageTitle?: React.ReactNode;
     centerChildren?: boolean;
@@ -41,7 +35,7 @@ export default function AppLayout({ language, setLanguage }: AppLayoutProps) {
           centerChildren={headerProps.centerChildren}
           year={headerProps.year}
         />
-        <main className="flex-1">
+        <main className="flex-1 scalable-content">
           <Outlet />
         </main>
         <Footer language={language} />

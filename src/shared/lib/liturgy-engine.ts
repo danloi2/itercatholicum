@@ -1,17 +1,13 @@
-import Romcal from '@shared/lib/romcal/romcal.js';
-// @ts-ignore
 import Spain_Es from '@shared/lib/romcal/es.js';
-// @ts-ignore
 import Spain_La from '@shared/lib/romcal/la.js';
+import Romcal from '@shared/lib/romcal/romcal.js';
 import { COLOR_MAP } from '@shared/constants/config';
-import type { ColorTheme, LiturgicalColor } from '@shared/types';
-
-export type LiturgicalDay = any;
+import type { ColorTheme, LiturgicalColor, LiturgicalDay } from '@shared/types';
 
 /**
  * Normalizes liturgical colors and applies business rules for specific feasts.
  */
-export function normalizeLiturgicalColor(day: LiturgicalDay): {
+export function normalizeLiturgicalColor(day: Partial<LiturgicalDay> & { colors: string[] }): {
   key: LiturgicalColor;
   theme: ColorTheme;
 } {
@@ -32,7 +28,7 @@ export function normalizeLiturgicalColor(day: LiturgicalDay): {
  */
 export function createRomcalInstance(language: 'es' | 'la' = 'es') {
   const locale = language === 'la' ? Spain_La : Spain_Es;
-  // @ts-ignore
+  // @ts-expect-error: dynamic calendar processing results in complex nested arrays
   return new Romcal.Romcal({ localizedCalendar: locale });
 }
 
@@ -53,6 +49,6 @@ export async function getLiturgicalDayInfo(
 ): Promise<LiturgicalDay | null> {
   const year = new Date(dateStr).getFullYear();
   const cal = await getLiturgicalYearData(year, language);
-  const allDays: LiturgicalDay[] = Object.values(cal).flat();
-  return allDays.find((d: any) => d.date === dateStr) || null;
+  const allDays = Object.values(cal).flat() as LiturgicalDay[];
+  return allDays.find((d) => d.date.split('T')[0] === dateStr) || null;
 }

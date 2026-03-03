@@ -24,6 +24,7 @@
   --input: 0 25% 69%;
   --ring: 0 100% 27%;
   --radius: 0.5rem;
+  --font-scale: 1;
 }
 
 .dark {
@@ -79,7 +80,8 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+}
+
+.scalable-content {
+  zoom: var(--font-scale, 1);
 }

@@ -22,7 +22,14 @@ export function useBibleHierarchy(language: 'es' | 'la') {
 }
 
 export function useBibleBookLoader(bookId: string, version: 'vulgata' | 'torres') {
-  const [bookData, setBookData] = useState<any>(null);
+  const [bookData, setBookData] = useState<{
+    isFullBook: boolean;
+    chapters: Array<{
+      numerus: number;
+      ctd_versus: number;
+      versus: Record<string, string>;
+    }>;
+  } | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 

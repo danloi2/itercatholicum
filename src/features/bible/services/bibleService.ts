@@ -21,8 +21,8 @@ export const bibleService = {
     const loader = modules[key];
     if (!loader) throw new Error(`File not found: ${key}`);
 
-    const module: any = await loader();
-    return module.default || module;
+    const module = (await loader()) as { default: { capitula: unknown[] } };
+    return module.default;
   },
 
   getRandomReference() {

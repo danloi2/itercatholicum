@@ -1,9 +1,9 @@
-import { useEffect, useMemo } from 'react';
-import { useCalendar } from '@features/calendar/hooks/useCalendar';
+import { useEffect, useState, useMemo } from 'react';
+import { getLiturgicalDayInfo, normalizeLiturgicalColor } from '../lib/liturgy-engine';
+import type { LiturgicalDay } from '../types';
 import { SEASON_INFO, ROMCAL_MAP, RANK_MAP, CYCLE_MAP } from '../constants/config';
 import { cn } from '../lib/utils';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ui/hover-card';
-import { normalizeLiturgicalColor } from '../lib/liturgy-engine';
 import { StoleIcon } from './icons/StoleIcon';
 
 interface LiturgicalIndicatorProps {
@@ -14,28 +14,20 @@ interface LiturgicalIndicatorProps {
 
 export default function LiturgicalIndicator({
   language,
-  activeYear,
   showTitle = false,
 }: LiturgicalIndicatorProps) {
-  const { data, generateData } = useCalendar();
-  const currentYear = new Date().getFullYear();
-  const yearToFetch = activeYear || currentYear;
+  const [todayEntry, setTodayEntry] = useState<LiturgicalDay | null>(null);
 
   useEffect(() => {
-    generateData(yearToFetch, language);
-  }, [yearToFetch, language, generateData]);
-
-  // Use today's date but with the active year if viewing the calendar
-  const today = new Date();
-  const displayDate = useMemo(() => {
-    if (!activeYear) return today.toISOString().split('T')[0];
-
-    // Create a date for the same day/month but in the target active year
-    const d = new Date(activeYear, today.getMonth(), today.getDate());
-    return d.toISOString().split('T')[0];
-  }, [activeYear]);
-
-  const todayEntry = data[displayDate]?.[0];
+    const todayStr = new Date().toISOString().split('T')[0];
+    getLiturgicalDayInfo(todayStr, language)
+      .then((day) => {
+        setTodayEntry(day);
+      })
+      .catch(() => {
+        setTodayEntry(null);
+      });
+  }, [language]);
 
   const liturgicalInfo = useMemo(() => {
     if (!todayEntry) return null;

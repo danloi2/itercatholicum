@@ -1,6 +1,6 @@
 declare module 'romcal' {
   export default class Romcal {
-    constructor(config?: any);
+    constructor(config?: unknown);
     generateCalendar(year: number): Promise<Record<string, LiturgicalDay[]>>;
   }
 
@@ -11,8 +11,8 @@ declare module 'romcal' {
     rankName: string;
     colors: string[];
     seasonNames: string[];
-    cycles: any;
-    calendar: any;
+    cycles: unknown;
+    calendar: unknown;
     // Add more fields as needed
   }
 }

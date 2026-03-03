@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Construction } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
-import { useLayout } from '@app/layout/AppLayout';
+import { useLayout } from '@app/layout/LayoutContext';
 
 interface FeaturePlaceholderProps {
   title: string;

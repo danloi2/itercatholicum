@@ -1,9 +1,10 @@
 import { ROMCAL_MAP, CYCLE_MAP } from '@shared/constants/config';
 import { normalizeLiturgicalColor } from '@shared/lib/liturgy-engine';
+import type { ColorTheme, LiturgicalDay } from '@shared/types';
 
 export interface LiturgicalSummary {
   text: string;
-  theme: any;
+  theme: ColorTheme;
   season: string;
   weekNum: number;
 }
@@ -28,7 +29,7 @@ export const SEASON_NAMES: Record<string, Record<string, string>> = {
 };
 
 export const calendarService = {
-  getLiturgicalSummary(day: any, language: 'es' | 'la'): LiturgicalSummary | null {
+  getLiturgicalSummary(day: LiturgicalDay, language: 'es' | 'la'): LiturgicalSummary | null {
     if (!day) return null;
 
     const seasonRaw = day.seasons?.[0] || 'ORDINARY_TIME';
@@ -55,7 +56,10 @@ export const calendarService = {
     return { text, theme, season, weekNum };
   },
 
-  getCycleInfo(day: any, language: 'es' | 'la'): { sunday: string; weekday: string; year: number } {
+  getCycleInfo(
+    day: LiturgicalDay,
+    language: 'es' | 'la'
+  ): { sunday: string; weekday: string; year: number } {
     if (!day) return { sunday: '', weekday: '', year: new Date().getFullYear() };
 
     const sundayCycle = day.cycles?.sundayCycle || '';
