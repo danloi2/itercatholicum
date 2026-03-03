@@ -7,7 +7,7 @@ interface ChapterSelectorProps {
     chapters: Array<{
       numerus: number;
       ctd_versus: number;
-      versus: Record<string, { textus: string }>;
+      versus: Record<string, string>;
     }>;
   } | null;
   bookName: string;
@@ -75,7 +75,7 @@ export const ChapterSelector: React.FC<ChapterSelectorProps> = ({
                     {chapter.versus && chapter.versus[0] ? (
                       <>
                         <sup className="text-xs mr-1 opacity-70 font-bold">1</sup>
-                        {chapter.versus[0].textus}
+                        {chapter.versus['1']}
                       </>
                     ) : (
                       '...'

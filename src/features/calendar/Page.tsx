@@ -163,6 +163,17 @@ export default function Page({ language, year }: PageProps) {
     }
   }, [loading, data, shouldScrollToToday, scrollToToday]);
 
+  // Scroll to today when switching tabs (but skip the very first render)
+  const prevTabRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (prevTabRef.current !== null && prevTabRef.current !== activeTab) {
+      // Give the new tab content time to mount before scrolling
+      const timer = setTimeout(() => performScroll('today'), 300);
+      return () => clearTimeout(timer);
+    }
+    prevTabRef.current = activeTab;
+  }, [activeTab]);
+
   const handleSelectDate = (dateStr: string) => {
     setIsSearchOpen(false);
 

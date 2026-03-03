@@ -9,10 +9,18 @@ interface ReadingContainerProps {
   selectedChapter: number | null;
   verses: { start: number; end: number };
   bookData: {
-    chapters: Array<{ numerus: number; versus: Record<string, string>; [key: string]: unknown }>;
+    chapters: Array<{
+      numerus: number;
+      versus: Record<string, string>;
+      [key: string]: unknown;
+    }>;
   } | null;
   otherBookData?: {
-    chapters: Array<{ numerus: number; versus: Record<string, string>; [key: string]: unknown }>;
+    chapters: Array<{
+      numerus: number;
+      versus: Record<string, string>;
+      [key: string]: unknown;
+    }>;
   } | null;
 }
 

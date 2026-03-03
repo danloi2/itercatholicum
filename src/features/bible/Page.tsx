@@ -117,7 +117,7 @@ export default function Page({ language }: PageProps) {
       return (
         <ReadingContainer
           language={language}
-          selectedBook={selectedBook}
+          selectedBook={selectedBook ?? null}
           selectedChapter={selectedChapter}
           verses={verses}
           bookData={bookData}

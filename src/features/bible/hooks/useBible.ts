@@ -44,7 +44,14 @@ export function useBibleBookLoader(bookId: string, version: 'vulgata' | 'torres'
     setError(null);
     try {
       const fileData = await bibleService.loadBookData(bookId, version);
-      setBookData({ isFullBook: true, chapters: fileData.capitula });
+      setBookData({
+        isFullBook: true,
+        chapters: fileData.capitula as Array<{
+          numerus: number;
+          ctd_versus: number;
+          versus: Record<string, string>;
+        }>,
+      });
     } catch (err) {
       console.error('Failed to load bible content:', err);
       setError('Error cargando el contenido / Error loading content');
