@@ -1,19 +1,20 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { useLayout } from '@app/layout/LayoutContext';
-import LiturgicalSeasonView from './components/views/LiturgicalSeasonView';
 import { useCalendar } from '@features/calendar/hooks/useCalendar';
 import { ArrowLeft, Search } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
 import { useNavigate } from 'react-router-dom';
 import { startOfWeek, format, addDays, addWeeks, subWeeks } from 'date-fns';
 import { es } from 'date-fns/locale';
+import { la } from '@shared/lib/locales';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@ui/tabs';
 import WeeklyView from './components/views/WeeklyView';
 import CalendarCommandPalette from './components/search/CalendarCommandPalette';
 import CalendarHeader from './components/layout/CalendarHeader';
 import { LiturgicalCalendarView } from './components/views/LiturgicalCalendarView';
 import { calendarService } from './services/calendarService';
+import LiturgicalSeasonView from './components/views/LiturgicalSeasonView';
 import { ROMCAL_MAP } from '@shared/constants/config';
 
 interface PageProps {
@@ -38,14 +39,20 @@ export default function Page({ language, year }: PageProps) {
     const element =
       document.getElementById(targetStr) || document.getElementById(`week-${targetStr}`);
     if (element) {
-      const headerOffset = 180;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      const elementRect = element.getBoundingClientRect();
+      const elementHeight = elementRect.height;
+      const elementTop = elementRect.top + window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate position to put the center of the element in the center of the viewport
+      const offsetPosition = elementTop - viewportHeight / 2 + elementHeight / 2;
+
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
   const [selectedYear, setSelectedYear] = useState<number>(year);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedSeason, setSelectedSeason] = useState<string>('none');
   const [activeTab, setActiveTab] = useState<'year' | 'seasons' | 'week'>('year');
   const [currentWeekStart, setCurrentWeekStart] = useState<Date>(() =>
@@ -55,6 +62,39 @@ export default function Page({ language, year }: PageProps) {
   const scrollToToday = useCallback(() => {
     const today = new Date();
     const currentYear = today.getFullYear();
+    const todayStr = format(today, 'yyyy-MM-dd');
+
+    // If we're in seasons view, we need to ensure today's season is selected or filter is off
+    if (activeTab === 'seasons') {
+      // Find today's season key
+      const todayEvents = data[todayStr];
+      if (todayEvents?.[0]) {
+        const principal = todayEvents[0];
+        const seasonRaw = principal.seasons?.[0] || 'ORDINARY_TIME';
+        let season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
+        if (principal.periods?.includes('HOLY_WEEK')) season = 'HOLY_WEEK';
+
+        let targetSeason = season;
+        if (season === 'ORDINARY_TIME') {
+          const sortedDates = Object.keys(data).sort();
+          let ordinaryBlock = 1;
+          for (const d of sortedDates) {
+            if (d === todayStr) break;
+            const ev = data[d][0];
+            if (!ev) continue;
+            const sRaw = ev.seasons?.[0] || 'ORDINARY_TIME';
+            let s = ROMCAL_MAP[sRaw.toUpperCase()] || sRaw.toUpperCase();
+            if (ev.periods?.includes('HOLY_WEEK')) s = 'HOLY_WEEK';
+            if (s === 'EASTER') ordinaryBlock = 2;
+          }
+          targetSeason = ordinaryBlock === 1 ? 'ORDINARY_TIME_1' : 'ORDINARY_TIME_2';
+        }
+
+        if (selectedSeason !== targetSeason) {
+          setSelectedSeason(targetSeason);
+        }
+      }
+    }
 
     if (selectedYear !== currentYear) {
       setSelectedYear(currentYear);
@@ -62,9 +102,10 @@ export default function Page({ language, year }: PageProps) {
       setShouldScrollToToday(true);
     } else {
       setCurrentWeekStart(startOfWeek(today, { weekStartsOn: 0 }));
-      setTimeout(() => performScroll('today'), 150);
+      // Use a slightly longer timeout if we just changed the season filter to allow DOM to update
+      setTimeout(() => performScroll('today'), activeTab === 'seasons' ? 300 : 150);
     }
-  }, [selectedYear]);
+  }, [selectedYear, activeTab, data, selectedSeason]);
 
   useEffect(() => {
     const pageTitle = language === 'la' ? 'Calendarium Liturgicum' : 'Calendario Litúrgico';
@@ -76,17 +117,16 @@ export default function Page({ language, year }: PageProps) {
   // Determine current liturgical season for the selector default
   useEffect(() => {
     if (!loading && Object.keys(data).length > 0 && selectedSeason === 'none') {
-      const today = new Date().toISOString().split('T')[0];
+      const now = new Date();
+      const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
       const todayEvents = data[today];
-      if (todayEvents && todayEvents[0]) {
+      if (todayEvents?.[0]) {
         const principal = todayEvents[0];
         const seasonRaw = principal.seasons?.[0] || 'ORDINARY_TIME';
         let season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
         if (principal.periods?.includes('HOLY_WEEK')) season = 'HOLY_WEEK';
 
-        // Check if we are in OT1 or OT2
         if (season === 'ORDINARY_TIME') {
-          // Find if there's an Easter before today in this year's data
           const sortedDates = Object.keys(data).sort();
           let ordinaryBlock = 1;
           for (const d of sortedDates) {
@@ -207,7 +247,7 @@ export default function Page({ language, year }: PageProps) {
   }, [activeTab, currentWeekStart, data, language, loading]);
 
   const displayMonth = useMemo(() => {
-    const currentLocale = language === 'la' ? es : es;
+    const currentLocale = language === 'la' ? la : es;
     const monthLabel = format(currentWeekStart, 'MMMM yyyy', { locale: currentLocale });
     const monthEndLabel = format(addDays(currentWeekStart, 6), 'MMMM yyyy', {
       locale: currentLocale,
@@ -219,11 +259,11 @@ export default function Page({ language, year }: PageProps) {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8">
-        <div className="max-w-[1400px] mx-auto px-0 sm:px-6">
+      <div className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8 overflow-x-hidden">
+        <div className="w-full mx-auto px-0 sm:px-12 overflow-visible">
           <Tabs
             defaultValue="year"
-            className="w-full"
+            className="w-full overflow-visible"
             onValueChange={(v) => setActiveTab(v as 'year' | 'seasons' | 'week')}
           >
             {portalTarget &&
@@ -250,31 +290,43 @@ export default function Page({ language, year }: PageProps) {
                 portalTarget
               )}
 
-            <TabsContent value="year" className="focus-visible:outline-none px-4 sm:px-0 mt-0">
+            <TabsContent
+              value="year"
+              className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
+            >
               <CalendarHeader
                 view="year"
                 year={selectedYear}
                 onYearChange={handleYearChange}
                 language={language}
+                selectedDate={selectedDate}
+                onDateSelect={setSelectedDate}
               />
-              <div className="text-center mb-8 border-b border-[#c49b9b]/20 pb-6 animate-in fade-in slide-in-from-top-4 duration-700">
-                <h1 className="text-3xl md:text-5xl font-serif font-bold text-[#8B0000] mb-2 tracking-tight">
+              <div className="text-center mb-12 border-b border-[#c49b9b]/20 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
+                <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#8B0000] mb-4 tracking-tight">
                   {language === 'la' ? 'Tempus Liturgicum' : 'Tiempo Litúrgico'}
                 </h1>
                 <div className="flex items-center justify-center gap-4">
-                  <span className="h-px w-6 bg-[#c49b9b]/30"></span>
-                  <span className="text-lg md:text-xl font-serif italic text-[#3d0c0c]">
+                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
+                  <span className="text-xl md:text-2xl font-serif italic text-[#3d0c0c]">
                     {selectedYear - 1} / {selectedYear}
                   </span>
-                  <span className="h-px w-6 bg-[#c49b9b]/30"></span>
+                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
                 </div>
               </div>
-              <div className="max-w-2xl mx-auto">
-                <LiturgicalCalendarView data={data} language={language} />
+              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible">
+                <LiturgicalCalendarView
+                  data={data}
+                  language={language}
+                  selectedDate={selectedDate}
+                />
               </div>
             </TabsContent>
 
-            <TabsContent value="seasons" className="focus-visible:outline-none px-4 sm:px-0 mt-0">
+            <TabsContent
+              value="seasons"
+              className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
+            >
               <CalendarHeader
                 view="year"
                 year={selectedYear}
@@ -283,7 +335,7 @@ export default function Page({ language, year }: PageProps) {
                 season={selectedSeason}
                 onSeasonChange={setSelectedSeason}
               />
-              <div className="max-w-2xl mx-auto">
+              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible">
                 <LiturgicalSeasonView
                   data={data}
                   loading={loading}
@@ -344,9 +396,7 @@ export default function Page({ language, year }: PageProps) {
         >
           <div className="flex flex-col items-center justify-center relative scale-90 md:scale-100">
             <span className="text-[10px] font-bold leading-none mb-0.5">
-              {new Date()
-                .toLocaleString(language === 'la' ? 'la' : 'es', { month: 'short' })
-                .toUpperCase()}
+              {format(new Date(), 'MMM', { locale: language === 'la' ? la : es }).toUpperCase()}
             </span>
             <span className="text-lg font-black leading-none">{new Date().getDate()}</span>
           </div>

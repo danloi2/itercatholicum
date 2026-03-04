@@ -1,5 +1,6 @@
-import React from 'react';
-import DayCard from '../cards/DayCard';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { LiturgicalCard } from '../cards/LiturgicalCard';
 import LiturgicalSeasonBanner from '../layout/LiturgicalSeasonBanner';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
 import { ROMCAL_MAP } from '@shared/constants/config';
@@ -11,13 +12,40 @@ interface LiturgicalSeasonViewProps {
   seasonFilter?: string;
 }
 
+/**
+ * Helper component that applies a dramatic vertical focus scaling.
+ */
+function VerticalFocusCard({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'center center', 'end start'],
+  });
+
+  // Continuous Focus Curve: Wider peaks to ensure no gaps during scroll
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 0.65, 1], [0.7, 1.0, 1.25, 1.0, 0.7]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.4, 0.9, 1, 0.9, 0.4]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ scale, opacity }}
+      className="w-full origin-center py-4 overflow-visible relative"
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function LiturgicalSeasonView({
   data,
   loading,
   language,
   seasonFilter = 'none',
 }: LiturgicalSeasonViewProps) {
-  const todayStr = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 
   if (loading) {
     return (
@@ -41,20 +69,14 @@ export default function LiturgicalSeasonView({
     const principal = events[0];
     if (!principal) return;
 
-    // Season Logic: Determine which season section we are in
     const seasonRaw = principal.seasons?.[0] || 'ORDINARY_TIME';
-    // Use centralized mapping and periods
     let season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
-
-    // Specific overrides for Holy Week
     if (principal.periods?.includes('HOLY_WEEK')) season = 'HOLY_WEEK';
 
-    // Handle split Ordinary Time (I and II)
     if (season === 'ORDINARY_TIME' && currentSeasonHeader === 'EASTER') {
       ordinaryBlock = 2;
     }
 
-    // Render decorative Banner when season changes
     const infoKey =
       season === 'ORDINARY_TIME'
         ? ordinaryBlock === 1
@@ -70,13 +92,14 @@ export default function LiturgicalSeasonView({
           : new Date().getFullYear();
 
         elements.push(
-          <LiturgicalSeasonBanner
-            key={`banner-${date}`}
-            seasonKey={infoKey}
-            language={language}
-            sundayCycle={sundayCycle}
-            year={year}
-          />
+          <VerticalFocusCard key={`banner-${date}`}>
+            <LiturgicalSeasonBanner
+              seasonKey={infoKey}
+              language={language}
+              sundayCycle={sundayCycle}
+              year={year}
+            />
+          </VerticalFocusCard>
         );
       }
       currentSeasonHeader = season;
@@ -87,9 +110,29 @@ export default function LiturgicalSeasonView({
     }
 
     elements.push(
-      <DayCard key={date} day={principal} isToday={date === todayStr} language={language} />
+      <VerticalFocusCard key={date}>
+        <LiturgicalCard
+          day={principal}
+          isToday={date === todayStr}
+          language={language as 'es' | 'la'}
+          variant="standard"
+        />
+      </VerticalFocusCard>
     );
   });
 
-  return <div className="space-y-4 relative">{elements}</div>;
+  return (
+    <div
+      className="relative px-4 md:px-12 pb-64 pt-32 w-full mx-auto overflow-visible"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+      }}
+    >
+      <div className="flex flex-col gap-0 items-center justify-center w-full max-w-7xl mx-auto overflow-visible">
+        {elements}
+      </div>
+    </div>
+  );
 }

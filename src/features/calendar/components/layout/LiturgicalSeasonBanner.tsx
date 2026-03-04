@@ -74,7 +74,7 @@ export default function LiturgicalSeasonBanner({
         {(localizedSundayCycle || weekdayCycle || year) && (
           <div
             className={cn(
-              'mb-4 px-5 py-2 rounded-full text-sm font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md transition-all duration-300',
+              'mb-[1em] px-[1.25em] py-[0.5em] rounded-full text-[0.875em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md transition-all duration-300',
               theme.badge
             )}
             style={{
@@ -93,14 +93,14 @@ export default function LiturgicalSeasonBanner({
 
         <h2
           className={cn(
-            'text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-none capitalize mb-2',
+            'text-[1.5em] sm:text-[1.875em] md:text-[2.25em] font-black tracking-tight leading-none capitalize mb-[0.1em]',
             theme.text
           )}
           style={{ textShadow: `0 2px 12px ${hex}20` }}
         >
           {title}
         </h2>
-        <p className="text-sm md:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed opacity-80">
+        <p className="text-[0.875em] md:text-[1em] text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed opacity-80">
           {desc}
         </p>
       </div>

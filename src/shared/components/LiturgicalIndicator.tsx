@@ -1,10 +1,14 @@
 import { useEffect, useState, useMemo } from 'react';
-import { getLiturgicalDayInfo, normalizeLiturgicalColor } from '../lib/liturgy-engine';
+import {
+  getLiturgicalDayInfo,
+  normalizeLiturgicalColor,
+  getFullLiturgicalName,
+} from '../lib/liturgy-engine';
 import type { LiturgicalDay } from '../types';
 import { SEASON_INFO, ROMCAL_MAP, RANK_MAP, CYCLE_MAP } from '../constants/config';
-import { cn } from '../lib/utils';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ui/hover-card';
 import { StoleIcon } from './icons/StoleIcon';
+import { LiturgicalBadge, LiturgicalColorDot } from './LiturgicalBadge';
 
 interface LiturgicalIndicatorProps {
   language: 'es' | 'la';
@@ -19,7 +23,8 @@ export default function LiturgicalIndicator({
   const [todayEntry, setTodayEntry] = useState<LiturgicalDay | null>(null);
 
   useEffect(() => {
-    const todayStr = new Date().toISOString().split('T')[0];
+    const now = new Date();
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
     getLiturgicalDayInfo(todayStr, language)
       .then((day) => {
         setTodayEntry(day);
@@ -55,13 +60,15 @@ export default function LiturgicalIndicator({
     const localizedWeekdayCycle = CYCLE_MAP[language]?.[weekdayCycleKey] || weekdayCycleKey;
 
     return {
-      name: todayEntry.name,
+      fullName: getFullLiturgicalName(todayEntry, language),
       season: language === 'la' ? primarySeason.latTitle : primarySeason.title,
       color: theme.hex,
       theme,
       rank: localizedRank,
       sundayCycle: localizedSundayCycle,
       weekdayCycle: localizedWeekdayCycle,
+      weekOfSeason: todayEntry.calendar.weekOfSeason,
+      rawRank: todayEntry.rank,
     };
   }, [todayEntry, language]);
 
@@ -70,62 +77,56 @@ export default function LiturgicalIndicator({
   return (
     <HoverCard openDelay={200}>
       <HoverCardTrigger asChild>
-        <div className="flex items-center gap-4 group cursor-help py-1">
+        <div className="flex items-center gap-3 group cursor-help py-1">
           <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
-            <StoleIcon color={liturgicalInfo.color} className="drop-shadow-sm" />
+            <StoleIcon
+              color={liturgicalInfo.color}
+              className="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm"
+            />
           </div>
-          <div className="flex flex-col items-start leading-none gap-1.5">
-            {showTitle && (
-              <h1 className="text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none mb-0.5">
+          {showTitle && (
+            <div className="flex flex-col items-start leading-none gap-1">
+              <h1 className="text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none">
                 <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
                   Iter Catholicum
                 </span>
               </h1>
-            )}
-            <div className="flex items-center gap-3">
-              <span
-                className={cn(
-                  'text-sm md:text-base font-black tracking-tight font-serif whitespace-nowrap',
-                  liturgicalInfo.theme.text
-                )}
-              >
-                {liturgicalInfo.season}
-              </span>
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[9px] md:text-[10px] px-1.5 py-0 bg-[#8B0000]/5 text-[#8B0000]/60 border border-[#8B0000]/10 rounded font-bold whitespace-nowrap leading-tight">
-                  {liturgicalInfo.sundayCycle}
-                </span>
-                <span className="text-[9px] md:text-[10px] px-1.5 py-0 bg-stone-100/50 text-[#3d0c0c]/60 border border-stone-200/50 rounded font-bold whitespace-nowrap leading-tight">
-                  {liturgicalInfo.weekdayCycle}
-                </span>
-              </div>
             </div>
-          </div>
+          )}
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="bg-[#fdfbf7] border-[#c49b9b] text-[#3d0c0c] font-serif shadow-xl w-64 p-3">
         <div className="text-xs space-y-1.5">
-          <p className="font-bold underline text-sm">{liturgicalInfo.name}</p>
+          <p className="font-bold underline text-sm">{liturgicalInfo.fullName}</p>
           <div className="flex items-center justify-between gap-4 pt-1">
             <div className="flex items-center gap-2">
-              <div
-                className="w-3 h-3 rounded-full"
-                style={{ backgroundColor: liturgicalInfo.color }}
-              />
-              <p className="opacity-80 italic font-medium">{liturgicalInfo.rank}</p>
+              <LiturgicalBadge
+                theme={liturgicalInfo.theme}
+                rawRank={liturgicalInfo.rawRank}
+                showDot
+              >
+                {liturgicalInfo.rank}
+              </LiturgicalBadge>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-[9px] px-1.5 py-0.5 bg-[#8B0000]/10 text-[#8B0000] rounded font-bold">
+              <LiturgicalBadge
+                theme={liturgicalInfo.theme}
+                showDot
+                className="bg-[#8B0000]/10 text-[#8B0000]"
+              >
                 {liturgicalInfo.sundayCycle}
-              </span>
-              <span className="text-[9px] px-1.5 py-0.5 bg-stone-200 text-stone-700 rounded font-bold">
+              </LiturgicalBadge>
+              <LiturgicalBadge theme={liturgicalInfo.theme} showDot variant="stone">
                 {liturgicalInfo.weekdayCycle}
-              </span>
+              </LiturgicalBadge>
             </div>
           </div>
-          <p className="text-[10px] pt-1 opacity-60 border-t border-[#c49b9b]/20">
-            {language === 'la' ? 'Status Liturgicus Hodiernus' : 'Estado Litúrgico del Día'}
-          </p>
+          <div className="pt-1 flex items-center gap-2 opacity-60 border-t border-[#c49b9b]/20">
+            <LiturgicalColorDot theme={liturgicalInfo.theme} className="w-1.5 h-1.5" />
+            <p className="text-[10px]">
+              {language === 'la' ? 'Status Liturgicus Hodiernus' : 'Estado Litúrgico del Día'}
+            </p>
+          </div>
         </div>
       </HoverCardContent>
     </HoverCard>

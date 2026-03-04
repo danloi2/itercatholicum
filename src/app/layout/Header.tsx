@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { LatinDateTime } from '@features/calendar/components/widgets/LatinDateTime';
+import { LatinDateDisplay, TimePill } from '@features/calendar/components/widgets/LatinDateTime';
 import LanguageToggle from './LanguageToggle';
 import LiturgicalIndicator from '@shared/components/LiturgicalIndicator';
 import { useTodayLiturgicalColor } from '@shared/hooks/useLiturgicalColor';
@@ -39,14 +39,15 @@ export default function Header({
               <LiturgicalIndicator language={language} activeYear={year} showTitle={true} />
             </div>
 
-            {/* Center: Date & Time */}
+            {/* Center: Date & Liturgical Info */}
             <div className="flex flex-col items-center justify-center">
-              <LatinDateTime language={language} />
+              <LatinDateDisplay language={language} />
             </div>
 
-            {/* Right: Language Toggle */}
-            <div className="flex justify-end">
+            {/* Right: Language Toggle & Time */}
+            <div className="flex flex-col items-end gap-1.5">
               <LanguageToggle language={language} setLanguage={setLanguage} />
+              <TimePill language={language} />
             </div>
           </div>
         </div>

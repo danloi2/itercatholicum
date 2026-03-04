@@ -56,14 +56,12 @@ The application is provided "as-is" for personal, educational, and devotional us
 ```text
 .
 ├── src/
-│   ├── components/        # UI Components (Headless & Styled)
-│   │   ├── ui/            # Radix UI primitives
-│   │   ├── Calendar/      # Liturgical calendar logic and views
-│   │   └── Bible/         # Bible reader and selector logic
-│   ├── hooks/             # Custom React hooks (useCalendar, etc.)
-│   ├── lib/               # Core utility libraries and Romcal logic
-│   ├── constants/         # UI strings and configuration
-│   └── types/             # TypeScript definitions
+│   ├── app/               # Core configuration, routes & layout
+│   ├── features/          # Feature domains (Bible, Calendar, Prayers, etc.)
+│   ├── shared/            # Common logic, utilities & global hooks
+│   ├── ui/                # Base design system primitives (Radix-based)
+│   ├── assets/            # Global static assets
+│   └── styles/            # Global CSS & Tailwind configuration
 ├── public/                # Static assets and fonts
 └── bible_metadata.json    # Structural metadata for PB Bibles
 ```

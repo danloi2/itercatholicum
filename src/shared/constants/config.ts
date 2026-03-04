@@ -186,27 +186,3 @@ export const CYCLE_MAP: Record<string, Record<string, string>> = {
     YEAR_C: 'Cyclus C',
   },
 };
-
-export const LATIN_WEEKDAYS = [
-  'Dom.',
-  'Fer. II',
-  'Fer. III',
-  'Fer. IV',
-  'Fer. V',
-  'Fer. VI',
-  'Sab.',
-];
-export const LATIN_MONTHS = [
-  'Ian.',
-  'Feb.',
-  'Mar.',
-  'Apr.',
-  'Mai.',
-  'Iun.',
-  'Iul.',
-  'Aug.',
-  'Sep.',
-  'Oct.',
-  'Nov.',
-  'Dec.',
-];

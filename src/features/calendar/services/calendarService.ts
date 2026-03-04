@@ -1,5 +1,5 @@
 import { ROMCAL_MAP, CYCLE_MAP } from '@shared/constants/config';
-import { normalizeLiturgicalColor } from '@shared/lib/liturgy-engine';
+import { normalizeLiturgicalColor, getFullLiturgicalName } from '@shared/lib/liturgy-engine';
 import type { ColorTheme, LiturgicalDay } from '@shared/types';
 
 export interface LiturgicalSummary {
@@ -32,26 +32,11 @@ export const calendarService = {
   getLiturgicalSummary(day: LiturgicalDay, language: 'es' | 'la'): LiturgicalSummary | null {
     if (!day) return null;
 
-    const seasonRaw = day.seasons?.[0] || 'ORDINARY_TIME';
-    let season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
-
-    // Holy Week override
-    if (day.periods?.includes('HOLY_WEEK')) {
-      season = 'HOLY_WEEK';
-    }
-
-    const translatedSeason = SEASON_NAMES[language]?.[season] || day.seasonNames?.[0] || season;
-    const weekNum = day.calendar?.weekOfSeason || 0;
     const theme = normalizeLiturgicalColor(day).theme;
-
-    let text: string;
-    if (season === 'HOLY_WEEK') {
-      text = language === 'la' ? 'Hebdomada Sancta' : 'Semana Santa';
-    } else if (weekNum > 0) {
-      text = `${language === 'la' ? 'Hebdomada' : 'Semana'} ${weekNum} de ${translatedSeason}`;
-    } else {
-      text = translatedSeason;
-    }
+    const text = getFullLiturgicalName(day, language);
+    const seasonRaw = day.seasons?.[0] || 'ORDINARY_TIME';
+    const season = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
+    const weekNum = day.calendar?.weekOfSeason || 0;
 
     return { text, theme, season, weekNum };
   },

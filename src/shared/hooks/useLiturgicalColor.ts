@@ -5,7 +5,7 @@ import { getLiturgicalDayInfo, normalizeLiturgicalColor } from '@shared/lib/litu
 
 /**
  * Determines the liturgical color for today using Romcal,
- * applying the same normalization as DayCard.tsx.
+ * applying the same normalization as LiturgicalCard.tsx.
  *
  * Returns a hex color string and its full ColorTheme object.
  */
@@ -15,7 +15,8 @@ export function useTodayLiturgicalColor(language: 'es' | 'la' = 'es') {
   useEffect(() => {
     async function loadColor() {
       try {
-        const todayStr = new Date().toISOString().split('T')[0];
+        const now = new Date();
+        const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
         const today = await getLiturgicalDayInfo(todayStr, language);
 
         if (today) {

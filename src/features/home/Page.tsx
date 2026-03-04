@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, Book, Church, Heart } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
-import DayCard from '@features/calendar/components/cards/DayCard';
-import { useCalendar } from '@features/calendar/hooks/useCalendar';
 import { useLayout } from '@app/layout/LayoutContext';
 
 interface PageProps {
@@ -12,20 +10,11 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({ language }) => {
   const navigate = useNavigate();
-  const { data: calendarData, generateData } = useCalendar();
   const { setHeaderProps } = useLayout();
-  const [targetYear] = React.useState(new Date().getFullYear());
 
   useEffect(() => {
     setHeaderProps({}); // Reset header to default
   }, [setHeaderProps]);
-
-  React.useEffect(() => {
-    generateData(targetYear, language);
-  }, [targetYear, language, generateData]);
-
-  const todayStr = new Date().toISOString().split('T')[0];
-  const todayData = calendarData[todayStr]?.[0];
 
   const content = {
     es: {
@@ -147,23 +136,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="bg-[#fefdfa] border-b border-[#c49b9b]/20 py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-center items-center">
-            {todayData && (
-              <div className="w-full max-w-2xl transform transition-all duration-500 animate-in fade-in slide-in-from-top-2">
-                <div
-                  onClick={() => navigate('/calendar')}
-                  className="cursor-pointer hover:scale-[1.01] active:scale-95 transition-all"
-                >
-                  <DayCard day={todayData} isToday={true} language={language} />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
       <div className="flex-1 flex flex-col pt-4">
         <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 w-full">

@@ -1,7 +1,10 @@
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+import { la } from '@shared/lib/locales';
 import Spain_Es from '@shared/lib/romcal/es.js';
 import Spain_La from '@shared/lib/romcal/la.js';
 import Romcal from '@shared/lib/romcal/romcal.js';
-import { COLOR_MAP } from '@shared/constants/config';
+import { COLOR_MAP, ROMCAL_MAP } from '@shared/constants/config';
 import type { ColorTheme, LiturgicalColor, LiturgicalDay } from '@shared/types';
 
 /**
@@ -38,6 +41,75 @@ export function createRomcalInstance(language: 'es' | 'la' = 'es') {
 export async function getLiturgicalYearData(year: number, language: 'es' | 'la' = 'es') {
   const romcal = createRomcalInstance(language);
   return await romcal.generateCalendar(year);
+}
+
+export const SEASON_NAMES: Record<string, Record<string, string>> = {
+  es: {
+    ADVENT: 'Adviento',
+    CHRISTMAS: 'Navidad',
+    LENT: 'Cuaresma',
+    EASTER: 'Pascua',
+    ORDINARY_TIME: 'Tiempo Ordinario',
+    HOLY_WEEK: 'Semana Santa',
+  },
+  la: {
+    ADVENT: 'Adventus',
+    CHRISTMAS: 'Nativitatis',
+    LENT: 'Quadragesima',
+    EASTER: 'Paschae',
+    ORDINARY_TIME: 'Tempus per Annum',
+    HOLY_WEEK: 'Hebdomada Sancta',
+  },
+};
+
+function getOrdinal(n: number, lang: 'es' | 'la'): string {
+  if (lang === 'la') {
+    const ordinals = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+    return ordinals[n] || n.toString();
+  }
+  return `${n}ª`;
+}
+
+/**
+ * Generates a full liturgical name including weekday and week of season.
+ * Example: "Martes de la 2ª semana de Cuaresma"
+ */
+export function getFullLiturgicalName(day: LiturgicalDay, lang: 'es' | 'la'): string {
+  if (!day) return '';
+
+  // Parse YYYY-MM-DD without timezone shift
+  const dateStr = day.date.split('T')[0];
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const dateObj = new Date(y, m - 1, d);
+
+  const currentLocale = lang === 'la' ? la : es;
+  const weekday = format(dateObj, 'EEEE', { locale: currentLocale });
+  const capitalizedWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+
+  const seasonRaw = day.seasons?.[0] || 'ORDINARY_TIME';
+  const mappedSeason = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
+  const translatedSeason =
+    SEASON_NAMES[lang]?.[mappedSeason] || day.seasonNames?.[0] || mappedSeason;
+  const weekNum = day.calendar?.weekOfSeason || 0;
+
+  if (day.periods?.includes('HOLY_WEEK')) {
+    const holyDay = lang === 'la' ? 'Hebdomada Sancta' : 'Semana Santa';
+    const link = lang === 'la' ? 'in' : 'de';
+    return `${capitalizedWeekday} ${link} ${holyDay}`;
+  }
+
+  if (weekNum > 0) {
+    const ordinal = getOrdinal(weekNum, lang);
+    if (lang === 'la') {
+      // Latin format: "Feria IV in hebdomada II Quadragesimae" or "Feria IV in II hebdomada Quadragesima"
+      // Using simpler structure: "Feria IV in II hebdomada Quadragesima"
+      return `${capitalizedWeekday} in ${ordinal} hebdomada ${translatedSeason}`;
+    }
+    // Spanish format: "Miércoles de la 2ª semana de Cuaresma"
+    return `${capitalizedWeekday} de la ${ordinal} semana de ${translatedSeason}`;
+  }
+
+  return day.name;
 }
 
 /**

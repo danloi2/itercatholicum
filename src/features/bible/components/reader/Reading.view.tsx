@@ -27,7 +27,7 @@ const ReadingView: React.FC<ReadingViewProps> = ({
   selectedChapterNumber,
 }) => {
   const containerClassName =
-    'pb-28 max-w-4xl mx-auto px-4 md:px-6 animate-in fade-in duration-700 mt-6';
+    'pb-28 max-w-6xl mx-auto px-0 md:px-4 animate-in fade-in duration-700 mt-2';
 
   if (!isSingleChapter) {
     return (
@@ -59,20 +59,18 @@ const ReadingView: React.FC<ReadingViewProps> = ({
 
   return (
     <div className={containerClassName}>
-      <div className="bg-white/40 p-6 md:p-8 rounded-2xl shadow-sm border border-[#c49b9b]/20">
-        <ReadingContent
-          content={chapters[0]}
-          otherContent={otherBookData?.chapters.find(
-            (c: ChapterData) => c.numerus === selectedChapterNumber
-          )}
-          startVerse={verses.start}
-          endVerse={verses.end}
-          bookName={selectedBookName}
-          chapter={selectedChapterNumber}
-          language={language}
-          otherLanguage={language === 'es' ? 'la' : 'es'}
-        />
-      </div>
+      <ReadingContent
+        content={chapters[0]}
+        otherContent={otherBookData?.chapters.find(
+          (c: ChapterData) => c.numerus === selectedChapterNumber
+        )}
+        startVerse={verses.start}
+        endVerse={verses.end}
+        bookName={selectedBookName}
+        chapter={selectedChapterNumber}
+        language={language}
+        otherLanguage={language === 'es' ? 'la' : 'es'}
+      />
     </div>
   );
 };

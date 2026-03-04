@@ -52,6 +52,8 @@
 @theme inline {
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'EB Garamond', Georgia, serif;
+  --font-bible: var(--font-serif);
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -83,5 +85,5 @@
 }
 
 .scalable-content {
-  zoom: var(--font-scale, 1);
+  font-size: calc(1rem * var(--font-scale, 1));
 }

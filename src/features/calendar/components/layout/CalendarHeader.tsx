@@ -1,10 +1,14 @@
 import { useMemo, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+import { la } from '@shared/lib/locales';
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
 import { SEASON_INFO } from '@shared/constants/config';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@ui/collapsible';
 import type { ColorTheme, SeasonInfo } from '@shared/types';
+import { LiturgicalDatePicker } from '../widgets/LiturgicalDatePicker';
 
 interface CalendarHeaderProps {
   view: 'year' | 'week';
@@ -22,6 +26,8 @@ interface CalendarHeaderProps {
   onPrevWeek?: () => void;
   onNextWeek?: () => void;
   theme?: ColorTheme; // To allow coloring the header based on the week's liturgical season
+  selectedDate?: Date;
+  onDateSelect?: (date: Date | undefined) => void;
 }
 
 export default function CalendarHeader({
@@ -36,6 +42,8 @@ export default function CalendarHeader({
   onPrevWeek,
   onNextWeek,
   theme,
+  selectedDate,
+  onDateSelect,
 }: CalendarHeaderProps) {
   const [navPortalTarget, setNavPortalTarget] = useState<HTMLElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -55,11 +63,18 @@ export default function CalendarHeader({
   const handleNextYear = () => onYearChange(year + 1);
 
   const displaySeason = useMemo(() => {
+    if (view === 'year' && onDateSelect) {
+      if (selectedDate) {
+        return format(selectedDate, 'PPP', { locale: language === 'la' ? la : es });
+      }
+      return language === 'la' ? 'Eligere Diem' : 'Elige un Día';
+    }
+
     if (season === 'none') return language === 'la' ? 'Totus Annus' : 'Todo el Año';
     const info = SEASON_INFO[season];
     if (!info) return season;
     return language === 'la' ? (info as SeasonInfo).latTitle : (info as SeasonInfo).title;
-  }, [season, language]);
+  }, [selectedDate, season, language, view, onDateSelect]);
 
   if (!navPortalTarget) return null;
 
@@ -102,70 +117,83 @@ export default function CalendarHeader({
         <div className="flex flex-col items-center justify-center text-center px-1 min-w-[120px] lg:min-w-[150px]">
           {view === 'year' ? (
             <div className="flex flex-col items-center">
-              <h2 className="text-base md:text-lg font-bold text-[#5c4033] leading-none tracking-tight">
+              <h2 className="text-[1em] md:text-[1.125em] font-bold text-[#5c4033] leading-none tracking-tight">
                 {year - 1} / {year}
               </h2>
-              <Collapsible open={isOpen} onOpenChange={setIsOpen} className="relative z-50">
-                <CollapsibleTrigger asChild>
-                  <button className="flex items-center justify-center gap-1 text-[10px] md:text-xs font-semibold mt-1 text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
-                    {displaySeason}
-                    <ChevronDown
-                      className={cn(
-                        'h-3 w-3 transition-transform duration-300',
-                        isOpen && 'rotate-180'
-                      )}
-                    />
-                  </button>
-                </CollapsibleTrigger>
-
-                <CollapsibleContent className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[220px] bg-white rounded-xl shadow-xl border border-stone-100 overflow-hidden animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 duration-200">
-                  <div className="flex flex-col max-h-[300px] overflow-y-auto py-1">
-                    <button
-                      onClick={() => {
-                        onSeasonChange?.('none');
-                        setIsOpen(false);
-                      }}
-                      className={cn(
-                        'px-3 py-2 text-sm text-left hover:bg-stone-50 transition-colors font-medium border-l-2',
-                        season === 'none'
-                          ? 'border-[#8B0000] text-[#8B0000] bg-stone-50'
-                          : 'border-transparent text-stone-600'
-                      )}
-                    >
-                      {language === 'la' ? 'Totus Annus' : 'Todo el Año'}
+              {onDateSelect && view === 'year' ? (
+                <LiturgicalDatePicker
+                  date={selectedDate}
+                  onSelect={onDateSelect}
+                  language={language}
+                  trigger={
+                    <button className="flex items-center justify-center gap-[0.25em] text-[0.65em] md:text-[0.75em] font-semibold mt-[0.25em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
+                      {displaySeason}
+                      <ChevronDown className="h-[1em] w-[1em] transition-transform duration-300" />
                     </button>
-                    {Object.entries(SEASON_INFO).map(([key, info]) => {
-                      const name =
-                        language === 'la'
-                          ? (info as SeasonInfo).latTitle
-                          : (info as SeasonInfo).title;
-                      return (
-                        <button
-                          key={key}
-                          onClick={() => {
-                            onSeasonChange?.(key);
-                            setIsOpen(false);
-                          }}
-                          className={cn(
-                            'px-3 py-2 text-sm text-left hover:bg-stone-50 transition-colors font-medium border-l-2',
-                            season === key
-                              ? 'border-[#8B0000] text-[#8B0000] bg-stone-50'
-                              : 'border-transparent text-stone-600'
-                          )}
-                        >
-                          {name}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
+                  }
+                />
+              ) : (
+                <Collapsible open={isOpen} onOpenChange={setIsOpen} className="relative z-50">
+                  <CollapsibleTrigger asChild>
+                    <button className="flex items-center justify-center gap-[0.25em] text-[0.65em] md:text-[0.75em] font-semibold mt-[0.25em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
+                      {displaySeason}
+                      <ChevronDown
+                        className={cn(
+                          'h-[1em] w-[1em] transition-transform duration-300',
+                          isOpen && 'rotate-180'
+                        )}
+                      />
+                    </button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="absolute top-[calc(100%+0.5em)] left-1/2 -translate-x-1/2 w-[14em] bg-white rounded-xl shadow-xl border border-stone-100 overflow-hidden animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 duration-200">
+                    <div className="flex flex-col max-h-[18em] overflow-y-auto py-[0.25em]">
+                      <button
+                        onClick={() => {
+                          onSeasonChange?.('none');
+                          setIsOpen(false);
+                        }}
+                        className={cn(
+                          'px-[0.75em] py-[0.5em] text-[0.875em] text-left hover:bg-stone-50 transition-colors font-medium border-l-2',
+                          season === 'none'
+                            ? 'border-[#8B0000] text-[#8B0000] bg-stone-50'
+                            : 'border-transparent text-stone-600'
+                        )}
+                      >
+                        {language === 'la' ? 'Totus Annus' : 'Todo el Año'}
+                      </button>
+                      {Object.entries(SEASON_INFO).map(([key, info]) => {
+                        const name =
+                          language === 'la'
+                            ? (info as SeasonInfo).latTitle
+                            : (info as SeasonInfo).title;
+                        return (
+                          <button
+                            key={key}
+                            onClick={() => {
+                              onSeasonChange?.(key);
+                              setIsOpen(false);
+                            }}
+                            className={cn(
+                              'px-[0.75em] py-[0.5em] text-[0.875em] text-left hover:bg-stone-50 transition-colors font-medium border-l-2',
+                              season === key
+                                ? 'border-[#8B0000] text-[#8B0000] bg-stone-50'
+                                : 'border-transparent text-stone-600'
+                            )}
+                          >
+                            {name}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              )}
             </div>
           ) : (
             <div className="flex flex-col items-center">
               <h2
                 className={cn(
-                  'text-base md:text-lg font-bold capitalize leading-none tracking-tight transition-colors duration-500',
+                  'text-[1em] md:text-[1.125em] font-bold capitalize leading-none tracking-tight transition-colors duration-500',
                   theme ? theme.text : 'text-[#5c4033]'
                 )}
               >
@@ -173,7 +201,7 @@ export default function CalendarHeader({
               </h2>
               <div
                 className={cn(
-                  'text-[10px] md:text-xs font-semibold mt-1 transition-colors duration-500 opacity-80 leading-none',
+                  'text-[0.65em] md:text-[0.75em] font-semibold mt-[0.25em] transition-colors duration-500 opacity-80 leading-none',
                   theme ? theme.text : 'text-[#c49b9b]'
                 )}
               >

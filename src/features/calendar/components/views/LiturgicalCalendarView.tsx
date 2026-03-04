@@ -1,19 +1,61 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
-import HorizontalDayCard from '../cards/HorizontalDayCard';
+import { LiturgicalCard } from '../cards/LiturgicalCard';
 import LiturgicalSeasonBanner from '../layout/LiturgicalSeasonBanner';
 import { ROMCAL_MAP } from '@shared/constants/config';
 
 interface LiturgicalCalendarViewProps {
   data: CalendarData;
   language: 'es' | 'la';
+  selectedDate?: Date;
+}
+
+/**
+ * Helper component that applies a dramatic vertical focus scaling.
+ */
+function VerticalFocusCard({ children, id }: { children: React.ReactNode; id?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'center center', 'end start'],
+  });
+
+  // Continuous Focus Curve: Wider peaks to ensure no gaps during scroll
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 0.65, 1], [0.7, 1.0, 1.25, 1.0, 0.7]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.4, 0.9, 1, 0.9, 0.4]);
+
+  return (
+    <motion.div
+      ref={ref}
+      id={id}
+      style={{ scale, opacity }}
+      className="w-full origin-center py-4 overflow-visible relative"
+    >
+      {children}
+    </motion.div>
+  );
 }
 
 export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
   data,
   language,
+  selectedDate,
 }) => {
-  const todayStr = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+  // Handle scrolling when selectedDate changes from header
+  useEffect(() => {
+    if (selectedDate) {
+      const dateStr = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`;
+      const el = document.getElementById(dateStr);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, [selectedDate]);
 
   const elements = useMemo(() => {
     const sortedDates = Object.keys(data).sort();
@@ -47,24 +89,27 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
           ? new Date(principal.date).getFullYear()
           : new Date().getFullYear();
         result.push(
-          <LiturgicalSeasonBanner
-            key={`banner-${date}`}
-            seasonKey={infoKey}
-            language={language}
-            sundayCycle={sundayCycle}
-            year={year}
-          />
+          <VerticalFocusCard key={`banner-${date}`}>
+            <LiturgicalSeasonBanner
+              seasonKey={infoKey}
+              language={language}
+              sundayCycle={sundayCycle}
+              year={year}
+            />
+          </VerticalFocusCard>
         );
         currentSeasonHeader = season;
       }
 
       result.push(
-        <HorizontalDayCard
-          key={date}
-          day={principal}
-          isToday={date === todayStr}
-          language={language}
-        />
+        <VerticalFocusCard key={date} id={date === todayStr ? 'today' : date}>
+          <LiturgicalCard
+            day={principal}
+            isToday={date === todayStr}
+            language={language}
+            variant="standard"
+          />
+        </VerticalFocusCard>
       );
     });
 
@@ -82,7 +127,14 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-2xl mx-auto px-4 pb-24">
+    <div
+      className="flex flex-col gap-0 w-full mx-auto pb-64 pt-32 relative overflow-visible px-4 md:px-12"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+      }}
+    >
       {elements}
     </div>
   );
