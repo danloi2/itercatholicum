@@ -24,13 +24,12 @@ function VerticalFocusCard({ children, id }: { children: React.ReactNode; id?: s
 
   // Continuous Focus Curve: Wider peaks to ensure no gaps during scroll
   const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 0.65, 1], [0.7, 1.0, 1.25, 1.0, 0.7]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.4, 0.9, 1, 0.9, 0.4]);
 
   return (
     <motion.div
       ref={ref}
       id={id}
-      style={{ scale, opacity }}
+      style={{ scale }}
       className="w-full origin-center py-4 overflow-visible relative"
     >
       {children}
@@ -127,14 +126,7 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
   }
 
   return (
-    <div
-      className="flex flex-col gap-0 w-full mx-auto pb-64 pt-32 relative overflow-visible px-4 md:px-12"
-      style={{
-        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-        WebkitMaskImage:
-          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-      }}
-    >
+    <div className="flex flex-col gap-0 w-full mx-auto pb-64 pt-32 relative overflow-visible px-4 md:px-12">
       {elements}
     </div>
   );
