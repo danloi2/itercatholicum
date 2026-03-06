@@ -52,29 +52,26 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
   className,
 }) => {
   const day = events?.[0];
-  if (!day) return null;
 
-  const { theme, key: normalizedKey } = normalizeLiturgicalColor(day);
-  const dateObj = new Date(day.date);
-  const currentLocale = language === 'la' ? la : es;
-
-  const weekday = format(dateObj, 'EEE', { locale: currentLocale });
-  const month = format(dateObj, 'MMM', { locale: currentLocale });
-
-  const todayLabel = language === 'la' ? 'HODIE' : 'HOY';
-  const localizedRank = RANK_MAP[language]?.[day.rank.toUpperCase()] || day.rank;
+  const liturgicalContext = useMemo(() => {
+    if (!day) return null;
+    return normalizeLiturgicalColor(day);
+  }, [day]);
 
   // Extract secondary items with titles and colors
   const secondaryItems = useMemo(() => {
+    if (!day || !liturgicalContext) return [];
+
     const items: Array<{ name: string; hex: string; showDot: boolean }> = [];
     const seenNames = new Set([day.name]);
+    const primaryKey = liturgicalContext.key;
 
     // Add other events from the array
     events.slice(1).forEach((e) => {
       if (!seenNames.has(e.name)) {
         const { theme: eTheme, key: eKey } = normalizeLiturgicalColor(e);
         // Show dot if it's a special rank OR if colors differ from the primary
-        const showDot = e.rank !== 'WEEKDAY' || eKey !== normalizedKey;
+        const showDot = e.rank !== 'WEEKDAY' || eKey !== primaryKey;
         items.push({ name: e.name, hex: eTheme.hex, showDot });
         seenNames.add(e.name);
       }
@@ -84,13 +81,25 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
     if (day.weekday && !seenNames.has(day.weekday.name)) {
       const { theme: wTheme, key: wKey } = normalizeLiturgicalColor(day.weekday);
       // For the nested weekday, show dot if its color differs from the primary theme
-      const showDot = wKey !== normalizedKey;
+      const showDot = wKey !== primaryKey;
       items.push({ name: day.weekday.name, hex: wTheme.hex, showDot });
       seenNames.add(day.weekday.name);
     }
 
     return items;
-  }, [events, day.name, day.weekday, normalizedKey]);
+  }, [events, day, liturgicalContext]);
+
+  if (!day || !liturgicalContext) return null;
+
+  const { theme, key: normalizedKey } = liturgicalContext;
+  const dateObj = new Date(day.date);
+  const currentLocale = language === 'la' ? la : es;
+
+  const weekday = format(dateObj, 'EEE', { locale: currentLocale });
+  const month = format(dateObj, 'MMM', { locale: currentLocale });
+
+  const todayLabel = language === 'la' ? 'HODIE' : 'HOY';
+  const localizedRank = RANK_MAP[language]?.[day.rank.toUpperCase()] || day.rank;
 
   // Responsive and variant-based size logic
   const isCompact = variant === 'compact';
