@@ -1,0 +1,230 @@
+[
+  {
+    "name": "Saint Ambrose",
+    "years": "c. 339–397",
+    "description": "Saint Ambrose, one of the four traditional Doctors of the Latin Church and Bishop of Milan, was a fierce opponent of Arianism in the West. Born in Trier to a Roman noble family, he served as governor before being unexpectedly acclaimed Bishop of Milan in 374 while still a catechumen. Ambrose defended Church autonomy against imperial interference, famously compelling Emperor Theodosius I to public penance. His theological writings, pastoral sermons influenced by classical rhetoric, and hymns shaped Western Christianity and deeply influenced the conversion of Augustine of Hippo.",
+    "notable_works": ["De Officiis Ministrorum", "Exameron", "De Sacramentis"]
+  },
+  {
+    "name": "Saint Augustine of Hippo",
+    "years": "354–430",
+    "description": "Saint Augustine, Bishop of Hippo and one of the four traditional Doctors of the Latin Church, is known as the Doctor of Grace. A prolific theologian and philosopher, his conversion from a secular life influenced Western Christianity’s understanding of grace, sin, and salvation. As bishop, he integrated Platonic thought with biblical revelation in comprehensive works addressing divine justice, the nature of the Church, and ethics. His confessional style and foundational City of God remain central texts in Christian theology.",
+    "notable_works": ["Confessions", "The City of God", "On the Trinity"]
+  },
+  {
+    "name": "Saint Jerome",
+    "years": "c. 347–420",
+    "description": "Saint Jerome, one of the four traditional Doctors of the Latin Church, was a biblical scholar and ascetic whose efforts bridged classical knowledge and Christian doctrine. Educated in Rome and fluent in Greek and Hebrew, he dedicated his life to biblical scholarship and asceticism, producing the Latin Vulgate translation that became the Catholic Church’s authoritative Bible. He wrote numerous commentaries on Scripture and engaged in theological controversies defending ascetic ideals and scriptural accuracy. Jerome’s efforts influenced medieval biblical studies profoundly.",
+    "notable_works": ["Latin Vulgate Bible", "Commentaries on Isaiah", "De Viris Illustribus"]
+  },
+  {
+    "name": "Saint Gregory I (the Great)",
+    "years": "c. 540–604",
+    "description": "Saint Gregory I, Pope and Fourth and last of the traditional Doctors of the Latin Church, was a key figure in developing the medieval papacy and Gregorian chant. He implemented extensive reforms in the Church's administration and liturgy and emphasized pastoral care through his prolific letters and homilies. His theological and political leadership shaped the Church’s role in medieval Europe and its relations with secular powers.",
+    "notable_works": ["Pastoral Rule", "Dialogues", "Commentary on Job"]
+  },
+  {
+    "name": "Saint Thomas Aquinas",
+    "years": "1225–1274",
+    "description": "Saint Thomas Aquinas, Dominican philosopher and theologian, was called Angelic Doctor. He synthesized Aristotelian philosophy with Christian theology, creating a comprehensive intellectual framework for understanding God, morality, and natural law. His masterpiece Summa Theologica systematically addresses theological questions with clarity and precision, profoundly influencing Catholic doctrine and Western philosophy. Aquinas is renowned for harmonizing faith and reason in his theological method.",
+    "notable_works": ["Summa Theologica", "Summa Contra Gentiles", "Catena Aurea"]
+  },
+  {
+    "name": "Saint Athanasius",
+    "years": "297–373",
+    "description": "Saint Athanasius, Bishop of Alexandria and Dominant opponent of Arianism, was instrumental in defining orthodox Trinitarian theology. He wrote extensively on the incarnation of Christ and the divinity of the Holy Spirit, shaping early Church doctrine. His theological works and leadership at multiple synods established key dogmatic foundations still upheld today.",
+    "notable_works": ["On the Incarnation", "Four Discourses Against the Arians", "Life of Antony"]
+  },
+  {
+    "name": "Saint Basil the Great",
+    "years": "330–379",
+    "description": "Saint Basil, Bishop of Caesarea and Father of monasticism, was a bishop, theologian, and monastic founder whose teachings significantly influenced Eastern Orthodox theology and Christian monasticism. He wrote extensively on the Holy Spirit and Trinitarian doctrine, and his liturgical reforms helped shape Eastern Christian worship practices. Basil’s emphasis on charity and community life strengthened the role of monasticism in Church tradition.",
+    "notable_works": ["Hexaemeron", "On the Holy Spirit"]
+  },
+  {
+    "name": "Saint Gregory of Nazianzus",
+    "years": "329–390",
+    "description": "Saint Gregory, Archbishop of Constantinople and Father of Trinitarian doctrine, was known as the 'Theologian.' His eloquent theological orations and poetry deeply influenced Christian thought on the nature of God as Trinity. Gregory played a vital role in the Council of Constantinople and left a rich legacy of theological writings and personal letters.",
+    "notable_works": ["Five Theological Orations", "Letters"]
+  },
+  {
+    "name": "Saint John Chrysostom",
+    "years": "347–407",
+    "description": "Saint John Chrysostom, Archbishop of Constantinople and Father of homiletics, was famed for his extraordinary preaching skills, earning him the name 'Golden Mouth.' His homilies addressed social justice, Christian ethics, and pastoral care, and his biblical commentaries clarified Scripture for a broad audience. Chrysostom’s legacy includes the Divine Liturgy of St. John Chrysostom used widely in Eastern Christianity.",
+    "notable_works": ["Homilies on the Statues", "Commentaries on Matthew"]
+  },
+  {
+    "name": "Saint Bonaventure",
+    "years": "1221–1274",
+    "description": "Saint Bonaventure, Franciscan friar and Doctor of the Church, integrated mystical spirituality with rigorous academic theology, emphasizing the soul's journey to God. As Minister General of the Franciscans and cardinal, he influenced the Order's direction and contributed to major theological syntheses of his age. His writings combine philosophy, theology, and spiritual reflection, showing a deep love for God’s mercy.",
+    "notable_works": ["The Journey of the Mind to God", "Commentary on the Sentences", "Collationes in Hexaemeron"]
+  },
+  {
+    "name": "Saint Anselm of Canterbury",
+    "years": "1033–1109",
+    "description": "Saint Anselm, Archbishop of Canterbury and Philosopher, formulated the ontological argument for God’s existence and advanced the satisfaction theory of atonement. His theological works shaped medieval scholasticism, blending faith with reason and emphasizing God’s justice and mercy. Anselm’s writings remain influential in both theology and philosophy, particularly concerning the nature of faith.",
+    "notable_works": ["Proslogion", "Cur Deus Homo", "De Conceptu Virginali et de Originali Peccato"]
+  },
+  {
+    "name": "Saint Isidore of Seville",
+    "years": "c. 560–636",
+    "description": "Saint Isidore, Archbishop of Seville and Father of encyclopedism, was a scholar and encyclopedist credited with preserving classical knowledge through the early Middle Ages. His work *Etymologiae* compiled vast amounts of knowledge across disciplines, serving as a key intellectual resource for centuries. Isidore’s efforts helped bridge the classical and medieval worlds and supported the Church’s educational mission.",
+    "notable_works": ["Etymologiae"]
+  },
+  {
+    "name": "Saint Peter Chrysologus",
+    "years": "c. 380–450",
+    "description": "Saint Peter Chrysologus, Bishop of Ravenna and Father of homiletics, was renowned for his brief but powerful sermons, earning him the title 'Doctor of the Word.' His preaching emphasized Christ’s incarnation and redemptive work, engaging laity with accessible theological insights. Though few works survive, his homilies influenced later patristic preaching and theology.",
+    "notable_works": ["Homilies"]
+  },
+  {
+    "name": "Saint Leo I (the Great)",
+    "years": "c. 400–461",
+    "description": "Saint Leo I, Pope and Father of Chalcedonian Creed, was a key theological leader who articulated the dual nature of Christ at the Council of Chalcedon and strongly asserted the primacy of the Roman See. His writings defended orthodox Christology against heresies and asserted papal authority in both spiritual and temporal matters. Leo's sermons and letters shaped medieval papal doctrine and ecclesiastical governance.",
+    "notable_works": ["Tomes", "Sermons"]
+  },
+  {
+    "name": "Saint Peter Damian",
+    "years": "1007–1072",
+    "description": "Saint Peter Damian, Cardinal and Father of clerical celibacy, was a fierce advocate for clerical celibacy and moral reform within the Church during the 11th century. His writings condemned simony and laxity among clergy, seeking to restore discipline and holiness. Damian’s influence contributed to the broader Gregorian Reform movement that shaped Church structure and spirituality.",
+    "notable_works": ["Liber Gomorrhianus"]
+  },
+  {
+    "name": "Saint Bernard of Clairvaux",
+    "years": "c. 1090–1153",
+    "description": "Saint Bernard, Abbot of Clairvaux and Father of monasticism, revitalized monastic life and played a leading role in promoting the Second Crusade. His mystical theology emphasized love as the path to union with God and influenced medieval spirituality deeply. Bernard’s numerous sermons, letters, and treatises strengthened both monasticism and ecclesial reform.",
+    "notable_works": ["On Loving God", "Sermons"]
+  },
+  {
+    "name": "Saint Hilary of Poitiers",
+    "years": "c. 315–367",
+    "description": "Saint Hilary, Bishop of Poitiers and Father of Trinitarian theology, was one of the first Western theologians to articulate the doctrine of the Trinity clearly. Known as 'the Athanasius of the West,' his writings were instrumental in combating heresies and promoting orthodox doctrine. Hilary’s theological works laid groundwork for later Trinitarian theology in the Latin Church.",
+    "notable_works": ["On the Trinity"]
+  },
+  {
+    "name": "Saint Alphonsus Liguori",
+    "years": "1696–1787",
+    "description": "Saint Alphonsus, Bishop and Moral theologian, was a renowned for his compassionate approach to moral theology and pastoral care. His prolific writings addressed conscience, ethics, and devotion, guiding clergy and laity alike in practical spirituality. Alphonsus’s blend of rigor and mercy has had lasting influence on Catholic moral teaching.",
+    "notable_works": ["Theologia Moralis", "Glories of Mary"]
+  },
+  {
+    "name": "Saint Francis de Sales",
+    "years": "1567–1622",
+    "description": "Saint Francis de Sales, Bishop of Geneva and Spiritual author, is noted for his gentle and accessible approach to Christian spirituality during the Catholic Reformation. He emphasized devotion in everyday life and the universal call to holiness, appealing to laypeople and clergy alike. His treatises combined practical advice with profound theological insights, fostering spiritual growth.",
+    "notable_works": ["Introduction to the Devout Life", "Treatise on the Love of God"]
+  },
+  {
+    "name": "Saint Cyril of Alexandria",
+    "years": "376–444",
+    "description": "Saint Cyril, Patriarch of Alexandria and Father of Christological orthodoxy, was a key figure in defining Christological orthodoxy at the Council of Ephesus, opposing Nestorianism vigorously. His theological writings emphasized the unity of Christ’s divine and human natures and defended the title of Mary as Theotokos. Cyril’s leadership and writings shaped early Christian doctrine and contributed significantly to the Church’s theological tradition.",
+    "notable_works": ["Commentary on the Gospel of John", "Letters and Sermons"]
+  },
+  {
+    "name": "Saint Cyril of Jerusalem",
+    "years": "c. 313–386",
+    "description": "Saint Cyril, Bishop of Jerusalem and Father of catechetics, was known for his catechetical lectures that provided comprehensive instruction on Christian faith and practice for new converts. His detailed *Catechetical Lectures* cover topics from the Creed and sacraments to moral living, and have been influential in liturgical tradition. Cyril’s work aimed to strengthen the faith and formation of early Christians in a complex religious context.",
+    "notable_works": ["Catechetical Lectures"]
+  },
+  {
+    "name": "Saint John of Damascus",
+    "years": "675–749",
+    "description": "Saint John, Monk and Father of icon veneration, was a staunch defender of icons during the iconoclastic controversies and a leading orthodox theologian of the Eastern Church. His systematic theological works articulate the doctrines of the Trinity and Incarnation and present a synthesis of patristic thought. John’s hymns and writings have greatly influenced Eastern Orthodox liturgy and theology.",
+    "notable_works": ["Exact Exposition of the Orthodox Faith"]
+  },
+  {
+    "name": "Saint Bede the Venerable",
+    "years": "673–735",
+    "description": "Saint Bede, English monk and Father of English history, is often called the 'Father of English History' for his *Ecclesiastical History of the English People*. He composed biblical commentaries and theological treatises that contributed to biblical scholarship and the education of the Church. Bede’s works preserved early medieval knowledge and helped shape the English Christian identity.",
+    "notable_works": ["Ecclesiastical History of the English People"]
+  },
+  {
+    "name": "Saint Ephrem the Syrian",
+    "years": "306–373",
+    "description": "Saint Ephrem, Deacon and Hymnographer, is among the greatest Syriac theologians and poets, known for his poetic defense of orthodoxy and apocalyptic visions. His hymns and sermons shaped Syriac Christian worship and doctrine, emphasizing Christ’s incarnation and salvation. Ephrem’s theological and poetic legacy endures in Eastern Christianity and beyond.",
+    "notable_works": ["Hymns and Homilies"]
+  },
+  {
+    "name": "Saint Peter Canisius",
+    "years": "1521–1597",
+    "description": "Saint Peter, Jesuit priest and Father of Catholic education, was instrumental in promoting the Catholic Reformation in German-speaking lands through his catechisms and preaching. His clear, accessible teaching helped revitalize faith among clergy and laity, countering Protestant influences. Canisius’ catechisms became standard texts in Catholic education for centuries.",
+    "notable_works": ["Roman Catechism", "Catechismus Minor"]
+  },
+  {
+    "name": "Saint John of the Cross",
+    "years": "1542–1591",
+    "description": "Saint John, Carmelite mystic and Father of mystical theology, articulated the dark night of the soul as part of the mystical journey to divine union. His writings combine poetic beauty with profound theological insight into the soul’s purification and illumination. His works inspired Catholic spirituality and have been recognized as masterpieces of mystical literature.",
+    "notable_works": ["Ascent of Mount Carmel", "Dark Night of the Soul", "Spiritual Canticle"]
+  },
+  {
+    "name": "Saint Robert Bellarmine",
+    "years": "1542–1621",
+    "description": "Saint Robert, Jesuit cardinal and Father of Catholic theology, was a leading figure of the Counter-Reformation, defending Catholic doctrine against Protestant critiques. His *Disputationes* systematically addressed theological controversies and clarified Catholic teachings on papal authority and grace. Bellarmine’s erudition and pastoral zeal were vital for Catholic intellectual life in the 16th and 17th centuries.",
+    "notable_works": ["Disputationes de Controversiis"]
+  },
+  {
+    "name": "Saint Albert the Great",
+    "years": "1206–1280",
+    "description": "Saint Albert, Dominican bishop and Father of Scholasticism, was a pioneering figure in integrating Aristotelian philosophy with Christian theology and the teacher of Thomas Aquinas. He contributed to a wide range of knowledge including natural sciences, philosophy, and theology, earning recognition as patron of scientists. His works laid important foundations for Scholasticism and influenced both theology and science.",
+    "notable_works": ["Summa Theologiae", "De Animalibus"]
+  },
+  {
+    "name": "Saint Anthony of Padua",
+    "years": "1195–1231",
+    "description": "Saint Anthony, Franciscan priest and Father of evangelization, was known for his powerful preaching, deep knowledge of Scripture, and miracles, becoming one of the most popular saints of the medieval Church, with a lasting devotion focused on his life and teachings.",
+    "notable_works": ["Sermons"]
+  },
+  {
+    "name": "Saint Lawrence of Brindisi",
+    "years": "1559–1619",
+    "description": "Saint Lawrence, Capuchin friar, theologian, and diplomat, played a crucial role in the Catholic Church’s post-Tridentine reforms and in preaching missions across Europe. An excellent linguist and preacher, he is remembered for his theological writings and effective pastoral work during tumultuous times. His influence extended to both Church reform and political diplomacy.",
+    "notable_works": ["Sermons and Theological Writings"]
+  },
+  {
+    "name": "Saint Teresa of Ávila",
+    "years": "1515–1582",
+    "description": "Saint Teresa, Carmelite nun and Father of Christian mysticism, reformed her order by emphasizing prayer, poverty, and simplicity, founding the Discalced Carmelites. She articulated the stages of mystical prayer and the soul’s spiritual ascent in her classic writings, contributing greatly to Christian mysticism. Recognized as a Doctor of the Church, her work revitalized Catholic spirituality during the Counter-Reformation.",
+    "notable_works": ["The Interior Castle", "The Way of Perfection"]
+  },
+  {
+    "name": "Saint Catherine of Siena",
+    "years": "1347–1380",
+    "description": "Saint Catherine, Dominican tertiary and Father of spiritual depth, was deeply involved in Church politics and reform during the Avignon Papacy. Her writings, including letters and the Dialogues, reveal profound theological insight and spiritual depth aimed at renewing the Church and society. Declared a Doctor of the Church, her legacy includes both mystical theology and active engagement with temporal matters.",
+    "notable_works": ["The Dialogue", "Letters"]
+  },
+  {
+    "name": "Saint Thérèse of Lisieux",
+    "years": "1873–1897",
+    "description": "Saint Thérèse, Discalced Carmelite nun and Father of spiritual simplicity, was known for her 'Little Way,' a spirituality that embraces childlike trust and love in daily life. Despite a brief life, her autobiography and writings inspired modern spirituality and devotion, emphasizing humility and confidence in God’s mercy. Declared Doctor of the Church in 1997, her influence extends worldwide.",
+    "notable_works": ["Story of a Soul"]
+  },
+  {
+    "name": "Saint Hildegard von Bingen",
+    "years": "1098–1179",
+    "description": "Saint Hildegard, Benedictine abbess, Father of mysticism, was renowned for her visionary theology, music, and writings on natural history and medicine. She provided a unique synthesis of spirituality, art, and science, with extensive correspondence and preaching influencing her era. Declared a Doctor of the Church in 2012, Hildegard’s legacy spans theology, mysticism, and cultural history.",
+    "notable_works": ["Scivias", "Book of Divine Works"]
+  },
+  {
+    "name": "Saint John of Avila",
+    "years": "1499–1569",
+    "description": "Saint John, Spanish priest, preacher, and Father of spiritual reform, emphasized pastoral care, holiness, and reform, influencing figures including Saint Teresa of Ávila. Declared Doctor of the Church in 2012, his deep spirituality and preaching shaped the Counter-Reformation era.",
+    "notable_works": ["Sermons and Spiritual Writings"]
+  },
+  {
+    "name": "Saint Gregory of Narek",
+    "years": "c. 945–1003",
+    "description": "Saint Gregory, Armenian abbot and Father of Armenian spirituality, was celebrated for his theological poetry and deep spiritual insight, especially in the *Book of Lamentations*. His works express a rich mystical theology, personal penitence, and divine mercy, making him a central figure in Armenian Christianity. Declared a Doctor of the Church in 2015, his legacy resonates in Eastern Christian spirituality.",
+    "notable_works": ["Book of Lamentations"]
+  },
+  {
+    "name": "Saint Irenaeus of Lyons",
+    "years": "c. 120–202",
+    "description": "Saint Irenaeus, Early bishop and Apologist, confronted heresies such as Gnosticism and developed a theology emphasizing apostolic tradition and unity of faith. His work laid foundations for orthodox Christian doctrine by linking Scripture and apostolic teaching. Irenaeus’s writings remain crucial for understanding early Church theology and combating doctrinal error.",
+    "notable_works": ["Against Heresies"]
+  },
+  {
+    "name": "Saint John Henry Newman",
+    "years": "1801–1890",
+    "description": "Saint John Henry Newman began his religious life as an Anglican priest, but after deep study and reflection, he converted to Catholicism in 1845 and was ordained a Catholic priest in 1847. He devoted himself to pastoral care and education, founding the Birmingham Oratory and serving the Catholic community with humility and zeal. In 1879, his lifetime of service was recognized when Pope Leo XIII elevated him to the rank of cardinal, a rare honor for someone who was not a bishop.",
+    "notable_works": ["Lectures on the Present Position of Catholics in England", "On the Development of Christian Doctrine", "Idea of A University"]
+  }
+]

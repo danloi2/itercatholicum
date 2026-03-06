@@ -1,8 +1,8 @@
 import { BIBLE_BOOKS } from '../constants/bibleVersions';
 
 const bibleModules = {
-  vulgata: import.meta.glob('../data/1592_vulgata_clementina_la/*.json'),
-  torres: import.meta.glob('../data/1823_torres_amat_es/*.json'),
+  vulgata: import.meta.glob('../../../shared/data/bibles/1592_vulgata_clementina_la/*.json'),
+  torres: import.meta.glob('../../../shared/data/bibles/1823_torres_amat_es/*.json'),
 };
 
 export const bibleService = {
@@ -15,8 +15,8 @@ export const bibleService = {
     const modules = version === 'vulgata' ? bibleModules.vulgata : bibleModules.torres;
     const key =
       version === 'vulgata'
-        ? `../data/1592_vulgata_clementina_la/${fileBase}.json`
-        : `../data/1823_torres_amat_es/${fileBase}.json`;
+        ? `../../../shared/data/bibles/1592_vulgata_clementina_la/${fileBase}.json`
+        : `../../../shared/data/bibles/1823_torres_amat_es/${fileBase}.json`;
 
     const loader = modules[key];
     if (!loader) throw new Error(`File not found: ${key}`);

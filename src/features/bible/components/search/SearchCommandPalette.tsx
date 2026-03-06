@@ -9,7 +9,7 @@ const bibleModules = import.meta.glob<{
       versus: Record<string, string>;
     }>;
   };
-}>('/src/features/bible/data/bibles/**/*.json');
+}>('/src/shared/data/bibles/**/*.json');
 import { BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
 
 interface BibleCommandPaletteProps {
@@ -59,7 +59,7 @@ const searchVerses = async (
         const fileBase = filename.replace('.json', '');
 
         // Construct the full path for the glob import
-        const fullPath = `/src/features/bible/data/bibles/${bibleVersion}/${fileBase}.json`;
+        const fullPath = `/src/shared/data/bibles/${bibleVersion}/${fileBase}.json`;
 
         // Lazy load the specific book data
         const loadModule = bibleModules[fullPath];

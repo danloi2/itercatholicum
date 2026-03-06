@@ -29,7 +29,7 @@ const bibleModules = import.meta.glob<{
       versus: Record<string, string>;
     }>;
   };
-}>('/src/features/bible/data/bibles/**/*.json');
+}>('/src/shared/data/bibles/**/*.json');
 
 // Normalize text for search (remove accents, lowercase)
 const normalizeText = (text: string): string => {
@@ -66,7 +66,7 @@ const searchVerses = async (
 
       try {
         const filename = language === 'es' ? book.files.torres : book.files.vulgata;
-        const bookPath = `/src/features/bible/data/bibles/${bibleVersion}/${filename}`;
+        const bookPath = `/src/shared/data/bibles/${bibleVersion}/${filename}`;
         const loadModule = bibleModules[bookPath];
 
         if (!loadModule) {
