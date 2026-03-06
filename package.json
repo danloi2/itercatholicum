@@ -35,7 +35,7 @@
     "react": "^19.2.0",
     "react-day-picker": "^9.14.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.13.0",
+    "react-router-dom": "^7.13.1",
     "romcal": "^3.0.0-dev.123",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7"
