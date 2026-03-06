@@ -53,14 +53,14 @@ export const SEASON_NAMES: Record<string, Record<string, string>> = {
   la: {
     ADVENT: 'Adventus',
     CHRISTMAS: 'Nativitatis',
-    LENT: 'Quadragesima',
-    EASTER: 'Paschae',
-    ORDINARY_TIME: 'Tempus per Annum',
+    LENT: 'Quadragesimæ',
+    EASTER: 'Paschæ',
+    ORDINARY_TIME: 'Temporis per Annum',
     HOLY_WEEK: 'Hebdomada Sancta',
   },
 };
 
-function getOrdinal(n: number, lang: 'es' | 'la'): string {
+export function getOrdinal(n: number, lang: 'es' | 'la'): string {
   if (lang === 'la') {
     const ordinals = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
     return ordinals[n] || n.toString();
@@ -99,9 +99,8 @@ export function getFullLiturgicalName(day: LiturgicalDay, lang: 'es' | 'la'): st
   if (weekNum > 0) {
     const ordinal = getOrdinal(weekNum, lang);
     if (lang === 'la') {
-      // Latin format: "Feria IV in hebdomada II Quadragesimae" or "Feria IV in II hebdomada Quadragesima"
-      // Using simpler structure: "Feria IV in II hebdomada Quadragesima"
-      return `${capitalizedWeekday} in ${ordinal} hebdomada ${translatedSeason}`;
+      // Latin format: "Feria IV Hebdomadæ II Quadragesimæ"
+      return `${capitalizedWeekday} Hebdomadæ ${ordinal} ${translatedSeason}`;
     }
     // Spanish format: "Miércoles de la 2ª semana de Cuaresma"
     return `${capitalizedWeekday} de la ${ordinal} semana de ${translatedSeason}`;

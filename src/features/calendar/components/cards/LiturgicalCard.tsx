@@ -6,7 +6,7 @@ import { RANK_MAP, CYCLE_MAP } from '@shared/constants/config';
 import { cn } from '@shared/lib/utils';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { normalizeLiturgicalColor } from '@shared/lib/liturgy-engine';
+import { normalizeLiturgicalColor, getOrdinal, SEASON_NAMES } from '@shared/lib/liturgy-engine';
 import { la } from '@shared/lib/locales';
 import type { LiturgicalDay } from '@shared/types';
 import { LiturgicalBadge, LiturgicalColorBadge } from '@shared/components/LiturgicalBadge';
@@ -257,8 +257,11 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
               >
                 <div className="flex items-center gap-2">
                   <span>
-                    {language === 'la' ? 'Hebdomada' : 'Semana'} {day.calendar.weekOfSeason}{' '}
-                    {day.seasonNames[0]}
+                    {language === 'la' ? 'Hebdomada' : 'Semana'}{' '}
+                    {getOrdinal(day.calendar.weekOfSeason, language)}{' '}
+                    {language === 'la'
+                      ? SEASON_NAMES.la[day.seasons[0].toUpperCase()] || day.seasonNames[0]
+                      : day.seasonNames[0]}
                   </span>
                 </div>
                 {isToday && (
