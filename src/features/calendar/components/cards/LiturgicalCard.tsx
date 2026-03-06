@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Card } from '@ui/card';
 import { Badge } from '@ui/badge';
 import { motion } from 'framer-motion';
@@ -8,16 +9,12 @@ import { es } from 'date-fns/locale';
 import { normalizeLiturgicalColor } from '@shared/lib/liturgy-engine';
 import { la } from '@shared/lib/locales';
 import type { LiturgicalDay } from '@shared/types';
-import {
-  LiturgicalBadge,
-  LiturgicalColorDot,
-  LiturgicalColorBadge,
-} from '@shared/components/LiturgicalBadge';
+import { LiturgicalBadge, LiturgicalColorBadge } from '@shared/components/LiturgicalBadge';
 
 export type LiturgicalCardVariant = 'standard' | 'compact' | 'vertical' | 'vertical-compact';
 
 interface LiturgicalCardProps {
-  day: LiturgicalDay;
+  events: LiturgicalDay[];
   isToday?: boolean;
   language?: 'es' | 'la';
   variant?: LiturgicalCardVariant;
@@ -48,12 +45,13 @@ const COLOR_NAME_MAP: Record<string, Record<string, string>> = {
 };
 
 export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
-  day,
+  events,
   isToday,
   language = 'es',
   variant = 'standard',
   className,
 }) => {
+  const day = events?.[0];
   if (!day) return null;
 
   const { theme, key: normalizedKey } = normalizeLiturgicalColor(day);
@@ -65,6 +63,34 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
 
   const todayLabel = language === 'la' ? 'HODIE' : 'HOY';
   const localizedRank = RANK_MAP[language]?.[day.rank.toUpperCase()] || day.rank;
+
+  // Extract secondary items with titles and colors
+  const secondaryItems = useMemo(() => {
+    const items: Array<{ name: string; hex: string; showDot: boolean }> = [];
+    const seenNames = new Set([day.name]);
+
+    // Add other events from the array
+    events.slice(1).forEach((e) => {
+      if (!seenNames.has(e.name)) {
+        const { theme: eTheme, key: eKey } = normalizeLiturgicalColor(e);
+        // Show dot if it's a special rank OR if colors differ from the primary
+        const showDot = e.rank !== 'WEEKDAY' || eKey !== normalizedKey;
+        items.push({ name: e.name, hex: eTheme.hex, showDot });
+        seenNames.add(e.name);
+      }
+    });
+
+    // Add nested weekday if it exists and hasn't been seen
+    if (day.weekday && !seenNames.has(day.weekday.name)) {
+      const { theme: wTheme, key: wKey } = normalizeLiturgicalColor(day.weekday);
+      // For the nested weekday, show dot if its color differs from the primary theme
+      const showDot = wKey !== normalizedKey;
+      items.push({ name: day.weekday.name, hex: wTheme.hex, showDot });
+      seenNames.add(day.weekday.name);
+    }
+
+    return items;
+  }, [events, day.name, day.weekday, normalizedKey]);
 
   // Responsive and variant-based size logic
   const isCompact = variant === 'compact';
@@ -177,26 +203,50 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
               >
                 {day.name}
               </h3>
-
-              {/* Redundant badges removed from here (Cycle/Year/Rank) */}
             </div>
 
-            {/* Liturgical metadata (shown in both standard and compact) */}
+            {/* Secondary items (commemorations, ferias) */}
+            {secondaryItems.length > 0 && (
+              <div
+                className={cn('flex flex-col gap-[0.3em] opacity-80', isVertical && 'items-center')}
+              >
+                {secondaryItems.map((item) => (
+                  <div
+                    key={item.name}
+                    className={cn('flex items-center gap-[0.5em]', isVertical && 'justify-center')}
+                  >
+                    {item.showDot && (
+                      <div
+                        className="w-[0.5em] h-[0.5em] rounded-full shrink-0 shadow-sm border border-black/10"
+                        style={{ backgroundColor: item.hex }}
+                      />
+                    )}
+                    <p
+                      className={cn(
+                        'leading-tight italic font-medium',
+                        isCompact ? 'text-[0.7em]' : 'text-[0.75em]',
+                        theme.text
+                      )}
+                    >
+                      {item.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Liturgical metadata */}
             {day.calendar?.weekOfSeason > 0 && (
               <div
                 className={cn(
-                  'font-semibold uppercase tracking-wider opacity-70 flex items-center gap-2',
+                  'font-semibold uppercase tracking-wider opacity-60 flex items-center gap-2',
                   'flex-col gap-[0.25em] items-start',
                   isVertical && 'items-center',
-                  isCompact ? 'text-[0.65em] mt-[0.2em]' : 'text-[0.75em]',
+                  isCompact ? 'text-[0.6em] mt-[0.1em]' : 'text-[0.7em]',
                   theme.text
                 )}
               >
                 <div className="flex items-center gap-2">
-                  <LiturgicalColorDot
-                    theme={theme}
-                    className={isCompact ? 'w-1 h-1' : 'w-1.5 h-1.5'}
-                  />
                   <span>
                     {language === 'la' ? 'Hebdomada' : 'Semana'} {day.calendar.weekOfSeason}{' '}
                     {day.seasonNames[0]}

@@ -112,7 +112,7 @@ export default function LiturgicalSeasonView({
     elements.push(
       <VerticalFocusCard key={date}>
         <LiturgicalCard
-          day={principal}
+          events={events}
           isToday={date === todayStr}
           language={language as 'es' | 'la'}
           variant="standard"

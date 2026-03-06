@@ -8,7 +8,7 @@ import type { LiturgicalDay } from '../types';
 import { SEASON_INFO, ROMCAL_MAP, RANK_MAP, CYCLE_MAP } from '../constants/config';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@ui/hover-card';
 import { StoleIcon } from './icons/StoleIcon';
-import { LiturgicalBadge, LiturgicalColorDot } from './LiturgicalBadge';
+import { LiturgicalBadge } from './LiturgicalBadge';
 
 interface LiturgicalIndicatorProps {
   language: 'es' | 'la';
@@ -100,29 +100,23 @@ export default function LiturgicalIndicator({
           <p className="font-bold underline text-sm">{liturgicalInfo.fullName}</p>
           <div className="flex items-center justify-between gap-4 pt-1">
             <div className="flex items-center gap-2">
-              <LiturgicalBadge
-                theme={liturgicalInfo.theme}
-                rawRank={liturgicalInfo.rawRank}
-                showDot
-              >
+              <LiturgicalBadge theme={liturgicalInfo.theme} rawRank={liturgicalInfo.rawRank}>
                 {liturgicalInfo.rank}
               </LiturgicalBadge>
             </div>
             <div className="flex items-center gap-1.5">
               <LiturgicalBadge
                 theme={liturgicalInfo.theme}
-                showDot
                 className="bg-[#8B0000]/10 text-[#8B0000]"
               >
                 {liturgicalInfo.sundayCycle}
               </LiturgicalBadge>
-              <LiturgicalBadge theme={liturgicalInfo.theme} showDot variant="stone">
+              <LiturgicalBadge theme={liturgicalInfo.theme} variant="stone">
                 {liturgicalInfo.weekdayCycle}
               </LiturgicalBadge>
             </div>
           </div>
           <div className="pt-1 flex items-center gap-2 opacity-60 border-t border-[#c49b9b]/20">
-            <LiturgicalColorDot theme={liturgicalInfo.theme} className="w-1.5 h-1.5" />
             <p className="text-[10px]">
               {language === 'la' ? 'Status Liturgicus Hodiernus' : 'Estado Litúrgico del Día'}
             </p>

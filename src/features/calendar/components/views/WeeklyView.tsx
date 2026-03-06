@@ -25,13 +25,13 @@ export default function WeeklyView({ data, loading, language, currentWeekStart }
       return {
         date,
         dateStr,
-        dayClass: events[0] || null,
+        events,
       };
     });
   }, [currentWeekStart, data]);
 
   const headerInfo = useMemo(() => {
-    const day = weekDays.find((wd) => wd.dayClass)?.dayClass;
+    const day = weekDays.find((wd) => wd.events[0])?.events[0];
     if (!day) return null;
 
     const summary = calendarService.getLiturgicalSummary(day, language as 'es' | 'la');
@@ -129,7 +129,7 @@ export default function WeeklyView({ data, loading, language, currentWeekStart }
           {weekDays.map((wd) => (
             <LiturgicalCard
               key={wd.dateStr}
-              day={wd.dayClass}
+              events={wd.events}
               isToday={wd.dateStr === todayStr}
               language={language as 'es' | 'la'}
               variant="vertical-compact"

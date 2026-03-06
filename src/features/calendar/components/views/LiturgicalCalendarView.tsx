@@ -103,7 +103,7 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
       result.push(
         <VerticalFocusCard key={date} id={date === todayStr ? 'today' : date}>
           <LiturgicalCard
-            day={principal}
+            events={events}
             isToday={date === todayStr}
             language={language}
             variant="standard"

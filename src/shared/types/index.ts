@@ -60,6 +60,7 @@ export interface LiturgicalDay {
     dayOfWeek?: number;
   };
   isHolyDayOfObligation: boolean;
+  weekday?: LiturgicalDay;
 }
 
 export interface LiturgicalSummary {
