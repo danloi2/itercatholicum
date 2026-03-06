@@ -23,8 +23,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          romcal: ['src/shared/lib/romcal/romcal.js'],
-          locales: ['src/shared/lib/romcal/es.js', 'src/shared/lib/romcal/la.js'],
+          vendor: ['react', 'react-dom'],
         },
       },
     },

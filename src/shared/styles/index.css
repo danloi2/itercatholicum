@@ -82,6 +82,11 @@
   * {
     @apply border-border;
   }
+  html,
+  body,
+  #root {
+    @apply relative min-h-screen;
+  }
 }
 
 .scalable-content {

@@ -55,11 +55,9 @@ export interface LiturgicalDay {
     psalterWeek: string;
   };
   calendar: {
-    weeksOfLent: number;
-    weeksOfEaster: number;
-    weeksOfOrdinaryTime: number;
-    weeksOfAdvent: number;
     weekOfSeason: number;
+    dayOfSeason?: number;
+    dayOfWeek?: number;
   };
   isHolyDayOfObligation: boolean;
 }

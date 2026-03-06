@@ -1,9 +1,8 @@
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { la } from '@shared/lib/locales';
-import Spain_Es from '@shared/lib/romcal/es.js';
-import Spain_La from '@shared/lib/romcal/la.js';
-import Romcal from '@shared/lib/romcal/romcal.js';
+import { Romcal } from 'romcal';
+import { Spain_Es, Spain_La } from '@romcal/calendar.spain';
 import { COLOR_MAP, ROMCAL_MAP } from '@shared/constants/config';
 import type { ColorTheme, LiturgicalColor, LiturgicalDay } from '@shared/types';
 
@@ -30,9 +29,8 @@ export function normalizeLiturgicalColor(day: Partial<LiturgicalDay> & { colors:
  * Creates a Romcal instance for the given language.
  */
 export function createRomcalInstance(language: 'es' | 'la' = 'es') {
-  const locale = language === 'la' ? Spain_La : Spain_Es;
-  // @ts-expect-error: dynamic calendar processing results in complex nested arrays
-  return new Romcal.Romcal({ localizedCalendar: locale });
+  const localizedCalendar = language === 'la' ? Spain_La : Spain_Es;
+  return new Romcal({ localizedCalendar });
 }
 
 /**
