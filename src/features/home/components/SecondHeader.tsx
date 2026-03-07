@@ -9,11 +9,13 @@ const SecondHeader: React.FC<SecondHeaderProps> = ({ language }) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Look for the portal element after initial mount
-    const element = document.getElementById('header-portal-center');
-    setPortalElement(element);
+    const findElement = () => {
+      const el = document.getElementById('header-portal-center');
+      if (el) setPortalElement(el);
+    };
 
-    // Also use a MutationObserver in case the header renders after the page
+    findElement();
+
     const observer = new MutationObserver(() => {
       const el = document.getElementById('header-portal-center');
       if (el) {

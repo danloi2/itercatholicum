@@ -144,8 +144,12 @@ export function LiturgicalBadgesPortal({ language = 'es' }: WidgetProps) {
   }, [language]);
 
   useEffect(() => {
-    const element = document.getElementById('header-portal-badges');
-    setPortalElement(element);
+    const findElement = () => {
+      const el = document.getElementById('header-portal-badges');
+      if (el) setPortalElement(el);
+    };
+
+    findElement();
 
     const observer = new MutationObserver(() => {
       const el = document.getElementById('header-portal-badges');
