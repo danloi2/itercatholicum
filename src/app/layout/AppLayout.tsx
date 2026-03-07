@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { useSettings } from '@shared/context/SettingsContext';
-
 import { LayoutContext } from './LayoutContext';
+import { LiturgicalBadgesPortal } from '@shared/components/widgets/LatinDateTime';
 
 interface AppLayoutProps {
   language: 'es' | 'la';
@@ -27,7 +27,8 @@ export default function AppLayout({ language, setLanguage }: AppLayoutProps) {
 
   return (
     <LayoutContext.Provider value={{ setHeaderProps }}>
-      <div className="min-h-screen flex flex-col bg-[#fdfbf7]">
+      <div className="min-h-screen flex flex-col bg-[#fdfbf7] relative">
+        <LiturgicalBadgesPortal language={language} />
         <Header
           language={language}
           setLanguage={setLanguage}
@@ -38,6 +39,7 @@ export default function AppLayout({ language, setLanguage }: AppLayoutProps) {
         <main className="flex-1 scalable-content">
           <Outlet />
         </main>
+
         <Footer language={language} />
       </div>
     </LayoutContext.Provider>

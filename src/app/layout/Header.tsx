@@ -1,8 +1,8 @@
 import { type ReactNode } from 'react';
 import LanguageToggle from './LanguageToggle';
+import SettingsDropdown from './SettingsDropdown';
 import { useTodayLiturgicalColor } from '@shared/hooks/useLiturgicalColor';
 import { StoleIcon } from '@shared/components/icons/StoleIcon';
-import { Settings } from 'lucide-react';
 import { LatinDateDisplay, TimePill } from '@shared/components/widgets/LatinDateTime';
 
 interface HeaderProps {
@@ -60,12 +60,7 @@ export default function Header({
             <div className="flex flex-col items-end gap-1.5">
               <div className="flex items-center gap-2 z-50">
                 <LanguageToggle language={language} setLanguage={setLanguage} />
-                <button
-                  className="flex items-center justify-center w-10 h-10 bg-white/60 backdrop-blur-md rounded-full border border-[#c49b9b]/20 shadow-sm text-[#c49b9b] hover:text-[#8B0000] hover:bg-white/80 transition-all duration-300 outline-none focus:ring-2 focus:ring-[#8B0000]/20"
-                  type="button"
-                >
-                  <Settings className="w-4 h-4" />
-                </button>
+                <SettingsDropdown language={language} />
               </div>
               <TimePill language={language} />
             </div>
@@ -74,22 +69,35 @@ export default function Header({
       </div>
 
       {/* Page-Specific Section (Second Header Slot) */}
-      {(pageTitle || children) && (
+      {(pageTitle || children || centerChildren) && (
         <div className="bg-stone-50/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {centerChildren ? (
-              <div className="flex items-center justify-center min-h-[60px] py-1 md:py-2 w-full">
-                {pageTitle && (
-                  <div className="flex items-center justify-center gap-2 flex-wrap w-full">
-                    {typeof pageTitle === 'string' ? (
-                      <h2 className="text-lg md:text-xl font-bold text-[#3d0c0c] tracking-tight truncate">
-                        {pageTitle}
-                      </h2>
-                    ) : (
-                      pageTitle
-                    )}
-                  </div>
-                )}
+              <div className="flex flex-col items-center justify-center min-h-[70px] py-2 w-full gap-2">
+                {/* Badges Portal Slot (Top of the stack) */}
+                <div
+                  id="header-portal-badges"
+                  className="flex items-center justify-center w-full min-h-[1.5rem]"
+                />
+
+                {/* Main Content Area (Title or Portal Center) */}
+                <div className="flex flex-col items-center justify-center w-full gap-1">
+                  <div
+                    id="header-portal-center"
+                    className="flex items-center justify-center w-full"
+                  />
+                  {pageTitle && (
+                    <div className="flex items-center justify-center gap-2 flex-wrap w-full">
+                      {typeof pageTitle === 'string' ? (
+                        <h2 className="text-xl md:text-2xl font-black text-[#3d0c0c] tracking-tight truncate font-serif italic text-center leading-tight">
+                          {pageTitle}
+                        </h2>
+                      ) : (
+                        <div className="w-full flex justify-center">{pageTitle}</div>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             ) : (
               <div className="grid grid-cols-3 items-center min-h-[60px] py-1 md:py-2 gap-4">

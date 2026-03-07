@@ -4,6 +4,8 @@ import { Calendar, Book, Church, Heart } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
 import { useLayout } from '@app/layout/LayoutContext';
 
+import SecondHeader from './components/SecondHeader';
+
 interface PageProps {
   language: 'es' | 'la';
 }
@@ -13,13 +15,13 @@ const Page: React.FC<PageProps> = ({ language }) => {
   const { setHeaderProps } = useLayout();
 
   useEffect(() => {
-    setHeaderProps({}); // Reset header to default
+    setHeaderProps({
+      centerChildren: true,
+    }); // Center second header content
   }, [setHeaderProps]);
 
   const content = {
     es: {
-      heroSubtitle:
-        'Tu compañero espiritual digital: Calendario, Biblia, Misa y Oración en un solo lugar.',
       sections: {
         calendar: {
           title: 'Calendario Litúrgico',
@@ -40,8 +42,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
       },
     },
     la: {
-      heroSubtitle:
-        'Comes tuus spiritualis digitalis: Calendarium, Biblia, Missa et Oratio in uno loco.',
       sections: {
         calendar: {
           title: 'Calendarium Liturgicum',
@@ -64,40 +64,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
   };
 
   const t = content[language];
-  const fullText = t.heroSubtitle;
-
-  const [displayText, setDisplayText] = React.useState('');
-  const [isDeleting, setIsDeleting] = React.useState(false);
-  const [typingSpeed, setTypingSpeed] = React.useState(70);
-
-  React.useEffect(() => {
-    const handleType = () => {
-      setDisplayText((current) => {
-        if (!isDeleting) {
-          if (current.length < fullText.length) {
-            setTypingSpeed(70);
-            return fullText.substring(0, current.length + 1);
-          } else {
-            setTypingSpeed(3000);
-            setIsDeleting(true);
-            return current;
-          }
-        } else {
-          if (current.length > 0) {
-            setTypingSpeed(40);
-            return fullText.substring(0, current.length - 1);
-          } else {
-            setTypingSpeed(1000);
-            setIsDeleting(false);
-            return '';
-          }
-        }
-      });
-    };
-
-    const timerId = setTimeout(handleType, typingSpeed);
-    return () => clearTimeout(timerId);
-  }, [displayText, isDeleting, fullText, typingSpeed]);
 
   const sections = [
     {
@@ -123,6 +89,7 @@ const Page: React.FC<PageProps> = ({ language }) => {
       description: t.sections.mass.description,
       color: 'text-[#8B0000] bg-[#fdfbf7]',
       path: '/mass',
+      disabled: true,
     },
     {
       id: 'prayers',
@@ -136,7 +103,8 @@ const Page: React.FC<PageProps> = ({ language }) => {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex-1 flex flex-col pt-4">
+      <SecondHeader language={language} />
+      <div className="flex-1 flex flex-col pt-4 md:pt-12">
         <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 w-full">
             {sections.map((section) => (
@@ -163,22 +131,11 @@ const Page: React.FC<PageProps> = ({ language }) => {
                 <h2 className="text-lg md:text-xl font-bold mb-1 md:mb-1.5 group-hover:text-[#8B0000] transition-colors">
                   {section.title}
                 </h2>
-                <p className="text-[#8B0000]/80 text-[11px] md:text-xs leading-relaxed serif italic">
+                <p className="text-[#8B0000]/80 text-sm md:text-xl leading-relaxed font-serif italic">
                   {section.description}
                 </p>
               </button>
             ))}
-          </div>
-        </div>
-
-        <div className="py-6 md:py-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-sm md:text-[20px] text-[#522b2b] italic font-serif leading-tight opacity-90 inline-flex items-center text-center px-4">
-                {displayText}
-                <span className="w-0.5 h-4 md:h-6 bg-[#8B0000] ml-1.5 animate-pulse" />
-              </p>
-            </div>
           </div>
         </div>
       </div>

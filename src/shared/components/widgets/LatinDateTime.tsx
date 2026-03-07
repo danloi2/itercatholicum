@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { Moon, Sun } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -113,67 +114,123 @@ export function LatinDateDisplay({ language = 'es' }: WidgetProps) {
       : format(now, "EEEE, d 'de' MMMM 'de' yyyy", { locale: es });
 
   return (
-    <div className="flex flex-col items-center gap-1 leading-tight text-center">
-      <div className="flex flex-col items-center gap-0.5">
-        <div className="text-xl font-bold text-slate-700 capitalize tracking-tight">{dateText}</div>
-        {liturgicalInfo && (
-          <span
-            className={cn(
-              'text-[20px] md:text-[22px] font-bold tracking-tight font-serif whitespace-nowrap opacity-80',
-              liturgicalInfo.theme.text
-            )}
-          >
-            {liturgicalInfo.fullName}
-          </span>
-        )}
-      </div>
-
+    <div className="flex flex-col items-center gap-0.5 leading-tight text-center">
+      <div className="text-xl font-bold text-slate-700 capitalize tracking-tight">{dateText}</div>
       {liturgicalInfo && (
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-0.5">
-          <LiturgicalBadge theme={liturgicalInfo.theme} showDot>
-            {liturgicalInfo.isHolyWeek ? (
-              language === 'la' ? (
-                'Hebdomada Sancta'
-              ) : (
-                'Semana Santa'
-              )
-            ) : (
-              <>
-                {liturgicalInfo.weekNum > 0 &&
-                  `${language === 'la' ? 'HEB' : 'SEMANA'} ${liturgicalInfo.weekNum} `}
-                {liturgicalInfo.season}
-              </>
-            )}
-          </LiturgicalBadge>
-
-          <div className="flex items-center gap-1.5">
-            <LiturgicalBadge
-              theme={liturgicalInfo.theme}
-              showDot
-              className="bg-[#8B0000]/5 text-[#8B0000]/70 border-[#8B0000]/10"
-            >
-              {liturgicalInfo.sundayCycle}
-            </LiturgicalBadge>
-
-            {liturgicalInfo.weekdayCycle && (
-              <LiturgicalBadge theme={liturgicalInfo.theme} showDot variant="stone">
-                {liturgicalInfo.weekdayCycle}
-              </LiturgicalBadge>
-            )}
-
-            {liturgicalInfo.rawRank && (
-              <LiturgicalBadge
-                theme={liturgicalInfo.theme}
-                rawRank={liturgicalInfo.rawRank}
-                showDot
-              >
-                {liturgicalInfo.rank}
-              </LiturgicalBadge>
-            )}
-          </div>
-        </div>
+        <span
+          className={cn(
+            'text-[20px] md:text-[22px] font-bold tracking-tight font-serif whitespace-nowrap opacity-80',
+            liturgicalInfo.theme.text
+          )}
+        >
+          {liturgicalInfo.fullName}
+        </span>
       )}
     </div>
+  );
+}
+
+/**
+ * Component to portal liturgical badges into the header's center slot.
+ */
+export function LiturgicalBadgesPortal({ language = 'es' }: WidgetProps) {
+  const [liturgicalDay, setLiturgicalDay] = useState<LiturgicalDay | null>(null);
+  const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    getLiturgicalDayInfo(todayStr, language).then(setLiturgicalDay);
+  }, [language]);
+
+  useEffect(() => {
+    const element = document.getElementById('header-portal-badges');
+    setPortalElement(element);
+
+    const observer = new MutationObserver(() => {
+      const el = document.getElementById('header-portal-badges');
+      if (el) {
+        setPortalElement(el);
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
+
+  const liturgicalInfo = useMemo(() => {
+    if (!liturgicalDay) return null;
+    const { theme } = normalizeLiturgicalColor(liturgicalDay);
+
+    const seasonRaw = liturgicalDay.seasons?.[0] || 'ORDINARY_TIME';
+    const mappedSeason = ROMCAL_MAP[seasonRaw.toUpperCase()] || seasonRaw.toUpperCase();
+    const translatedSeason =
+      SEASON_NAMES[language]?.[mappedSeason] || liturgicalDay.seasonNames?.[0] || mappedSeason;
+    const weekNum = liturgicalDay.calendar?.weekOfSeason || 0;
+
+    const sundayCycleKey = liturgicalDay.cycles?.sundayCycle || '';
+    const weekdayCycleKey = liturgicalDay.cycles?.weekdayCycle || '';
+    const localizedSundayCycle = CYCLE_MAP[language]?.[sundayCycleKey] || sundayCycleKey;
+    const localizedWeekdayCycle = CYCLE_MAP[language]?.[weekdayCycleKey] || weekdayCycleKey;
+    const localizedRank =
+      RANK_MAP[language]?.[liturgicalDay.rank.toUpperCase()] || liturgicalDay.rank;
+
+    return {
+      theme,
+      season: translatedSeason,
+      weekNum,
+      sundayCycle: localizedSundayCycle,
+      weekdayCycle: localizedWeekdayCycle,
+      rank: localizedRank,
+      rawRank: liturgicalDay.rank,
+      isHolyWeek: liturgicalDay.periods?.includes('HOLY_WEEK'),
+    };
+  }, [liturgicalDay, language]);
+
+  if (!portalElement || !liturgicalInfo) return null;
+
+  return createPortal(
+    <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+      <LiturgicalBadge theme={liturgicalInfo.theme} showDot>
+        {liturgicalInfo.isHolyWeek ? (
+          language === 'la' ? (
+            'Hebdomada Sancta'
+          ) : (
+            'Semana Santa'
+          )
+        ) : (
+          <>
+            {liturgicalInfo.weekNum > 0 &&
+              `${language === 'la' ? 'HEB' : 'SEMANA'} ${liturgicalInfo.weekNum} `}
+            {liturgicalInfo.season}
+          </>
+        )}
+      </LiturgicalBadge>
+
+      <div className="flex items-center gap-1.5">
+        <LiturgicalBadge
+          theme={liturgicalInfo.theme}
+          showDot
+          className="bg-[#8B0000]/5 text-[#8B0000]/70 border-[#8B0000]/10"
+        >
+          {liturgicalInfo.sundayCycle}
+        </LiturgicalBadge>
+
+        {liturgicalInfo.weekdayCycle && (
+          <LiturgicalBadge theme={liturgicalInfo.theme} showDot variant="stone">
+            {liturgicalInfo.weekdayCycle}
+          </LiturgicalBadge>
+        )}
+
+        {liturgicalInfo.rawRank && (
+          <LiturgicalBadge theme={liturgicalInfo.theme} rawRank={liturgicalInfo.rawRank} showDot>
+            {liturgicalInfo.rank}
+          </LiturgicalBadge>
+        )}
+      </div>
+    </div>,
+    portalElement
   );
 }
 
