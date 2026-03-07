@@ -47,7 +47,7 @@ export default function SecondHeader({
   const currentGroup = selectedBook?.type[language] || (language === 'es' ? 'Otros' : 'Alii');
 
   return (
-    <div className="flex items-center gap-2 animate-in fade-in duration-300 flex-wrap">
+    <div className="flex items-center justify-center gap-2 animate-in fade-in duration-300 flex-wrap w-full">
       {/* Root: Biblia */}
       <button
         onClick={() => {

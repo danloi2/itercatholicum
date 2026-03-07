@@ -5,9 +5,10 @@ import type { ReadingData } from '../services/lectionaryService';
 
 interface MassReadingProps {
   reading: ReadingData;
+  id?: string;
 }
 
-export const MassReading: React.FC<MassReadingProps> = ({ reading }) => {
+export const MassReading: React.FC<MassReadingProps> = ({ reading, id }) => {
   // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const referenceParts = React.useMemo(() => {
     const parts = reading.displayReference.split(':');
@@ -39,7 +40,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ reading }) => {
   );
 
   return (
-    <ContentCanvas className="mb-12">
+    <ContentCanvas className="mb-12" id={id}>
       <CanvasHeader
         title={reading.title}
         subtitle={subtitle}

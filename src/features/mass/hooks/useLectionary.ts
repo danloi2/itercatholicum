@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { lectionaryService, type DailyReadings } from '../services/lectionaryService';
 import { getLiturgicalDayInfo } from '@shared/lib/liturgy-engine';
+import type { LiturgicalDay } from '@shared/types';
 
 export function useLectionary(date: Date, language: 'es' | 'la') {
   const [readings, setReadings] = useState<DailyReadings | null>(null);
+  const [liturgicalDay, setLiturgicalDay] = useState<LiturgicalDay | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -21,6 +23,7 @@ export function useLectionary(date: Date, language: 'es' | 'la') {
         throw new Error('Could not find liturgical information for this date.');
       }
 
+      setLiturgicalDay(dayInfo);
       const version = language === 'la' ? 'vulgata' : 'torres';
       const dailyReadings = await lectionaryService.getReadings(dayInfo, version);
       setReadings(dailyReadings);
@@ -37,5 +40,5 @@ export function useLectionary(date: Date, language: 'es' | 'la') {
     fetchReadings();
   }, [fetchReadings]);
 
-  return { readings, loading, error, refetch: fetchReadings };
+  return { readings, loading, error, liturgicalDay, refetch: fetchReadings };
 }

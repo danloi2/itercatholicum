@@ -107,6 +107,7 @@ const searchVerses = async (
                     chapter: chapterNum,
                     verse: parseInt(verseNum),
                     text: verseText as string,
+                    // If we want to show exact matches, we could pass it here
                   });
                 }
               }
@@ -182,9 +183,45 @@ export default function TextSearch({
     onOpenChange(false);
   };
 
+  const highlightMatch = (text: string, query: string) => {
+    const normalizedText = normalizeText(text);
+    const normalizedQuery = normalizeText(query);
+    const index = normalizedText.indexOf(normalizedQuery);
+
+    if (index === -1) return text;
+
+    // Find the actual position in the original text
+    let actualIndex = 0;
+    let normalizedIndex = 0;
+    while (normalizedIndex < index && actualIndex < text.length) {
+      const char = text[actualIndex];
+      const normalizedChar = normalizeText(char);
+      normalizedIndex += normalizedChar.length;
+      actualIndex++;
+    }
+
+    const before = text.substring(0, actualIndex);
+    const match = text.substring(actualIndex, actualIndex + query.length);
+    const after = text.substring(actualIndex + query.length);
+
+    return (
+      <>
+        {before}
+        <span className="font-bold text-[#8B0000]">{match}</span>
+        {after}
+      </>
+    );
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && results.length > 0) {
+      handleResultClick(results[0]);
+    }
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[80vh] p-0 gap-0 bg-[#fdfbf7] border-2 border-[#8B0000]/20">
+      <DialogContent className="max-w-2xl max-h-[80vh] p-0 gap-0 bg-[#fdfbf7] border-2 border-[#8B0000]/20 sm:rounded-xl overflow-hidden">
         <DialogTitle className="sr-only">
           {language === 'la' ? 'Quaerere Contentum Bibliae' : 'Buscar Contenido de la Biblia'}
         </DialogTitle>
@@ -195,14 +232,15 @@ export default function TextSearch({
         </DialogDescription>
         <div className="flex flex-col h-full">
           {/* Search Input */}
-          <div className="flex items-center border-b border-[#c49b9b] px-3">
-            <Search className="w-5 h-5 text-[#8B0000] mr-2" />
+          <div className="flex items-center border-b border-[#c49b9b] px-4">
+            <Search className="w-5 h-5 text-[#8B0000] mr-2 opacity-50" />
             <input
               ref={inputRef}
               className="flex w-full h-14 py-3 text-lg bg-transparent outline-none placeholder:text-[#c49b9b] text-[#3d0c0c] font-serif"
               placeholder={language === 'la' ? 'Quaerere in Biblia...' : 'Buscar en la Biblia...'}
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
             {isSearching && <Loader2 className="w-5 h-5 animate-spin text-[#8B0000]" />}
           </div>
@@ -218,13 +256,15 @@ export default function TextSearch({
                     className="flex flex-col p-4 rounded-xl hover:bg-[#8B0000]/5 transition-all text-left border border-transparent hover:border-[#8B0000]/10 group"
                   >
                     <span className="text-sm font-bold text-[#8B0000] mb-1 flex items-center gap-2">
-                      <span className="opacity-60 font-serif">{result.bookName}</span>
-                      <span className="bg-[#8B0000]/10 px-2 py-0.5 rounded-full">
+                      <span className="opacity-60 font-serif uppercase tracking-widest text-[10px]">
+                        {result.bookName}
+                      </span>
+                      <span className="bg-[#8B0000]/10 px-2 py-0.5 rounded-full text-[10px]">
                         {result.chapter}:{result.verse}
                       </span>
                     </span>
                     <p className="text-[#3d0c0c] font-serif leading-relaxed line-clamp-3">
-                      {result.text}
+                      {highlightMatch(result.text, inputValue)}
                     </p>
                   </button>
                 ))}
@@ -245,6 +285,11 @@ export default function TextSearch({
                 </p>
               </div>
             )}
+          </div>
+
+          <div className="border-t border-[#c49b9b] px-4 py-3 text-[10px] text-[#8B0000]/50 flex justify-between uppercase tracking-tighter bg-[#8B0000]/5">
+            <span>{language === 'la' ? 'Intra ad eligendum' : 'Enter para seleccionar'}</span>
+            <span>Esc para cerrar</span>
           </div>
         </div>
       </DialogContent>

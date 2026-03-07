@@ -1,5 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useMemo, useState } from 'react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { la } from '@shared/lib/locales';
@@ -45,19 +44,7 @@ export default function SecondHeader({
   selectedDate,
   onDateSelect,
 }: CalendarHeaderProps) {
-  const [navPortalTarget, setNavPortalTarget] = useState<HTMLElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const el = document.getElementById('header-portal-center');
-      if (el) {
-        setNavPortalTarget(el);
-        clearInterval(timer);
-      }
-    }, 50);
-    return () => clearInterval(timer);
-  }, []);
 
   const handlePrevYear = () => onYearChange(year - 1);
   const handleNextYear = () => onYearChange(year + 1);
@@ -76,10 +63,8 @@ export default function SecondHeader({
     return language === 'la' ? (info as SeasonInfo).latTitle : (info as SeasonInfo).title;
   }, [selectedDate, season, language, view, onDateSelect]);
 
-  if (!navPortalTarget) return null;
-
-  return createPortal(
-    <div className="flex items-center gap-2 sm:gap-3 animate-in fade-in duration-300">
+  return (
+    <div className="flex items-center justify-center gap-2 sm:gap-3 animate-in fade-in duration-300 w-full flex-wrap">
       <div
         className="flex items-center gap-1 sm:gap-2 px-1 lg:px-2 py-1.5 rounded-xl border transition-all duration-500 shadow-xs bg-white/40 backdrop-blur-md"
         style={{
@@ -238,7 +223,6 @@ export default function SecondHeader({
           <ChevronsRight className="h-4 w-4" />
         </button>
       </div>
-    </div>,
-    navPortalTarget
+    </div>
   );
 }

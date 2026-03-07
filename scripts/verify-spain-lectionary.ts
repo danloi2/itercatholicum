@@ -3,19 +3,48 @@ import { Spain_Es } from '@romcal/calendar.spain';
 import * as fs from 'fs';
 import * as path from 'path';
 
+interface RomcalDay {
+  id: string;
+  date: string;
+  name: string;
+  rank: string;
+  cycles: {
+    sundayCycle: string;
+    weekdayCycle: string;
+  };
+  calendar: {
+    weekOfSeason: number;
+  };
+  periods: string[];
+}
+
+interface LectionaryEntry {
+  firstReading?: string | string[];
+  psalm?: string | string[];
+  secondReading?: string | string[];
+  gospel?: string | string[];
+  yearCycle?: string;
+  yearNumber?: string;
+  season?: string;
+  massType?: string | string[];
+  weekdayType?: string;
+  weekOrder?: string;
+  slug?: string;
+}
+
 // Simulation of the matching logic in lectionaryService.ts
-function findReadingEntry(day: any, data: any[]) {
+function findReadingEntry(day: RomcalDay, data: LectionaryEntry[]) {
   const dayId = day.id.toLowerCase().replace(/_/g, '');
 
   // 1. Slug matching
-  const slugMatches = data.filter((e: any) => {
+  const slugMatches = data.filter((e: LectionaryEntry) => {
     if (!e.slug) return false;
     const normalizedSlug = e.slug.toLowerCase().replace(/_/g, '');
     return dayId.includes(normalizedSlug) || normalizedSlug.includes(dayId);
   });
 
   if (slugMatches.length > 0) {
-    return slugMatches.find((e: any) => !!e.firstReading) || slugMatches[0];
+    return slugMatches.find((e: LectionaryEntry) => !!e.firstReading) || slugMatches[0];
   }
 
   // 2. Week/Cycle matching
@@ -35,7 +64,7 @@ function findReadingEntry(day: any, data: any[]) {
     'saturday',
   ][weekday];
 
-  const matches = data.filter((entry: any) => {
+  const matches = data.filter((entry: LectionaryEntry) => {
     const entryCycle = (entry.yearCycle || '').toUpperCase();
     const entryWeekOrder = (entry.weekOrder || '').toString();
     const entryYearNumber = (entry.yearNumber || '').toString();
@@ -55,18 +84,18 @@ function findReadingEntry(day: any, data: any[]) {
     }
   });
 
-  return matches.find((e: any) => !!e.firstReading) || matches[0] || null;
+  return matches.find((e: LectionaryEntry) => !!e.firstReading) || matches[0] || null;
 }
 
 async function run() {
   const romcal = new Romcal({ localizedCalendar: Spain_Es });
   const cal = await romcal.generateCalendar(2026);
-  const days = Object.values(cal).flat();
+  const days = Object.values(cal).flat() as unknown as RomcalDay[];
 
   const lectionesDir = path.resolve('src/shared/data/lectiones');
 
   // Load ALL json files
-  const allFiles: { name: string; data: any[] }[] = [];
+  const allFiles: { name: string; data: LectionaryEntry[] }[] = [];
   const walkSync = (dir: string) => {
     const files = fs.readdirSync(dir);
     files.forEach((file) => {
@@ -116,7 +145,7 @@ async function run() {
       continue;
     }
 
-    let foundEntry = null;
+    let foundEntry: LectionaryEntry | null = null;
     let sourceFile = '';
 
     for (const fileObj of allFiles) {

@@ -1,7 +1,11 @@
 import { createContext, useContext } from 'react';
 
 export interface LayoutContextType {
-  setHeaderProps: (props: { pageTitle?: React.ReactNode; year?: number }) => void;
+  setHeaderProps: (props: {
+    pageTitle?: React.ReactNode;
+    year?: number;
+    centerChildren?: boolean;
+  }) => void;
 }
 
 export const LayoutContext = createContext<LayoutContextType | null>(null);

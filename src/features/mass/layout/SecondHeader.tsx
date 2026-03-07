@@ -1,5 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
-import { createPortal } from 'react-dom';
+import { useMemo } from 'react';
 import {
   getFullLiturgicalName,
   normalizeLiturgicalColor,
@@ -18,20 +17,8 @@ interface MassHeaderProps {
 }
 
 export default function SecondHeader({ liturgicalDay, language, onDateChange }: MassHeaderProps) {
-  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const pageTitleStr = getFullLiturgicalName(liturgicalDay, language);
   const selectedDate = new Date(liturgicalDay.date);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const el = document.getElementById('header-portal-center');
-      if (el) {
-        setPortalTarget(el);
-        clearInterval(timer);
-      }
-    }, 50);
-    return () => clearInterval(timer);
-  }, []);
 
   const liturgicalInfo = useMemo(() => {
     const { theme } = normalizeLiturgicalColor(liturgicalDay);
@@ -61,10 +48,8 @@ export default function SecondHeader({ liturgicalDay, language, onDateChange }: 
     };
   }, [liturgicalDay, language]);
 
-  if (!portalTarget) return null;
-
-  return createPortal(
-    <div className="flex flex-col items-center gap-1.5 animate-in fade-in slide-in-from-top-2 duration-500 min-w-0 w-full">
+  return (
+    <div className="flex flex-col items-center justify-center gap-1.5 animate-in fade-in slide-in-from-top-2 duration-500 min-w-0 w-full">
       <div className="flex items-center gap-2 flex-wrap justify-center min-w-0">
         {onDateChange ? (
           <LiturgicalDatePicker
@@ -122,7 +107,6 @@ export default function SecondHeader({ liturgicalDay, language, onDateChange }: 
           </LiturgicalBadge>
         )}
       </div>
-    </div>,
-    portalTarget
+    </div>
   );
 }

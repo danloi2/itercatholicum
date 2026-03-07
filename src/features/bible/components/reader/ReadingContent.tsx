@@ -15,6 +15,7 @@ interface BibleDisplayProps {
   chapter?: number | string | null;
   language?: 'es' | 'la';
   otherLanguage?: 'es' | 'la' | string;
+  bookId?: string;
 }
 
 export default function ReadingContent({

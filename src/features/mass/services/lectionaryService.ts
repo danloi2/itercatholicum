@@ -354,11 +354,22 @@ export const lectionaryService = {
           const book = BIBLE_BOOKS.find((b) => b.id === bookId);
           if (!book) return undefined;
 
-          const bookData = await bibleService.loadBookData(bookId, version);
+          interface ChapterSchema {
+            numerus: number;
+            versus: Record<string, string>;
+          }
+          interface BookSchema {
+            capitula: ChapterSchema[];
+          }
+
+          const bookData = (await bibleService.loadBookData(
+            bookId,
+            version
+          )) as unknown as BookSchema;
           const verseList: { num: string; text: string }[] = [];
 
           for (let c = startChap; c <= endChap; c++) {
-            const chapterData = (bookData.capitula as any[]).find((ch) => ch.numerus === c);
+            const chapterData = bookData.capitula.find((ch) => ch.numerus === c);
             if (!chapterData) continue;
 
             const vKeys = Object.keys(chapterData.versus).sort((a, b) => parseInt(a) - parseInt(b));

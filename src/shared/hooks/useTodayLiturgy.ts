@@ -35,9 +35,9 @@ export function useTodayLiturgy(language: 'es' | 'la') {
     name: fullName,
     season: liturgicalDay.seasons?.[0] || '',
     color: theme.hex,
-    rank: RANK_MAP[liturgicalDay.rank]?.[language] || liturgicalDay.rank,
+    rank: RANK_MAP[language]?.[liturgicalDay.rank] || liturgicalDay.rank,
     cycle: liturgicalDay.cycles
-      ? `${CYCLE_MAP.sunday[liturgicalDay.cycles.sundayCycle as keyof typeof CYCLE_MAP.sunday]?.[language] || ''} / ${CYCLE_MAP.weekday[liturgicalDay.cycles.weekdayCycle as keyof typeof CYCLE_MAP.weekday]?.[language] || ''}`
+      ? `${CYCLE_MAP[language]?.[liturgicalDay.cycles.sundayCycle] || ''} / ${CYCLE_MAP[language]?.[liturgicalDay.cycles.weekdayCycle] || ''}`
       : '',
   };
 }

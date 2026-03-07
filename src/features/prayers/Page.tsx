@@ -88,7 +88,7 @@ export default function Page({ language }: PageProps) {
           prayersWithJsonCount={prayersWithJsonCount}
         />
       ),
-      centerChildren: false,
+      centerChildren: true,
     });
   }, [language, viewMode, selectedTimeType, selectedPrayer, prayersWithJsonCount, setHeaderProps]);
 
@@ -160,16 +160,16 @@ export default function Page({ language }: PageProps) {
         <FloatingActionButton
           onClick={() => setIsSearchOpen(true)}
           icon={<Search />}
-          label={language === 'la' ? 'Invenire Orationem' : 'Buscar Oración'}
-          variant="accent"
+          label={language === 'la' ? 'QUAERERE' : 'BUSCAR'}
+          variant="primary"
         />
 
         {viewMode === 'READ' && (
           <FloatingActionButton
             onClick={handleRandom}
             icon={<Shuffle />}
-            label={language === 'la' ? 'Temere' : 'Aleatorio'}
-            variant="brown"
+            label={language === 'la' ? 'FORTUITUS' : 'ALEATORIO'}
+            variant="accent"
             iconAnimation="group-hover:rotate-180 duration-500"
           />
         )}
@@ -177,7 +177,7 @@ export default function Page({ language }: PageProps) {
         <FloatingActionButton
           onClick={handleBack}
           icon={<ArrowLeft />}
-          label={language === 'la' ? 'RETRO' : 'ATRÁS'}
+          label={language === 'la' ? (viewMode === 'SELECTION' ? 'INITIUM' : 'RETRO') : 'ATRÁS'}
           variant="ghost"
           iconAnimation="group-hover:-translate-x-1"
         />

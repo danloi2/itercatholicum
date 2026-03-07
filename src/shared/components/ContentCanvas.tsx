@@ -50,6 +50,7 @@ interface ContentCanvasProps {
   maxWidth?: string;
   className?: string;
   showDecorativeSeparator?: boolean;
+  id?: string;
 }
 
 /**
@@ -61,6 +62,7 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
   maxWidth = 'max-w-6xl',
   className = '',
   showDecorativeSeparator = true,
+  id,
 }) => {
   /**
    * Liturgical cross pattern (symmetrical and solemn)
@@ -76,7 +78,7 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
   `;
 
   return (
-    <div className={cn('flex justify-center w-full px-0 py-0', className)}>
+    <div className={cn('flex justify-center w-full px-0 py-0', className)} id={id}>
       <div
         className={cn(
           'relative p-6 md:p-16 mx-auto min-h-[calc(100vh-160px)] overflow-hidden w-full rounded-none md:rounded-sm border-x md:border border-primary/10 transition-all duration-700',

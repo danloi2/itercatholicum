@@ -36,7 +36,7 @@ export default function PrayersHeader({
   const activeTheme = selectedTimeType;
 
   return (
-    <div className="flex items-center gap-2 animate-in fade-in duration-300">
+    <div className="flex items-center justify-center gap-2 animate-in fade-in duration-300 w-full flex-wrap">
       {/* Root: Oraciones */}
       <button
         onClick={() => {

@@ -16,6 +16,7 @@ import { LiturgicalCalendarView } from './components/views/LiturgicalCalendarVie
 import { calendarService } from './services/calendarService';
 import LiturgicalSeasonView from './components/views/LiturgicalSeasonView';
 import { ROMCAL_MAP } from '@shared/constants/config';
+import { Fab as FloatingActionButton } from '@shared/components/buttons/Fab';
 
 interface PageProps {
   language: 'es' | 'la';
@@ -111,6 +112,7 @@ export default function Page({ language, year }: PageProps) {
     const pageTitle = language === 'la' ? 'Calendarium Liturgicum' : 'Calendario Litúrgico';
     setHeaderProps({
       pageTitle,
+      centerChildren: true,
     });
   }, [language, setHeaderProps]);
 
@@ -365,18 +367,12 @@ export default function Page({ language, year }: PageProps) {
       {/* Floating Buttons Container */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* Search Button */}
-        <button
+        <FloatingActionButton
+          icon={<Search />}
+          label={language === 'la' ? 'FESTIVITATES' : 'FESTIVIDADES'}
           onClick={() => setIsSearchOpen(true)}
-          className={cn(
-            'flex items-center justify-center w-14 h-14 text-white rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95 group relative',
-            'bg-linear-to-r from-[#8B0000] to-[#522b2b] shadow-[#8B0000]/30'
-          )}
-        >
-          <Search className="w-6 h-6 group-hover:scale-110 transition-transform" />
-          <span className="absolute right-full mr-4 px-2 py-1 bg-[#2d1a1a] text-white text-xs font-serif rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl border border-white/10 italic pointer-events-none">
-            {language === 'la' ? 'Invenire Diem' : 'Buscar Día'}
-          </span>
-        </button>
+          variant="primary"
+        />
 
         {/* Today Button */}
         <button
@@ -397,19 +393,13 @@ export default function Page({ language, year }: PageProps) {
           </span>
         </button>
 
-        {/* Back to Home Button */}
-        <button
+        {/* Back Button */}
+        <FloatingActionButton
+          icon={<ArrowLeft />}
+          label={language === 'la' ? 'INITIUM' : 'ATRÁS'}
           onClick={() => navigate('/')}
-          className={cn(
-            'flex items-center justify-center w-14 h-14 rounded-full shadow-xl hover:scale-105 transition-all active:scale-95 group relative border border-stone-200',
-            'bg-white/80 backdrop-blur-sm bg-linear-to-b from-stone-50 to-white text-slate-700'
-          )}
-        >
-          <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-          <span className="absolute right-full mr-4 px-2 py-1 bg-[#5c4033] text-[#f4ecd8] text-xs font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm pointer-events-none">
-            {language === 'la' ? 'INITIUM' : 'INICIO'}
-          </span>
-        </button>
+          variant="ghost"
+        />
       </div>
 
       <CalendarCommandPalette

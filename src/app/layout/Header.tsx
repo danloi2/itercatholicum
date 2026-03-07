@@ -11,9 +11,16 @@ interface HeaderProps {
   pageTitle?: ReactNode;
   children?: ReactNode;
   year?: number;
+  centerChildren?: boolean;
 }
 
-export default function Header({ language, setLanguage, pageTitle, children }: HeaderProps) {
+export default function Header({
+  language,
+  setLanguage,
+  pageTitle,
+  children,
+  centerChildren,
+}: HeaderProps) {
   const { hex } = useTodayLiturgicalColor(language);
 
   return (
@@ -70,11 +77,10 @@ export default function Header({ language, setLanguage, pageTitle, children }: H
       {(pageTitle || children) && (
         <div className="bg-stone-50/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-3 items-center min-h-[60px] py-1 md:py-2 gap-4">
-              {/* Left Slot: Feature Titles / Breadcrumbs */}
-              <div className="flex items-center overflow-hidden">
+            {centerChildren ? (
+              <div className="flex items-center justify-center min-h-[60px] py-1 md:py-2 w-full">
                 {pageTitle && (
-                  <div className="flex items-center gap-2 flex-wrap min-w-0">
+                  <div className="flex items-center justify-center gap-2 flex-wrap w-full">
                     {typeof pageTitle === 'string' ? (
                       <h2 className="text-lg md:text-xl font-bold text-[#3d0c0c] tracking-tight truncate">
                         {pageTitle}
@@ -85,16 +91,36 @@ export default function Header({ language, setLanguage, pageTitle, children }: H
                   </div>
                 )}
               </div>
+            ) : (
+              <div className="grid grid-cols-3 items-center min-h-[60px] py-1 md:py-2 gap-4">
+                {/* Left Slot: Feature Titles / Breadcrumbs */}
+                <div className="flex items-center overflow-hidden">
+                  {pageTitle && (
+                    <div className="flex items-center gap-2 flex-wrap min-w-0">
+                      {typeof pageTitle === 'string' ? (
+                        <h2 className="text-lg md:text-xl font-bold text-[#3d0c0c] tracking-tight truncate">
+                          {pageTitle}
+                        </h2>
+                      ) : (
+                        pageTitle
+                      )}
+                    </div>
+                  )}
+                </div>
 
-              {/* Center Slot: Main Selectors (Mass date picker, Calendar nav) */}
-              <div id="header-portal-center" className="flex items-center justify-center min-w-0" />
+                {/* Center Slot: Main Selectors (Mass date picker, Calendar nav) */}
+                <div
+                  id="header-portal-center"
+                  className="flex items-center justify-center min-w-0"
+                />
 
-              {/* Right Slot: Tabs & Actions */}
-              <div className="flex items-center justify-end gap-3 min-w-0">
-                <div id="header-portal-right" className="flex items-center gap-2" />
-                {children}
+                {/* Right Slot: Tabs & Actions */}
+                <div className="flex items-center justify-end gap-3 min-w-0">
+                  <div id="header-portal-right" className="flex items-center gap-2" />
+                  {children}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}

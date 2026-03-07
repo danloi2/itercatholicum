@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useLayout } from '@app/layout/LayoutContext';
-import { Shuffle, Search, ArrowLeft, BookOpen, Loader2 } from 'lucide-react';
+import { Shuffle, Search, ArrowLeft, FileText, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
 import SearchCommandPalette from './components/search/SearchCommandPalette';
@@ -68,7 +68,7 @@ export default function Page({ language }: PageProps) {
           bookData={bookData}
         />
       ),
-      centerChildren: false,
+      centerChildren: true,
     });
   }, [language, selectedBook, selectedChapter, verses, hierarchy, bookData, setHeaderProps]);
 
@@ -231,7 +231,7 @@ export default function Page({ language }: PageProps) {
         />
 
         <FloatingActionButton
-          icon={<BookOpen />}
+          icon={<FileText />}
           label={language === 'la' ? 'CONTENTUM' : 'CONTENIDO'}
           onClick={() => setIsContentSearchOpen(true)}
           variant="amber"
