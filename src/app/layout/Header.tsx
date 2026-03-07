@@ -52,8 +52,12 @@ export default function Header({
             </div>
 
             {/* Center: Liturgical Info */}
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-1.5">
               <LatinDateDisplay language={language} />
+              <div
+                id="header-portal-badges"
+                className="flex items-center justify-center w-full min-h-6"
+              />
             </div>
 
             {/* Right: Controls & Time */}
@@ -73,13 +77,7 @@ export default function Header({
         <div className="bg-stone-50/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {centerChildren ? (
-              <div className="flex flex-col items-center justify-center min-h-[70px] py-2 w-full gap-2">
-                {/* Badges Portal Slot (Top of the stack) */}
-                <div
-                  id="header-portal-badges"
-                  className="flex items-center justify-center w-full min-h-[1.5rem]"
-                />
-
+              <div className="flex flex-col items-center justify-center min-h-[50px] py-1.5 w-full gap-1">
                 {/* Main Content Area (Title or Portal Center) */}
                 <div className="flex flex-col items-center justify-center w-full gap-1">
                   <div

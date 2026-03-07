@@ -29,7 +29,6 @@ export default function Page({ language, year }: PageProps) {
   const { data, loading, generateData } = useCalendar();
   const { setHeaderProps } = useLayout();
   const hasScrolledRef = useRef(false);
-  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const [shouldScrollToToday, setShouldScrollToToday] = useState(false);
 
   const performScroll = (dateStrOrToday: string) => {
@@ -173,13 +172,16 @@ export default function Page({ language, year }: PageProps) {
     }
   }, [selectedYear, currentWeekStart]);
 
+  const [portalCenter, setPortalCenter] = useState<HTMLElement | null>(null);
+  const [portalRight, setPortalRight] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      const el = document.getElementById('header-portal-right');
-      if (el) {
-        setPortalTarget(el);
-        clearInterval(timer);
-      }
+      const elCenter = document.getElementById('header-portal-center');
+      const elRight = document.getElementById('header-portal-right');
+      if (elCenter) setPortalCenter(elCenter);
+      if (elRight) setPortalRight(elRight);
+      if (elCenter && elRight) clearInterval(timer);
     }, 50);
     return () => clearInterval(timer);
   }, []);
@@ -268,7 +270,7 @@ export default function Page({ language, year }: PageProps) {
             className="w-full overflow-visible"
             onValueChange={(v) => setActiveTab(v as 'year' | 'seasons' | 'week')}
           >
-            {portalTarget &&
+            {portalRight &&
               createPortal(
                 <TabsList className="flex w-fit shadow-sm border border-stone-200/50 bg-white/50 backdrop-blur-sm">
                   <TabsTrigger value="year" className="text-[10px] sm:text-xs px-2">
@@ -281,34 +283,26 @@ export default function Page({ language, year }: PageProps) {
                     {language === 'la' ? 'Hebdomada' : 'Semana'}
                   </TabsTrigger>
                 </TabsList>,
-                portalTarget
+                portalRight
               )}
 
             <TabsContent
               value="year"
               className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
             >
-              <SecondHeader
-                view="year"
-                year={selectedYear}
-                onYearChange={handleYearChange}
-                language={language}
-                selectedDate={selectedDate}
-                onDateSelect={setSelectedDate}
-              />
-              <div className="text-center mb-12 border-b border-[#c49b9b]/20 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
-                <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#8B0000] mb-4 tracking-tight">
-                  {language === 'la' ? 'Tempus Liturgicum' : 'Tiempo Litúrgico'}
-                </h1>
-                <div className="flex items-center justify-center gap-4">
-                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-                  <span className="text-xl md:text-2xl font-serif italic text-[#3d0c0c]">
-                    {selectedYear - 1} / {selectedYear}
-                  </span>
-                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-                </div>
-              </div>
-              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible">
+              {portalCenter &&
+                createPortal(
+                  <SecondHeader
+                    view="year"
+                    year={selectedYear}
+                    onYearChange={handleYearChange}
+                    language={language}
+                    selectedDate={selectedDate}
+                    onDateSelect={setSelectedDate}
+                  />,
+                  portalCenter
+                )}
+              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible mt-8">
                 <LiturgicalCalendarView
                   data={data}
                   language={language}
@@ -321,14 +315,18 @@ export default function Page({ language, year }: PageProps) {
               value="seasons"
               className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
             >
-              <SecondHeader
-                view="year"
-                year={selectedYear}
-                onYearChange={handleYearChange}
-                language={language}
-                season={selectedSeason}
-                onSeasonChange={setSelectedSeason}
-              />
+              {portalCenter &&
+                createPortal(
+                  <SecondHeader
+                    view="year"
+                    year={selectedYear}
+                    onYearChange={handleYearChange}
+                    language={language}
+                    season={selectedSeason}
+                    onSeasonChange={setSelectedSeason}
+                  />,
+                  portalCenter
+                )}
               <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible">
                 <LiturgicalSeasonView
                   data={data}
@@ -340,17 +338,21 @@ export default function Page({ language, year }: PageProps) {
             </TabsContent>
 
             <TabsContent value="week" className="focus-visible:outline-none px-0 sm:px-0 mt-0">
-              <SecondHeader
-                view="week"
-                year={selectedYear}
-                onYearChange={setSelectedYear}
-                language={language}
-                displayMonth={displayMonth}
-                displayWeekInfo={headerInfo?.text}
-                onPrevWeek={() => setCurrentWeekStart(subWeeks(currentWeekStart, 1))}
-                onNextWeek={() => setCurrentWeekStart(addWeeks(currentWeekStart, 1))}
-                theme={headerInfo?.theme}
-              />
+              {portalCenter &&
+                createPortal(
+                  <SecondHeader
+                    view="week"
+                    year={selectedYear}
+                    onYearChange={setSelectedYear}
+                    language={language}
+                    displayMonth={displayMonth}
+                    displayWeekInfo={headerInfo?.text}
+                    onPrevWeek={() => setCurrentWeekStart(subWeeks(currentWeekStart, 1))}
+                    onNextWeek={() => setCurrentWeekStart(addWeeks(currentWeekStart, 1))}
+                    theme={headerInfo?.theme}
+                  />,
+                  portalCenter
+                )}
               <div className="w-full">
                 <WeeklyView
                   data={data}
