@@ -90,6 +90,15 @@ export function getFullLiturgicalName(day: LiturgicalDay, lang: 'es' | 'la'): st
     SEASON_NAMES[lang]?.[mappedSeason] || day.seasonNames?.[0] || mappedSeason;
   const weekNum = day.calendar?.weekOfSeason || 0;
 
+  const isSpecial =
+    day.rank === 'SOLEMNITY' ||
+    day.rank === 'FEAST' ||
+    day.precedence?.toString().includes('PRIVILEGED_SUNDAY') ||
+    day.id.includes('palm_sunday');
+
+  // If it's a special day (Solemnity/Feast/Privileged Sunday), use its name directly
+  if (isSpecial) return day.name;
+
   if (day.periods?.includes('HOLY_WEEK')) {
     const holyDay = lang === 'la' ? 'Hebdomada Sancta' : 'Semana Santa';
     const link = lang === 'la' ? 'in' : 'de';

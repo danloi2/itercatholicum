@@ -26,7 +26,7 @@ interface BibleHeaderProps {
   } | null;
 }
 
-export default function LayoutHeader({
+export default function SecondHeader({
   language,
   selectedBook,
   selectedChapter,

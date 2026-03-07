@@ -59,6 +59,7 @@ export interface LiturgicalDay {
     dayOfSeason?: number;
     dayOfWeek?: number;
   };
+  precedence: string;
   isHolyDayOfObligation: boolean;
   weekday?: LiturgicalDay;
 }

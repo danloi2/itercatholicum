@@ -8,7 +8,7 @@ import { cn } from '@shared/lib/utils';
 import { SEASON_INFO } from '@shared/constants/config';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@ui/collapsible';
 import type { ColorTheme, SeasonInfo } from '@shared/types';
-import { LiturgicalDatePicker } from '../widgets/LiturgicalDatePicker';
+import { LiturgicalDatePicker } from '@shared/components/widgets/LiturgicalDatePicker';
 
 interface CalendarHeaderProps {
   view: 'year' | 'week';
@@ -30,7 +30,7 @@ interface CalendarHeaderProps {
   onDateSelect?: (date: Date | undefined) => void;
 }
 
-export default function CalendarHeader({
+export default function SecondHeader({
   view,
   year,
   onYearChange,
@@ -50,7 +50,7 @@ export default function CalendarHeader({
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const el = document.getElementById('week-nav-portal-target');
+      const el = document.getElementById('header-portal-center');
       if (el) {
         setNavPortalTarget(el);
         clearInterval(timer);

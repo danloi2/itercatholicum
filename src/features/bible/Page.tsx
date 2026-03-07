@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
 import SearchCommandPalette from './components/search/SearchCommandPalette';
 import TextSearch from './components/search/TextSearch';
-import LayoutHeader from './components/layout/LayoutHeader';
+import SecondHeader from './layout/SecondHeader';
 import { bibleService } from './services/bibleService';
 import { BookTree } from './components/navigation/BookTree';
 import { ChapterSelector } from './components/navigation/ChapterSelector';
@@ -53,7 +53,7 @@ export default function Page({ language }: PageProps) {
   useEffect(() => {
     setHeaderProps({
       pageTitle: (
-        <LayoutHeader
+        <SecondHeader
           language={language}
           selectedBook={selectedBook || null}
           selectedChapter={selectedChapter}

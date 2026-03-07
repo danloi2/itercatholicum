@@ -11,7 +11,7 @@ import { la } from '@shared/lib/locales';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@ui/tabs';
 import WeeklyView from './components/views/WeeklyView';
 import CalendarCommandPalette from './components/search/CalendarCommandPalette';
-import CalendarHeader from './components/layout/CalendarHeader';
+import SecondHeader from './layout/SecondHeader';
 import { LiturgicalCalendarView } from './components/views/LiturgicalCalendarView';
 import { calendarService } from './services/calendarService';
 import LiturgicalSeasonView from './components/views/LiturgicalSeasonView';
@@ -173,7 +173,7 @@ export default function Page({ language, year }: PageProps) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const el = document.getElementById('header-portal-target');
+      const el = document.getElementById('header-portal-right');
       if (el) {
         setPortalTarget(el);
         clearInterval(timer);
@@ -268,25 +268,17 @@ export default function Page({ language, year }: PageProps) {
           >
             {portalTarget &&
               createPortal(
-                <div className="flex w-full items-center justify-center md:static relative gap-4 mt-2 md:mt-0">
-                  <div
-                    id="week-nav-portal-target"
-                    className="flex shrink-0 items-center justify-center md:absolute md:left-1/2 md:-translate-x-1/2"
-                  ></div>
-                  <div className="flex md:flex-1 shrink-0 justify-center md:justify-end">
-                    <TabsList className="flex w-fit shadow-sm border border-stone-200/50">
-                      <TabsTrigger value="year" className="text-[10px] sm:text-xs px-2">
-                        {language === 'la' ? 'Annus' : 'Año'}
-                      </TabsTrigger>
-                      <TabsTrigger value="seasons" className="text-[10px] sm:text-xs px-2">
-                        {language === 'la' ? 'Tempus' : 'Tiempo'}
-                      </TabsTrigger>
-                      <TabsTrigger value="week" className="text-[10px] sm:text-xs px-2">
-                        {language === 'la' ? 'Hebdomada' : 'Semana'}
-                      </TabsTrigger>
-                    </TabsList>
-                  </div>
-                </div>,
+                <TabsList className="flex w-fit shadow-sm border border-stone-200/50 bg-white/50 backdrop-blur-sm">
+                  <TabsTrigger value="year" className="text-[10px] sm:text-xs px-2">
+                    {language === 'la' ? 'Annus' : 'Año'}
+                  </TabsTrigger>
+                  <TabsTrigger value="seasons" className="text-[10px] sm:text-xs px-2">
+                    {language === 'la' ? 'Tempus' : 'Tiempo'}
+                  </TabsTrigger>
+                  <TabsTrigger value="week" className="text-[10px] sm:text-xs px-2">
+                    {language === 'la' ? 'Hebdomada' : 'Semana'}
+                  </TabsTrigger>
+                </TabsList>,
                 portalTarget
               )}
 
@@ -294,7 +286,7 @@ export default function Page({ language, year }: PageProps) {
               value="year"
               className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
             >
-              <CalendarHeader
+              <SecondHeader
                 view="year"
                 year={selectedYear}
                 onYearChange={handleYearChange}
@@ -327,7 +319,7 @@ export default function Page({ language, year }: PageProps) {
               value="seasons"
               className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
             >
-              <CalendarHeader
+              <SecondHeader
                 view="year"
                 year={selectedYear}
                 onYearChange={handleYearChange}
@@ -346,7 +338,7 @@ export default function Page({ language, year }: PageProps) {
             </TabsContent>
 
             <TabsContent value="week" className="focus-visible:outline-none px-0 sm:px-0 mt-0">
-              <CalendarHeader
+              <SecondHeader
                 view="week"
                 year={selectedYear}
                 onYearChange={setSelectedYear}

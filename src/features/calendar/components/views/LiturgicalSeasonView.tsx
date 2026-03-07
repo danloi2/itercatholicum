@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LiturgicalCard } from '../cards/LiturgicalCard';
-import LiturgicalSeasonBanner from '../layout/LiturgicalSeasonBanner';
+import LiturgicalSeasonBanner from '@shared/components/widgets/LiturgicalSeasonBanner';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
 import { ROMCAL_MAP } from '@shared/constants/config';
 

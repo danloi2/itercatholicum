@@ -155,7 +155,6 @@
     },
     {
       "numerus": 9,
-      "ctd_versus": 39,
       "versus": {
         "1": "Para el fin: por los ocultos arcanos del hijo. Salmo de David.",
         "2": "A ti, ¡oh Señor!, tributaré gracias con todo mi corazón; contaré todas tus maravillas.",
@@ -177,7 +176,13 @@
         "18": "Serán arrojados al infierno los pecadores, y todas esas gentes que viven olvidadas de Dios.",
         "19": "Que no estará para siempre olvidado el pobre; ni quedará para siempre frustrada la paciencia de los infelices.",
         "20": "Levántate, ¡oh Señor!, haz que no prevalezca el hombre malvado; sean juzgadas las gentes ante tu presencia.",
-        "21": "Establece, Señor, sobre ellas un legislador; para que conozcan que son hombres débiles y miserables.",
+        "21": "Establece, Señor, sobre ellas un legislador; para que conozcan que son hombres débiles y miserables."
+      },
+      "ctd_versus": 21
+    },
+    {
+      "numerus": 10,
+      "versus": {
         "22": "¿Y por qué, ¡oh Señor!, te has retirado a lo lejos, y me has desamparado en el tiempo más crítico, en la tribulación?",
         "23": "Mientras que el impío se llena de soberbia, se requema el pobre; mas en fin, los impíos son cogidos en los mismos designios o tramas que han urdido.",
         "24": "Por cuanto el pecador se jacta en los perversos deseos de su alma; y el inicuo se ve celebrado.",
@@ -196,10 +201,11 @@
         "37": "Reinará el Señor eternamente y por los siglos de los siglos; vosotros, ¡oh naciones impías!, seréis extirpadas de su tierra.",
         "38": "Atendiste, ¡oh Señor!, al deseo de los pobres; prestaste benignos oídos a la rectitud de su corazón,",
         "39": "para hacer justicia al huérfano y al oprimido; a fin de que cese ya el hombre de gloriarse de su poder sobre la tierra."
-      }
+      },
+      "ctd_versus": 18
     },
     {
-      "numerus": 10,
+      "numerus": 11,
       "ctd_versus": 8,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -213,7 +219,7 @@
       }
     },
     {
-      "numerus": 11,
+      "numerus": 12,
       "ctd_versus": 9,
       "versus": {
         "1": "Para el fin: para la octava: Salmo de David.",
@@ -228,7 +234,7 @@
       }
     },
     {
-      "numerus": 12,
+      "numerus": 13,
       "ctd_versus": 6,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -240,7 +246,7 @@
       }
     },
     {
-      "numerus": 13,
+      "numerus": 14,
       "ctd_versus": 7,
       "versus": {
         "1": "Para el fin: Salmo de David. Dijo en su corazón el insensato: No hay Dios. Los hombres se han corrompido, y se han hecho abominables por seguir sus pasiones; no hay quien obre bien, no hay uno siquiera.",
@@ -253,7 +259,7 @@
       }
     },
     {
-      "numerus": 14,
+      "numerus": 15,
       "ctd_versus": 5,
       "versus": {
         "1": "Salmo de David. ¡Ah, Señor!, ¿quién morará en tu celestial tabernáculo?; ¿o quién descansará en tu santo monte?",
@@ -264,7 +270,7 @@
       }
     },
     {
-      "numerus": 15,
+      "numerus": 16,
       "ctd_versus": 11,
       "versus": {
         "1": "Inscripcion de titulo: Del mismo David. Sálvame, oh Señor, pues tengo puesta en ti toda mi esperanza.",
@@ -281,7 +287,7 @@
       }
     },
     {
-      "numerus": 16,
+      "numerus": 17,
       "ctd_versus": 15,
       "versus": {
         "1": "Oracion de David. Atiende, ¡oh Señor!, a mi justicia, acoge mis plegarias. Presta oídos a mi oración, que no la pronuncio con labios hipócritas o fraudulentos.",
@@ -302,7 +308,7 @@
       }
     },
     {
-      "numerus": 17,
+      "numerus": 18,
       "ctd_versus": 51,
       "versus": {
         "1": "Para el fin. Salmo de David, siervo del Señor, a cuya gloria dirigió las palabras de este cántico, el día en que le libró el Señor de las manos de todos sus enemigos, como también del poder de Saúl, con cuyo motivo dijo:",
@@ -359,7 +365,7 @@
       }
     },
     {
-      "numerus": 18,
+      "numerus": 19,
       "ctd_versus": 15,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -380,7 +386,7 @@
       }
     },
     {
-      "numerus": 19,
+      "numerus": 20,
       "ctd_versus": 10,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -396,7 +402,7 @@
       }
     },
     {
-      "numerus": 20,
+      "numerus": 21,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -416,7 +422,7 @@
       }
     },
     {
-      "numerus": 21,
+      "numerus": 22,
       "ctd_versus": 32,
       "versus": {
         "1": "Para el fin: por el auxilio de la mañana, Salmo de David.",
@@ -454,7 +460,7 @@
       }
     },
     {
-      "numerus": 22,
+      "numerus": 23,
       "ctd_versus": 6,
       "versus": {
         "1": "Salmo de David. El Señor es mi pastor, nada me faltará.",
@@ -466,7 +472,7 @@
       }
     },
     {
-      "numerus": 23,
+      "numerus": 24,
       "ctd_versus": 10,
       "versus": {
         "1": "Para el primer dia de la semana: Salmo de David. Del Señor es la tierra y cuanto ella contiene; el mundo y todos sus habitantes.",
@@ -482,7 +488,7 @@
       }
     },
     {
-      "numerus": 24,
+      "numerus": 25,
       "ctd_versus": 22,
       "versus": {
         "1": "Para el fin: Salmo de David. A ti, ¡oh Señor!, he levantado mi espíritu.",
@@ -510,7 +516,7 @@
       }
     },
     {
-      "numerus": 25,
+      "numerus": 26,
       "ctd_versus": 12,
       "versus": {
         "1": "Para el fin: Salmo de David. ¡Oh Señor!, sé tú mi juez, puesto que yo he procedido según mi inocencia; y esperando en el Señor no vacilaré.",
@@ -528,7 +534,7 @@
       }
     },
     {
-      "numerus": 26,
+      "numerus": 27,
       "ctd_versus": 14,
       "versus": {
         "1": "Salmo de David antes de ser ungido. El Señor es mi luz y mi salvación: ¿a quién he de temer yo? El Señor es el defensor de mi vida: ¿quién me hará temblar?",
@@ -548,7 +554,7 @@
       }
     },
     {
-      "numerus": 27,
+      "numerus": 28,
       "ctd_versus": 9,
       "versus": {
         "1": "Salmo del mismo David. A ti, oh Señor, clamaré, no te hagas sordo a mis ruegos, Dios mío; no sea que no haciendo tú caso de mí, llegue yo a contarme con los que bajan al sepulcro.",
@@ -563,7 +569,7 @@
       }
     },
     {
-      "numerus": 28,
+      "numerus": 29,
       "ctd_versus": 11,
       "versus": {
         "1": "Salmo de David, cuando se concluyó el Tabernáculo. Presentad al Señor, ¡oh hijos de Dios!, presentad al Señor corderos para el sacrificio.",
@@ -580,7 +586,7 @@
       }
     },
     {
-      "numerus": 29,
+      "numerus": 30,
       "ctd_versus": 13,
       "versus": {
         "1": "Salmo de David, cantado en la dedicacion de la Casa de David.",
@@ -599,7 +605,7 @@
       }
     },
     {
-      "numerus": 30,
+      "numerus": 31,
       "ctd_versus": 25,
       "versus": {
         "1": "Para el fin: Salmo de David, por un éxtasi ó EXCESO DE PENA.",
@@ -630,7 +636,7 @@
       }
     },
     {
-      "numerus": 31,
+      "numerus": 32,
       "ctd_versus": 11,
       "versus": {
         "1": "Del mismo David, salmo de inteligencia. Felices aquellos a quienes se han perdonado sus iniquidades, y se han borrado sus pecados.",
@@ -647,7 +653,7 @@
       }
     },
     {
-      "numerus": 32,
+      "numerus": 33,
       "ctd_versus": 22,
       "versus": {
         "1": "Salmo de David. Regocijaos, ¡oh justos!, en el Señor; a los rectos de corazón es a quienes les está bien alabarle.",
@@ -675,7 +681,7 @@
       }
     },
     {
-      "numerus": 33,
+      "numerus": 34,
       "ctd_versus": 23,
       "versus": {
         "1": "Salmo de David, cuando se desfiguró delante del Rey Achimelech, el cual le echó de si, con lo que David se escapó.",
@@ -704,7 +710,7 @@
       }
     },
     {
-      "numerus": 34,
+      "numerus": 35,
       "ctd_versus": 28,
       "versus": {
         "1": "Salmo del mismo David. Juzga, ¡oh Señor!, a los que me dañan; bate a los que pelean contra mí.",
@@ -738,7 +744,7 @@
       }
     },
     {
-      "numerus": 35,
+      "numerus": 36,
       "ctd_versus": 13,
       "versus": {
         "1": "Para el fin: Salmo del mismo David, siervo del Señor.",
@@ -757,7 +763,7 @@
       }
     },
     {
-      "numerus": 36,
+      "numerus": 37,
       "ctd_versus": 40,
       "versus": {
         "1": "Salmo del mismo David. No envidies la prosperidad de los malignos, ni tengas celos de los que obran la iniquidad;",
@@ -803,7 +809,7 @@
       }
     },
     {
-      "numerus": 37,
+      "numerus": 38,
       "ctd_versus": 23,
       "versus": {
         "1": "Salmo de David para recuerdo; en sábado.",
@@ -832,7 +838,7 @@
       }
     },
     {
-      "numerus": 38,
+      "numerus": 39,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin, á Idithun: cántico de David.",
@@ -852,7 +858,7 @@
       }
     },
     {
-      "numerus": 39,
+      "numerus": 40,
       "ctd_versus": 18,
       "versus": {
         "1": "Para el fin: Salmo del mismo David.",
@@ -876,7 +882,7 @@
       }
     },
     {
-      "numerus": 40,
+      "numerus": 41,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Salmo del mismo David.",
@@ -896,7 +902,7 @@
       }
     },
     {
-      "numerus": 41,
+      "numerus": 42,
       "ctd_versus": 12,
       "versus": {
         "1": "Para el fin: Salmo de instruccion, á los hijos de Coré.",
@@ -914,7 +920,7 @@
       }
     },
     {
-      "numerus": 42,
+      "numerus": 43,
       "ctd_versus": 5,
       "versus": {
         "1": "Salmo de David. Júzgame tú, oh Dios, y toma en tus manos mi causa; líbrame de la gente impía, y del hombre inicuo y engañador.",
@@ -925,7 +931,7 @@
       }
     },
     {
-      "numerus": 43,
+      "numerus": 44,
       "ctd_versus": 26,
       "versus": {
         "1": "Para el fin á los hijos de Coré: Salmo de inteligencia.",
@@ -957,7 +963,7 @@
       }
     },
     {
-      "numerus": 44,
+      "numerus": 45,
       "ctd_versus": 18,
       "versus": {
         "1": "Para el fin: para aquellos que han de ser mudados ó Trocados: A los hijos de Coré, Salmo de inteligencia: Cántico en alabanza del amado.",
@@ -981,7 +987,7 @@
       }
     },
     {
-      "numerus": 45,
+      "numerus": 46,
       "ctd_versus": 12,
       "versus": {
         "1": "Para el fin á los hijos de Coré: Salmo para los misterios.",
@@ -999,7 +1005,7 @@
       }
     },
     {
-      "numerus": 46,
+      "numerus": 47,
       "ctd_versus": 10,
       "versus": {
         "1": "Para el fin: á los hijos de Coré, Salmo.",
@@ -1015,7 +1021,7 @@
       }
     },
     {
-      "numerus": 47,
+      "numerus": 48,
       "ctd_versus": 15,
       "versus": {
         "1": "Salmo de cántico: á los hijos de Coré: para el segundo dia de la semana.",
@@ -1036,7 +1042,7 @@
       }
     },
     {
-      "numerus": 48,
+      "numerus": 49,
       "ctd_versus": 21,
       "versus": {
         "1": "Para el fin: á los hijos de Coré, Salmo.",
@@ -1063,7 +1069,7 @@
       }
     },
     {
-      "numerus": 49,
+      "numerus": 50,
       "ctd_versus": 23,
       "versus": {
         "1": "Salma de ó para Asaph. El Dios de los dioses, el Señor ha hablado y ha convocado la tierra, desde el oriente hasta el occidente.",
@@ -1092,7 +1098,7 @@
       }
     },
     {
-      "numerus": 50,
+      "numerus": 51,
       "ctd_versus": 21,
       "versus": {
         "1": "Para el fin: Salmo de David;",
@@ -1119,7 +1125,7 @@
       }
     },
     {
-      "numerus": 51,
+      "numerus": 52,
       "ctd_versus": 11,
       "versus": {
         "1": "Para el fin, Salmo de inteligencia de David,",
@@ -1136,7 +1142,7 @@
       }
     },
     {
-      "numerus": 52,
+      "numerus": 53,
       "ctd_versus": 7,
       "versus": {
         "1": "Para el fin: por Maeleth. Salmo de inteligencia de David. Dijo el insensato en su corazon: No hay Dios.",
@@ -1149,7 +1155,7 @@
       }
     },
     {
-      "numerus": 53,
+      "numerus": 54,
       "ctd_versus": 9,
       "versus": {
         "1": "Para el fin: sobre los Cánticos. Salmo de inteligencia de David.",
@@ -1164,7 +1170,7 @@
       }
     },
     {
-      "numerus": 54,
+      "numerus": 55,
       "ctd_versus": 24,
       "versus": {
         "1": "Para el fin: sobre los Cánticos. Salmo de inteligencia de David.",
@@ -1194,7 +1200,7 @@
       }
     },
     {
-      "numerus": 55,
+      "numerus": 56,
       "ctd_versus": 13,
       "versus": {
         "1": "Para el fin: para la gente que estaba lejos del Santuario. Inscripción para ponerse sobre una columna por David, cuando los estrangeros ó filisteos le detuvieron en Get.",
@@ -1213,7 +1219,7 @@
       }
     },
     {
-      "numerus": 56,
+      "numerus": 57,
       "ctd_versus": 12,
       "versus": {
         "1": "Para el fin: no destruyas a tu siervo. Salmo de David para inscribirse en una columna, cuando huyendo de Saúl se retiró en una cueva.",
@@ -1231,7 +1237,7 @@
       }
     },
     {
-      "numerus": 57,
+      "numerus": 58,
       "ctd_versus": 12,
       "versus": {
         "1": "Para el fin: no destruyas a tu siervo: Salmo de David para inscribirse en una columna.",
@@ -1249,7 +1255,7 @@
       }
     },
     {
-      "numerus": 58,
+      "numerus": 59,
       "ctd_versus": 18,
       "versus": {
         "1": "Para el fin. No destruyas a tu siervo. Salmo de David para inscribirse en una columna: cuando Saúl envió una guardia a su casa, con el fin de quitarle la vida.",
@@ -1273,7 +1279,7 @@
       }
     },
     {
-      "numerus": 59,
+      "numerus": 60,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Por aquellos que serán mudados. Inscripción para una columna. Al mismo David para instruccion.",
@@ -1293,7 +1299,7 @@
       }
     },
     {
-      "numerus": 60,
+      "numerus": 61,
       "ctd_versus": 9,
       "versus": {
         "1": "Para el fin: sobre los Canticos de David",
@@ -1308,7 +1314,7 @@
       }
     },
     {
-      "numerus": 61,
+      "numerus": 62,
       "ctd_versus": 13,
       "versus": {
         "1": "Para el fin: Salmo de David para Idithun.",
@@ -1327,7 +1333,7 @@
       }
     },
     {
-      "numerus": 62,
+      "numerus": 63,
       "ctd_versus": 12,
       "versus": {
         "1": "Salmo de David, estando en el desierto de Iduméa",
@@ -1345,7 +1351,7 @@
       }
     },
     {
-      "numerus": 63,
+      "numerus": 64,
       "ctd_versus": 11,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -1362,7 +1368,7 @@
       }
     },
     {
-      "numerus": 64,
+      "numerus": 65,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Salmo de David. Cántico de Jeremías y de Ezequiel para el pueblo transportado al cautiverio, cuando empezaba a salir de él.",
@@ -1382,7 +1388,7 @@
       }
     },
     {
-      "numerus": 65,
+      "numerus": 66,
       "ctd_versus": 20,
       "versus": {
         "1": "Salmo y Cántico de la Resurreccion. Moradores todos de la tierra, dirigid a Dios voces de júbilo.",
@@ -1408,7 +1414,7 @@
       }
     },
     {
-      "numerus": 66,
+      "numerus": 67,
       "ctd_versus": 8,
       "versus": {
         "1": "Para el fin, sobre los himnos: Salmo y Cántico de David.",
@@ -1422,7 +1428,7 @@
       }
     },
     {
-      "numerus": 67,
+      "numerus": 68,
       "ctd_versus": 36,
       "versus": {
         "1": "Para el fin: Salmo y Cántico del mismo David.",
@@ -1464,7 +1470,7 @@
       }
     },
     {
-      "numerus": 68,
+      "numerus": 69,
       "ctd_versus": 37,
       "versus": {
         "1": "Para el fin: por los que han de ser mundados.",
@@ -1507,7 +1513,7 @@
       }
     },
     {
-      "numerus": 69,
+      "numerus": 70,
       "ctd_versus": 6,
       "versus": {
         "1": "Para el fin: Salmo de David, en memoría de haberle el Señor salvado.",
@@ -1519,7 +1525,7 @@
       }
     },
     {
-      "numerus": 70,
+      "numerus": 71,
       "ctd_versus": 24,
       "versus": {
         "1": "Salmo de David: De los hijos de Jonadab, y de los primeros cautivos. En ti, ¡oh Señor!, tengo puesta mi esperanza; no sea yo para siempre confundido.",
@@ -1549,7 +1555,7 @@
       }
     },
     {
-      "numerus": 71,
+      "numerus": 72,
       "ctd_versus": 20,
       "versus": {
         "1": "Salmo sobre Salomon.",
@@ -1575,7 +1581,7 @@
       }
     },
     {
-      "numerus": 72,
+      "numerus": 73,
       "ctd_versus": 28,
       "versus": {
         "1": "Salmo de Asaph. ¡Cuán bondadoso es Dios para Israel, para los que son de corazón recto!",
@@ -1609,7 +1615,7 @@
       }
     },
     {
-      "numerus": 73,
+      "numerus": 74,
       "ctd_versus": 23,
       "versus": {
         "1": "Salma de inteligencia de Asaph. ¿Y por qué, oh Dios, nos has desechado para siempre? ¿Cómo se ha encendido tu furor contra las ovejitas que apacientas?",
@@ -1638,7 +1644,7 @@
       }
     },
     {
-      "numerus": 74,
+      "numerus": 75,
       "ctd_versus": 11,
       "versus": {
         "1": "Para el fin: no nos destruyas. Salmo y Cántico de Asaph.",
@@ -1655,7 +1661,7 @@
       }
     },
     {
-      "numerus": 75,
+      "numerus": 76,
       "ctd_versus": 13,
       "versus": {
         "1": "Para el fin: para alabar. Salmo de Asaph, Cantico sobre los assyrios.",
@@ -1674,7 +1680,7 @@
       }
     },
     {
-      "numerus": 76,
+      "numerus": 77,
       "ctd_versus": 21,
       "versus": {
         "1": "Para el fin: Para Idithun, Salmo de Asaph.",
@@ -1701,7 +1707,7 @@
       }
     },
     {
-      "numerus": 77,
+      "numerus": 78,
       "ctd_versus": 72,
       "versus": {
         "1": "Inteligencia, ó instruccion de Asaph. Escucha, pueblo mío, mi ley y ten atentos tus oídos para percibir las palabras de mi boca.",
@@ -1779,7 +1785,7 @@
       }
     },
     {
-      "numerus": 78,
+      "numerus": 79,
       "ctd_versus": 13,
       "versus": {
         "1": "Salmo de Asaph. Oh Dios, los gentiles han entrado en tu heredad; han profanado tu santo templo; han dejado a Jerusalén como una barraca de hortelano.",
@@ -1798,7 +1804,7 @@
       }
     },
     {
-      "numerus": 79,
+      "numerus": 80,
       "ctd_versus": 20,
       "versus": {
         "1": "Para el fin: Para aquellos que han de ser mudados. Testimonio de Asaph. Salmo.",
@@ -1824,7 +1830,7 @@
       }
     },
     {
-      "numerus": 80,
+      "numerus": 81,
       "ctd_versus": 17,
       "versus": {
         "1": "Para el fin: para los lagares. Salmo para el mismo Asaph.",
@@ -1847,7 +1853,7 @@
       }
     },
     {
-      "numerus": 81,
+      "numerus": 82,
       "ctd_versus": 8,
       "versus": {
         "1": "Salmo de Asaph. Presente está Dios en la reunión de los dioses de la tierra, y allí en medio de ellos juzga a esos dioses.",
@@ -1861,7 +1867,7 @@
       }
     },
     {
-      "numerus": 82,
+      "numerus": 83,
       "ctd_versus": 19,
       "versus": {
         "1": "Cántico y Salmo de Asaph.",
@@ -1886,7 +1892,7 @@
       }
     },
     {
-      "numerus": 83,
+      "numerus": 84,
       "ctd_versus": 13,
       "versus": {
         "1": "Para el fin. Para los lagares, ó vendimia. Salmo para los hijos de Coré.",
@@ -1905,7 +1911,7 @@
       }
     },
     {
-      "numerus": 84,
+      "numerus": 85,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Salmo para los hijos de Coré.",
@@ -1925,7 +1931,7 @@
       }
     },
     {
-      "numerus": 85,
+      "numerus": 86,
       "ctd_versus": 17,
       "versus": {
         "1": "Oracion del mismo David. Inclina, Señor, tu oído a mis ruegos, y escúchame, porque me hallo afligido y necesitado.",
@@ -1948,7 +1954,7 @@
       }
     },
     {
-      "numerus": 86,
+      "numerus": 87,
       "ctd_versus": 7,
       "versus": {
         "1": "A los hijos de Coré. Salmo y Cántico. Sobre los montes santos está Jerusalén fundada.",
@@ -1961,7 +1967,7 @@
       }
     },
     {
-      "numerus": 87,
+      "numerus": 88,
       "ctd_versus": 19,
       "versus": {
         "1": "Para los hijos de Coré, hasta el fin, sobre Mahelet; para cantarse alternativamente. Instrucción de Emán Ezraíta.",
@@ -1986,7 +1992,7 @@
       }
     },
     {
-      "numerus": 88,
+      "numerus": 89,
       "ctd_versus": 53,
       "versus": {
         "1": "Instruccion de Ethan Ezrahite.",
@@ -2045,7 +2051,7 @@
       }
     },
     {
-      "numerus": 89,
+      "numerus": 90,
       "ctd_versus": 17,
       "versus": {
         "1": "Oracion de Moisés, varon de Dios. Señor, en todas épocas has sido tú nuestro amparo.",
@@ -2068,7 +2074,7 @@
       }
     },
     {
-      "numerus": 90,
+      "numerus": 91,
       "ctd_versus": 16,
       "versus": {
         "1": "Alabanza y cántico de David. El que se acoge al asilo del Altísimo, descansará siempre bajo la protección del Dios del cielo.",
@@ -2090,7 +2096,7 @@
       }
     },
     {
-      "numerus": 91,
+      "numerus": 92,
       "ctd_versus": 16,
       "versus": {
         "1": "Salmo y Cántico. Para el dia del sábado.",
@@ -2112,7 +2118,7 @@
       }
     },
     {
-      "numerus": 92,
+      "numerus": 93,
       "ctd_versus": 5,
       "versus": {
         "1": "El Señor reinó, se revistió de gloria, se armó de fortaleza, y se ciñó todo de ella. Asentó también firme la tierra, y no será conmovida.",
@@ -2123,7 +2129,7 @@
       }
     },
     {
-      "numerus": 93,
+      "numerus": 94,
       "ctd_versus": 23,
       "versus": {
         "1": "El Señor es el Dios de las venganzas; y el Dios de las venganzas ha obrado con libertad.",
@@ -2152,7 +2158,7 @@
       }
     },
     {
-      "numerus": 94,
+      "numerus": 95,
       "ctd_versus": 11,
       "versus": {
         "1": "Venid, regocijémonos en el Señor; cantemos con júbilo las alabanzas del Dios, salvador nuestro.",
@@ -2169,7 +2175,7 @@
       }
     },
     {
-      "numerus": 95,
+      "numerus": 96,
       "ctd_versus": 13,
       "versus": {
         "1": "Cántico del mismo David, cantado cuando se reedificó la Casa de Dios despues de la cautividad. Cantad al Señor un cántico nuevo. Regiones todas de la tierra, cantad al Señor.",
@@ -2188,7 +2194,7 @@
       }
     },
     {
-      "numerus": 96,
+      "numerus": 97,
       "ctd_versus": 12,
       "versus": {
         "1": "Salmo de David, cuando fué restaurada su tierra. El Señor es el que reina: Regocíjese la tierra; muestre su júbilo la multitud de islas.",
@@ -2206,7 +2212,7 @@
       }
     },
     {
-      "numerus": 97,
+      "numerus": 98,
       "ctd_versus": 9,
       "versus": {
         "1": "Salmo del mismo David. Cantad al Señor un cántico nuevo; porque ha hecho maravillas. Su diestra y su santo brazo han obrado su salvación.",
@@ -2221,7 +2227,7 @@
       }
     },
     {
-      "numerus": 98,
+      "numerus": 99,
       "ctd_versus": 9,
       "versus": {
         "1": "Salmo del mismo David. Reina ya el Señor, que se estremezcan los pueblos; reina ya aquel que está sentado sobre los querubines, agítese la tierra.",
@@ -2236,7 +2242,7 @@
       }
     },
     {
-      "numerus": 99,
+      "numerus": 100,
       "ctd_versus": 5,
       "versus": {
         "1": "Salmo de la alabanza.",
@@ -2247,7 +2253,7 @@
       }
     },
     {
-      "numerus": 100,
+      "numerus": 101,
       "ctd_versus": 8,
       "versus": {
         "1": "Salmo del mismo David. Cantaré, Señor, las alabanzas de tu misericordia y de tu justicia.",
@@ -2261,7 +2267,7 @@
       }
     },
     {
-      "numerus": 101,
+      "numerus": 102,
       "ctd_versus": 29,
       "versus": {
         "1": "Oración de un miserable, que hallándose atribulado derrama en la presencia del Señor sus plegarias.",
@@ -2296,7 +2302,7 @@
       }
     },
     {
-      "numerus": 102,
+      "numerus": 103,
       "ctd_versus": 22,
       "versus": {
         "1": "Del mismo David. Bendice, ¡oh alma mía!, al Señor, y bendigan todas mis entrañas su santo Nombre.",
@@ -2324,7 +2330,7 @@
       }
     },
     {
-      "numerus": 103,
+      "numerus": 104,
       "ctd_versus": 35,
       "versus": {
         "1": "Del mismo David. ¡Oh alma mía!, bendice al Señor. Señor Dios mío, tú te has engrandecido mucho y en gran manera. Te has revestido de gloria y de majestad;",
@@ -2365,7 +2371,7 @@
       }
     },
     {
-      "numerus": 104,
+      "numerus": 105,
       "ctd_versus": 45,
       "versus": {
         "1": "Aleluya. Alabad al Señor e invocad su Nombre; predicad entre las naciones sus admirables obras.",
@@ -2416,7 +2422,7 @@
       }
     },
     {
-      "numerus": 105,
+      "numerus": 106,
       "ctd_versus": 48,
       "versus": {
         "1": "Aleluya. Alabad al Señor porque es tan bueno, porque es eterna su misericordia.",
@@ -2470,7 +2476,7 @@
       }
     },
     {
-      "numerus": 106,
+      "numerus": 107,
       "ctd_versus": 43,
       "versus": {
         "1": "Aleluya. Alabad al Señor, porque es tan bueno, porque es eterna su misericordia.",
@@ -2519,7 +2525,7 @@
       }
     },
     {
-      "numerus": 107,
+      "numerus": 108,
       "ctd_versus": 14,
       "versus": {
         "1": "Cántico y Salmo del mismo David.",
@@ -2539,7 +2545,7 @@
       }
     },
     {
-      "numerus": 108,
+      "numerus": 109,
       "ctd_versus": 31,
       "versus": {
         "1": "Salmo de David: para el fin.",
@@ -2576,7 +2582,7 @@
       }
     },
     {
-      "numerus": 109,
+      "numerus": 110,
       "ctd_versus": 7,
       "versus": {
         "1": "Salmo de David. El Señor dijo a mi Señor: Siéntate a mi diestra, mientras que yo pongo a tus enemigos por tarima de tus pies.",
@@ -2589,7 +2595,7 @@
       }
     },
     {
-      "numerus": 110,
+      "numerus": 111,
       "ctd_versus": 10,
       "versus": {
         "1": "Aleluya. Oh Señor, te loaré con todo mi corazón en la sociedad de los justos y en tu pueblo.",
@@ -2605,7 +2611,7 @@
       }
     },
     {
-      "numerus": 111,
+      "numerus": 112,
       "ctd_versus": 10,
       "versus": {
         "1": "Aleluya: del regreso de Aggéo y de Zacharias. Bienaventurado el hombre que teme al Señor, y que toda su afición la pone en cumplir sus mandamientos.",
@@ -2621,7 +2627,7 @@
       }
     },
     {
-      "numerus": 112,
+      "numerus": 113,
       "ctd_versus": 9,
       "versus": {
         "1": "Aleluya. Alabad ¡oh jóvenes! al Señor, dad loores al Nombre del Señor.",
@@ -2636,8 +2642,7 @@
       }
     },
     {
-      "numerus": 113,
-      "ctd_versus": 26,
+      "numerus": 114,
       "versus": {
         "1": "Aleluya. Cuando Israel salió de Egipto, al partir la casa de Jacob de en medio de aquel pueblo extranjero.",
         "2": "Consagró Dios a su servicio al pueblo de Judá, y estableció su imperio en Israel.",
@@ -2646,7 +2651,13 @@
         "5": "¿Qué tienes tú, ¡oh mar!, que así has huido?; y tú, ¡oh Jordán!, ¿por qué has vuelto atrás?",
         "6": "Vosotros, ¡oh montes!, ¿por qué brincasteis de gozo como carneros?; y ¿vosotros, ¡oh collados!, como corderitos?",
         "7": "Por la presencia del Señor se estremeció la tierra, por la presencia del Dios de Jacob ,",
-        "8": "que convirtió la peña en estanque de aguas, y en fuentes de aguas la árida roca.",
+        "8": "que convirtió la peña en estanque de aguas, y en fuentes de aguas la árida roca."
+      },
+      "ctd_versus": 8
+    },
+    {
+      "numerus": 115,
+      "versus": {
         "9": "No a nosotros, Señor, no a nosotros, sino a tu Nombre da toda la gloria,",
         "10": "para hacer brillar tu misericordia y tu verdad; a fin de que jamás digan los gentiles: ¿Dónde está su Dios?",
         "11": "Nuestro Dios está en los cielos, él ha hecho todo cuanto quiso.",
@@ -2665,11 +2676,11 @@
         "24": "El cielo empíreo es para el Señor; mas la tierra la dio a sus hijos de los hombres.",
         "25": "¡Oh Señor!, no te alabarán los muertos, ni cuantos descienden al sepulcro.",
         "26": "Nosotros sí, los que vivimos, bendecimos al Señor desde ahora, y por todos los siglos."
-      }
+      },
+      "ctd_versus": 18
     },
     {
-      "numerus": 114,
-      "ctd_versus": 9,
+      "numerus": 116,
       "versus": {
         "1": "Aleluya. Amé al Señor, seguro de que oirá la voz de mi oración.",
         "2": "Porque se dignó inclinar hacia mí sus oídos, y así lo invocaré en todos los días de mi vida.",
@@ -2679,13 +2690,7 @@
         "6": "El Señor guarda a los pequeñuelos; yo me humillé, y él me sacó a paz y salvo.",
         "7": "Vuelve, ¡oh alma mía!, a tu sosiego; ya que el Señor te ha favorecido tanto.",
         "8": "Pues él ha librado de la muerte a mi alma, ha enjugado mis lágrimas, y apartado mis pies del precipicio.",
-        "9": "Acepto seré yo al Señor en la región de los vivos."
-      }
-    },
-    {
-      "numerus": 115,
-      "ctd_versus": 10,
-      "versus": {
+        "9": "Acepto seré yo al Señor en la región de los vivos.",
         "10": "Creí a Dios; por eso hablé confiado; aunque me vi reducido al mayor abatimien-to.",
         "11": "Yo dije en mi transporte de ánimo, o perturbacion: Todos los hombres son falaces.",
         "12": "Mas ¿cómo podré corresponder al Señor por todas las mercedes que me ha hecho?",
@@ -2696,10 +2701,11 @@
         "17": "a ti ofreceré yo un sacrificio de alabanza, e invocaré el Nombre del Señor.",
         "18": "Cumpliré mis votos al Señor a la vista de todo su pueblo,",
         "19": "en los atrios de la casa del Señor, en medio de ti, ¡oh Jerusalén !"
-      }
+      },
+      "ctd_versus": 19
     },
     {
-      "numerus": 116,
+      "numerus": 117,
       "ctd_versus": 2,
       "versus": {
         "1": "Aleluya. Alabad al Señor, naciones todas de la tierra, pueblos todos cantad sus alabanzas.",
@@ -2707,7 +2713,7 @@
       }
     },
     {
-      "numerus": 117,
+      "numerus": 118,
       "ctd_versus": 29,
       "versus": {
         "1": "Aleluya. Alabad al Señor, porque es tan bueno; porque hace brillar eternamente su misericordia.",
@@ -2742,7 +2748,7 @@
       }
     },
     {
-      "numerus": 118,
+      "numerus": 119,
       "ctd_versus": 176,
       "versus": {
         "1": "Aleluya. ALEPH. Bienaventurados los que proceden sin mancilla, los que caminan según la ley del Señor.",
@@ -2924,7 +2930,7 @@
       }
     },
     {
-      "numerus": 119,
+      "numerus": 120,
       "ctd_versus": 7,
       "versus": {
         "1": "Cántico de los grados, ó gradual. Clamé al Señor en mi tribulación, y me atendió.",
@@ -2937,7 +2943,7 @@
       }
     },
     {
-      "numerus": 120,
+      "numerus": 121,
       "ctd_versus": 8,
       "versus": {
         "1": "Cántico gradual. Alcé mis ojos hacia los montes de Jerusalén , de donde me vendrá el socorro.",
@@ -2951,7 +2957,7 @@
       }
     },
     {
-      "numerus": 121,
+      "numerus": 122,
       "ctd_versus": 9,
       "versus": {
         "1": "Cántico gradual. Gran contento tuve cuando se me dijo: Iremos a la casa del Señor.",
@@ -2966,7 +2972,7 @@
       }
     },
     {
-      "numerus": 122,
+      "numerus": 123,
       "ctd_versus": 4,
       "versus": {
         "1": "Cántico gradual. A ti, Señor, que habitas en los cielos, levanté mis ojos.",
@@ -2976,7 +2982,7 @@
       }
     },
     {
-      "numerus": 123,
+      "numerus": 124,
       "ctd_versus": 8,
       "versus": {
         "1": "Cántico gradual. A no haber estado el Señor con nosotros, confiéselo ahora Israel,",
@@ -2990,7 +2996,7 @@
       }
     },
     {
-      "numerus": 124,
+      "numerus": 125,
       "ctd_versus": 5,
       "versus": {
         "1": "Cántico gradual. Los que ponen en el Señor su confianza estarán firmes como el monte de Sión; nunca jamás será derrotado el morador",
@@ -3001,7 +3007,7 @@
       }
     },
     {
-      "numerus": 125,
+      "numerus": 126,
       "ctd_versus": 6,
       "versus": {
         "1": "Cántico gradual. Cuando el Señor haga volver a Sión los cautivos, será indecible nuestro consuelo.",
@@ -3013,7 +3019,7 @@
       }
     },
     {
-      "numerus": 126,
+      "numerus": 127,
       "ctd_versus": 5,
       "versus": {
         "1": "Cántico gradual de Salomon. Si el Señor no es el que edifica la casa, en vano se fatigan los que la fabrican. Si el Señor no guarda la ciudad, inútilmente se desvela el que la guarda.",
@@ -3024,7 +3030,7 @@
       }
     },
     {
-      "numerus": 127,
+      "numerus": 128,
       "ctd_versus": 6,
       "versus": {
         "1": "Cántico gradual. Bienaventurados todos aquellos que temen al Señor, que andan por sus santos caminos.",
@@ -3036,7 +3042,7 @@
       }
     },
     {
-      "numerus": 128,
+      "numerus": 129,
       "ctd_versus": 8,
       "versus": {
         "1": "Cántico gradual. Muchas veces me han asaltado los enemigos desde mi tierna edad; dígalo ahora Israel.",
@@ -3050,7 +3056,7 @@
       }
     },
     {
-      "numerus": 129,
+      "numerus": 130,
       "ctd_versus": 8,
       "versus": {
         "1": "Cántico gradual. Desde lo más profundo clamé a ti, ¡oh Señor!",
@@ -3064,7 +3070,7 @@
       }
     },
     {
-      "numerus": 130,
+      "numerus": 131,
       "ctd_versus": 3,
       "versus": {
         "1": "Cántico gradual de David. ¡Oh Señor!, no se ha enorgullecido mi corazón, ni mis ojos se han mostrado altivos. No he aspirado a cosas grandes, ni a cosas elevadas sobre mi capacidad.",
@@ -3073,7 +3079,7 @@
       }
     },
     {
-      "numerus": 131,
+      "numerus": 132,
       "ctd_versus": 18,
       "versus": {
         "1": "Cántico gradual. Acuérdate de David, ¡oh Señor!, y de toda su gran mansedumbre;",
@@ -3097,7 +3103,7 @@
       }
     },
     {
-      "numerus": 132,
+      "numerus": 133,
       "ctd_versus": 3,
       "versus": {
         "1": "Cántico gradual de David. ¡Oh cuán buena y cuán dulce cosa es vivir los hermanos en mutua unión!",
@@ -3106,7 +3112,7 @@
       }
     },
     {
-      "numerus": 133,
+      "numerus": 134,
       "ctd_versus": 3,
       "versus": {
         "1": "Cántico gradual. Ea, pues, bendecid al Señor ahora mismo, vosotros todos, ¡oh siervos del Señor! Vosotros los que asistís en la casa del Señor, en los atrios del templo de nuestro Dios,",
@@ -3115,7 +3121,7 @@
       }
     },
     {
-      "numerus": 134,
+      "numerus": 135,
       "ctd_versus": 21,
       "versus": {
         "1": "Aleluya. Alabad el nombre del Señor; tributadle alabanzas vosotros, siervos suyos",
@@ -3142,7 +3148,7 @@
       }
     },
     {
-      "numerus": 135,
+      "numerus": 136,
       "ctd_versus": 26,
       "versus": {
         "1": "Aleluya. Alabad al Señor, porque es infinitamente bueno, porque es eterna su misericordia.",
@@ -3174,7 +3180,7 @@
       }
     },
     {
-      "numerus": 136,
+      "numerus": 137,
       "ctd_versus": 9,
       "versus": {
         "1": "Salmo de David, para Jeremias. En las márgenes de los ríos del país de Babilonia, allí nos sentábamos, y nos poníamos a llorar, acordándonos de ti, ¡oh Sión!",
@@ -3189,7 +3195,7 @@
       }
     },
     {
-      "numerus": 137,
+      "numerus": 138,
       "ctd_versus": 8,
       "versus": {
         "1": "Del mismo David. Te alabaré, Señor, con todo mi corazón; porque oíste las peticiones de mi boca. En presencia de los ángeles te cantaré himnos.",
@@ -3203,7 +3209,7 @@
       }
     },
     {
-      "numerus": 138,
+      "numerus": 139,
       "ctd_versus": 24,
       "versus": {
         "1": "Para el fin: Salmo de David. ¡Oh Señor!, tú has hecho prueba de mí, y me tienes bien conocido.",
@@ -3233,7 +3239,7 @@
       }
     },
     {
-      "numerus": 139,
+      "numerus": 140,
       "ctd_versus": 14,
       "versus": {
         "1": "Para el fin: Salmo de David.",
@@ -3253,7 +3259,7 @@
       }
     },
     {
-      "numerus": 140,
+      "numerus": 141,
       "ctd_versus": 10,
       "versus": {
         "1": "Salmo de David. Señor, a ti he clamado, óyeme benigno; atiende mi voz, cuando hacia ti la dirijo.",
@@ -3269,7 +3275,7 @@
       }
     },
     {
-      "numerus": 141,
+      "numerus": 142,
       "ctd_versus": 8,
       "versus": {
         "1": "Salmo de inteligencia de David: su oracion cuando estaba en la cueva.",
@@ -3283,7 +3289,7 @@
       }
     },
     {
-      "numerus": 142,
+      "numerus": 143,
       "ctd_versus": 12,
       "versus": {
         "1": "Salmo de David cuando le perseguia su hijo Absalon. ¡Oh Señor!, escucha benigno mi oración; presta oídos a mi súplica, según la verdad de tus promesas; óyeme por tu misericordia.",
@@ -3301,7 +3307,7 @@
       }
     },
     {
-      "numerus": 143,
+      "numerus": 144,
       "ctd_versus": 15,
       "versus": {
         "1": "Salmo de David contra Goliath. Bendito sea el Señor Dios mío, que adiestra mis manos para la pelea y mis dedos para manejar las armas.",
@@ -3322,7 +3328,7 @@
       }
     },
     {
-      "numerus": 144,
+      "numerus": 145,
       "ctd_versus": 21,
       "versus": {
         "1": "Alabanza inspirada al mismo David. Te ensalzaré, ¡oh Dios y rey mío!, y bendeciré, y cantaré alabanzas a tu Nombre desde ahora, y por los siglos de los siglos.",
@@ -3349,7 +3355,7 @@
       }
     },
     {
-      "numerus": 145,
+      "numerus": 146,
       "ctd_versus": 10,
       "versus": {
         "1": "Aleluya: de Aggeo y de Zacharias.",
@@ -3365,8 +3371,7 @@
       }
     },
     {
-      "numerus": 146,
-      "ctd_versus": 11,
+      "numerus": 147,
       "versus": {
         "1": "Aleluya. Alabad al Señor; porque justa cosa es cantarle himnos. Cántese a nuestro Dios un grato y digno cántico.",
         "2": "Edificando el Señor a Jerusalén , congregará a los hijos de Israel, que andan dispersos por el mundo.",
@@ -3378,13 +3383,7 @@
         "8": "El es el que cubre el cielo de nubes, y dispone así la lluvia para la tierra; el que produce en los montes el heno, y la hierba para los animales del servicio de los hombres.",
         "9": "El que da a las bestias el alimento que les es propio, y a los polluelos de los cuervos que claman a él.",
         "10": "No hace el Señor caso del brío del caballo; ni se complace en que el hombre tenga robustos y veloces pies.",
-        "11": "Se complace, sí, en aquellos que le temen y adoran, y en los que confían en su misericordia."
-      }
-    },
-    {
-      "numerus": 147,
-      "ctd_versus": 9,
-      "versus": {
+        "11": "Se complace, sí, en aquellos que le temen y adoran, y en los que confían en su misericordia.",
         "12": "Aleluya. Alaba al Señor, ¡oh Jerusalén !; alaba, ¡oh Sión!, a tu Dios.",
         "13": "Porque él ha asegurado con fuertes barras o cerrojos tus puertas; ha llenado de bendición a tus hijos, que moran dentro de ti.",
         "14": "Ha establecido la paz en tu territorio, y te alimenta de la flor de harina.",
@@ -3394,7 +3393,8 @@
         "18": "Pero luego despacha sus órdenes, derrite estas cosas; hace soplar su viento, y fluyen las aguas.",
         "19": "El anuncia su palabra a Jacob , sus preceptos y ocultos juicios a Israel.",
         "20": "No ha hecho otro tanto con las demás naciones, ni les ha manifestado a todas ellas sus juicios o preceptos. ¡Aleluya!"
-      }
+      },
+      "ctd_versus": 20
     },
     {
       "numerus": 148,

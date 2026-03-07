@@ -11,7 +11,7 @@
     "weekdayType": "sunday",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "trinitySunday",
+    "slug": "trinity",
     "description": "Solemnity of the Most Holy Trinity"
   },
   {
@@ -26,7 +26,7 @@
     "weekdayType": "sunday",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "trinitySunday",
+    "slug": "trinity",
     "description": "Solemnity of the Most Holy Trinity"
   },
   {
@@ -41,7 +41,7 @@
     "weekdayType": "sunday",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "trinitySunday",
+    "slug": "trinity",
     "description": "Solemnity of the Most Holy Trinity"
   },
   {
@@ -361,11 +361,7 @@
   },
   {
     "firstReading": ["Wis 3:1-9", "Wis 4:7-15", "Isa 25:6-9"],
-    "psalm": [
-      "Ps 23:1-3a, 3b-4, 5, 6",
-      "Ps 25:6+7b, 17-18, 20-21",
-      "Ps 27:1, 4, 7+8b+9a, 13-14"
-    ],
+    "psalm": ["Ps 23:1-3a, 3b-4, 5, 6", "Ps 25:6+7b, 17-18, 20-21", "Ps 27:1, 4, 7+8b+9a, 13-14"],
     "secondReading": [
       "Rom 5:5-11",
       "Rom 5:17-21",
@@ -449,5 +445,50 @@
     "periodOfDay": "day",
     "slug": "",
     "description": "The Immaculate Conception of the Blessed Virgin Mary (transferred to Monday 12/9 if 12/8 is a Sunday of Advent)"
+  },
+  {
+    "firstReading": "Heb 10:11-23",
+    "psalm": "Ps 40:7-8a, 8b-9, 10, 11",
+    "secondReading": "",
+    "gospel": "Luke 22:14-20",
+    "yearCycle": "A",
+    "yearNumber": "",
+    "season": "",
+    "massType": "feast",
+    "weekdayType": "weekday",
+    "weekOrder": "",
+    "periodOfDay": "day",
+    "slug": "ourLordJesusChristTheEternalHighPriest",
+    "description": "Jesucristo, Sumo y Eterno Sacerdote (Spain)"
+  },
+  {
+    "firstReading": "Jer 31:31-34",
+    "psalm": "Ps 110:1bcde, 2, 3",
+    "secondReading": "",
+    "gospel": "Mark 14:12a, 22-25",
+    "yearCycle": "B",
+    "yearNumber": "",
+    "season": "",
+    "massType": "feast",
+    "weekdayType": "weekday",
+    "weekOrder": "",
+    "periodOfDay": "day",
+    "slug": "ourLordJesusChristTheEternalHighPriest",
+    "description": "Jesucristo, Sumo y Eterno Sacerdote (Spain)"
+  },
+  {
+    "firstReading": "Isa 52:13--53:12",
+    "psalm": "Ps 40:7-8a, 8b-9, 10, 11",
+    "secondReading": "",
+    "gospel": "John 17:1-2, 9, 14-26",
+    "yearCycle": "C",
+    "yearNumber": "",
+    "season": "",
+    "massType": "feast",
+    "weekdayType": "weekday",
+    "weekOrder": "",
+    "periodOfDay": "day",
+    "slug": "ourLordJesusChristTheEternalHighPriest",
+    "description": "Jesucristo, Sumo y Eterno Sacerdote (Spain)"
   }
 ]

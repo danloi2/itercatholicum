@@ -10,6 +10,7 @@ interface ChapterData {
 interface ReadingViewProps {
   language: 'es' | 'la';
   selectedBookName: string;
+  selectedBookId: string;
   chapters: ChapterData[];
   otherBookData?: { chapters: ChapterData[] };
   verses: { start: number; end: number };
@@ -20,6 +21,7 @@ interface ReadingViewProps {
 const ReadingView: React.FC<ReadingViewProps> = ({
   language,
   selectedBookName,
+  selectedBookId,
   chapters,
   otherBookData,
   verses,
@@ -45,6 +47,7 @@ const ReadingView: React.FC<ReadingViewProps> = ({
                   startVerse={1}
                   endVerse={9999}
                   bookName={selectedBookName}
+                  bookId={selectedBookId}
                   chapter={chapter.numerus}
                   language={language}
                   otherLanguage={language === 'es' ? 'la' : 'es'}
@@ -67,6 +70,7 @@ const ReadingView: React.FC<ReadingViewProps> = ({
         startVerse={verses.start}
         endVerse={verses.end}
         bookName={selectedBookName}
+        bookId={selectedBookId}
         chapter={selectedChapterNumber}
         language={language}
         otherLanguage={language === 'es' ? 'la' : 'es'}

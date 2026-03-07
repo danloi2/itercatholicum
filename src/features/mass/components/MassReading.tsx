@@ -1,56 +1,36 @@
 import React from 'react';
 import { ContentCanvas, CanvasHeader, CanvasInitial } from '@shared/components/ContentCanvas';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@ui/hover-card';
+import type { ReadingData } from '../services/lectionaryService';
 
-interface BibleDisplayProps {
-  content: {
-    versus: Record<string, string>;
-  };
-  otherContent?: {
-    versus: Record<string, string>;
-  };
-  startVerse: number;
-  endVerse: number;
-  bookName?: string;
-  chapter?: number | string | null;
-  language?: 'es' | 'la';
-  otherLanguage?: 'es' | 'la' | string;
+interface MassReadingProps {
+  reading: ReadingData;
 }
 
-export default function ReadingContent({
-  content,
-  otherContent,
-  startVerse,
-  endVerse,
-  bookName,
-  chapter,
-  language = 'es',
-}: BibleDisplayProps) {
-  const versesToDisplay = React.useMemo(() => {
-    const verses: { num: string; text: string }[] = [];
-    for (let i = startVerse; i <= endVerse; i++) {
-      const key = i.toString();
-      if (content?.versus && content.versus[key]) {
-        verses.push({ num: key, text: content.versus[key] });
-      }
+export const MassReading: React.FC<MassReadingProps> = ({ reading }) => {
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
+  const referenceParts = React.useMemo(() => {
+    const parts = reading.displayReference.split(':');
+    if (parts.length > 1) {
+      return {
+        main: parts[0],
+        badge: parts.slice(1).join(':'),
+      };
     }
-    return verses;
-  }, [content, startVerse, endVerse]);
+    return {
+      main: reading.displayReference,
+      badge: null,
+    };
+  }, [reading.displayReference]);
 
   const subtitle = (
     <div className="flex flex-col items-center gap-1">
       <div className="flex items-center justify-center gap-4">
         <span className="h-px w-6 bg-border/30"></span>
-        <span className="italic">
-          {chapter === 0
-            ? language === 'la'
-              ? 'Omnia Capitula'
-              : 'Todos los capítulos'
-            : `${language === 'la' ? 'Caput' : 'Capítulo'} ${chapter}`}
-        </span>
-        {chapter !== 0 && (startVerse > 1 || endVerse < 500) && (
+        <span className="italic font-serif text-primary/70">{referenceParts.main}</span>
+        {referenceParts.badge && (
           <span className="bg-primary/5 text-primary text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full border border-primary/10 uppercase tracking-widest not-italic">
-            {`${startVerse}-${endVerse > 500 ? (language === 'la' ? 'Fin.' : 'Fin') : endVerse}`}
+            {referenceParts.badge}
           </span>
         )}
         <span className="h-px w-6 bg-border/30"></span>
@@ -59,21 +39,21 @@ export default function ReadingContent({
   );
 
   return (
-    <ContentCanvas className="mt-4">
-      {bookName && (
-        <CanvasHeader
-          title={bookName}
-          subtitle={subtitle}
-          className="animate-in fade-in slide-in-from-top-4 duration-700"
-        />
-      )}
+    <ContentCanvas className="mb-12">
+      <CanvasHeader
+        title={reading.title}
+        subtitle={subtitle}
+        className="animate-in fade-in slide-in-from-top-4 duration-700"
+      />
 
-      <div className="text-justify px-2 md:px-6">
-        {versesToDisplay.map((verse, index) => {
-          const otherVerseText = otherContent?.versus?.[verse.num];
+      <div className="text-justify px-2 md:px-6 font-serif leading-relaxed text-lg md:text-xl text-[#3d0c0c]">
+        {reading.verseList.map((verse, index) => {
+          const otherVerseText = reading.otherLanguageVerseList?.find(
+            (v) => v.num === verse.num
+          )?.text;
 
           const verseContent = (
-            <>
+            <React.Fragment key={verse.num}>
               {index === 0 ? (
                 <>
                   <CanvasInitial>{verse.text.charAt(0).toUpperCase()}</CanvasInitial>
@@ -87,7 +67,7 @@ export default function ReadingContent({
                   <span>{verse.text} </span>
                 </>
               )}
-            </>
+            </React.Fragment>
           );
 
           if (otherVerseText) {
@@ -117,4 +97,4 @@ export default function ReadingContent({
       </div>
     </ContentCanvas>
   );
-}
+};

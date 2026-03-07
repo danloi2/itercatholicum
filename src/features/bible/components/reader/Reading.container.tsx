@@ -47,6 +47,7 @@ const ReadingContainer: React.FC<ReadingContainerProps> = ({
     <ReadingView
       language={language}
       selectedBookName={selectedBook?.name[language] || ''}
+      selectedBookId={selectedBook?.id || ''}
       chapters={chaptersToRender}
       otherBookData={otherBookData || undefined}
       verses={verses}

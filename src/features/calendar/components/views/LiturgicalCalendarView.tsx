@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
 import { LiturgicalCard } from '../cards/LiturgicalCard';
-import LiturgicalSeasonBanner from '../layout/LiturgicalSeasonBanner';
+import LiturgicalSeasonBanner from '@shared/components/widgets/LiturgicalSeasonBanner';
 import { ROMCAL_MAP } from '@shared/constants/config';
 
 interface LiturgicalCalendarViewProps {

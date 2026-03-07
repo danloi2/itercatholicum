@@ -551,7 +551,7 @@
     "weekdayType": "19/03",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "josephSpouseOfMary",
     "description": "St. Joseph, husband of the Blessed Virgin Mary"
   },
   {
@@ -1616,7 +1616,7 @@
     "weekdayType": "25/07",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "jamesApostle",
     "description": "St. James, Apostle"
   },
   {
@@ -1916,7 +1916,7 @@
     "weekdayType": "15/08",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "assumptionVigil",
     "description": "The Assumption of the Blessed Virgin Mary, Vigil"
   },
   {
@@ -1931,7 +1931,7 @@
     "weekdayType": "15/08",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "assumption",
     "description": "The Assumption of the Blessed Virgin Mary, Mass during the Day"
   },
   {
@@ -2696,7 +2696,7 @@
     "weekdayType": "01/11",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "allSaints",
     "description": "All Saints"
   },
   {
@@ -3056,7 +3056,7 @@
     "weekdayType": "08/12",
     "weekOrder": "",
     "periodOfDay": "day",
-    "slug": "",
+    "slug": "immaculateConception",
     "description": "The Immaculate Conception of the Blessed Virgin Mary [2024: transferred to Monday, Dec. 9]"
   },
   {
