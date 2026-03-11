@@ -116,7 +116,9 @@ export function getLecturaLabel(type: LecturaType, lang: 'es' | 'la', allDayType
       result += (lang === 'es' ? ' (forma larga)' : ' (forma longa)');
   }
 
-  if (isAlt) result += ' (alt.)';
+  if (isAlt) {
+    result += (lang === 'es' ? ' (forma altera)' : ' (forma alternativa)');
+  }
 
   return result;
 }
