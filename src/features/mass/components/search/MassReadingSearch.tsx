@@ -1,26 +1,25 @@
 import React from 'react';
 import { Search, FileText } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@ui/dialog';
-import type { DailyReadings, ReadingData } from '../../services/lectionaryService';
+import { type DailyLectiones, getLecturaLabel } from '../../services/lectionaryService';
 
 interface MassReadingSearchProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  readings: DailyReadings | null;
+  lectiones: DailyLectiones | null;
   language?: 'la' | 'es';
 }
 
 interface TextMatch {
   id: string;
   title: string;
-  text: string;
   snippet: string;
 }
 
 export default function MassReadingSearch({
   open,
   onOpenChange,
-  readings,
+  lectiones,
   language = 'la',
 }: MassReadingSearchProps) {
   const [inputValue, setInputValue] = React.useState('');
@@ -36,50 +35,46 @@ export default function MassReadingSearch({
   }, [open]);
 
   React.useEffect(() => {
-    if (!inputValue.trim() || inputValue.length < 2 || !readings) {
+    if (!inputValue.trim() || inputValue.length < 2 || !lectiones) {
       setMatches([]);
       return;
     }
 
-    const normalize = (str: string) => {
-      if (!str) return '';
-      return str
+    const normalize = (str: string) =>
+      str
         .toLowerCase()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
-    };
 
     const query = normalize(inputValue);
     const results: TextMatch[] = [];
 
-    const checkReading = (reading: ReadingData | undefined, id: string) => {
-      if (!reading || !reading.text) return;
-      const normalizedText = normalize(reading.text);
+    const allTypes = lectiones.lecturas.map((l) => l.type);
+
+    lectiones.lecturas.forEach((lectura, index) => {
+      const fullText = [lectura.intro[language], lectura.text[language]]
+        .filter(Boolean)
+        .join(' ');
+      const normalizedText = normalize(fullText);
+
       if (normalizedText.includes(query)) {
-        // Find index in original text to create snippet
-        const index = normalizedText.indexOf(query);
-        const start = Math.max(0, index - 40);
-        const end = Math.min(reading.text.length, index + query.length + 40);
-        let snippet = reading.text.substring(start, end);
+        const idx = normalizedText.indexOf(query);
+        const start = Math.max(0, idx - 40);
+        const end = Math.min(fullText.length, idx + query.length + 80);
+        let snippet = fullText.substring(start, end);
         if (start > 0) snippet = '...' + snippet;
-        if (end < reading.text.length) snippet = snippet + '...';
+        if (end < fullText.length) snippet = snippet + '...';
 
         results.push({
-          id,
-          title: reading.title || id,
-          text: reading.text,
+          id: `lectura-${index}`,
+          title: getLecturaLabel(lectura.type, language, allTypes),
           snippet,
         });
       }
-    };
-
-    checkReading(readings.firstReading, 'first-reading');
-    checkReading(readings.psalm, 'psalm');
-    checkReading(readings.secondReading, 'second-reading');
-    checkReading(readings.gospel, 'gospel');
+    });
 
     setMatches(results);
-  }, [inputValue, readings]);
+  }, [inputValue, lectiones, language]);
 
   const handleSelect = (id: string) => {
     onOpenChange(false);
@@ -88,11 +83,7 @@ export default function MassReadingSearch({
       const headerOffset = 150;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
@@ -144,7 +135,7 @@ export default function MassReadingSearch({
             />
           </div>
 
-          {/* Results Area */}
+          {/* Results */}
           <div className="flex-1 overflow-y-auto max-h-[60vh] p-2 custom-scrollbar">
             {matches.length > 0 ? (
               <div className="flex flex-col gap-1">
@@ -154,11 +145,18 @@ export default function MassReadingSearch({
                     onClick={() => handleSelect(match.id)}
                     className="flex flex-col p-4 rounded-xl hover:bg-[#8B0000]/5 transition-all text-left border border-transparent hover:border-[#8B0000]/10 group"
                   >
-                    <span className="text-sm font-bold text-[#8B0000] mb-1 flex items-center gap-2">
-                      <FileText className="w-4 h-4 opacity-70" />
-                      <span className="opacity-60 font-serif uppercase tracking-widest text-[10px]">
-                        {match.title}
-                      </span>
+                    <span className="text-sm font-bold text-[#8B0000] mb-1 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <FileText className="w-4 h-4 opacity-70" />
+                        <span className="opacity-60 font-serif uppercase tracking-widest text-[10px]">
+                          {match.title.replace(/\s*\((forma.*?)\)\s*/i, '').trim()}
+                        </span>
+                      </div>
+                      {match.title.match(/\((forma.*?)\)/i) && (
+                        <span className="inline-flex w-fit items-center px-1.5 py-0.5 rounded-full text-[0.55em] font-bold font-sans uppercase tracking-widest bg-[#8B0000]/10 text-[#8B0000] ml-2">
+                          {match.title.match(/\((forma.*?)\)/i)![1]}
+                        </span>
+                      )}
                     </span>
                     <p className="text-[#3d0c0c] font-serif leading-relaxed line-clamp-3">
                       {highlightMatch(match.snippet, inputValue)}

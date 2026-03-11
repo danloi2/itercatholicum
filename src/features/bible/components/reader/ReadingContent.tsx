@@ -1,6 +1,5 @@
 import React from 'react';
 import { ContentCanvas, CanvasHeader, CanvasInitial } from '@shared/components/ContentCanvas';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@ui/hover-card';
 
 interface BibleDisplayProps {
   content: {
@@ -93,19 +92,15 @@ export default function ReadingContent({
 
           if (otherVerseText) {
             return (
-              <HoverCard key={verse.num}>
-                <HoverCardTrigger asChild>
-                  <span className="inline cursor-pointer hover:bg-primary/5 rounded px-0.5 transition-colors">
-                    {verseContent}
-                  </span>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80 p-4 bg-[#fdfbf7] border-border/30 shadow-xl font-serif text-foreground text-base md:text-lg pointer-events-none">
+              <span key={verse.num} className="group relative inline cursor-pointer hover:bg-primary/5 rounded px-0.5 transition-colors">
+                {verseContent}
+                <div className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-1 hidden group-hover:block w-[85vw] md:w-80 p-3 md:p-4 rounded-md bg-[#fdfbf7] border border-border/30 shadow-xl font-serif text-foreground text-sm md:text-base pointer-events-none z-50">
                   <p className="leading-relaxed text-justify">
                     <sup className="text-[0.7em] font-bold text-red-600 mr-1">{verse.num}</sup>
                     {otherVerseText}
                   </p>
-                </HoverCardContent>
-              </HoverCard>
+                </div>
+              </span>
             );
           }
 

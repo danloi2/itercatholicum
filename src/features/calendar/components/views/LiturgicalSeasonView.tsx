@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
 import { LiturgicalCard } from '../cards/LiturgicalCard';
 import LiturgicalSeasonBanner from '@shared/components/widgets/LiturgicalSeasonBanner';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
@@ -12,31 +11,7 @@ interface LiturgicalSeasonViewProps {
   seasonFilter?: string;
 }
 
-/**
- * Helper component that applies a dramatic vertical focus scaling.
- */
-function VerticalFocusCard({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'center center', 'end start'],
-  });
-
-  // Continuous Focus Curve: Wider peaks to ensure no gaps during scroll
-  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 0.65, 1], [0.7, 1.0, 1.25, 1.0, 0.7]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.4, 0.9, 1, 0.9, 0.4]);
-
-  return (
-    <motion.div
-      ref={ref}
-      style={{ scale, opacity }}
-      className="w-full origin-center py-4 overflow-visible relative"
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 export default function LiturgicalSeasonView({
   data,
@@ -92,14 +67,14 @@ export default function LiturgicalSeasonView({
           : new Date().getFullYear();
 
         elements.push(
-          <VerticalFocusCard key={`banner-${date}`}>
+          <div key={`banner-${date}`} className="w-full py-4">
             <LiturgicalSeasonBanner
               seasonKey={infoKey}
               language={language}
               sundayCycle={sundayCycle}
               year={year}
             />
-          </VerticalFocusCard>
+          </div>
         );
       }
       currentSeasonHeader = season;
@@ -110,14 +85,14 @@ export default function LiturgicalSeasonView({
     }
 
     elements.push(
-      <VerticalFocusCard key={date}>
+      <div key={date} className="w-full py-4">
         <LiturgicalCard
           events={events}
           isToday={date === todayStr}
           language={language as 'es' | 'la'}
           variant="standard"
         />
-      </VerticalFocusCard>
+      </div>
     );
   });
 

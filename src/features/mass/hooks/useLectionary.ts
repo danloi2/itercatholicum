@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
-import { lectionaryService, type DailyReadings } from '../services/lectionaryService';
+import { lectionaryService, type DailyLectiones } from '../services/lectionaryService';
 import { getLiturgicalDayInfo } from '@shared/lib/liturgy-engine';
 import type { LiturgicalDay } from '@shared/types';
 
 export function useLectionary(date: Date, language: 'es' | 'la') {
-  const [readings, setReadings] = useState<DailyReadings | null>(null);
+  const [lectiones, setLectiones] = useState<DailyLectiones | null>(null);
   const [liturgicalDay, setLiturgicalDay] = useState<LiturgicalDay | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -20,13 +20,16 @@ export function useLectionary(date: Date, language: 'es' | 'la') {
       const dayInfo = await getLiturgicalDayInfo(dateStr, language);
 
       if (!dayInfo) {
-        throw new Error('Could not find liturgical information for this date.');
+        throw new Error(
+          language === 'la'
+            ? 'Non inventa est informatio liturgica pro hac die.'
+            : 'No se encontró información litúrgica para esta fecha.'
+        );
       }
 
       setLiturgicalDay(dayInfo);
-      const version = language === 'la' ? 'vulgata' : 'torres';
-      const dailyReadings = await lectionaryService.getReadings(dayInfo, version);
-      setReadings(dailyReadings);
+      const result = await lectionaryService.getLectionesForDay(dayInfo);
+      setLectiones(result);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Error loading readings';
       console.error('Error fetching lectionary:', err);
@@ -40,5 +43,5 @@ export function useLectionary(date: Date, language: 'es' | 'la') {
     fetchReadings();
   }, [fetchReadings]);
 
-  return { readings, loading, error, liturgicalDay, refetch: fetchReadings };
+  return { lectiones, loading, error, liturgicalDay, refetch: fetchReadings };
 }

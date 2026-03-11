@@ -61,9 +61,6 @@ export function LiturgicalDatePicker({
           initialFocus
           locale={currentLocale}
           className="font-serif"
-          captionLayout="dropdown"
-          fromYear={1900}
-          toYear={2100}
         />
       </PopoverContent>
     </Popover>

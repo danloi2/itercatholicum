@@ -49,29 +49,35 @@ const searchVerses = async (
   const bibleVersion = language === 'es' ? '1823_torres_amat_es' : '1592_vulgata_clementina_la';
 
   try {
-    // Search through all books
-    for (const book of BIBLE_BOOKS) {
+    const CHUNK_SIZE = 10;
+    
+    for (let i = 0; i < BIBLE_BOOKS.length; i += CHUNK_SIZE) {
       if (results.length >= limit) break;
-
-      try {
-        // Get filename from constants
-        const filename = language === 'es' ? book.files.torres : book.files.vulgata;
-        // Strip .json for dynamic import if necessary, but here we use the full path or relative
-        const fileBase = filename.replace('.json', '');
-
-        // Construct the full path for the glob import
-        const fullPath = `/src/shared/data/bibles/${bibleVersion}/${fileBase}.json`;
-
-        // Lazy load the specific book data
-        const loadModule = bibleModules[fullPath];
-        if (!loadModule) {
-          console.warn(`Module not found for path: ${fullPath}`);
-          continue;
-        }
-        const module = await loadModule();
-        const bookData = module.default;
-
-        // Search through chapters and verses
+      
+      const chunk = BIBLE_BOOKS.slice(i, i + CHUNK_SIZE);
+      
+      const loadedModules = await Promise.all(
+        chunk.map(async (book) => {
+          try {
+            const filename = language === 'es' ? book.files.torres : book.files.vulgata;
+            const fileBase = filename.replace('.json', '');
+            const fullPath = `/src/shared/data/bibles/${bibleVersion}/${fileBase}.json`;
+            const loadModule = bibleModules[fullPath];
+            if (!loadModule) return null;
+            const module = await loadModule();
+            return { book, bookData: module.default };
+          } catch {
+            return null;
+          }
+        })
+      );
+      
+      for (const res of loadedModules) {
+        if (!res) continue;
+        if (results.length >= limit) break;
+        
+        const { book, bookData } = res;
+        
         if (bookData.capitula && Array.isArray(bookData.capitula)) {
           for (const chapter of bookData.capitula) {
             if (results.length >= limit) break;
@@ -97,9 +103,6 @@ const searchVerses = async (
             }
           }
         }
-      } catch {
-        // Skip books that don't exist or can't be loaded
-        continue;
       }
     }
   } catch (error) {

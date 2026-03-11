@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useLayout } from '@app/layout/LayoutContext';
 import { ArrowLeft, Loader2, Info, Search, FileText } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useLectionary } from './hooks/useLectionary';
 import { MassReading } from './components/MassReading';
+import { getLecturaLabel } from './services/lectionaryService';
+import { ContentCanvas } from '@shared/components/ContentCanvas';
 import SecondHeader from './layout/SecondHeader';
+import { getFullLiturgicalName } from '@shared/lib/liturgy-engine';
 import { useTTS } from '@shared/hooks/useTTS';
 import { FloatingTTSButton, Fab as FloatingActionButton } from '@shared/components/buttons/Fab';
 import { format } from 'date-fns';
@@ -20,10 +23,16 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({ language }) => {
   const navigate = useNavigate();
-  const [selectedDate, setSelectedDate] = React.useState(() => new Date());
+  const location = useLocation();
+  const [selectedDate, setSelectedDate] = React.useState(() => {
+    if (location.state?.date) {
+      return new Date(location.state.date);
+    }
+    return new Date();
+  });
   const [isFestivitySearchOpen, setIsFestivitySearchOpen] = React.useState(false);
   const [isTextSearchOpen, setIsTextSearchOpen] = React.useState(false);
-  const { readings, loading, error, liturgicalDay } = useLectionary(selectedDate, language);
+  const { lectiones, loading, error, liturgicalDay } = useLectionary(selectedDate, language);
   const { data, generateData } = useCalendar();
   const { setHeaderProps } = useLayout();
 
@@ -49,15 +58,13 @@ const Page: React.FC<PageProps> = ({ language }) => {
   }, [language, liturgicalDay, setHeaderProps]);
 
   const handlePlay = () => {
-    if (readings) {
-      const parts = [
-        readings.firstReading,
-        readings.psalm,
-        readings.secondReading,
-        readings.gospel,
-      ].filter(Boolean);
-
-      const allText = parts.map((r) => `${r!.title}. ${r!.text}`).join(' ');
+    if (lectiones) {
+      const allText = lectiones.lecturas
+        .map(
+          (l) =>
+            `${getLecturaLabel(l.type, language)}. ${l.intro[language]} ${l.text[language]}`
+        )
+        .join(' ');
       speak(allText, language);
     }
   };
@@ -70,16 +77,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
   const handleBack = () => {
     navigate('/');
   };
-
-  const readingList = React.useMemo(() => {
-    if (!readings) return [];
-    return [
-      { id: 'first-reading', data: readings.firstReading },
-      { id: 'psalm', data: readings.psalm },
-      { id: 'second-reading', data: readings.secondReading },
-      { id: 'gospel', data: readings.gospel },
-    ].filter((item) => !!item.data);
-  }, [readings]);
 
   return (
     <div className="flex flex-col flex-1">
@@ -97,10 +94,29 @@ const Page: React.FC<PageProps> = ({ language }) => {
               <Info className="w-10 h-10 text-red-500" />
               <p className="font-serif text-lg">{error}</p>
             </div>
-          ) : readings ? (
+          ) : lectiones && lectiones.lecturas.length > 0 ? (
             <div className="flex flex-col gap-12">
-              {readingList.map((item) => (
-                <MassReading key={item.id} reading={item.data!} id={item.id} />
+              {/* ── Liturgical day title in a canvas ── */}
+              {liturgicalDay && (
+                <ContentCanvas showDecorativeSeparator={false} symbol="crismon">
+                  <div className="flex flex-col items-center justify-center py-12 md:py-20 gap-6 animate-in fade-in slide-in-from-top-2 duration-700">
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#3d0c0c] text-center leading-tight max-w-3xl">
+                      {getFullLiturgicalName(liturgicalDay, language)}
+                    </h2>
+                    <div className="w-16 h-0.5 bg-[#8B0000]/20" />
+                  </div>
+                </ContentCanvas>
+              )}
+
+              {lectiones.lecturas.map((lectura, i) => (
+                <MassReading
+                  key={`${lectiones.dayId}-${lectura.type}-${i}`}
+                  id={`lectura-${i}`}
+                  lectura={lectura}
+                  index={i}
+                  language={language}
+                  allTypes={lectiones.lecturas.map((l) => l.type)}
+                />
               ))}
             </div>
           ) : (
@@ -113,7 +129,7 @@ const Page: React.FC<PageProps> = ({ language }) => {
 
       {/* ── FABs ── */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2">
-        {readings && (
+        {lectiones && (
           <FloatingTTSButton
             isPlaying={isPlaying}
             isPaused={isPaused}
@@ -173,7 +189,7 @@ const Page: React.FC<PageProps> = ({ language }) => {
       <MassReadingSearch
         open={isTextSearchOpen}
         onOpenChange={setIsTextSearchOpen}
-        readings={readings}
+        lectiones={lectiones}
         language={language}
       />
     </div>

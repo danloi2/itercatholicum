@@ -51,6 +51,8 @@ interface ContentCanvasProps {
   className?: string;
   showDecorativeSeparator?: boolean;
   id?: string;
+  position?: 'odd' | 'even'; // To determine Alpha or Omega
+  symbol?: 'crismon' | 'cross' | 'none';
 }
 
 /**
@@ -63,10 +65,30 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
   className = '',
   showDecorativeSeparator = true,
   id,
+  position = 'odd',
+  symbol = 'none',
 }) => {
   /**
-   * Liturgical cross pattern (symmetrical and solemn)
+   * Liturgical symbols as SVGs
    */
+  const symbols = {
+    alpha: (
+      <svg viewBox="0 0 100 100" className="w-full h-full fill-primary/10">
+        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize="80" fontFamily="serif">Α</text>
+      </svg>
+    ),
+    omega: (
+      <svg viewBox="0 0 100 100" className="w-full h-full fill-primary/10">
+        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize="80" fontFamily="serif">Ω</text>
+      </svg>
+    ),
+    crismon: (
+        <svg viewBox="0 0 100 100" className="w-8 h-8 fill-primary/40">
+            <path d="M50 5 L50 95 M40 15 L60 15 M50 5 C65 5 65 35 50 35 M30 30 L70 70 M70 30 L30 70" stroke="currentColor" strokeWidth="2" fill="none" />
+        </svg>
+    ),
+  };
+
   const svgPattern = `
   data:image/svg+xml;utf8,
   <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>
@@ -98,6 +120,21 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
         {/* Subtle aged inner shadow */}
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_180px_rgba(0,0,0,0.15)] rounded-none md:rounded-sm" />
 
+        {/* Cornices: Alpha/Omega */}
+        <div className="absolute top-4 left-4 w-12 h-12 pointer-events-none opacity-40">
+           {position === 'odd' ? symbols.alpha : symbols.omega}
+        </div>
+        <div className="absolute bottom-4 right-4 w-12 h-12 pointer-events-none opacity-40">
+           {position === 'odd' ? symbols.omega : symbols.alpha}
+        </div>
+
+        {/* Centered logic for crismon if requested */}
+        {symbol === 'crismon' && (
+            <div className="absolute top-8 left-1/2 -translate-x-1/2 pointer-events-none text-primary">
+                {symbols.crismon}
+            </div>
+        )}
+
         {/* Content */}
         <div className="relative font-bible text-foreground text-justify leading-[1.9] text-[1.15em]">
           {children}
@@ -113,3 +150,4 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
     </div>
   );
 };
+

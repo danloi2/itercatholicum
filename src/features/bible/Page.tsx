@@ -149,7 +149,8 @@ export default function Page({ language }: PageProps) {
     if (!renderingContent) return '';
 
     const versesToDisplay = [];
-    for (let i = verses.start; i <= verses.end; i++) {
+    const maxVerse = Math.min(verses.end, renderingContent.ctd_versus || 9999);
+    for (let i = verses.start; i <= maxVerse; i++) {
       const key = i.toString();
       if (renderingContent.versus && renderingContent.versus[key]) {
         versesToDisplay.push(renderingContent.versus[key]);

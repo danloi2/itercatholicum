@@ -10,6 +10,7 @@ import { normalizeLiturgicalColor, getOrdinal, SEASON_NAMES } from '@shared/lib/
 import { la } from '@shared/lib/locales';
 import type { LiturgicalDay } from '@shared/types';
 import { LiturgicalBadge, LiturgicalColorBadge } from '@shared/components/LiturgicalBadge';
+import { useNavigate } from 'react-router-dom';
 
 export type LiturgicalCardVariant = 'standard' | 'compact' | 'vertical' | 'vertical-compact';
 
@@ -51,6 +52,7 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
   variant = 'standard',
   className,
 }) => {
+  const navigate = useNavigate();
   const day = events?.[0];
 
   const liturgicalContext = useMemo(() => {
@@ -108,9 +110,10 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
 
   return (
     <motion.div
+      onClick={() => navigate('/mass', { state: { date: day.date } })}
       whileHover={{ scale: 1.03, zIndex: 10, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.98 }}
-      className={cn('w-full max-w-[30em] mx-auto overflow-visible', className)}
+      className={cn('w-full max-w-[30em] mx-auto overflow-visible cursor-pointer', className)}
     >
       <Card
         id={day.date}

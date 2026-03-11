@@ -33,7 +33,7 @@ const Page: React.FC<PageProps> = ({ language }) => {
         },
         mass: {
           title: 'Santa Misa',
-          description: 'Sigue el orden de la Santa Misa (Próximamente).',
+          description: 'Sigue el orden de la Santa Misa',
         },
         prayers: {
           title: 'Oraciones',
@@ -53,7 +53,7 @@ const Page: React.FC<PageProps> = ({ language }) => {
         },
         mass: {
           title: 'Sancta Missa',
-          description: 'Ordinem Sanctae Missae sequere (Mox venturum).',
+          description: 'Ordinem Sanctae Missae sequere.',
         },
         prayers: {
           title: 'Orationes',

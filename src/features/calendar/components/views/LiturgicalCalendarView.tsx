@@ -1,5 +1,4 @@
-import React, { useMemo, useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useMemo, useEffect } from 'react';
 import type { CalendarData } from '@features/calendar/hooks/useCalendar';
 import { LiturgicalCard } from '../cards/LiturgicalCard';
 import LiturgicalSeasonBanner from '@shared/components/widgets/LiturgicalSeasonBanner';
@@ -11,31 +10,7 @@ interface LiturgicalCalendarViewProps {
   selectedDate?: Date;
 }
 
-/**
- * Helper component that applies a dramatic vertical focus scaling.
- */
-function VerticalFocusCard({ children, id }: { children: React.ReactNode; id?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'center center', 'end start'],
-  });
-
-  // Continuous Focus Curve: Wider peaks to ensure no gaps during scroll
-  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 0.65, 1], [0.7, 1.0, 1.25, 1.0, 0.7]);
-
-  return (
-    <motion.div
-      ref={ref}
-      id={id}
-      style={{ scale }}
-      className="w-full origin-center py-4 overflow-visible relative"
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
   data,
@@ -88,27 +63,27 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
           ? new Date(principal.date).getFullYear()
           : new Date().getFullYear();
         result.push(
-          <VerticalFocusCard key={`banner-${date}`}>
+          <div key={`banner-${date}`} className="w-full py-4">
             <LiturgicalSeasonBanner
               seasonKey={infoKey}
               language={language}
               sundayCycle={sundayCycle}
               year={year}
             />
-          </VerticalFocusCard>
+          </div>
         );
         currentSeasonHeader = season;
       }
 
       result.push(
-        <VerticalFocusCard key={date} id={date === todayStr ? 'today' : date}>
+        <div key={date} id={date === todayStr ? 'today' : date} className="w-full py-4">
           <LiturgicalCard
             events={events}
             isToday={date === todayStr}
             language={language}
             variant="standard"
           />
-        </VerticalFocusCard>
+        </div>
       );
     });
 

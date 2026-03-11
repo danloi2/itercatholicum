@@ -111,7 +111,6 @@ export default function Page({ language, year }: PageProps) {
     const pageTitle = language === 'la' ? 'Calendarium Liturgicum' : 'Calendario Litúrgico';
     setHeaderProps({
       pageTitle,
-      centerChildren: true,
     });
   }, [language, setHeaderProps]);
 
@@ -263,11 +262,11 @@ export default function Page({ language, year }: PageProps) {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8 overflow-x-hidden">
-        <div className="w-full mx-auto px-0 sm:px-12 overflow-visible">
+      <div className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8">
+        <div className="max-w-[1400px] mx-auto px-0 sm:px-6">
           <Tabs
             defaultValue="year"
-            className="w-full overflow-visible"
+            className="w-full"
             onValueChange={(v) => setActiveTab(v as 'year' | 'seasons' | 'week')}
           >
             {portalRight &&
@@ -286,10 +285,7 @@ export default function Page({ language, year }: PageProps) {
                 portalRight
               )}
 
-            <TabsContent
-              value="year"
-              className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
-            >
+            <TabsContent value="year" className="focus-visible:outline-none px-4 sm:px-0 mt-0">
               {portalCenter &&
                 createPortal(
                   <SecondHeader
@@ -302,7 +298,19 @@ export default function Page({ language, year }: PageProps) {
                   />,
                   portalCenter
                 )}
-              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible mt-8">
+              <div className="text-center mb-12 border-b border-[#c49b9b]/20 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
+                <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#8B0000] mb-4 tracking-tight">
+                  {language === 'la' ? 'Tempus Liturgicum' : 'Tiempo Litúrgico'}
+                </h1>
+                <div className="flex items-center justify-center gap-4">
+                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
+                  <span className="text-xl md:text-2xl font-serif italic text-[#3d0c0c]">
+                    {selectedYear - 1} / {selectedYear}
+                  </span>
+                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
+                </div>
+              </div>
+              <div className="max-w-2xl mx-auto">
                 <LiturgicalCalendarView
                   data={data}
                   language={language}
@@ -311,10 +319,7 @@ export default function Page({ language, year }: PageProps) {
               </div>
             </TabsContent>
 
-            <TabsContent
-              value="seasons"
-              className="focus-visible:outline-none px-4 sm:px-0 mt-0 overflow-visible"
-            >
+            <TabsContent value="seasons" className="focus-visible:outline-none px-4 sm:px-0 mt-0">
               {portalCenter &&
                 createPortal(
                   <SecondHeader
@@ -327,7 +332,7 @@ export default function Page({ language, year }: PageProps) {
                   />,
                   portalCenter
                 )}
-              <div className="w-full max-w-7xl mx-auto px-4 md:px-8 overflow-visible">
+              <div className="max-w-2xl mx-auto">
                 <LiturgicalSeasonView
                   data={data}
                   loading={loading}

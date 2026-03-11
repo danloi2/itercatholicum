@@ -57,33 +57,45 @@ const searchVerses = async (
   const bibleVersion = language === 'es' ? '1823_torres_amat_es' : '1592_vulgata_clementina_la';
 
   try {
-    // Search through all books
-    for (const book of BIBLE_BOOKS) {
+    const booksToSearch = BIBLE_BOOKS.filter(
+      (book) => !filters?.bookId || book.id === filters.bookId
+    );
+
+    const CHUNK_SIZE = 10;
+
+    for (let i = 0; i < booksToSearch.length; i += CHUNK_SIZE) {
       if (results.length >= limit) break;
 
-      // Filter by book if specified
-      if (filters?.bookId && book.id !== filters.bookId) continue;
+      const chunk = booksToSearch.slice(i, i + CHUNK_SIZE);
 
-      try {
-        const filename = language === 'es' ? book.files.torres : book.files.vulgata;
-        const bookPath = `/src/shared/data/bibles/${bibleVersion}/${filename}`;
-        const loadModule = bibleModules[bookPath];
+      const loadedModules = await Promise.all(
+        chunk.map(async (book) => {
+          try {
+            const filename = language === 'es' ? book.files.torres : book.files.vulgata;
+            const bookPath = `/src/shared/data/bibles/${bibleVersion}/${filename}`;
+            const loadModule = bibleModules[bookPath];
 
-        if (!loadModule) {
-          continue;
-        }
+            if (!loadModule) return null;
+            const module = await loadModule();
+            return { book, data: module.default };
+          } catch (error) {
+            console.warn(`⚠️ Failed to load book: ${book.name[language]}`, error);
+            return null;
+          }
+        })
+      );
 
-        // Lazy load the specific book data
-        const module = await loadModule();
-        const data = module.default;
+      for (const res of loadedModules) {
+        if (!res) continue;
+        if (results.length >= limit) break;
 
-        // Search through chapters and verses
+        const { book, data } = res;
+
         if (data.capitula && Array.isArray(data.capitula)) {
           for (const chapter of data.capitula) {
             if (results.length >= limit) break;
 
             const chapterNum = chapter.numerus;
-            // Filter by chapter if specified
             if (filters?.chapter && filters.chapter !== 0 && chapterNum !== filters.chapter)
               continue;
 
@@ -94,7 +106,6 @@ const searchVerses = async (
                 if (results.length >= limit) break;
 
                 const vNum = parseInt(verseNum);
-                // Filter by verse range if specified
                 if (filters?.verses && filters.chapter && filters.chapter !== 0) {
                   if (vNum < filters.verses.start || vNum > filters.verses.end) continue;
                 }
@@ -107,16 +118,12 @@ const searchVerses = async (
                     chapter: chapterNum,
                     verse: parseInt(verseNum),
                     text: verseText as string,
-                    // If we want to show exact matches, we could pass it here
                   });
                 }
               }
             }
           }
         }
-      } catch (error) {
-        console.warn(`⚠️ Failed to load book: ${book.name[language]}`, error);
-        continue;
       }
     }
   } catch (error) {
