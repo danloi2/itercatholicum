@@ -117,7 +117,7 @@ export function getLecturaLabel(type: LecturaType, lang: 'es' | 'la', allDayType
   }
 
   if (isAlt) {
-    result += (lang === 'es' ? ' (forma altera)' : ' (forma alternativa)');
+    result += (lang === 'es' ? ' (forma alternativa)' : ' (forma altera)');
   }
 
   return result;
