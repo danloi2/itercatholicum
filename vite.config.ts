@@ -22,8 +22,13 @@ export default defineConfig({
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+          if (id.includes('src/shared/data') || id.includes('bibleIncipits')) {
+            return 'liturgical-data';
+          }
         },
       },
     },
