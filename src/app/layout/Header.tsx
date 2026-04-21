@@ -33,111 +33,78 @@ export default function Header({
         borderColor: `${hex}30`,
       }}
     >
-      {/* Unified Top Section - Only on Home */}
+      {/* Settings button — always top-right, absolute */}
+      <div className="absolute top-2 right-3 sm:right-6 z-50">
+        <SettingsDropdown language={language} setLanguage={setLanguage} />
+      </div>
+
+      {/* ── HOME: Stacked centered layout ── */}
       {isHome && (
-        <div className="border-b border-stone-200/30">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1 md:py-2">
-            <div className="flex items-center justify-between gap-2">
-              {/* Left: Branding */}
-              <div className="flex items-center shrink-0">
-                <div className="flex items-center gap-1.5 sm:gap-3 group py-1">
-                  <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
-                    <StoleIcon color={hex} className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 drop-shadow-sm" />
-                  </div>
-                  <h1 className="text-base sm:text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif">
-                    <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
-                      Iter Catholicum
-                    </span>
-                  </h1>
-                </div>
-              </div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 md:py-3">
+          <div className="flex flex-col items-center gap-1.5">
 
-              {/* Center: Liturgical Info — hidden on xs, visible on sm+ */}
-              <div className="hidden sm:flex flex-col items-center justify-center gap-1 flex-1 min-w-0 overflow-hidden">
-                <LatinDateDisplay language={language} />
-                <div
-                  id="header-portal-badges"
-                  className="flex items-center justify-center w-full min-h-6"
-                />
+            {/* Branding */}
+            <div className="flex items-center gap-2 group">
+              <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
+                <StoleIcon color={hex} className="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm" />
               </div>
-
-              {/* Right: Controls & Time */}
-              <div className="flex flex-col items-end gap-1 shrink-0">
-                <div className="flex items-center gap-1.5 z-50">
-                  <SettingsDropdown language={language} setLanguage={setLanguage} />
-                </div>
-                <TimePill language={language} />
-              </div>
+              <h1 className="text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif">
+                <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+                  Iter Catholicum
+                </span>
+              </h1>
             </div>
 
-            {/* Liturgical Info on xs screens only */}
-            <div className="sm:hidden flex flex-col items-center pb-1 gap-0.5">
-              <LatinDateDisplay language={language} />
-              <div
-                id="header-portal-badges-xs"
-                className="flex items-center justify-center w-full min-h-5"
-              />
-            </div>
+            {/* Liturgical Date */}
+            <LatinDateDisplay language={language} />
+
+            {/* Time */}
+            <TimePill language={language} />
+
+            {/* Badge portal */}
+            <div
+              id="header-portal-badges"
+              className="flex items-center justify-center w-full min-h-5"
+            />
           </div>
         </div>
       )}
 
-      {/* Page-Specific Section (Second Header Slot) */}
+      {/* ── SUBPAGES: Stacked centered layout ── */}
       {(pageTitle || children || centerChildren) && (
-        <div className="bg-stone-50/50">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            {centerChildren ? (
-              <div className="flex flex-col items-center justify-center min-h-[44px] sm:min-h-[50px] py-1.5 w-full gap-1">
-                <div className="flex flex-col items-center justify-center w-full gap-1 min-w-0">
-                  <div
-                    id="header-portal-center"
-                    className="flex items-center justify-center w-full min-w-0"
-                  />
-                  {pageTitle && (
-                    <div className="flex items-center justify-center gap-2 flex-wrap w-full min-w-0 px-2">
-                      {typeof pageTitle === 'string' ? (
-                        <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight font-serif italic text-center leading-tight line-clamp-2">
-                          {pageTitle}
-                        </h2>
-                      ) : (
-                        <div className="w-full flex justify-center min-w-0 overflow-hidden">{pageTitle}</div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-center justify-between min-h-[48px] sm:min-h-[60px] py-1 md:py-2 gap-2">
-                {/* Left Slot: Feature Titles / Breadcrumbs */}
-                <div className="flex items-center overflow-hidden flex-1 min-w-0">
-                  {pageTitle && (
-                    <div className="flex items-center min-w-0">
-                      {typeof pageTitle === 'string' ? (
-                        <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight truncate font-serif italic">
-                          {pageTitle}
-                        </h2>
-                      ) : (
-                        <div className="min-w-0 overflow-hidden">{pageTitle}</div>
-                      )}
-                    </div>
-                  )}
-                </div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex flex-col items-center gap-1.5">
 
-                {/* Center Slot: Main Selectors */}
-                <div
-                  id="header-portal-center"
-                  className="flex items-center justify-center shrink-0"
-                />
-
-                {/* Right Slot: Tabs & Actions */}
-                <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
-                  <div id="header-portal-right" className="flex items-center gap-1.5" />
-                  {children}
-                  {!isHome && <SettingsDropdown language={language} setLanguage={setLanguage} />}
+          {/* 1. Page title — always on top */}
+          {pageTitle && (
+            <div className="flex items-center justify-center w-full min-w-0">
+              {typeof pageTitle === 'string' ? (
+                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight font-serif italic text-center leading-tight line-clamp-2">
+                  {pageTitle}
+                </h2>
+              ) : (
+                <div className="w-full flex justify-center min-w-0 overflow-hidden pr-10">
+                  {pageTitle}
                 </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
+
+          {/* 2. Portal for navigation controls (date pickers, year nav, etc.) */}
+          <div
+            id="header-portal-center"
+            className="flex items-center justify-center w-full min-w-0"
+          />
+
+          {/* 3. Extra children and right portal (tabs, etc.) */}
+          {children && (
+            <div className="flex items-center justify-center gap-2 min-w-0">
+              <div id="header-portal-right" className="flex items-center gap-1.5" />
+              {children}
+            </div>
+          )}
+          {!children && (
+            <div id="header-portal-right" className="flex items-center gap-1.5" />
+          )}
         </div>
       )}
     </header>
