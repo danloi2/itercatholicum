@@ -5,7 +5,6 @@ name: Deploy & Release
 on:
   push:
     tags: ['v*']
-  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
