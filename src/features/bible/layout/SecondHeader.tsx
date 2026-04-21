@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@shared/lib/utils';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@ui/collapsible';
 import { type BibleBook, BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
 
 interface BibleHeaderProps {

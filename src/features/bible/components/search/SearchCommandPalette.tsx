@@ -350,7 +350,6 @@ export default function SearchCommandPalette({
                   }
 
                   // Case 2: Book and Chapter/Verses
-                  const hasSpecificVerse = inputValue.includes(',') || inputValue.includes(':') || inputValue.includes(' ');
                   const chapterOnlyRef = formatBibleReference(book.name[language], parsed.chapter, 0, 0, language);
                   const specificRef = formatBibleReference(book.name[language], parsed.chapter, parsed.verse, parsed.verseEnd, language);
                   
