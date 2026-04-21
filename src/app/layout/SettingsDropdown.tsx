@@ -1,4 +1,4 @@
-import { Settings, Type } from 'lucide-react';
+import { Settings, Type, Languages } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,13 +7,16 @@ import {
   DropdownMenuTrigger,
 } from '@ui/dropdown-menu';
 import { Slider } from '@ui/slider';
+import { Switch } from '@ui/switch';
 import { useSettings } from '@shared/context/SettingsContext';
+import { cn } from '@shared/lib/utils';
 
 interface SettingsDropdownProps {
   language: 'es' | 'la';
+  setLanguage: (lang: 'es' | 'la') => void;
 }
 
-export default function SettingsDropdown({ language }: SettingsDropdownProps) {
+export default function SettingsDropdown({ language, setLanguage }: SettingsDropdownProps) {
   const { fontScale, setFontScale } = useSettings();
 
   return (
@@ -25,8 +28,39 @@ export default function SettingsDropdown({ language }: SettingsDropdownProps) {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="w-56 p-4 bg-white/95 backdrop-blur-xl border-[#c49b9b]/20 rounded-2xl shadow-xl animate-in fade-in zoom-in-95 duration-200 z-60"
+        className="w-64 p-4 bg-white/95 backdrop-blur-xl border-[#c49b9b]/20 rounded-2xl shadow-xl animate-in fade-in zoom-in-95 duration-200 z-60"
       >
+        {/* Language Section */}
+        <DropdownMenuLabel className="flex items-center gap-2 px-0 pb-3 text-[#522b2b] font-bold tracking-tight">
+          <Languages className="w-4 h-4 text-[#c49b9b]" />
+          {language === 'la' ? 'Lingua' : 'Idioma'}
+        </DropdownMenuLabel>
+        <div className="flex items-center justify-between bg-[#fdfbf7] rounded-xl p-3 border border-[#c49b9b]/10 mb-4">
+          <span
+            className={cn(
+              'text-[10px] font-black tracking-widest transition-colors',
+              language === 'es' ? 'text-[#8B0000]' : 'text-stone-400'
+            )}
+          >
+            ESPAÑOL
+          </span>
+          <Switch
+            checked={language === 'la'}
+            onCheckedChange={(checked) => setLanguage(checked ? 'la' : 'es')}
+          />
+          <span
+            className={cn(
+              'text-[10px] font-black tracking-widest transition-colors',
+              language === 'la' ? 'text-[#8B0000]' : 'text-stone-400'
+            )}
+          >
+            LATINA
+          </span>
+        </div>
+
+        <DropdownMenuSeparator className="bg-[#c49b9b]/10 mb-4" />
+
+        {/* Font Size Section */}
         <DropdownMenuLabel className="flex items-center gap-2 px-0 pb-3 text-[#522b2b] font-bold tracking-tight">
           <Type className="w-4 h-4 text-[#c49b9b]" />
           {language === 'la' ? 'Magnitudo litterarum' : 'Tamaño de letra'}
@@ -34,7 +68,6 @@ export default function SettingsDropdown({ language }: SettingsDropdownProps) {
             {Math.round(fontScale * 100)}%
           </span>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-[#c49b9b]/10 mb-4" />
         <div className="px-1 py-2">
           <Slider
             value={[fontScale]}

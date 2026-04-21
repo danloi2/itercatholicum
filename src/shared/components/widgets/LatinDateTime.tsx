@@ -115,7 +115,9 @@ export function LatinDateDisplay({ language = 'es' }: WidgetProps) {
 
   return (
     <div className="flex flex-col items-center gap-0.5 leading-tight text-center">
-      <div className="text-xl font-bold text-slate-700 capitalize tracking-tight">{dateText}</div>
+      <div className="text-xl font-bold text-slate-700 capitalize tracking-tight font-serif">
+        {dateText}
+      </div>
       {liturgicalInfo && (
         <span
           className={cn(

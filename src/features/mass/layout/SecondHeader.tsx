@@ -9,6 +9,7 @@ import type { LiturgicalDay } from '@shared/types';
 import { LiturgicalDatePicker } from '@shared/components/widgets/LiturgicalDatePicker';
 import { ChevronDown } from 'lucide-react';
 import { LiturgicalBadge } from '@shared/components/LiturgicalBadge';
+import { StoleIcon } from '@shared/components/icons/StoleIcon';
 
 interface MassHeaderProps {
   liturgicalDay: LiturgicalDay;
@@ -57,16 +58,24 @@ export default function SecondHeader({ liturgicalDay, language, onDateChange }: 
             onSelect={(date) => date && onDateChange(date)}
             language={language}
             trigger={
-              <button className="flex items-center gap-1.5 text-lg md:text-xl font-bold tracking-tight text-[#8B0000] hover:text-[#3d0c0c] transition-colors group text-center min-w-0">
-                <span className="truncate max-w-[300px] md:max-w-none">{pageTitleStr}</span>
+              <button className="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#3d0c0c] hover:text-[#8B0000] transition-colors group text-center min-w-0 font-serif italic">
+                <StoleIcon
+                  color={liturgicalInfo.theme.hex}
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 drop-shadow-sm shrink-0"
+                />
+                <span className="truncate max-w-[160px] sm:max-w-[260px] md:max-w-none">{pageTitleStr}</span>
                 <ChevronDown className="w-4 h-4 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity" />
               </button>
             }
           />
         ) : (
-          <span className="text-lg md:text-xl font-bold tracking-tight text-[#8B0000] truncate text-center">
-            {pageTitleStr}
-          </span>
+          <div className="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#3d0c0c] truncate text-center font-serif italic">
+            <StoleIcon
+              color={liturgicalInfo.theme.hex}
+              className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 drop-shadow-sm shrink-0"
+            />
+            <span className="truncate">{pageTitleStr}</span>
+          </div>
         )}
       </div>
 

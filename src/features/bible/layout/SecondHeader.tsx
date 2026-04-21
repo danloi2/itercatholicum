@@ -47,7 +47,7 @@ export default function SecondHeader({
   const currentGroup = selectedBook?.type[language] || (language === 'es' ? 'Otros' : 'Alii');
 
   return (
-    <div className="flex items-center justify-center gap-2 animate-in fade-in duration-300 flex-wrap w-full">
+    <div className="flex items-center justify-center gap-1.5 sm:gap-2 animate-in fade-in duration-300 flex-wrap w-full min-w-0 overflow-hidden">
       {/* Root: Biblia */}
       <button
         onClick={() => {
@@ -55,7 +55,7 @@ export default function SecondHeader({
           onChapterChange(null);
         }}
         className={cn(
-          'text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000]',
+          'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
           !selectedBook ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
         )}
       >
@@ -70,7 +70,7 @@ export default function SecondHeader({
         <Collapsible open={testamentOpen} onOpenChange={setTestamentOpen} className="relative">
           <CollapsibleTrigger asChild>
             <button className="flex items-center gap-1 group outline-none">
-              <span className="text-lg md:text-xl font-bold tracking-tight text-[#3d0c0c] transition-colors group-hover:text-[#8B0000]">
+            <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#3d0c0c] transition-colors group-hover:text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
                 {currentTestament}
               </span>
               <ChevronDown
@@ -156,7 +156,7 @@ export default function SecondHeader({
         <Collapsible open={bookOpen} onOpenChange={setBookOpen} className="relative">
           <CollapsibleTrigger asChild>
             <button className="flex items-center gap-1 group outline-none">
-              <span className="text-lg md:text-xl font-bold tracking-tight text-[#8B0000] transition-colors hover:opacity-80">
+              <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#8B0000] transition-colors hover:opacity-80 truncate max-w-[90px] sm:max-w-none">
                 {selectedBook.name[language]}
               </span>
               <ChevronDown
@@ -201,7 +201,7 @@ export default function SecondHeader({
         <Collapsible open={chapterOpen} onOpenChange={setChapterOpen} className="relative">
           <CollapsibleTrigger asChild>
             <button className="flex items-center gap-1 group outline-none">
-              <span className="text-lg md:text-xl font-bold tracking-tight text-[#8B0000]">
+              <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
                 {selectedChapter === 0
                   ? language === 'la'
                     ? 'Omnia'
@@ -266,7 +266,7 @@ export default function SecondHeader({
         <Collapsible open={versesOpen} onOpenChange={setVersesOpen} className="relative">
           <CollapsibleTrigger asChild>
             <button className="flex items-center gap-1 group outline-none">
-              <span className="text-lg md:text-xl font-bold tracking-tight text-[#8B0000]">
+              <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
                 {`V. ${verses.start}-${verses.end > 500 ? (language === 'la' ? 'Fin.' : 'Fin') : verses.end}`}
               </span>
               <ChevronDown

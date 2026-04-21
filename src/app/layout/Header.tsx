@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import LanguageToggle from './LanguageToggle';
+import { useLocation } from 'react-router-dom';
 import SettingsDropdown from './SettingsDropdown';
 import { useTodayLiturgicalColor } from '@shared/hooks/useLiturgicalColor';
 import { StoleIcon } from '@shared/components/icons/StoleIcon';
@@ -22,6 +22,8 @@ export default function Header({
   centerChildren,
 }: HeaderProps) {
   const { hex } = useTodayLiturgicalColor(language);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   return (
     <header
@@ -31,99 +33,107 @@ export default function Header({
         borderColor: `${hex}30`,
       }}
     >
-      {/* Unified Top Section */}
-      <div className="border-b border-stone-200/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-2">
-          <div className="grid grid-cols-3 items-center gap-4">
-            {/* Left: Branding */}
-            <div className="flex items-center">
-              <div className="flex items-center gap-3 group py-1">
-                <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
-                  <StoleIcon color={hex} className="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm" />
-                </div>
-                <div className="flex flex-col items-start leading-none gap-1">
-                  <h1 className="text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none">
+      {/* Unified Top Section - Only on Home */}
+      {isHome && (
+        <div className="border-b border-stone-200/30">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1 md:py-2">
+            <div className="flex items-center justify-between gap-2">
+              {/* Left: Branding */}
+              <div className="flex items-center shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-3 group py-1">
+                  <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
+                    <StoleIcon color={hex} className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 drop-shadow-sm" />
+                  </div>
+                  <h1 className="text-base sm:text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif">
                     <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
                       Iter Catholicum
                     </span>
                   </h1>
                 </div>
               </div>
+
+              {/* Center: Liturgical Info — hidden on xs, visible on sm+ */}
+              <div className="hidden sm:flex flex-col items-center justify-center gap-1 flex-1 min-w-0 overflow-hidden">
+                <LatinDateDisplay language={language} />
+                <div
+                  id="header-portal-badges"
+                  className="flex items-center justify-center w-full min-h-6"
+                />
+              </div>
+
+              {/* Right: Controls & Time */}
+              <div className="flex flex-col items-end gap-1 shrink-0">
+                <div className="flex items-center gap-1.5 z-50">
+                  <SettingsDropdown language={language} setLanguage={setLanguage} />
+                </div>
+                <TimePill language={language} />
+              </div>
             </div>
 
-            {/* Center: Liturgical Info */}
-            <div className="flex flex-col items-center justify-center gap-1.5">
+            {/* Liturgical Info on xs screens only */}
+            <div className="sm:hidden flex flex-col items-center pb-1 gap-0.5">
               <LatinDateDisplay language={language} />
               <div
-                id="header-portal-badges"
-                className="flex items-center justify-center w-full min-h-6"
+                id="header-portal-badges-xs"
+                className="flex items-center justify-center w-full min-h-5"
               />
-            </div>
-
-            {/* Right: Controls & Time */}
-            <div className="flex flex-col items-end gap-1.5">
-              <div className="flex items-center gap-2 z-50">
-                <LanguageToggle language={language} setLanguage={setLanguage} />
-                <SettingsDropdown language={language} />
-              </div>
-              <TimePill language={language} />
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Page-Specific Section (Second Header Slot) */}
       {(pageTitle || children || centerChildren) && (
         <div className="bg-stone-50/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             {centerChildren ? (
-              <div className="flex flex-col items-center justify-center min-h-[50px] py-1.5 w-full gap-1">
-                {/* Main Content Area (Title or Portal Center) */}
-                <div className="flex flex-col items-center justify-center w-full gap-1">
+              <div className="flex flex-col items-center justify-center min-h-[44px] sm:min-h-[50px] py-1.5 w-full gap-1">
+                <div className="flex flex-col items-center justify-center w-full gap-1 min-w-0">
                   <div
                     id="header-portal-center"
-                    className="flex items-center justify-center w-full"
+                    className="flex items-center justify-center w-full min-w-0"
                   />
                   {pageTitle && (
-                    <div className="flex items-center justify-center gap-2 flex-wrap w-full">
+                    <div className="flex items-center justify-center gap-2 flex-wrap w-full min-w-0 px-2">
                       {typeof pageTitle === 'string' ? (
-                        <h2 className="text-xl md:text-2xl font-black text-[#3d0c0c] tracking-tight truncate font-serif italic text-center leading-tight">
+                        <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight font-serif italic text-center leading-tight line-clamp-2">
                           {pageTitle}
                         </h2>
                       ) : (
-                        <div className="w-full flex justify-center">{pageTitle}</div>
+                        <div className="w-full flex justify-center min-w-0 overflow-hidden">{pageTitle}</div>
                       )}
                     </div>
                   )}
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-3 items-center min-h-[60px] py-1 md:py-2 gap-4">
+              <div className="flex items-center justify-between min-h-[48px] sm:min-h-[60px] py-1 md:py-2 gap-2">
                 {/* Left Slot: Feature Titles / Breadcrumbs */}
-                <div className="flex items-center overflow-hidden">
+                <div className="flex items-center overflow-hidden flex-1 min-w-0">
                   {pageTitle && (
-                    <div className="flex items-center gap-2 flex-wrap min-w-0">
+                    <div className="flex items-center min-w-0">
                       {typeof pageTitle === 'string' ? (
-                        <h2 className="text-lg md:text-xl font-bold text-[#3d0c0c] tracking-tight truncate">
+                        <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight truncate font-serif italic">
                           {pageTitle}
                         </h2>
                       ) : (
-                        pageTitle
+                        <div className="min-w-0 overflow-hidden">{pageTitle}</div>
                       )}
                     </div>
                   )}
                 </div>
 
-                {/* Center Slot: Main Selectors (Mass date picker, Calendar nav) */}
+                {/* Center Slot: Main Selectors */}
                 <div
                   id="header-portal-center"
-                  className="flex items-center justify-center min-w-0"
+                  className="flex items-center justify-center shrink-0"
                 />
 
                 {/* Right Slot: Tabs & Actions */}
-                <div className="flex items-center justify-end gap-3 min-w-0">
-                  <div id="header-portal-right" className="flex items-center gap-2" />
+                <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+                  <div id="header-portal-right" className="flex items-center gap-1.5" />
                   {children}
+                  {!isHome && <SettingsDropdown language={language} setLanguage={setLanguage} />}
                 </div>
               </div>
             )}

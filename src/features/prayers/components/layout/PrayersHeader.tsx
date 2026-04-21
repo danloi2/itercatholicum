@@ -44,7 +44,7 @@ export default function PrayersHeader({
           onViewModeChange('SELECTION');
         }}
         className={cn(
-          'text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000]',
+          'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
           viewMode === 'SELECTION' ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
         )}
       >
@@ -68,7 +68,7 @@ export default function PrayersHeader({
             <button className="flex items-center gap-1.5 group outline-none">
               <span
                 className={cn(
-                  'text-lg md:text-xl font-bold tracking-tight transition-colors group-hover:text-[#8B0000]',
+                  'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors group-hover:text-[#8B0000] truncate max-w-[120px] sm:max-w-[200px] md:max-w-none',
                   activeTheme ? activeTheme.textClass : 'text-[#3d0c0c]'
                 )}
               >
@@ -130,7 +130,7 @@ export default function PrayersHeader({
       {viewMode === 'READ' && selectedPrayerTitle && (
         <>
           <span className="text-[#c49b9b] opacity-40 text-xs font-bold">/</span>
-          <span className="text-lg md:text-xl font-bold tracking-tight text-[#8B0000] truncate max-w-[150px] md:max-w-[300px]">
+          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#8B0000] truncate max-w-[100px] sm:max-w-[200px] md:max-w-[300px]">
             {selectedPrayerTitle}
           </span>
         </>
