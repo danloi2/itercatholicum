@@ -262,7 +262,7 @@ export default function Page({ language, year }: PageProps) {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex-1 w-full bg-[#fdfbf7] py-2 sm:py-4">
+      <div className="flex-1 w-full bg-[#fdfbf7] py-0.5 sm:py-1">
         <div className="max-w-[1400px] mx-auto px-0 sm:px-6">
           <Tabs
             defaultValue="year"
