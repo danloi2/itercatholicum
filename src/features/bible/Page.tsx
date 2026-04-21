@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useLayout } from '@app/layout/LayoutContext';
 import { Shuffle, Search, ArrowLeft, FileText, Loader2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
 import SearchCommandPalette from './components/search/SearchCommandPalette';
 import TextSearch from './components/search/TextSearch';
@@ -20,10 +20,36 @@ interface PageProps {
 
 export default function Page({ language }: PageProps) {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const selectedVersion = language === 'la' ? 'vulgata' : 'torres';
   const [selectedBookId, setSelectedBookId] = useState<string>('');
   const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
   const [verses, setVerses] = useState<{ start: number; end: number }>({ start: 1, end: 5 });
+
+  // Handle URL parameters
+  useEffect(() => {
+    const bookParam = searchParams.get('book');
+    const chapterParam = searchParams.get('chapter');
+    const verseParam = searchParams.get('verse');
+    const verseEndParam = searchParams.get('verseEnd');
+
+    if (bookParam) {
+      setSelectedBookId(bookParam);
+      if (chapterParam) {
+        const ch = parseInt(chapterParam, 10);
+        setSelectedChapter(ch);
+        
+        if (verseParam) {
+          const v = parseInt(verseParam, 10);
+          const vEnd = verseEndParam ? parseInt(verseEndParam, 10) : 9999;
+          setVerses({ start: v, end: vEnd });
+        } else {
+          setVerses({ start: 1, end: 9999 });
+        }
+      }
+    }
+  }, [searchParams]);
+
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [isContentSearchOpen, setIsContentSearchOpen] = useState(false);
 
@@ -58,19 +84,40 @@ export default function Page({ language }: PageProps) {
           selectedBook={selectedBook || null}
           selectedChapter={selectedChapter}
           verses={verses}
-          onBookChange={setSelectedBookId}
-          onChapterChange={(ch: number | null) => {
-            setSelectedChapter(ch);
-            setVerses({ start: 1, end: 9999 });
+          onBookChange={(id) => {
+            setSearchParams(prev => {
+              if (id) prev.set('book', id);
+              else prev.delete('book');
+              prev.delete('chapter');
+              prev.delete('verse');
+              prev.delete('verseEnd');
+              return prev;
+            });
           }}
-          onVersesChange={setVerses}
+          onChapterChange={(ch: number | null) => {
+            setSearchParams(prev => {
+              if (ch !== null) prev.set('chapter', ch.toString());
+              else prev.delete('chapter');
+              prev.delete('verse');
+              prev.delete('verseEnd');
+              return prev;
+            });
+          }}
+          onVersesChange={(v: { start: number; end: number }) => {
+            setSearchParams(prev => {
+              prev.set('verse', v.start.toString());
+              if (v.end < 9000) prev.set('verseEnd', v.end.toString());
+              else prev.delete('verseEnd');
+              return prev;
+            });
+          }}
           hierarchy={hierarchy}
           bookData={bookData}
         />
       ),
       centerChildren: true,
     });
-  }, [language, selectedBook, selectedChapter, verses, hierarchy, bookData, setHeaderProps]);
+  }, [language, selectedBook, selectedChapter, verses, hierarchy, bookData, setHeaderProps, setSearchParams]);
 
   const renderMainContent = () => {
     if (loading || otherLoading) {

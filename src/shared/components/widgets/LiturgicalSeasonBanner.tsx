@@ -74,7 +74,7 @@ export default function LiturgicalSeasonBanner({
         {(localizedSundayCycle || weekdayCycle || year) && (
           <div
             className={cn(
-              'mb-[1em] px-[1.25em] py-[0.5em] rounded-full text-[0.875em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md transition-all duration-300',
+              'mb-[1em] px-[1.5em] py-[0.6em] rounded-full text-[1em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md transition-all duration-300',
               theme.badge
             )}
             style={{

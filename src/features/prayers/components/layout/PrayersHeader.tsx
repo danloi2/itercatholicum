@@ -37,19 +37,27 @@ export default function PrayersHeader({
 
   return (
     <div className="flex items-center justify-center gap-2 animate-in fade-in duration-300 w-full flex-wrap">
-      {/* Root: Oraciones */}
-      <button
-        onClick={() => {
-          onTimeTypeChange(null);
-          onViewModeChange('SELECTION');
-        }}
-        className={cn(
-          'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
-          viewMode === 'SELECTION' ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
+      <div className="flex flex-col items-center">
+        <button
+          onClick={() => {
+            onTimeTypeChange(null);
+            onViewModeChange('SELECTION');
+          }}
+          className={cn(
+            'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
+            viewMode === 'SELECTION' ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
+          )}
+        >
+          {language === 'la' ? 'Orationes' : 'Oraciones'}
+        </button>
+        {viewMode === 'SELECTION' && (
+          <span className="text-[14px] sm:text-xl italic text-[#3d0c0c]/60 font-serif -mt-0.5">
+            {language === 'la'
+              ? 'Ad Te, Domine, levavi animam meam'
+              : 'A ti, Señor, levanto mi alma'}
+          </span>
         )}
-      >
-        {language === 'la' ? 'Orationes' : 'Oraciones'}
-      </button>
+      </div>
 
       {/* Separator / Breadcrumb arrow */}
       {(selectedTimeType || viewMode !== 'SELECTION') && (

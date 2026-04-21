@@ -70,7 +70,7 @@ export default function Header({
 
       {/* ── SUBPAGES: Stacked centered layout ── */}
       {(pageTitle || children || centerChildren) && (
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-0.5 flex flex-col items-center gap-0.5">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 md:py-3 flex flex-col items-center gap-1">
 
           {/* 1. Page title — always on top */}
           {pageTitle && (
@@ -80,7 +80,7 @@ export default function Header({
                   {pageTitle}
                 </h2>
               ) : (
-                <div className="w-full flex justify-center min-w-0 overflow-hidden pr-10">
+                <div className="w-full flex justify-center min-w-0">
                   {pageTitle}
                 </div>
               )}

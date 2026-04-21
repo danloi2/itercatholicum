@@ -96,17 +96,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
             </div>
           ) : lectiones && lectiones.lecturas.length > 0 ? (
             <div className="flex flex-col gap-12">
-              {/* ── Liturgical day title in a canvas ── */}
-              {liturgicalDay && (
-                <ContentCanvas showDecorativeSeparator={false} symbol="crismon">
-                  <div className="flex flex-col items-center justify-center py-12 md:py-20 gap-6 animate-in fade-in slide-in-from-top-2 duration-700">
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#3d0c0c] text-center leading-tight max-w-3xl">
-                      {getFullLiturgicalName(liturgicalDay, language)}
-                    </h2>
-                    <div className="w-16 h-0.5 bg-[#8B0000]/20" />
-                  </div>
-                </ContentCanvas>
-              )}
 
               {lectiones.lecturas.map((lectura, i) => (
                 <MassReading

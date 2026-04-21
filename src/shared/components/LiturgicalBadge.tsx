@@ -43,7 +43,7 @@ export const LiturgicalBadge: React.FC<LiturgicalBadgeProps> = ({
 
   // Base classes for the badge to match LiturgicalCard styling
   const baseClasses =
-    'text-[9px] md:text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider h-auto border';
+    'text-[11px] md:text-[12px] px-2.5 py-1 rounded font-bold uppercase tracking-wider h-auto border';
 
   if (variant === 'stone' || isFeria) {
     return (
@@ -86,7 +86,7 @@ export const LiturgicalColorBadge: React.FC<{
   <Badge
     variant="outline"
     className={cn(
-      'text-[9px] md:text-[10px] px-1.5 py-0.1 h-[1.8em] rounded font-medium uppercase tracking-wider border bg-white/50',
+      'text-[11px] md:text-[12px] px-2.5 py-1 h-auto rounded font-medium uppercase tracking-wider border bg-white/50',
       className
     )}
   >

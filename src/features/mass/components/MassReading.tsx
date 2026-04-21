@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Book } from 'lucide-react';
+import { parseBibleReference, getBibleReferenceUrl } from '@features/bible/utils/bibleNavigation';
 import { type Lectura, getLecturaLabel } from '../services/lectionaryService';
 import { ContentCanvas, CanvasInitial } from '@shared/components/ContentCanvas';
 import { cn } from '@shared/lib/utils';
@@ -89,10 +92,11 @@ const GospelCross = () => (
 /**
  * Renders the header with title (left) and reference (right)
  */
-const ReadingHeader = ({ title, reference, isChant }: { 
+const ReadingHeader = ({ title, reference, isChant, language }: { 
     title: string; 
     reference?: string; 
     isChant: boolean;
+    language: 'es' | 'la';
 }) => {
     // Extract forma breve/larga/longe/brevis into a badge instead of text
     const shapeMatch = title.match(/\((forma.*?)\)/i);
@@ -114,11 +118,26 @@ const ReadingHeader = ({ title, reference, isChant }: {
                     </span>
                 )}
             </div>
-            {reference && (
-                <span className="text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80 whitespace-nowrap ml-4">
-                    {reference}
-                </span>
-            )}
+            {reference && (() => {
+                const parsed = parseBibleReference(reference);
+                if (parsed) {
+                    return (
+                        <Link 
+                            to={getBibleReferenceUrl(parsed)}
+                            className="inline-flex items-center gap-1.5 text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80 whitespace-nowrap ml-4 hover:opacity-100 hover:underline transition-all underline-offset-4 decoration-[#8B0000]/30 group/ref"
+                            title={language === 'la' ? 'Vade ad Bibliam' : 'Ir a la Biblia'}
+                        >
+                            <Book className="w-3.5 h-3.5 opacity-40 group-hover/ref:opacity-100 transition-opacity" />
+                            {reference}
+                        </Link>
+                    );
+                }
+                return (
+                    <span className="text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80 whitespace-nowrap ml-4">
+                        {reference}
+                    </span>
+                );
+            })()}
         </div>
     );
 };
@@ -270,6 +289,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ lectura, index, langua
         title={title} 
         reference={lectura.reference} 
         isChant={isChant || isComment}
+        language={language}
       />
 
       {/* Global Intro (Red, Italic, Serif) */}

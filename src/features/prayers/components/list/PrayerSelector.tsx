@@ -15,20 +15,6 @@ const PrayerSelector: React.FC<PrayerSelectorProps> = ({
 }) => {
   return (
     <div className="max-w-7xl mx-auto mt-6 px-4 animate-in fade-in duration-700">
-      <div className="text-center mb-12 border-b border-[#c49b9b]/20 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
-        <h1 className="text-3xl md:text-5xl font-serif font-bold text-[#8B0000] mb-2 tracking-tight">
-          {language === 'la' ? 'Orationes' : 'Oraciones'}
-        </h1>
-        <div className="flex items-center justify-center gap-4">
-          <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-          <span className="text-lg md:text-xl font-serif italic text-stone-600">
-            {language === 'la'
-              ? 'Ad te, Domine, levavi animam meam'
-              : 'A ti, Señor, levanto mi alma'}
-          </span>
-          <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {liturgicalTimePrayerTypes.map((timeType) => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContentCanvas, CanvasHeader, CanvasInitial } from '@shared/components/ContentCanvas';
+import { formatBibleReference } from '../../utils/bibleNavigation';
 
 interface BibleDisplayProps {
   content: {
@@ -42,17 +43,8 @@ export default function ReadingContent({
       <div className="flex items-center justify-center gap-4">
         <span className="h-px w-6 bg-border/30"></span>
         <span className="italic">
-          {chapter === 0
-            ? language === 'la'
-              ? 'Omnia Capitula'
-              : 'Todos los capítulos'
-            : `${language === 'la' ? 'Caput' : 'Capítulo'} ${chapter}`}
+          {formatBibleReference('', chapter ?? 0, startVerse, endVerse, language).trim()}
         </span>
-        {chapter !== 0 && (startVerse > 1 || endVerse < 500) && (
-          <span className="bg-primary/5 text-primary text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full border border-primary/10 uppercase tracking-widest not-italic">
-            {`${startVerse}-${endVerse > 500 ? (language === 'la' ? 'Fin.' : 'Fin') : endVerse}`}
-          </span>
-        )}
         <span className="h-px w-6 bg-border/30"></span>
       </div>
     </div>

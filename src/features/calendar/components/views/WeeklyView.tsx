@@ -92,7 +92,7 @@ export default function WeeklyView({ data, loading, language, currentWeekStart }
             {headerInfo.sundayCycle && (
               <div
                 className={cn(
-                  'mb-[0.5em] px-[1.25em] py-[0.25em] rounded-full text-[0.75em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md',
+                  'mb-[1em] px-[1.5em] py-[0.6em] rounded-full text-[1em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md transition-all duration-300',
                   headerInfo.theme?.badge
                 )}
                 style={{

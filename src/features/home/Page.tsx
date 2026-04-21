@@ -75,14 +75,6 @@ const Page: React.FC<PageProps> = ({ language }) => {
       path: '/calendar',
     },
     {
-      id: 'bible',
-      title: t.sections.bible.title,
-      icon: <Book className="w-7 h-7" />,
-      description: t.sections.bible.description,
-      color: 'text-[#522b2b] bg-[#fdfbf7]',
-      path: '/bible',
-    },
-    {
       id: 'mass',
       title: t.sections.mass.title,
       icon: <Church className="w-7 h-7" />,
@@ -90,6 +82,14 @@ const Page: React.FC<PageProps> = ({ language }) => {
       color: 'text-[#8B0000] bg-[#fdfbf7]',
       path: '/mass',
       disabled: true,
+    },
+    {
+      id: 'bible',
+      title: t.sections.bible.title,
+      icon: <Book className="w-7 h-7" />,
+      description: t.sections.bible.description,
+      color: 'text-[#522b2b] bg-[#fdfbf7]',
+      path: '/bible',
     },
     {
       id: 'prayers',

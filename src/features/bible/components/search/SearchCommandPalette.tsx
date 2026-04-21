@@ -12,6 +12,7 @@ const bibleModules = import.meta.glob<{
   };
 }>('/src/shared/data/bibles/**/*.json');
 import { BIBLE_BOOKS } from '@features/bible/constants/bibleVersions';
+import { formatBibleReference, parseBibleReference } from '../../utils/bibleNavigation';
 
 interface BibleCommandPaletteProps {
   open: boolean;
@@ -122,6 +123,8 @@ export default function SearchCommandPalette({
   const [bookSuggestions, setBookSuggestions] = React.useState<typeof BIBLE_BOOKS>([]);
   const [verseResults, setVerseResults] = React.useState<VerseResult[]>([]);
   const [isSearching, setIsSearching] = React.useState(false);
+  const [showAllChapters, setShowAllChapters] = React.useState(false);
+  const [showAllVerses, setShowAllVerses] = React.useState(false);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const searchTimeoutRef = React.useRef<number | undefined>(undefined);
 
@@ -131,6 +134,8 @@ export default function SearchCommandPalette({
       setInputValue('');
       setBookSuggestions([]);
       setVerseResults([]);
+      setShowAllChapters(false);
+      setShowAllVerses(false);
     }
   }, [open]);
 
@@ -139,20 +144,25 @@ export default function SearchCommandPalette({
       setBookSuggestions([]);
       setVerseResults([]);
       setIsSearching(false);
+      setShowAllChapters(false);
+      setShowAllVerses(false);
       return;
     }
 
     const query = inputValue.toLowerCase();
+    // Extract only the letters to keep suggesting the book even if numbers are typed
+    const bookSearchPart = query.match(/^[a-z\sáéíóúñ1-3]+/i)?.[0].trim() || query;
 
     // Check if query matches book names (for reference search)
     const bookMatch = BIBLE_BOOKS.filter((book) => {
       const nameLa = book.name.la.toLowerCase();
       const nameEs = book.name.es.toLowerCase();
       const abbr = book.acronym.toLowerCase();
-      const id = book.id.toLowerCase();
 
       return (
-        nameLa.includes(query) || nameEs.includes(query) || abbr.includes(query) || id === query
+        nameLa.includes(bookSearchPart) || 
+        nameEs.includes(bookSearchPart) || 
+        abbr.includes(bookSearchPart)
       );
     }).slice(0, 5);
 
@@ -180,85 +190,30 @@ export default function SearchCommandPalette({
       if (searchTimeoutRef.current) {
         clearTimeout(searchTimeoutRef.current);
       }
+      setShowAllChapters(false);
+      setShowAllVerses(false);
     };
   }, [inputValue, language]);
 
-  const parseCommand = (text: string) => {
-    let bestMatchBook = null;
-    let remainingText = '';
-
-    for (const book of BIBLE_BOOKS) {
-      const nameLa = book.name.la.toLowerCase();
-      const nameEs = book.name.es.toLowerCase();
-      const abbr = book.acronym.toLowerCase();
-      const textLower = text.toLowerCase();
-
-      if (textLower.startsWith(nameLa)) {
-        if (!bestMatchBook || nameLa.length > bestMatchBook.matchedLength) {
-          bestMatchBook = { book, matchedLength: nameLa.length };
-          remainingText = text.substring(nameLa.length).trim();
-        }
-      }
-      if (textLower.startsWith(nameEs)) {
-        if (!bestMatchBook || nameEs.length > bestMatchBook.matchedLength) {
-          bestMatchBook = { book, matchedLength: nameEs.length };
-          remainingText = text.substring(nameEs.length).trim();
-        }
-      }
-      if (textLower.startsWith(abbr)) {
-        if (!bestMatchBook || abbr.length > bestMatchBook.matchedLength) {
-          bestMatchBook = { book, matchedLength: abbr.length };
-          remainingText = text.substring(abbr.length).trim();
-        }
-      }
-    }
-
-    if (bestMatchBook) {
-      const parts = remainingText.split(':');
-      const chapterStr = parts[0]?.trim();
-      const versesStr = parts[1]?.trim();
-
-      const chapter = parseInt(chapterStr);
-      if (!isNaN(chapter)) {
-        let verseStart: number | undefined;
-        let verseEnd: number | undefined;
-
-        if (versesStr) {
-          const verseParts = versesStr.split('-');
-          verseStart = parseInt(verseParts[0]);
-          if (verseParts[1]) {
-            verseEnd = parseInt(verseParts[1]);
-          }
-        }
-
-        return {
-          book: bestMatchBook.book,
-          chapter,
-          verseStart,
-          verseEnd,
-        };
-      }
-    }
-    return null;
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      const parsed = parseCommand(inputValue);
+      const parsed = parseBibleReference(inputValue);
 
-      if (parsed && parsed.chapter) {
-        onSelect(parsed.book.id, parsed.chapter, parsed.verseStart, parsed.verseEnd);
+      if (parsed) {
+        onSelect(parsed.bookId, parsed.chapter, parsed.verse, parsed.verseEnd);
         onOpenChange(false);
         return;
       }
 
-      if (parsed && !parsed.chapter) {
-        setInputValue(`${parsed.book.acronym} `);
-        return;
-      }
-
+      // If no valid reference but we have book suggestions, use the first one
       if (bookSuggestions.length > 0) {
         setInputValue(`${bookSuggestions[0].acronym} `);
+        return;
+      }
+      
+      // If we have verse results, use the first one
+      if (verseResults.length > 0) {
+        handleSelectVerse(verseResults[0]);
       }
     }
   };
@@ -323,8 +278,8 @@ export default function SearchCommandPalette({
               className="flex h-14 w-full bg-transparent py-3 text-lg outline-none placeholder:text-[#c49b9b] text-[#3d0c0c] font-serif"
               placeholder={
                 language === 'la'
-                  ? 'Quaerere librum, caput... (e.g. Gn 1:1)'
-                  : 'Buscar libro, capítulo... (ej. Gn 1:1)'
+                  ? 'Quaerere librum, caput... (e.g. Gn 1, 1)'
+                  : 'Buscar libro, capítulo... (ej. Gn 1, 1)'
               }
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
@@ -334,6 +289,149 @@ export default function SearchCommandPalette({
 
           {(bookSuggestions.length > 0 || verseResults.length > 0 || isSearching || inputValue) && (
             <div className="max-h-[400px] overflow-y-auto p-2 custom-scrollbar">
+              {(() => {
+                const parsed = parseBibleReference(inputValue);
+                if (parsed) {
+                  const book = BIBLE_BOOKS.find(b => b.id === parsed.bookId);
+                  if (!book) return null;
+
+                  // Case 1: Book only (Chapter 0)
+                  if (parsed.chapter === 0) {
+                    return (
+                      <div className="mb-6">
+                        <div className="px-4 py-2 text-[10px] font-bold text-[#8B0000]/50 uppercase tracking-widest mb-2">
+                          {language === 'la' ? 'Vade ad:' : 'Ir a la referencia:'}
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <button
+                            className="w-full flex items-center gap-3 px-4 py-4 rounded-xl bg-[#8B0000]/5 border border-[#8B0000]/20 hover:bg-[#8B0000]/10 transition-all text-left group"
+                            onClick={() => {
+                              onSelect(parsed.bookId, 0, 1, 9999);
+                              onOpenChange(false);
+                            }}
+                          >
+                            <Book className="h-6 w-6 text-[#8B0000]" />
+                            <div className="flex flex-col">
+                              <span className="text-lg font-bold text-[#8B0000] font-serif">
+                                {book.name[language]}
+                              </span>
+                              <span className="text-xs text-[#3d0c0c]/60 italic font-serif">
+                                {language === 'la' ? 'Librum Totum' : 'Ver todo el libro'}
+                              </span>
+                            </div>
+                          </button>
+
+                          {/* Quick chapter access */}
+                          <div className="grid grid-cols-4 sm:grid-cols-6 gap-1 px-1">
+                            {Array.from({ length: showAllChapters ? book.chapters : Math.min(book.chapters, 12) }, (_, i) => i + 1).map(ch => (
+                              <button
+                                key={ch}
+                                onClick={() => {
+                                  onSelect(parsed.bookId, ch, 1, 9999);
+                                  onOpenChange(false);
+                                }}
+                                className="h-10 flex items-center justify-center rounded-lg bg-white border border-[#8B0000]/10 text-[#8B0000] font-serif hover:bg-[#8B0000]/5 hover:border-[#8B0000]/30 transition-all text-sm font-bold"
+                              >
+                                {book.acronym} {ch}
+                              </button>
+                            ))}
+                            {book.chapters > 12 && !showAllChapters && (
+                              <button 
+                                onClick={() => setShowAllChapters(true)}
+                                className="h-10 flex items-center justify-center rounded-lg bg-stone-50 border border-dashed border-[#8B0000]/30 text-[#8B0000]/70 font-serif text-[10px] uppercase font-bold hover:bg-[#8B0000]/5 transition-colors"
+                              >
+                                +{book.chapters - 12}
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  // Case 2: Book and Chapter/Verses
+                  const hasSpecificVerse = inputValue.includes(',') || inputValue.includes(':') || inputValue.includes(' ');
+                  const chapterOnlyRef = formatBibleReference(book.name[language], parsed.chapter, 0, 0, language);
+                  const specificRef = formatBibleReference(book.name[language], parsed.chapter, parsed.verse, parsed.verseEnd, language);
+                  
+                  return (
+                    <div className="mb-6">
+                      <div className="px-4 py-2 text-[10px] font-bold text-[#8B0000]/50 uppercase tracking-widest mb-2">
+                        {language === 'la' ? 'Vade ad:' : 'Ir a la referencia:'}
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        {/* Option 1: Full Chapter */}
+                        <button
+                          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-[#8B0000]/10 hover:bg-[#8B0000]/5 hover:border-[#8B0000]/30 transition-all text-left group"
+                          onClick={() => {
+                            onSelect(parsed.bookId, parsed.chapter, 1, 9999);
+                            onOpenChange(false);
+                          }}
+                        >
+                          <Book className="h-5 w-5 text-[#8B0000] opacity-60" />
+                          <div className="flex flex-col">
+                            <span className="text-base font-bold text-[#3d0c0c] font-serif group-hover:text-[#8B0000]">
+                              {chapterOnlyRef}
+                            </span>
+                            <span className="text-[10px] uppercase tracking-widest text-[#8B0000]/60 font-sans">
+                              {language === 'la' ? 'Caput Totum' : 'Capítulo completo'}
+                            </span>
+                          </div>
+                        </button>
+
+                        {/* Option 2: Specific Verse */}
+                        <div className="flex flex-col gap-2">
+                          <button
+                            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-[#8B0000]/5 border border-[#8B0000]/20 hover:bg-[#8B0000]/10 transition-all text-left group"
+                            onClick={() => {
+                              onSelect(parsed.bookId, parsed.chapter, parsed.verse, parsed.verseEnd);
+                              onOpenChange(false);
+                            }}
+                          >
+                            <FileText className="h-5 w-5 text-[#8B0000]" />
+                            <div className="flex flex-col">
+                              <span className="text-base font-bold text-[#8B0000] font-serif">
+                                {specificRef}
+                              </span>
+                              <span className="text-[10px] uppercase tracking-widest text-[#8B0000]/60 font-sans">
+                                {language === 'la' ? 'Versus' : 'Versículo específico'}
+                              </span>
+                            </div>
+                          </button>
+
+                          {/* Quick verse access (if no range is being typed) */}
+                          {!parsed.verseEnd && (
+                            <div className="grid grid-cols-4 sm:grid-cols-6 gap-1 px-1">
+                              {Array.from({ length: showAllVerses ? 50 : 12 }, (_, i) => i + 1).map(v => (
+                                <button
+                                  key={v}
+                                  onClick={() => {
+                                    onSelect(parsed.bookId, parsed.chapter, v, v);
+                                    onOpenChange(false);
+                                  }}
+                                  className="h-10 flex items-center justify-center rounded-lg bg-white border border-[#8B0000]/10 text-[#8B0000] font-serif hover:bg-[#8B0000]/5 hover:border-[#8B0000]/30 transition-all text-xs"
+                                >
+                                  {book.acronym} {parsed.chapter}, {v}
+                                </button>
+                              ))}
+                              {!showAllVerses && (
+                                <button 
+                                  onClick={() => setShowAllVerses(true)}
+                                  className="h-10 flex items-center justify-center rounded-lg bg-stone-50 border border-dashed border-[#8B0000]/30 text-[#8B0000]/70 font-serif text-[10px] uppercase font-bold hover:bg-[#8B0000]/5 transition-colors"
+                                >
+                                  +
+                                </button>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
+              })()}
+
               {/* Book Suggestions */}
               {bookSuggestions.length > 0 && (
                 <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-1">
@@ -374,7 +472,7 @@ export default function SearchCommandPalette({
                       <div className="flex items-center mb-1 gap-2">
                         <FileText className="h-4 w-4 text-[#8B0000] opacity-70" />
                         <span className="font-bold text-[#8B0000] font-serif text-sm">
-                          {result.bookName} {result.chapter}:{result.verse}
+                          {formatBibleReference(result.bookName, result.chapter, result.verse, result.verse, language)}
                         </span>
                       </div>
                       <div className="text-xs text-[#3d0c0c]/80 font-serif leading-relaxed line-clamp-2 italic">
