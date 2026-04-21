@@ -98,12 +98,7 @@ export default function LiturgicalSeasonView({
 
   return (
     <div
-      className="relative px-4 md:px-12 pb-64 pt-32 w-full mx-auto overflow-visible"
-      style={{
-        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-        WebkitMaskImage:
-          'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-      }}
+      className="relative px-4 md:px-12 pb-64 pt-4 w-full mx-auto overflow-visible"
     >
       <div className="flex flex-col gap-0 items-center justify-center w-full max-w-7xl mx-auto overflow-visible">
         {elements}

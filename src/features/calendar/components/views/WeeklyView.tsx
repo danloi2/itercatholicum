@@ -85,20 +85,20 @@ export default function WeeklyView({ data, loading, language, currentWeekStart }
           />
           <div
             className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
-            style={{ backgroundColor: `${hex}90` }}
+            style={{ backgroundColor: hex === '#ffffff' ? '#8B0000' : `${hex}90` }}
           />
 
           <div className="relative z-10 flex flex-col items-center">
             {headerInfo.sundayCycle && (
               <div
                 className={cn(
-                  'mb-[1em] px-[1.25em] py-[0.5em] rounded-full text-[0.875em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md',
+                  'mb-[0.5em] px-[1.25em] py-[0.25em] rounded-full text-[0.75em] font-black tracking-[0.2em] uppercase shadow-sm border backdrop-blur-md',
                   headerInfo.theme?.badge
                 )}
                 style={{
                   backgroundColor: `${hex}15`,
                   borderColor: `${hex}30`,
-                  color: hex,
+                  color: hex === '#ffffff' ? '#8B0000' : hex,
                 }}
               >
                 {headerInfo.sundayCycle}{' '}

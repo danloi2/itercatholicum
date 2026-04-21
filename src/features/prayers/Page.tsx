@@ -117,7 +117,7 @@ export default function Page({ language }: PageProps) {
 
   return (
     <div className="flex flex-col flex-1">
-      <main className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8">
+      <main className="flex-1 w-full bg-[#fdfbf7] py-2 sm:py-4">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           {viewMode === 'SELECTION' && (
             <PrayerSelector

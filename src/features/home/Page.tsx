@@ -104,8 +104,8 @@ const Page: React.FC<PageProps> = ({ language }) => {
   return (
     <div className="flex flex-col flex-1">
       <SecondHeader language={language} />
-      <div className="flex-1 flex flex-col pt-4 md:pt-12">
-        <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4">
+      <div className="flex-1 flex flex-col pt-2 md:pt-6">
+        <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 w-full">
             {sections.map((section) => (
               <button

@@ -40,8 +40,8 @@ export default function Header({
 
       {/* ── HOME: Stacked centered layout ── */}
       {isHome && (
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 md:py-3">
-          <div className="flex flex-col items-center gap-1.5">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1 md:py-2">
+          <div className="flex flex-col items-center gap-1">
 
             {/* Branding */}
             <div className="flex items-center gap-2 group">
@@ -72,7 +72,7 @@ export default function Header({
 
       {/* ── SUBPAGES: Stacked centered layout ── */}
       {(pageTitle || children || centerChildren) && (
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex flex-col items-center gap-1.5">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-0.5 flex flex-col items-center gap-0.5">
 
           {/* 1. Page title — always on top */}
           {pageTitle && (

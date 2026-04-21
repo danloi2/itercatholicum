@@ -101,7 +101,7 @@ export const LiturgicalCalendarView: React.FC<LiturgicalCalendarViewProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-0 w-full mx-auto pb-64 pt-32 relative overflow-visible px-4 md:px-12">
+    <div className="flex flex-col gap-0 w-full mx-auto pb-64 pt-4 relative overflow-visible px-4 md:px-12">
       {elements}
     </div>
   );

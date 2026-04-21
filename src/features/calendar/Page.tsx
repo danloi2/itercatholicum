@@ -262,7 +262,7 @@ export default function Page({ language, year }: PageProps) {
 
   return (
     <div className="flex flex-col flex-1">
-      <div className="flex-1 w-full bg-[#fdfbf7] py-6 sm:py-8">
+      <div className="flex-1 w-full bg-[#fdfbf7] py-2 sm:py-4">
         <div className="max-w-[1400px] mx-auto px-0 sm:px-6">
           <Tabs
             defaultValue="year"
@@ -298,18 +298,6 @@ export default function Page({ language, year }: PageProps) {
                   />,
                   portalCenter
                 )}
-              <div className="text-center mb-12 border-b border-[#c49b9b]/20 pb-8 animate-in fade-in slide-in-from-top-4 duration-700">
-                <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#8B0000] mb-4 tracking-tight">
-                  {language === 'la' ? 'Tempus Liturgicum' : 'Tiempo Litúrgico'}
-                </h1>
-                <div className="flex items-center justify-center gap-4">
-                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-                  <span className="text-xl md:text-2xl font-serif italic text-[#3d0c0c]">
-                    {selectedYear - 1} / {selectedYear}
-                  </span>
-                  <span className="h-px w-8 bg-[#c49b9b]/30"></span>
-                </div>
-              </div>
               <div className="max-w-2xl mx-auto">
                 <LiturgicalCalendarView
                   data={data}

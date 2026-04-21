@@ -80,7 +80,7 @@ export default function LiturgicalSeasonBanner({
             style={{
               backgroundColor: `${hex}15`,
               borderColor: `${hex}30`,
-              color: hex,
+              color: hex === '#ffffff' ? '#8B0000' : hex,
             }}
           >
             {localizedSundayCycle}
