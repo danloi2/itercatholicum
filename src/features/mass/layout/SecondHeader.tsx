@@ -50,7 +50,12 @@ export default function SecondHeader({ liturgicalDay, language, onDateChange }: 
   }, [liturgicalDay, language]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-1.5 animate-in fade-in slide-in-from-top-2 duration-500 min-w-0 w-full">
+    <div className="flex flex-col items-center justify-center gap-1 animate-in fade-in slide-in-from-top-2 duration-500 min-w-0 w-full">
+      <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none font-serif italic mb-1.5">
+        <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+          {language === 'la' ? 'Lectiones et Evangelium' : 'Lecturas y Evangelio'}
+        </span>
+      </h2>
       <div className="flex items-center gap-2 flex-wrap justify-center min-w-0">
         {onDateChange ? (
           <LiturgicalDatePicker

@@ -19,16 +19,17 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 2000,
+    chunkSizeWarningLimit: 6000,
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
             return 'vendor';
           }
-          if (id.includes('src/shared/data') || id.includes('bibleIncipits')) {
-            return 'liturgical-data';
-          }
+          if (id.includes('shared/data/bibles/1592_vulgata')) return 'bible-vulgata';
+          if (id.includes('shared/data/bibles/1823_torres')) return 'bible-torres';
+          if (id.includes('shared/data/lectiones')) return 'lectionary-data';
+          if (id.includes('bibleIncipits')) return 'bible-incipits';
         },
       },
     },

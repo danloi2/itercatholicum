@@ -46,25 +46,28 @@ export default function SecondHeader({
   const currentGroup = selectedBook?.type[language] || (language === 'es' ? 'Otros' : 'Alii');
 
   return (
-    <div className="flex items-center justify-center gap-1 sm:gap-2 animate-in fade-in duration-500 flex-wrap w-full max-w-full px-2 overflow-visible relative">
-      {/* Root: Biblia */}
+    <div className="flex flex-col items-center justify-center gap-1.5 animate-in fade-in duration-500 w-full max-w-full px-2">
+      {/* Root Title: Biblia (Always Visible) */}
       <div className="flex items-center">
         <button
           onClick={() => onBookChange('')}
-          className={cn(
-            'text-sm sm:text-base md:text-lg font-bold tracking-tight transition-all hover:text-[#8B0000] px-2 py-1 rounded-md hover:bg-[#8B0000]/5',
-            !selectedBook ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/40'
-          )}
+          className="transition-all hover:opacity-80 shrink-0"
         >
-          {language === 'la' ? 'Biblia' : 'Biblia'}
+          <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none font-serif italic">
+            <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+              {language === 'la' ? 'Biblia' : 'Biblia'}
+            </span>
+          </h2>
         </button>
       </div>
+
+      {/* Breadcrumbs Row */}
+      <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap w-full overflow-visible relative">
 
       {/* Testament Selector */}
       {currentTestament && (
         <div className="relative">
           <div className="flex items-center gap-1">
-            <span className="text-[#c49b9b] opacity-30 text-[10px] font-bold">/</span>
             <button 
               onClick={() => {
                 setTestamentOpen(!testamentOpen);
@@ -75,7 +78,7 @@ export default function SecondHeader({
               }}
               className="flex items-center gap-0.5 group outline-none px-1.5 py-1 rounded-md hover:bg-[#8B0000]/5 transition-all"
             >
-              <span className="text-sm sm:text-base font-bold tracking-tight text-[#3d0c0c]/80 transition-colors group-hover:text-[#8B0000] truncate max-w-[70px] sm:max-w-none">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#3d0c0c]/80 transition-colors group-hover:text-[#8B0000] truncate max-w-[70px] sm:max-w-none">
                 {currentTestament}
               </span>
               <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 opacity-40', testamentOpen && 'rotate-180')} />
@@ -121,7 +124,7 @@ export default function SecondHeader({
               }}
               className="flex items-center gap-0.5 group outline-none px-1.5 py-1 rounded-md hover:bg-[#8B0000]/5 transition-all"
             >
-              <span className="text-sm sm:text-base font-bold tracking-tight text-[#3d0c0c]/80 transition-colors group-hover:text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#3d0c0c]/80 transition-colors group-hover:text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
                 {currentGroup}
               </span>
               <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 opacity-40', groupOpen && 'rotate-180')} />
@@ -167,7 +170,7 @@ export default function SecondHeader({
               }}
               className="flex items-center gap-0.5 group outline-none px-1.5 py-1 rounded-md hover:bg-[#8B0000]/5 transition-all"
             >
-              <span className="text-sm sm:text-base font-bold tracking-tight text-[#8B0000] transition-opacity hover:opacity-80 truncate max-w-[90px] sm:max-w-none">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#8B0000] transition-opacity hover:opacity-80 truncate max-w-[90px] sm:max-w-none">
                 {selectedBook.name[language]}
               </span>
               <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 opacity-40 text-[#8B0000]', bookOpen && 'rotate-180')} />
@@ -212,7 +215,7 @@ export default function SecondHeader({
               }}
               className="flex items-center gap-0.5 group outline-none px-1.5 py-1 rounded-md hover:bg-[#8B0000]/5 transition-all"
             >
-              <span className="text-sm sm:text-base font-bold tracking-tight text-[#8B0000] truncate max-w-[60px] sm:max-w-none">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#8B0000] truncate max-w-[60px] sm:max-w-none">
                 {selectedChapter === 0 ? (language === 'la' ? 'Omnia' : 'Todos') : `Cap. ${selectedChapter}`}
               </span>
               <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 opacity-40 text-[#8B0000]', chapterOpen && 'rotate-180')} />
@@ -275,7 +278,7 @@ export default function SecondHeader({
               }}
               className="flex items-center gap-0.5 group outline-none px-1.5 py-1 rounded-md hover:bg-[#8B0000]/5 transition-all"
             >
-              <span className="text-sm sm:text-base font-bold tracking-tight text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#8B0000] truncate max-w-[80px] sm:max-w-none">
                 {`V. ${verses.start}-${verses.end > 500 ? (language === 'la' ? 'Fin.' : 'Fin') : verses.end}`}
               </span>
               <ChevronDown className={cn('h-3 w-3 transition-transform duration-300 opacity-40 text-[#8B0000]', versesOpen && 'rotate-180')} />
@@ -333,5 +336,6 @@ export default function SecondHeader({
         </div>
       )}
     </div>
-  );
+  </div>
+);
 }

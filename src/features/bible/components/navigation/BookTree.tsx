@@ -33,7 +33,7 @@ export const BookTree: React.FC<BookTreeProps> = ({ language, hierarchy, onSelec
                   className="border border-stone-200 rounded-lg bg-white/50 overflow-hidden"
                 >
                   <AccordionTrigger className="px-4 py-3 hover:bg-[#fdfbf7] transition-colors hover:no-underline">
-                    <span className="text-sm font-medium text-stone-700">{group}</span>
+                    <span className="text-base md:text-lg font-medium text-stone-700">{group}</span>
                   </AccordionTrigger>
                   <AccordionContent className="px-1 pb-2">
                     <div className="grid grid-cols-1 gap-1 p-1">
@@ -48,7 +48,7 @@ export const BookTree: React.FC<BookTreeProps> = ({ language, hierarchy, onSelec
                         >
                           <BookIcon className="w-4 h-4 text-stone-400 group-hover:text-[#8B0000] shrink-0 transition-colors" />
                           <div className="flex-1 min-w-0">
-                            <div className="text-sm font-serif text-stone-800 group-hover:text-[#8B0000] truncate">
+                            <div className="text-base md:text-lg font-serif text-stone-800 group-hover:text-[#8B0000] truncate">
                               {book.name[language]}
                             </div>
                           </div>

@@ -128,10 +128,10 @@ const Page: React.FC<PageProps> = ({ language }) => {
                       )
                     : section.icon}
                 </div>
-                <h2 className="text-lg md:text-xl font-bold mb-1 md:mb-1.5 group-hover:text-[#8B0000] transition-colors">
+                <h2 className="text-lg md:text-2xl font-bold mb-1 md:mb-1.5 group-hover:text-[#8B0000] transition-colors">
                   {section.title}
                 </h2>
-                <p className="text-[#8B0000]/80 text-sm md:text-xl leading-relaxed font-serif italic">
+                <p className="text-[#8B0000]/80 text-xs md:text-lg leading-relaxed font-serif italic">
                   {section.description}
                 </p>
               </button>

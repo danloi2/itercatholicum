@@ -111,9 +111,9 @@ export const LiturgicalCard: React.FC<LiturgicalCardProps> = ({
   return (
     <motion.div
       onClick={() => navigate('/mass', { state: { date: day.date } })}
-      whileHover={{ scale: 1.03, zIndex: 10, transition: { duration: 0.2 } }}
+      whileHover={{ scale: 1.02, zIndex: 10, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.98 }}
-      className={cn('w-full max-w-[30em] mx-auto overflow-visible cursor-pointer', className)}
+      className={cn('w-full max-w-[45em] mx-auto overflow-visible cursor-pointer text-base md:text-lg', className)}
     >
       <Card
         id={day.date}

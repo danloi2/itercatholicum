@@ -108,7 +108,14 @@ export default function Page({ language, year }: PageProps) {
   }, [selectedYear, activeTab, data, selectedSeason]);
 
   useEffect(() => {
-    const pageTitle = language === 'la' ? 'Calendarium Liturgicum' : 'Calendario Litúrgico';
+    const titleText = language === 'la' ? 'Calendarium Liturgicum' : 'Calendario Litúrgico';
+    const pageTitle = (
+      <h2 className="text-2xl md:text-4xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif italic">
+        <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+          {titleText}
+        </span>
+      </h2>
+    );
     setHeaderProps({
       pageTitle,
     });
@@ -272,13 +279,13 @@ export default function Page({ language, year }: PageProps) {
             {portalRight &&
               createPortal(
                 <TabsList className="flex w-fit shadow-sm border border-stone-200/50 bg-white/50 backdrop-blur-sm">
-                  <TabsTrigger value="year" className="text-[10px] sm:text-xs px-2">
+                  <TabsTrigger value="year" className="text-xs sm:text-lg px-4 py-2 font-serif">
                     {language === 'la' ? 'Annus' : 'Año'}
                   </TabsTrigger>
-                  <TabsTrigger value="seasons" className="text-[10px] sm:text-xs px-2">
+                  <TabsTrigger value="seasons" className="text-xs sm:text-lg px-4 py-2 font-serif">
                     {language === 'la' ? 'Tempus' : 'Tiempo'}
                   </TabsTrigger>
-                  <TabsTrigger value="week" className="text-[10px] sm:text-xs px-2">
+                  <TabsTrigger value="week" className="text-xs sm:text-lg px-4 py-2 font-serif">
                     {language === 'la' ? 'Hebdomada' : 'Semana'}
                   </TabsTrigger>
                 </TabsList>,

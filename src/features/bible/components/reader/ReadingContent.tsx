@@ -42,7 +42,7 @@ export default function ReadingContent({
     <div className="flex flex-col items-center gap-1">
       <div className="flex items-center justify-center gap-4">
         <span className="h-px w-6 bg-border/30"></span>
-        <span className="italic">
+        <span className="italic text-2xl md:text-3xl font-serif text-[#8B0000]">
           {formatBibleReference('', chapter ?? 0, startVerse, endVerse, language).trim()}
         </span>
         <span className="h-px w-6 bg-border/30"></span>
@@ -71,7 +71,7 @@ export default function ReadingContent({
                   <sup className="text-[0.55em] font-bold text-[#8B0000]/60 mr-1.5 select-none align-baseline">
                     {verse.num}
                   </sup>
-                  <CanvasInitial className="mr-2">{verse.text.charAt(0).toUpperCase()}</CanvasInitial>
+                  <CanvasInitial className="mr-0.5">{verse.text.charAt(0).toUpperCase()}</CanvasInitial>
                   <span>{verse.text.substring(1)} </span>
                 </>
               ) : (
@@ -90,7 +90,7 @@ export default function ReadingContent({
               {otherVerseText ? (
                 <div className="cursor-pointer">
                   {verseContent}
-                  <div className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-2 hidden group-hover:block w-[90vw] md:w-96 p-4 md:p-6 rounded-2xl bg-[#fdfbf7] border border-[#8B0000]/10 shadow-[0_20px_50px_rgba(0,0,0,0.2)] font-serif text-[#3d0c0c] text-base md:text-lg pointer-events-none z-50">
+                  <div className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-2 hidden group-hover:block w-[95vw] md:w-160 p-6 md:p-8 rounded-2xl bg-[#fdfbf7] border border-[#8B0000]/10 shadow-[0_20px_60px_rgba(0,0,0,0.3)] font-serif text-[#3d0c0c] text-xl md:text-2xl pointer-events-none z-50">
                     <p className="leading-relaxed text-justify">
                       <sup className="text-[0.6em] font-bold text-[#8B0000]/60 mr-1.5 align-baseline">{verse.num}</sup>
                       {otherVerseText}

@@ -114,14 +114,15 @@ export function LatinDateDisplay({ language = 'es' }: WidgetProps) {
       : format(now, "EEEE, d 'de' MMMM 'de' yyyy", { locale: es });
 
   return (
-    <div className="flex flex-col items-center gap-0.5 leading-tight text-center">
-      <div className="text-xl font-bold text-slate-700 capitalize tracking-tight font-serif">
+    <div className="flex flex-col items-center gap-0.5 leading-tight text-center max-w-full">
+      <div className="text-base md:text-xl font-bold text-slate-700 capitalize tracking-tight font-serif opacity-80">
         {dateText}
       </div>
       {liturgicalInfo && (
         <span
           className={cn(
-            'text-[20px] md:text-[22px] font-bold tracking-tight font-serif whitespace-nowrap opacity-80',
+            'text-[24px] sm:text-[30px] md:text-[36px] font-bold tracking-tight font-serif opacity-100',
+            'truncate max-w-[90vw] md:max-w-none px-2',
             liturgicalInfo.theme.text
           )}
         >

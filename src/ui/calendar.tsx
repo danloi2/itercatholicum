@@ -17,31 +17,31 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
       className={cn('p-3', className)}
       classNames={{
         /* Layout general */
-        months: 'flex flex-col gap-3',
-        month: 'space-y-2',
+        months: 'flex flex-col gap-4',
+        month: 'space-y-4',
 
         /* Header */
-        month_caption: 'flex items-center justify-between h-8 px-1',
-        caption_label: 'text-sm font-medium',
+        month_caption: 'flex items-center justify-between h-10 px-2',
+        caption_label: 'text-base font-bold',
 
-        nav: 'flex items-center gap-1',
+        nav: 'flex items-center gap-2',
 
         button_previous: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-7 w-7 p-0 opacity-60 hover:opacity-100'
+          'h-10 w-10 p-0 opacity-60 hover:opacity-100'
         ),
         button_next: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-7 w-7 p-0 opacity-60 hover:opacity-100'
+          'h-10 w-10 p-0 opacity-60 hover:opacity-100'
         ),
 
-        dropdowns: 'flex gap-1',
+        dropdowns: 'flex gap-2',
 
         /* Grid */
         month_grid: 'w-full border-collapse',
 
         weekdays: 'flex justify-between',
-        weekday: 'w-8 text-[11px] font-medium text-muted-foreground text-center',
+        weekday: 'w-12 text-[13px] font-bold text-muted-foreground text-center',
 
         week: 'flex justify-between',
 
@@ -51,7 +51,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         /* Botón del día */
         day_button: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-8 w-8 p-0 text-sm font-medium rounded-md aria-selected:opacity-100'
+          'h-12 w-12 p-0 text-base font-semibold rounded-lg aria-selected:opacity-100'
         ),
 
         /* Estados */

@@ -102,7 +102,7 @@ export default function SecondHeader({
         <div className="flex flex-col items-center justify-center text-center px-1 min-w-[120px] lg:min-w-[150px]">
           {view === 'year' ? (
             <div className="flex flex-col items-center">
-              <h2 className="text-[1em] md:text-[1.125em] font-bold text-[#5c4033] leading-none tracking-tight">
+              <h2 className="text-[1.25em] md:text-[1.5em] font-bold text-[#5c4033] leading-none tracking-tight">
                 {year - 1} / {year}
               </h2>
               {onDateSelect && view === 'year' ? (
@@ -111,20 +111,20 @@ export default function SecondHeader({
                   onSelect={onDateSelect}
                   language={language}
                   trigger={
-                    <button className="flex items-center justify-center gap-[0.25em] text-[0.65em] md:text-[0.75em] font-semibold mt-[0.25em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
+                    <button className="flex items-center justify-center gap-[0.25em] text-[0.8em] md:text-[0.9em] font-semibold mt-[0.35em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
                       {displaySeason}
-                      <ChevronDown className="h-[1em] w-[1em] transition-transform duration-300" />
+                      <ChevronDown className="h-[1.1em] w-[1.1em] transition-transform duration-300" />
                     </button>
                   }
                 />
               ) : (
                 <Collapsible open={isOpen} onOpenChange={setIsOpen} className="relative z-50">
                   <CollapsibleTrigger asChild>
-                    <button className="flex items-center justify-center gap-[0.25em] text-[0.65em] md:text-[0.75em] font-semibold mt-[0.25em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
+                    <button className="flex items-center justify-center gap-[0.25em] text-[0.8em] md:text-[0.9em] font-semibold mt-[0.35em] text-[#c49b9b] hover:text-[#5c4033] transition-colors outline-none cursor-pointer leading-none">
                       {displaySeason}
                       <ChevronDown
                         className={cn(
-                          'h-[1em] w-[1em] transition-transform duration-300',
+                          'h-[1.1em] w-[1.1em] transition-transform duration-300',
                           isOpen && 'rotate-180'
                         )}
                       />

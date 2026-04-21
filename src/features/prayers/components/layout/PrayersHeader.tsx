@@ -44,14 +44,22 @@ export default function PrayersHeader({
             onViewModeChange('SELECTION');
           }}
           className={cn(
-            'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
-            viewMode === 'SELECTION' ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
+            'transition-all hover:opacity-80 shrink-0',
+            viewMode === 'SELECTION' ? 'text-transparent' : 'text-[#3d0c0c]/40 text-lg sm:text-xl md:text-2xl font-bold'
           )}
         >
-          {language === 'la' ? 'Orationes' : 'Oraciones'}
+          {viewMode === 'SELECTION' ? (
+            <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none font-serif italic">
+              <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
+                {language === 'la' ? 'Orationes' : 'Oraciones'}
+              </span>
+            </h2>
+          ) : (
+            language === 'la' ? 'Orationes' : 'Oraciones'
+          )}
         </button>
         {viewMode === 'SELECTION' && (
-          <span className="text-[14px] sm:text-xl italic text-[#3d0c0c]/60 font-serif -mt-0.5">
+          <span className="text-[14px] sm:text-2xl italic text-[#3d0c0c]/60 font-serif mt-1">
             {language === 'la'
               ? 'Ad Te, Domine, levavi animam meam'
               : 'A ti, Señor, levanto mi alma'}
@@ -76,7 +84,7 @@ export default function PrayersHeader({
             <button className="flex items-center gap-1.5 group outline-none">
               <span
                 className={cn(
-                  'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors group-hover:text-[#8B0000] truncate max-w-[120px] sm:max-w-[200px] md:max-w-none',
+                  'text-lg sm:text-xl md:text-2xl font-bold tracking-tight transition-colors group-hover:text-[#8B0000] truncate max-w-[120px] sm:max-w-[200px] md:max-w-none',
                   activeTheme ? activeTheme.textClass : 'text-[#3d0c0c]'
                 )}
               >

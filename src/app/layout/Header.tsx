@@ -49,7 +49,7 @@ export default function Header({
               <div className="relative transform transition-transform group-hover:scale-110 duration-500 shrink-0">
                 <StoleIcon color={hex} className="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm" />
               </div>
-              <h1 className="text-xl md:text-2xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif">
+              <h1 className="text-2xl md:text-4xl font-black tracking-tighter text-[#3d0c0c] leading-none font-serif">
                 <span className="bg-linear-to-r from-[#8B0000] to-[#3d0c0c] bg-clip-text text-transparent">
                   Iter Catholicum
                 </span>
@@ -76,7 +76,7 @@ export default function Header({
           {pageTitle && (
             <div className="flex items-center justify-center w-full min-w-0">
               {typeof pageTitle === 'string' ? (
-                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-[#3d0c0c] tracking-tight font-serif italic text-center leading-tight line-clamp-2">
+                <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-[#3d0c0c] tracking-tight font-serif italic text-center leading-tight line-clamp-2 drop-shadow-sm">
                   {pageTitle}
                 </h2>
               ) : (
