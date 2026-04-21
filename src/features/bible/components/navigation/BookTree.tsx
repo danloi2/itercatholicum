@@ -17,17 +17,6 @@ interface BookTreeProps {
 export const BookTree: React.FC<BookTreeProps> = ({ language, hierarchy, onSelectBook }) => {
   return (
     <div className="max-w-4xl mx-auto p-2 md:p-4 space-y-4 animate-in fade-in duration-500">
-      <div className="text-center space-y-1 mb-4">
-        <h1 className="text-2xl md:text-4xl font-serif font-bold text-[#8B0000] mb-1 tracking-tight">
-          {language === 'la' ? 'Sacra Biblia' : 'Santa Biblia'}
-        </h1>
-        <div className="h-px w-20 bg-linear-to-r from-transparent via-[#8B0000]/30 to-transparent mx-auto" />
-        <h2 className="text-base md:text-lg font-serif italic text-black/70">
-          {language === 'la'
-            ? 'Verbum Domini manet in aeternum'
-            : 'La Palabra del Señor permanece para siempre'}
-        </h2>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {hierarchy.testaments.map((testament) => (

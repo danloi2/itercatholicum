@@ -49,18 +49,27 @@ export default function SecondHeader({
   return (
     <div className="flex items-center justify-center gap-1.5 sm:gap-2 animate-in fade-in duration-300 flex-wrap w-full min-w-0 overflow-hidden">
       {/* Root: Biblia */}
-      <button
-        onClick={() => {
-          onBookChange('');
-          onChapterChange(null);
-        }}
-        className={cn(
-          'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
-          !selectedBook ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
+      <div className="flex flex-col items-center">
+        <button
+          onClick={() => {
+            onBookChange('');
+            onChapterChange(null);
+          }}
+          className={cn(
+            'text-base sm:text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[#8B0000] shrink-0',
+            !selectedBook ? 'text-[#3d0c0c]' : 'text-[#3d0c0c]/60'
+          )}
+        >
+          {language === 'la' ? 'Sacra Biblia' : 'Santa Biblia'}
+        </button>
+        {!selectedBook && (
+          <span className="text-[10px] sm:text-xs italic text-[#3d0c0c]/60 font-serif -mt-0.5">
+            {language === 'la'
+              ? 'Verbum Domini manet in aeternum'
+              : 'La Palabra del Señor permanece para siempre'}
+          </span>
         )}
-      >
-        {language === 'la' ? 'Sacra Biblia' : 'Santa Biblia'}
-      </button>
+      </div>
 
       {/* Separator */}
       {currentTestament && <span className="text-[#c49b9b] opacity-40 text-xs font-bold">/</span>}
