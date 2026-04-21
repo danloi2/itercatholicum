@@ -15,28 +15,69 @@ export function parseBibleReference(reference: string): ParsedReference | null {
   if (!reference) return null;
 
   // Normalize: replace colons with commas for the chapter/verse separator
-  // and ensure we have a standard format.
   const normalized = reference.replace(':', ',').trim();
   
-  // Match pattern: Acronym [Chapter] [Verse]
-  // 1. Try full reference: "Jn 1, 3-10"
-  let match = normalized.match(/^(.+?)\s+(\d+)(?:[\s,:]+(\d+)(?:[\s\-:]+(\d+))?)?/);
+  // Advanced parsing:
+  // 1. Try to extract book acronym (everything before the first number)
+  const bookMatch = normalized.match(/^([1-3]?\s*[a-zA-ZáéíóúÁÉÍÓÚ]+)\s*/);
+  if (!bookMatch) return null;
   
-  let acronym = '';
-  let chapter = 0;
-  let verse = 1;
-  let verseEnd: number | undefined = undefined;
-
-  if (match) {
-    acronym = match[1].trim();
-    chapter = parseInt(match[2], 10);
-    verse = match[3] ? parseInt(match[3], 10) : 1;
-    verseEnd = match[4] ? parseInt(match[4], 10) : undefined;
-  } else {
-    // 2. Try book only: "Jn"
-    acronym = normalized.trim();
-    chapter = 0; // Means show all or book overview
+  const acronym = bookMatch[1].trim();
+  const rest = normalized.substring(bookMatch[0].length).trim();
+  
+  // 2. Extract first chapter and verse
+  // Standard format: "7, 51b" or "7:51a" or "7"
+  const partsMatch = rest.match(/(\d+)[a-zA-Z]*(?:[\s,:]+(\d+)[a-zA-Z]*)?/);
+  if (!partsMatch) {
+    // Just the book
+    return parseWithAcronym(acronym, 0, 1);
   }
+  
+  const chapter = parseInt(partsMatch[1], 10);
+  const verse = partsMatch[2] ? parseInt(partsMatch[2], 10) : 1;
+  
+  // 3. Try to find the verse range
+  let verseEnd: number | undefined = undefined;
+  
+  // Check for multi-chapter span first
+  const multiChapterSpan = rest.match(/\d+[a-zA-Z]*[\s,:]+\d+[a-zA-Z]*\s*-\s*\d+[a-zA-Z]*[\s,:]+\d+[a-zA-Z]*/);
+  
+  if (!multiChapterSpan) {
+    // For single chapter, find all numbers after the chapter
+    // and pick the highest one as the end of the range.
+    // e.g. "1-3a.4-5.6-7" -> 7 is the highest
+    const allNumbers = rest.match(/\d+/g);
+    if (allNumbers && allNumbers.length > 2) {
+      // First number is chapter, second is start verse
+      const numbers = allNumbers.map(n => parseInt(n, 10));
+      const vStart = numbers[1];
+      const others = numbers.slice(2);
+      const maxVerse = Math.max(...others);
+      if (maxVerse > vStart) {
+        verseEnd = maxVerse;
+      }
+    } else if (allNumbers && allNumbers.length === 2) {
+      // Just chapter and verse, no range
+    } else {
+      // Traditional range match: "1-8"
+      const rangeMatch = rest.match(/(\d+)[a-zA-Z]*[\s,:]+(\d+)[a-zA-Z]*\s*-\s*(\d+)[a-zA-Z]*(?![,\s:]+\d+)/);
+      if (rangeMatch) {
+        const vStart = parseInt(rangeMatch[2], 10);
+        const vEnd = parseInt(rangeMatch[3], 10);
+        if (vEnd > vStart) {
+          verseEnd = vEnd;
+        }
+      }
+    }
+  }
+
+  return parseWithAcronym(acronym, chapter, verse, verseEnd);
+}
+
+/**
+ * Helper to resolve acronym and return ParsedReference
+ */
+function parseWithAcronym(acronym: string, chapter: number, verse: number, verseEnd?: number): ParsedReference | null {
 
   // Find book by acronym (case insensitive)
   const book = BIBLE_BOOKS.find(b => 

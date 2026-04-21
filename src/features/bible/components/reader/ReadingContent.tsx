@@ -60,7 +60,7 @@ export default function ReadingContent({
         />
       )}
 
-      <div className="flex flex-col px-2 md:px-10 text-[1.25rem] md:text-[1.5rem] leading-tight md:leading-[1.3] tracking-tight text-[#3d0c0c] font-serif antialiased">
+      <div className="flex flex-col px-2 md:px-10 text-[1.4em] md:text-[1.65em] leading-[1.3em] tracking-tight text-[#3d0c0c] font-serif antialiased">
         {versesToDisplay.map((verse, index) => {
           const otherVerseText = otherContent?.versus?.[verse.num];
 

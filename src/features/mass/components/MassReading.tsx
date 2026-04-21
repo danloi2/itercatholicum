@@ -108,7 +108,7 @@ const ReadingHeader = ({ title, reference, isChant, language }: {
             <div className="flex flex-col gap-1">
                 <h2 className={cn(
                     "text-[#8B0000] uppercase tracking-wider font-sans",
-                    isChant ? "text-[1.125em] md:text-[1.25em] font-normal lowercase first-letter:uppercase" : "text-[1.25em] md:text-[1.5em] font-bold"
+                    isChant ? "text-[1.125em] md:text-[1.25em] font-normal lowercase first-letter:uppercase" : "text-[1.4em] md:text-[1.65em] font-bold"
                 )} style={!isChant ? { fontVariant: 'small-caps' } : undefined}>
                     {cleanTitle}
                 </h2>
@@ -118,26 +118,59 @@ const ReadingHeader = ({ title, reference, isChant, language }: {
                     </span>
                 )}
             </div>
-            {reference && (() => {
-                const parsed = parseBibleReference(reference);
-                if (parsed) {
-                    return (
-                        <Link 
-                            to={getBibleReferenceUrl(parsed)}
-                            className="inline-flex items-center gap-1.5 text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80 whitespace-nowrap ml-4 hover:opacity-100 hover:underline transition-all underline-offset-4 decoration-[#8B0000]/30 group/ref"
-                            title={language === 'la' ? 'Vade ad Bibliam' : 'Ir a la Biblia'}
-                        >
-                            <Book className="w-3.5 h-3.5 opacity-40 group-hover/ref:opacity-100 transition-opacity" />
-                            {reference}
-                        </Link>
-                    );
-                }
-                return (
-                    <span className="text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80 whitespace-nowrap ml-4">
-                        {reference}
-                    </span>
-                );
-            })()}
+            {reference && (
+                <div className="flex flex-wrap justify-end gap-x-3 gap-y-1 ml-4">
+                    {(() => {
+                        // 1. Identify if we should split by "-" (multi-chapter span) or keep it (verse range)
+                        // Only split by "-" if it looks like "Chapter, Verse - Chapter, Verse"
+                        const isMultiChapter = reference.match(/\d+[a-zA-Z]*[\s,:]+\d+[a-zA-Z]*\s*-\s*\d+[a-zA-Z]*[\s,:]+\d+[a-zA-Z]*/);
+                        
+                        let parts: string[] = [];
+                        if (isMultiChapter) {
+                            // Split by "-", ";" or "y"
+                            parts = reference.split(/(\s*[-;y]\s*)/);
+                        } else {
+                            // Split only by ";" or "y"
+                            parts = reference.split(/(\s*[;y]\s*)/);
+                        }
+
+                        let currentBookId = '';
+
+                        return parts.map((part, i) => {
+                            const trimmed = part.trim();
+                            if (!trimmed || trimmed === '-' || trimmed === ';' || trimmed === 'y') {
+                                return <span key={i} className="text-[#8B0000] opacity-40 font-sans text-sm">{part}</span>;
+                            }
+
+                            let toParse = trimmed;
+                            if (!trimmed.match(/^[1-3]?\s*[a-zA-ZáéíóúÁÉÍÓÚ]/)) {
+                                const lastBook = BIBLE_BOOKS.find(b => b.id === currentBookId);
+                                if (lastBook) {
+                                    toParse = `${lastBook.acronym} ${trimmed}`;
+                                }
+                            }
+
+                            const parsed = parseBibleReference(toParse);
+                            if (parsed) {
+                                currentBookId = parsed.bookId;
+                                return (
+                                    <Link 
+                                        key={i}
+                                        to={getBibleReferenceUrl(parsed)}
+                                        className="inline-flex items-center gap-1 text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium hover:underline transition-all underline-offset-4 decoration-[#8B0000]/30 group/ref"
+                                        title={language === 'la' ? 'Vade ad Bibliam' : 'Ir a la Biblia'}
+                                    >
+                                        {i === 0 && <Book className="w-3.5 h-3.5 opacity-40 group-hover/ref:opacity-100 transition-opacity mr-0.5" />}
+                                        {trimmed}
+                                    </Link>
+                                );
+                            }
+
+                            return <span key={i} className="text-[#8B0000] font-sans text-[0.875em] md:text-[1em] font-medium opacity-80">{trimmed}</span>;
+                        });
+                    })()}
+                </div>
+            )}
         </div>
     );
 };
@@ -167,7 +200,7 @@ function PsalmBody({ text }: { text: string }) {
         
         return (
           <div key={si} className="pl-8 md:pl-12 border-l-2 border-[#8B0000]/5 py-1">
-            <p className="font-serif leading-tight md:leading-tight text-[1.25rem] md:text-[1.5rem] tracking-tight relative">
+            <p className="font-serif leading-tight md:leading-tight text-[1.4em] md:text-[1.65em] tracking-tight relative">
               <span className="absolute -left-8 md:-left-10 mt-1">
                 <LiturgicalMark>℣</LiturgicalMark>
               </span>
@@ -223,7 +256,7 @@ function ReadingBody({
   const isAcclamation = normType.includes('ACCLAMATION');
 
   return (
-    <div className="text-justify font-serif leading-tight md:leading-tight text-[1.25rem] md:text-[1.5rem] tracking-tight text-[#3d0c0c] antialiased">
+    <div className="text-justify font-serif leading-tight md:leading-tight text-[1.4em] md:text-[1.65em] tracking-tight text-[#3d0c0c] antialiased">
       {paragraphs.map((para, pIdx) => {
         const lines = para.split('\n').filter((l) => l.length > 0);
         return (
@@ -295,7 +328,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ lectura, index, langua
       {/* Global Intro (Red, Italic, Serif) */}
       {introText && (
           <div className="mb-4 px-2 md:px-6 flex flex-wrap gap-x-2 items-baseline">
-              <span className="italic font-serif text-[#8B0000] text-[1.25rem] md:text-[1.5rem] leading-tight tracking-tight">
+              <span className="italic font-serif text-[#8B0000] text-[1.4em] md:text-[1.65em] leading-tight tracking-tight">
                   {isPsalm && (
                     <>
                       <LiturgicalMark className="text-[0.875em] mr-1">℟</LiturgicalMark>
@@ -326,7 +359,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ lectura, index, langua
         return (
           <div className="mb-8 px-2 md:px-6">
             {isGospel && <GospelCross />}
-            <span className="font-serif text-[#3d0c0c] text-[1.25rem] md:text-[1.5rem] leading-tight tracking-tight">
+            <span className="font-serif text-[#3d0c0c] text-[1.4em] md:text-[1.65em] leading-tight tracking-tight">
               {incipit}
             </span>
           </div>
