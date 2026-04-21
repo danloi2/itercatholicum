@@ -9,7 +9,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
-  contents: write   # needed to create releases
+  contents: write   # needed to create releases and push gh-pages branch
   pages: write
   id-token: write
 
@@ -41,26 +41,30 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
         with:
-          path: './dist'
+          name: dist
+          path: ./dist
 
-  # ── 2. Deploy to GitHub Pages ──────────────────────────────────────────────
+  # ── 2. Deploy to GitHub Pages (via gh-pages branch) ───────────────────────
   deploy:
     name: Deploy to Pages
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
 
   # ── 3. Create GitHub Release ───────────────────────────────────────────────
   release:
