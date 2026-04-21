@@ -1,33 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 
 interface SecondHeaderProps {
   language: 'es' | 'la';
 }
 
 const SecondHeader: React.FC<SecondHeaderProps> = ({ language }) => {
-  const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const findElement = () => {
-      const el = document.getElementById('header-portal-center');
-      if (el) setPortalElement(el);
-    };
-
-    findElement();
-
-    const observer = new MutationObserver(() => {
-      const el = document.getElementById('header-portal-center');
-      if (el) {
-        setPortalElement(el);
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, []);
-
   const content = {
     es: {
       heroSubtitle:
@@ -75,16 +52,13 @@ const SecondHeader: React.FC<SecondHeaderProps> = ({ language }) => {
     return () => clearTimeout(timerId);
   }, [displayText, isDeleting, fullText, typingSpeed]);
 
-  if (!portalElement) return null;
-
-  return createPortal(
-    <div className="flex flex-col justify-center items-center w-full min-h-[40px]">
+  return (
+    <div className="flex flex-col justify-center items-center w-full min-h-[40px] mb-4">
       <p className="text-sm md:text-lg text-[#522b2b] italic font-serif leading-tight opacity-90 inline-flex items-center text-center px-4">
         {displayText}
         <span className="w-0.5 h-4 md:h-5 bg-[#8B0000] ml-1.5 animate-pulse" />
       </p>
-    </div>,
-    portalElement
+    </div>
   );
 };
 

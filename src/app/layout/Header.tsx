@@ -33,8 +33,9 @@ export default function Header({
         borderColor: `${hex}30`,
       }}
     >
-      {/* Settings button — always top-right, absolute */}
-      <div className="absolute top-2 right-3 sm:right-6 z-50">
+      {/* Settings & Time — top-right, absolute */}
+      <div className="absolute top-2 right-3 sm:right-6 z-50 flex items-center gap-2">
+        <TimePill language={language} />
         <SettingsDropdown language={language} setLanguage={setLanguage} />
       </div>
 
@@ -57,9 +58,6 @@ export default function Header({
 
             {/* Liturgical Date */}
             <LatinDateDisplay language={language} />
-
-            {/* Time */}
-            <TimePill language={language} />
 
             {/* Badge portal */}
             <div
