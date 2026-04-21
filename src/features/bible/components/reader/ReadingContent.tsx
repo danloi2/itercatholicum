@@ -60,7 +60,7 @@ export default function ReadingContent({
         />
       )}
 
-      <div className="text-justify px-2 md:px-8 text-[1.15rem] md:text-[1.4rem] leading-[1.4] md:leading-[1.5] tracking-tight text-[#3d0c0c] font-serif antialiased">
+      <div className="flex flex-col px-2 md:px-10 text-[1.25rem] md:text-[1.5rem] leading-tight md:leading-[1.3] tracking-tight text-[#3d0c0c] font-serif antialiased">
         {versesToDisplay.map((verse, index) => {
           const otherVerseText = otherContent?.versus?.[verse.num];
 
@@ -68,12 +68,15 @@ export default function ReadingContent({
             <>
               {index === 0 ? (
                 <>
+                  <sup className="text-[0.55em] font-bold text-[#8B0000]/60 mr-1.5 select-none align-baseline">
+                    {verse.num}
+                  </sup>
                   <CanvasInitial className="mr-2">{verse.text.charAt(0).toUpperCase()}</CanvasInitial>
                   <span>{verse.text.substring(1)} </span>
                 </>
               ) : (
                 <>
-                  <sup className="text-[0.55em] font-bold text-[#8B0000]/60 mr-1 select-none align-baseline">
+                  <sup className="text-[0.55em] font-bold text-[#8B0000]/60 mr-1.5 select-none align-baseline">
                     {verse.num}
                   </sup>
                   <span>{verse.text} </span>
@@ -82,24 +85,22 @@ export default function ReadingContent({
             </>
           );
 
-          if (otherVerseText) {
-            return (
-              <span key={verse.num} className="group relative inline cursor-pointer hover:bg-[#8B0000]/5 rounded transition-all duration-300">
-                {verseContent}
-                <div className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-2 hidden group-hover:block w-[90vw] md:w-96 p-4 md:p-6 rounded-2xl bg-[#fdfbf7] border border-[#8B0000]/10 shadow-[0_20px_50px_rgba(0,0,0,0.2)] font-serif text-[#3d0c0c] text-base md:text-lg pointer-events-none z-50">
-                  <p className="leading-relaxed text-justify">
-                    <sup className="text-[0.6em] font-bold text-[#8B0000]/60 mr-1.5 align-baseline">{verse.num}</sup>
-                    {otherVerseText}
-                  </p>
-                </div>
-              </span>
-            );
-          }
-
           return (
-            <span key={verse.num} className="inline">
-              {verseContent}
-            </span>
+            <div key={verse.num} className="group relative py-0.5 border-b border-[#8B0000]/5 last:border-0 hover:bg-[#8B0000]/5 transition-colors rounded px-1 -mx-1">
+              {otherVerseText ? (
+                <div className="cursor-pointer">
+                  {verseContent}
+                  <div className="absolute bottom-full left-0 md:left-1/2 md:-translate-x-1/2 mb-2 hidden group-hover:block w-[90vw] md:w-96 p-4 md:p-6 rounded-2xl bg-[#fdfbf7] border border-[#8B0000]/10 shadow-[0_20px_50px_rgba(0,0,0,0.2)] font-serif text-[#3d0c0c] text-base md:text-lg pointer-events-none z-50">
+                    <p className="leading-relaxed text-justify">
+                      <sup className="text-[0.6em] font-bold text-[#8B0000]/60 mr-1.5 align-baseline">{verse.num}</sup>
+                      {otherVerseText}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                verseContent
+              )}
+            </div>
           );
         })}
       </div>

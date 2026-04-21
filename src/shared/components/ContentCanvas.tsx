@@ -37,7 +37,7 @@ export const CanvasInitial: React.FC<{
 }> = ({ children, className }) => (
   <span
     className={cn(
-      'text-[2.5em] font-bold text-primary font-serif inline-block leading-none align-baseline mr-[0.05em]',
+      'text-[1.2em] font-bold text-primary font-serif align-baseline mr-[0.05em]',
       className
     )}
   >
@@ -136,7 +136,7 @@ export const ContentCanvas: React.FC<ContentCanvasProps> = ({
         )}
 
         {/* Content */}
-        <div className="relative font-bible text-foreground text-justify leading-[1.9] text-[1.15em]">
+        <div className="relative font-bible text-foreground text-justify">
           {children}
         </div>
 

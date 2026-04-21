@@ -46,7 +46,14 @@ export default function Page({ language }: PageProps) {
         } else {
           setVerses({ start: 1, end: 9999 });
         }
+      } else {
+        setSelectedChapter(null);
+        setVerses({ start: 1, end: 9999 });
       }
+    } else {
+      setSelectedBookId('');
+      setSelectedChapter(null);
+      setVerses({ start: 1, end: 9999 });
     }
   }, [searchParams]);
 
@@ -76,69 +83,74 @@ export default function Page({ language }: PageProps) {
 
   const { setHeaderProps } = useLayout();
 
+  const headerContent = useMemo(() => (
+    <SecondHeader
+      language={language}
+      selectedBook={selectedBook || null}
+      selectedChapter={selectedChapter}
+      verses={verses}
+      onBookChange={(id) => {
+        setSearchParams(prev => {
+          if (id) prev.set('book', id);
+          else prev.delete('book');
+          prev.delete('chapter');
+          prev.delete('verse');
+          prev.delete('verseEnd');
+          return prev;
+        });
+      }}
+      onChapterChange={(ch: number | null) => {
+        setSearchParams(prev => {
+          if (ch !== null) prev.set('chapter', ch.toString());
+          else prev.delete('chapter');
+          prev.delete('verse');
+          prev.delete('verseEnd');
+          return prev;
+        });
+      }}
+      onVersesChange={(v: { start: number; end: number }) => {
+        setSearchParams(prev => {
+          prev.set('verse', v.start.toString());
+          if (v.end < 9000) prev.set('verseEnd', v.end.toString());
+          else prev.delete('verseEnd');
+          return prev;
+        });
+      }}
+      hierarchy={hierarchy}
+      bookData={bookData}
+    />
+  ), [language, selectedBook, selectedChapter, verses, hierarchy, bookData, setSearchParams]);
+
   useEffect(() => {
     setHeaderProps({
-      pageTitle: (
-        <SecondHeader
-          language={language}
-          selectedBook={selectedBook || null}
-          selectedChapter={selectedChapter}
-          verses={verses}
-          onBookChange={(id) => {
-            setSearchParams(prev => {
-              if (id) prev.set('book', id);
-              else prev.delete('book');
-              prev.delete('chapter');
-              prev.delete('verse');
-              prev.delete('verseEnd');
-              return prev;
-            });
-          }}
-          onChapterChange={(ch: number | null) => {
-            setSearchParams(prev => {
-              if (ch !== null) prev.set('chapter', ch.toString());
-              else prev.delete('chapter');
-              prev.delete('verse');
-              prev.delete('verseEnd');
-              return prev;
-            });
-          }}
-          onVersesChange={(v: { start: number; end: number }) => {
-            setSearchParams(prev => {
-              prev.set('verse', v.start.toString());
-              if (v.end < 9000) prev.set('verseEnd', v.end.toString());
-              else prev.delete('verseEnd');
-              return prev;
-            });
-          }}
-          hierarchy={hierarchy}
-          bookData={bookData}
-        />
-      ),
+      pageTitle: headerContent,
       centerChildren: true,
     });
-  }, [language, selectedBook, selectedChapter, verses, hierarchy, bookData, setHeaderProps, setSearchParams]);
+  }, [headerContent, setHeaderProps]);
 
   const renderMainContent = () => {
+    if (!selectedBookId) {
+      return (
+        <BookTree language={language} hierarchy={hierarchy} onSelectBook={setSelectedBookId} />
+      );
+    }
+
     if (loading || otherLoading) {
       return (
         <div className="flex flex-col items-center justify-center h-48 mt-10">
           <Loader2 className="w-10 h-10 animate-spin text-[#8B0000] mb-3" />
-          <p className="font-serif text-[#522b2b] italic text-sm">Loading Sacred Text...</p>
+          <p className="font-serif text-[#522b2b] italic text-sm">
+            {language === 'la' ? 'Sacra Biblia legere...' : 'Cargando la Sagrada Biblia...'}
+          </p>
         </div>
       );
     }
+
     if (error || otherError) {
       return (
         <div className="flex items-center justify-center h-48 text-red-500 font-serif text-lg mt-10">
           {error || otherError}
         </div>
-      );
-    }
-
-    if (!selectedBookId) {
-      return (
-        <BookTree language={language} hierarchy={hierarchy} onSelectBook={setSelectedBookId} />
       );
     }
 

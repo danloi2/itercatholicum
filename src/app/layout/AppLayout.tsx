@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -25,8 +25,10 @@ export default function AppLayout({ language, setLanguage }: AppLayoutProps) {
     year?: number;
   }>({});
 
+  const contextValue = useMemo(() => ({ setHeaderProps }), []);
+
   return (
-    <LayoutContext.Provider value={{ setHeaderProps }}>
+    <LayoutContext.Provider value={contextValue}>
       <div className="min-h-screen flex flex-col bg-[#fdfbf7] relative">
         <LiturgicalBadgesPortal language={language} />
         <Header

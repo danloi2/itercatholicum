@@ -33,10 +33,11 @@ export function useBibleBookLoader(bookId: string, version: 'vulgata' | 'torres'
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const loadContent = useCallback(async () => {
+  const loadContent = useCallback(async (isCurrent: () => boolean) => {
     if (!bookId) {
       setBookData(null);
       setError(null);
+      setLoading(false);
       return;
     }
 
@@ -44,6 +45,8 @@ export function useBibleBookLoader(bookId: string, version: 'vulgata' | 'torres'
     setError(null);
     try {
       const fileData = await bibleService.loadBookData(bookId, version);
+      if (!isCurrent()) return;
+      
       setBookData({
         isFullBook: true,
         chapters: fileData.capitula as Array<{
@@ -53,16 +56,26 @@ export function useBibleBookLoader(bookId: string, version: 'vulgata' | 'torres'
         }>,
       });
     } catch (err) {
+      if (!isCurrent()) return;
       console.error('Failed to load bible content:', err);
       setError('Error cargando el contenido / Error loading content');
     } finally {
-      setLoading(false);
+      if (isCurrent()) {
+        setLoading(false);
+      }
     }
   }, [bookId, version]);
 
   useEffect(() => {
-    loadContent();
+    let active = true;
+    const isCurrent = () => active;
+    
+    loadContent(isCurrent);
+    
+    return () => {
+      active = false;
+    };
   }, [loadContent]);
 
-  return { bookData, loading, error, reload: loadContent };
+  return { bookData, loading, error, reload: () => loadContent(() => true) };
 }

@@ -82,7 +82,7 @@ export default function SecondHeader({
             </button>
           </div>
           {testamentOpen && (
-            <div className="absolute top-full left-0 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-[100]">
+            <div className="absolute top-full left-0 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-100">
               <div className="flex flex-col py-1">
                 {hierarchy.testaments.map((t) => (
                   <button
@@ -128,7 +128,7 @@ export default function SecondHeader({
             </button>
           </div>
           {groupOpen && (
-            <div className="absolute top-full left-0 mt-2 w-[200px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-[100]">
+            <div className="absolute top-full left-0 mt-2 w-[200px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-100">
               <div className="flex flex-col py-1 max-h-[300px] overflow-y-auto custom-scrollbar">
                 {Array.from(hierarchy.groupsByTestament[currentTestament || ''] || []).map((g) => (
                   <button
@@ -174,7 +174,7 @@ export default function SecondHeader({
             </button>
           </div>
           {bookOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-[100]">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-100">
               <div className="flex flex-col max-h-[40vh] overflow-y-auto py-1 custom-scrollbar">
                 {(hierarchy.booksByGroup[currentGroup] || []).map((b) => (
                   <button
@@ -219,7 +219,7 @@ export default function SecondHeader({
             </button>
           </div>
           {chapterOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-[100]">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-100">
               <div className="p-3">
                 <button
                   onClick={() => {
@@ -282,7 +282,7 @@ export default function SecondHeader({
             </button>
           </div>
           {versesOpen && (
-            <div className="absolute top-full right-0 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 p-4 animate-in fade-in slide-in-from-top-2 duration-200 z-[100]">
+            <div className="absolute top-full right-0 mt-2 w-[220px] bg-[#fdfbf7] rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-[#8B0000]/10 p-4 animate-in fade-in slide-in-from-top-2 duration-200 z-100">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-bold text-[#8B0000]/60 uppercase tracking-widest px-1">

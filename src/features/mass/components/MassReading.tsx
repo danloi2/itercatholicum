@@ -167,7 +167,7 @@ function PsalmBody({ text }: { text: string }) {
         
         return (
           <div key={si} className="pl-8 md:pl-12 border-l-2 border-[#8B0000]/5 py-1">
-            <p className="font-serif leading-loose text-[1.125em] md:text-[1.25em] relative">
+            <p className="font-serif leading-tight md:leading-tight text-[1.25rem] md:text-[1.5rem] tracking-tight relative">
               <span className="absolute -left-8 md:-left-10 mt-1">
                 <LiturgicalMark>℣</LiturgicalMark>
               </span>
@@ -223,13 +223,13 @@ function ReadingBody({
   const isAcclamation = normType.includes('ACCLAMATION');
 
   return (
-    <div className="text-justify font-serif leading-relaxed text-[1.125em] md:text-[1.25em] text-[#3d0c0c]">
+    <div className="text-justify font-serif leading-tight md:leading-tight text-[1.25rem] md:text-[1.5rem] tracking-tight text-[#3d0c0c] antialiased">
       {paragraphs.map((para, pIdx) => {
         const lines = para.split('\n').filter((l) => l.length > 0);
         return (
           <p 
             key={pIdx} 
-            className={cn("mb-6 pl-6 md:pl-8 -indent-6 md:-indent-8")}
+            className={cn("mb-6")}
           >
             {lines.map((line, li) => {
               const isFirstGlobalLine = pIdx === 0 && li === 0;
@@ -295,7 +295,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ lectura, index, langua
       {/* Global Intro (Red, Italic, Serif) */}
       {introText && (
           <div className="mb-4 px-2 md:px-6 flex flex-wrap gap-x-2 items-baseline">
-              <span className="italic font-serif text-[#8B0000] text-[1.125em] md:text-[1.25em] leading-snug">
+              <span className="italic font-serif text-[#8B0000] text-[1.25rem] md:text-[1.5rem] leading-tight tracking-tight">
                   {isPsalm && (
                     <>
                       <LiturgicalMark className="text-[0.875em] mr-1">℟</LiturgicalMark>
@@ -326,7 +326,7 @@ export const MassReading: React.FC<MassReadingProps> = ({ lectura, index, langua
         return (
           <div className="mb-8 px-2 md:px-6">
             {isGospel && <GospelCross />}
-            <span className="font-serif text-[#3d0c0c] text-[1.125em] md:text-[1.25em] leading-snug">
+            <span className="font-serif text-[#3d0c0c] text-[1.25rem] md:text-[1.5rem] leading-tight tracking-tight">
               {incipit}
             </span>
           </div>
