@@ -3877,9 +3877,9 @@
     "lecturas": [
       {
         "type": "FIRSTLECTURE",
-        "reference": "Jn 11, 3-7.17.20-27.33b-45",
+        "reference": "1 Jn 1, 5-10; 2, 1-2",
         "intro": {
-          "es": "Yo soy la resurrección y la vida.",
+          "es": "La sangre de Jesús nos limpia de todo pecado.Yo soy la resurrección y la vida.",
           "la": ""
         },
         "text": {
@@ -3889,9 +3889,9 @@
       },
       {
         "type": "PSALM",
-        "reference": "1 Jn 1, 5-10; 2, 1-2",
+        "reference": "Sal 102, 2-4.8-9.13-14.17-18",
         "intro": {
-          "es": "La sangre de Jesús nos limpia de todo pecado.",
+          "es": "Bendice, alma mía, al Señor.",
           "la": ""
         },
         "text": {
@@ -3901,9 +3901,9 @@
       },
       {
         "type": "GOSPEL",
-        "reference": "Sal 102, 2-4.8-9.13-14.17-18",
+        "reference": "Mt 11, 25-30",
         "intro": {
-          "es": "Bendice, alma mía, al Señor. ",
+          "es": " ",
           "la": ""
         },
         "text": {
