@@ -8,6 +8,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
 
 ---
 
@@ -55,7 +56,7 @@ The project is built on the pillars of **liturgical accuracy**, **theological tr
 
 ### Prerequisites
 - Node.js (v20+)
-- npm
+- pnpm
 
 ### Installation
 1. Clone the repository:
@@ -64,11 +65,11 @@ The project is built on the pillars of **liturgical accuracy**, **theological tr
    ```
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 3. Start development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 ---
